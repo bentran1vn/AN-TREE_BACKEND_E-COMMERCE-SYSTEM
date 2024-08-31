@@ -16,6 +16,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Antree_Ecommerce_BE.Persist
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Antree_Ecommerce_BE.Contract", "src\Antree_Ecommerce_BE.Contract\Antree_Ecommerce_BE.Contract.csproj", "{B4B304EE-2EC1-4EC8-8F80-29A0DC9C7BD9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Antree_Ecommerce_BE.Infratructure", "src\Antree_Ecommerce_BE.Infratructure\Antree_Ecommerce_BE.Infratructure.csproj", "{1BC3E7E7-7CB1-4DD5-8361-8DC43EF6C242}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Antree_Ecommerce_BE.Tests", "test\Antree_Ecommerce_BE.Tests\Antree_Ecommerce_BE.Tests.csproj", "{D8EC2646-4783-4D85-95D0-EE9658B551C0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,6 +32,8 @@ Global
 		{2311C7B5-2E12-4A4F-95B9-4BBC5BB0018E} = {02561D10-CAB8-4ACE-95BE-5C907CACA155}
 		{4CAC57AC-0998-44BE-90BF-CCDA42F06424} = {02561D10-CAB8-4ACE-95BE-5C907CACA155}
 		{B4B304EE-2EC1-4EC8-8F80-29A0DC9C7BD9} = {02561D10-CAB8-4ACE-95BE-5C907CACA155}
+		{1BC3E7E7-7CB1-4DD5-8361-8DC43EF6C242} = {02561D10-CAB8-4ACE-95BE-5C907CACA155}
+		{D8EC2646-4783-4D85-95D0-EE9658B551C0} = {45031A9D-6E73-4806-8EE0-9DC15702E468}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{1AA334B3-C706-4C0A-9805-EEC6F0BE35D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -54,5 +60,13 @@ Global
 		{B4B304EE-2EC1-4EC8-8F80-29A0DC9C7BD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4B304EE-2EC1-4EC8-8F80-29A0DC9C7BD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4B304EE-2EC1-4EC8-8F80-29A0DC9C7BD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BC3E7E7-7CB1-4DD5-8361-8DC43EF6C242}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BC3E7E7-7CB1-4DD5-8361-8DC43EF6C242}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BC3E7E7-7CB1-4DD5-8361-8DC43EF6C242}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BC3E7E7-7CB1-4DD5-8361-8DC43EF6C242}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8EC2646-4783-4D85-95D0-EE9658B551C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8EC2646-4783-4D85-95D0-EE9658B551C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8EC2646-4783-4D85-95D0-EE9658B551C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8EC2646-4783-4D85-95D0-EE9658B551C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

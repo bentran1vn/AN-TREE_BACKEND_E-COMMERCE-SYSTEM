@@ -10,4 +10,26 @@
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0"/>
     </ItemGroup>
 
+    <ItemGroup>
+      <Compile Remove="WeatherForecast.cs" />
+      <Compile Remove="Controllers\WeatherForecastController.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Antree_Ecommerce_BE.API.http" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Controllers\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Antree_Ecommerce_BE.Application\Antree_Ecommerce_BE.Application.csproj" />
+      <ProjectReference Include="..\Antree_Ecommerce_BE.Contract\Antree_Ecommerce_BE.Contract.csproj" />
+      <ProjectReference Include="..\Antree_Ecommerce_BE.Domain\Antree_Ecommerce_BE.Domain.csproj" />
+      <ProjectReference Include="..\Antree_Ecommerce_BE.Infratructure\Antree_Ecommerce_BE.Infratructure.csproj" />
+      <ProjectReference Include="..\Antree_Ecommerce_BE.Persistence\Antree_Ecommerce_BE.Persistence.csproj" />
+      <ProjectReference Include="..\Antree_Ecommerce_BE.Presentation\Antree_Ecommerce_BE.Presentation.csproj" />
+    </ItemGroup>
+
 </Project>

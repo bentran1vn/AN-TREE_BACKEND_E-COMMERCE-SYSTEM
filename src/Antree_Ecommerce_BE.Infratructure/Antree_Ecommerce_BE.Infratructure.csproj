@@ -7,7 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Antree_Ecommerce_BE.Contract\Antree_Ecommerce_BE.Contract.csproj" />
+      <ProjectReference Include="..\Antree_Ecommerce_BE.Application\Antree_Ecommerce_BE.Application.csproj" />
     </ItemGroup>
 
 </Project>

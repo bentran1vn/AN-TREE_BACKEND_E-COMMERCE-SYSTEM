@@ -6,4 +6,10 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Antree_Ecommerce_BE.Contract\Antree_Ecommerce_BE.Contract.csproj" />
+      <ProjectReference Include="..\Antree_Ecommerce_BE.Domain\Antree_Ecommerce_BE.Domain.csproj" />
+      <ProjectReference Include="..\Antree_Ecommerce_BE.Persistence\Antree_Ecommerce_BE.Persistence.csproj" />
+    </ItemGroup>
+
 </Project>
