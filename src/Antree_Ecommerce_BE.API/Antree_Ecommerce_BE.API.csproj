@@ -27,7 +27,7 @@
       <ProjectReference Include="..\Antree_Ecommerce_BE.Application\Antree_Ecommerce_BE.Application.csproj" />
       <ProjectReference Include="..\Antree_Ecommerce_BE.Contract\Antree_Ecommerce_BE.Contract.csproj" />
       <ProjectReference Include="..\Antree_Ecommerce_BE.Domain\Antree_Ecommerce_BE.Domain.csproj" />
-      <ProjectReference Include="..\Antree_Ecommerce_BE.Infratructure\Antree_Ecommerce_BE.Infratructure.csproj" />
+      <ProjectReference Include="..\Antree_Ecommerce_BE.Infrastructure\Antree_Ecommerce_BE.Infrastructure.csproj" />
       <ProjectReference Include="..\Antree_Ecommerce_BE.Persistence\Antree_Ecommerce_BE.Persistence.csproj" />
       <ProjectReference Include="..\Antree_Ecommerce_BE.Presentation\Antree_Ecommerce_BE.Presentation.csproj" />
     </ItemGroup>

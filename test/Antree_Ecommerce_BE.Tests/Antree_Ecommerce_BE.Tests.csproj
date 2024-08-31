@@ -11,9 +11,24 @@
       <ProjectReference Include="..\..\src\Antree_Ecommerce_BE.Application\Antree_Ecommerce_BE.Application.csproj" />
       <ProjectReference Include="..\..\src\Antree_Ecommerce_BE.Contract\Antree_Ecommerce_BE.Contract.csproj" />
       <ProjectReference Include="..\..\src\Antree_Ecommerce_BE.Domain\Antree_Ecommerce_BE.Domain.csproj" />
-      <ProjectReference Include="..\..\src\Antree_Ecommerce_BE.Infratructure\Antree_Ecommerce_BE.Infratructure.csproj" />
+      <ProjectReference Include="..\..\src\Antree_Ecommerce_BE.Infrastructure\Antree_Ecommerce_BE.Infrastructure.csproj" />
       <ProjectReference Include="..\..\src\Antree_Ecommerce_BE.Persistence\Antree_Ecommerce_BE.Persistence.csproj" />
       <ProjectReference Include="..\..\src\Antree_Ecommerce_BE.Presentation\Antree_Ecommerce_BE.Presentation.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="coverlet.collector" Version="6.0.2">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+      <PackageReference Include="FluentAssertions" Version="6.8.0" />
+      <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+      <PackageReference Include="NetArchTest.Rules" Version="1.3.2" />
+      <PackageReference Include="xunit" Version="2.9.0" />
+      <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
     </ItemGroup>
 
 </Project>

@@ -1,6 +1,6 @@
 using System.Reflection;
 
-namespace Antree_Ecommerce_BE.Infratructure;
+namespace Antree_Ecommerce_BE.Infrastructure;
 
 public static class AssemblyReference
 {
