@@ -6,4 +6,28 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Compile Remove="Class1.cs" />
+      <Compile Remove="Abstract\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="Abstract\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Abstract\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Ardalis.SmartEnum" Version="8.0.0" />
+      <PackageReference Include="MediatR" Version="8.0.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Services\Feedback\" />
+      <Folder Include="Services\Orders\" />
+      <Folder Include="Services\Products\Validators\" />
+    </ItemGroup>
+
 </Project>
