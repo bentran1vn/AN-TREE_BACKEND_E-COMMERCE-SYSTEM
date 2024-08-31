@@ -20,6 +20,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Antree_Ecommerce_BE.Infrast
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Antree_Ecommerce_BE.Tests", "test\Antree_Ecommerce_BE.Tests\Antree_Ecommerce_BE.Tests.csproj", "{D8EC2646-4783-4D85-95D0-EE9658B551C0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "items", "items", "{4C445F61-9409-44E7-82D7-083F364AA581}"
+	ProjectSection(SolutionItems) = preProject
+		items\.editorconfig = items\.editorconfig
+		items\Directory.Build.props = items\Directory.Build.props
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
