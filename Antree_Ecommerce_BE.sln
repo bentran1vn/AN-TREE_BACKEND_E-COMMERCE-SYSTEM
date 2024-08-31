@@ -1,8 +1,58 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02561D10-CAB8-4ACE-95BE-5C907CACA155}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{45031A9D-6E73-4806-8EE0-9DC15702E468}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Antree_Ecommerce_BE.API", "src\Antree_Ecommerce_BE.API\Antree_Ecommerce_BE.API.csproj", "{1AA334B3-C706-4C0A-9805-EEC6F0BE35D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Antree_Ecommerce_BE.Application", "src\Antree_Ecommerce_BE.Application\Antree_Ecommerce_BE.Application.csproj", "{3D041023-04C4-42A1-8821-E21B61841DC9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Antree_Ecommerce_BE.Domain", "src\Antree_Ecommerce_BE.Domain\Antree_Ecommerce_BE.Domain.csproj", "{7ABDAC86-C66A-4135-B34D-C9825C5289A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Antree_Ecommerce_BE.Presentation", "src\Antree_Ecommerce_BE.Presentation\Antree_Ecommerce_BE.Presentation.csproj", "{2311C7B5-2E12-4A4F-95B9-4BBC5BB0018E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Antree_Ecommerce_BE.Persistence", "src\Antree_Ecommerce_BE.Persistence\Antree_Ecommerce_BE.Persistence.csproj", "{4CAC57AC-0998-44BE-90BF-CCDA42F06424}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Antree_Ecommerce_BE.Contract", "src\Antree_Ecommerce_BE.Contract\Antree_Ecommerce_BE.Contract.csproj", "{B4B304EE-2EC1-4EC8-8F80-29A0DC9C7BD9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1AA334B3-C706-4C0A-9805-EEC6F0BE35D5} = {02561D10-CAB8-4ACE-95BE-5C907CACA155}
+		{3D041023-04C4-42A1-8821-E21B61841DC9} = {02561D10-CAB8-4ACE-95BE-5C907CACA155}
+		{7ABDAC86-C66A-4135-B34D-C9825C5289A0} = {02561D10-CAB8-4ACE-95BE-5C907CACA155}
+		{2311C7B5-2E12-4A4F-95B9-4BBC5BB0018E} = {02561D10-CAB8-4ACE-95BE-5C907CACA155}
+		{4CAC57AC-0998-44BE-90BF-CCDA42F06424} = {02561D10-CAB8-4ACE-95BE-5C907CACA155}
+		{B4B304EE-2EC1-4EC8-8F80-29A0DC9C7BD9} = {02561D10-CAB8-4ACE-95BE-5C907CACA155}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1AA334B3-C706-4C0A-9805-EEC6F0BE35D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AA334B3-C706-4C0A-9805-EEC6F0BE35D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AA334B3-C706-4C0A-9805-EEC6F0BE35D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AA334B3-C706-4C0A-9805-EEC6F0BE35D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D041023-04C4-42A1-8821-E21B61841DC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D041023-04C4-42A1-8821-E21B61841DC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D041023-04C4-42A1-8821-E21B61841DC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D041023-04C4-42A1-8821-E21B61841DC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7ABDAC86-C66A-4135-B34D-C9825C5289A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7ABDAC86-C66A-4135-B34D-C9825C5289A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7ABDAC86-C66A-4135-B34D-C9825C5289A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7ABDAC86-C66A-4135-B34D-C9825C5289A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2311C7B5-2E12-4A4F-95B9-4BBC5BB0018E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2311C7B5-2E12-4A4F-95B9-4BBC5BB0018E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2311C7B5-2E12-4A4F-95B9-4BBC5BB0018E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2311C7B5-2E12-4A4F-95B9-4BBC5BB0018E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CAC57AC-0998-44BE-90BF-CCDA42F06424}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CAC57AC-0998-44BE-90BF-CCDA42F06424}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CAC57AC-0998-44BE-90BF-CCDA42F06424}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CAC57AC-0998-44BE-90BF-CCDA42F06424}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4B304EE-2EC1-4EC8-8F80-29A0DC9C7BD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4B304EE-2EC1-4EC8-8F80-29A0DC9C7BD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4B304EE-2EC1-4EC8-8F80-29A0DC9C7BD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4B304EE-2EC1-4EC8-8F80-29A0DC9C7BD9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
