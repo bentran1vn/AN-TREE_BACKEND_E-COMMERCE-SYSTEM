@@ -12,12 +12,12 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Discounts",
+                name: "Discount",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
                     DiscountPercent = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Total = table.Column<int>(type: "int", nullable: false),
                     Used = table.Column<int>(type: "int", nullable: false),
@@ -29,16 +29,16 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Discounts", x => x.Id);
+                    table.PrimaryKey("PK_Discount", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "ProductCategorys",
+                name: "ProductCategory",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
                     CreatedOnUtc = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: false),
                     ModifiedOnUtc = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: true),
                     CreatedBy = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -47,21 +47,21 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ProductCategorys", x => x.Id);
+                    table.PrimaryKey("PK_ProductCategory", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Users",
+                name: "User",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Username = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Firstname = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Lastname = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Phonenumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Role = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Username = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
+                    Firstname = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Lastname = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Phonenumber = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Role = table.Column<int>(type: "int", nullable: false),
                     CreatedOnUtc = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: false),
                     ModifiedOnUtc = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: true),
                     CreatedBy = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -70,7 +70,7 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Users", x => x.Id);
+                    table.PrimaryKey("PK_User", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -81,7 +81,7 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                     ProductCategoryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
                     Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
                     Sku = table.Column<int>(type: "int", nullable: false),
                     Sold = table.Column<int>(type: "int", nullable: false),
                     CreatedOnUtc = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: false),
@@ -94,22 +94,22 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                 {
                     table.PrimaryKey("PK_Product", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Product_ProductCategorys_ProductCategoryId",
+                        name: "FK_Product_ProductCategory_ProductCategoryId",
                         column: x => x.ProductCategoryId,
-                        principalTable: "ProductCategorys",
+                        principalTable: "ProductCategory",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Orders",
+                name: "Order",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     DiscountId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Note = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Address = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
+                    Note = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
                     Total = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Status = table.Column<int>(type: "int", nullable: false),
                     CreatedOnUtc = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: false),
@@ -118,80 +118,81 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Orders", x => x.Id);
+                    table.PrimaryKey("PK_Order", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Orders_Discounts_DiscountId",
+                        name: "FK_Order_Discount_DiscountId",
                         column: x => x.DiscountId,
-                        principalTable: "Discounts",
+                        principalTable: "Discount",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_Orders_Users_UserId",
+                        name: "FK_Order_User_UserId",
                         column: x => x.UserId,
-                        principalTable: "Users",
+                        principalTable: "User",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "UserAddresses",
+                name: "UserAddress",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    City = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Province = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IsOrderd = table.Column<bool>(type: "bit", nullable: false),
+                    Address = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    City = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Province = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    PhoneNumber = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    IsOrder = table.Column<bool>(type: "bit", nullable: false),
                     CreatedOnUtc = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: false),
                     ModifiedOnUtc = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_UserAddresses", x => x.Id);
+                    table.PrimaryKey("PK_UserAddress", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_UserAddresses_Users_UserId",
+                        name: "FK_UserAddress_User_UserId",
                         column: x => x.UserId,
-                        principalTable: "Users",
+                        principalTable: "User",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "UserPayments",
+                name: "UserPayment",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     PaymentType = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Provider = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CardNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Cvc = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Expire = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: false),
+                    CardNumber = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Cvc = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    IsOrder = table.Column<bool>(type: "bit", nullable: false),
+                    Expire = table.Column<DateTimeOffset>(type: "datetimeoffset", maxLength: 20, nullable: false),
                     CreatedOnUtc = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: false),
                     ModifiedOnUtc = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_UserPayments", x => x.Id);
+                    table.PrimaryKey("PK_UserPayment", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_UserPayments_Users_UserId",
+                        name: "FK_UserPayment_User_UserId",
                         column: x => x.UserId,
-                        principalTable: "Users",
+                        principalTable: "User",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "ProductDiscounts",
+                name: "ProductDiscount",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     ProductId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
                     DiscountPercent = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     StartTime = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: false),
                     EndTime = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: false),
@@ -203,9 +204,9 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ProductDiscounts", x => x.Id);
+                    table.PrimaryKey("PK_ProductDiscount", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ProductDiscounts_Product_ProductId",
+                        name: "FK_ProductDiscount_Product_ProductId",
                         column: x => x.ProductId,
                         principalTable: "Product",
                         principalColumn: "Id",
@@ -213,7 +214,7 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ProductFeedbacks",
+                name: "ProductFeedback",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -226,9 +227,9 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ProductFeedbacks", x => x.Id);
+                    table.PrimaryKey("PK_ProductFeedback", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ProductFeedbacks_Product_ProductId",
+                        name: "FK_ProductFeedback_Product_ProductId",
                         column: x => x.ProductId,
                         principalTable: "Product",
                         principalColumn: "Id",
@@ -236,7 +237,7 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "OrderDetails",
+                name: "OrderDetail",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -249,15 +250,15 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_OrderDetails", x => x.Id);
+                    table.PrimaryKey("PK_OrderDetail", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_OrderDetails_Orders_OrderId",
+                        name: "FK_OrderDetail_Order_OrderId",
                         column: x => x.OrderId,
-                        principalTable: "Orders",
+                        principalTable: "Order",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_OrderDetails_Product_ProductId",
+                        name: "FK_OrderDetail_Product_ProductId",
                         column: x => x.ProductId,
                         principalTable: "Product",
                         principalColumn: "Id",
@@ -265,36 +266,36 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "OrderPayments",
+                name: "OrderPayment",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     OrderId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CardNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Cvc = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Expire = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CardNumber = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Cvc = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    Expire = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     CreatedOnUtc = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: false),
                     ModifiedOnUtc = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_OrderPayments", x => x.Id);
+                    table.PrimaryKey("PK_OrderPayment", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_OrderPayments_Orders_OrderId",
+                        name: "FK_OrderPayment_Order_OrderId",
                         column: x => x.OrderId,
-                        principalTable: "Orders",
+                        principalTable: "Order",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "OrderDetailFeedbacks",
+                name: "OrderDetailFeedback",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     OrderDetailId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Content = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Content = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
                     Rating = table.Column<int>(type: "int", nullable: false),
                     CreatedOnUtc = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: false),
                     ModifiedOnUtc = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: true),
@@ -302,44 +303,44 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_OrderDetailFeedbacks", x => x.Id);
+                    table.PrimaryKey("PK_OrderDetailFeedback", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_OrderDetailFeedbacks_OrderDetails_OrderDetailId",
+                        name: "FK_OrderDetailFeedback_OrderDetail_OrderDetailId",
                         column: x => x.OrderDetailId,
-                        principalTable: "OrderDetails",
+                        principalTable: "OrderDetail",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_OrderDetailFeedbacks_OrderDetailId",
-                table: "OrderDetailFeedbacks",
-                column: "OrderDetailId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_OrderDetails_OrderId",
-                table: "OrderDetails",
-                column: "OrderId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_OrderDetails_ProductId",
-                table: "OrderDetails",
-                column: "ProductId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_OrderPayments_OrderId",
-                table: "OrderPayments",
-                column: "OrderId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Orders_DiscountId",
-                table: "Orders",
+                name: "IX_Order_DiscountId",
+                table: "Order",
                 column: "DiscountId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Orders_UserId",
-                table: "Orders",
+                name: "IX_Order_UserId",
+                table: "Order",
                 column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_OrderDetail_OrderId",
+                table: "OrderDetail",
+                column: "OrderId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_OrderDetail_ProductId",
+                table: "OrderDetail",
+                column: "ProductId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_OrderDetailFeedback_OrderDetailId",
+                table: "OrderDetailFeedback",
+                column: "OrderDetailId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_OrderPayment_OrderId",
+                table: "OrderPayment",
+                column: "OrderId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Product_ProductCategoryId",
@@ -347,23 +348,23 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                 column: "ProductCategoryId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ProductDiscounts_ProductId",
-                table: "ProductDiscounts",
+                name: "IX_ProductDiscount_ProductId",
+                table: "ProductDiscount",
                 column: "ProductId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ProductFeedbacks_ProductId",
-                table: "ProductFeedbacks",
+                name: "IX_ProductFeedback_ProductId",
+                table: "ProductFeedback",
                 column: "ProductId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserAddresses_UserId",
-                table: "UserAddresses",
+                name: "IX_UserAddress_UserId",
+                table: "UserAddress",
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserPayments_UserId",
-                table: "UserPayments",
+                name: "IX_UserPayment_UserId",
+                table: "UserPayment",
                 column: "UserId");
         }
 
@@ -371,40 +372,40 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "OrderDetailFeedbacks");
+                name: "OrderDetailFeedback");
 
             migrationBuilder.DropTable(
-                name: "OrderPayments");
+                name: "OrderPayment");
 
             migrationBuilder.DropTable(
-                name: "ProductDiscounts");
+                name: "ProductDiscount");
 
             migrationBuilder.DropTable(
-                name: "ProductFeedbacks");
+                name: "ProductFeedback");
 
             migrationBuilder.DropTable(
-                name: "UserAddresses");
+                name: "UserAddress");
 
             migrationBuilder.DropTable(
-                name: "UserPayments");
+                name: "UserPayment");
 
             migrationBuilder.DropTable(
-                name: "OrderDetails");
+                name: "OrderDetail");
 
             migrationBuilder.DropTable(
-                name: "Orders");
+                name: "Order");
 
             migrationBuilder.DropTable(
                 name: "Product");
 
             migrationBuilder.DropTable(
-                name: "Discounts");
+                name: "Discount");
 
             migrationBuilder.DropTable(
-                name: "Users");
+                name: "User");
 
             migrationBuilder.DropTable(
-                name: "ProductCategorys");
+                name: "ProductCategory");
         }
     }
 }

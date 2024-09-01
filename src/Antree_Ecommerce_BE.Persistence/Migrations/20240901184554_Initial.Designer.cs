@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Antree_Ecommerce_BE.Persistence.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240901163337_Initial")]
+    [Migration("20240901184554_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -39,7 +39,8 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<decimal>("DiscountPercent")
                         .HasColumnType("decimal(18,2)");
@@ -55,7 +56,8 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<DateTimeOffset>("StartTime")
                         .HasColumnType("datetimeoffset");
@@ -68,7 +70,7 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Discounts");
+                    b.ToTable("Discount", (string)null);
                 });
 
             modelBuilder.Entity("Antree_Ecommerce_BE.Domain.Entities.Order", b =>
@@ -79,7 +81,8 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
 
                     b.Property<string>("Address")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<DateTimeOffset>("CreatedOnUtc")
                         .HasColumnType("datetimeoffset");
@@ -95,7 +98,8 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
 
                     b.Property<string>("Note")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<int>("Status")
                         .HasColumnType("int");
@@ -112,7 +116,7 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Order", (string)null);
                 });
 
             modelBuilder.Entity("Antree_Ecommerce_BE.Domain.Entities.OrderDetail", b =>
@@ -145,7 +149,7 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("OrderDetails");
+                    b.ToTable("OrderDetail", (string)null);
                 });
 
             modelBuilder.Entity("Antree_Ecommerce_BE.Domain.Entities.OrderDetailFeedback", b =>
@@ -156,7 +160,8 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
 
                     b.Property<string>("Content")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<DateTimeOffset>("CreatedOnUtc")
                         .HasColumnType("datetimeoffset");
@@ -177,7 +182,7 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
 
                     b.HasIndex("OrderDetailId");
 
-                    b.ToTable("OrderDetailFeedbacks");
+                    b.ToTable("OrderDetailFeedback", (string)null);
                 });
 
             modelBuilder.Entity("Antree_Ecommerce_BE.Domain.Entities.OrderPayment", b =>
@@ -188,18 +193,21 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
 
                     b.Property<string>("CardNumber")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<DateTimeOffset>("CreatedOnUtc")
                         .HasColumnType("datetimeoffset");
 
                     b.Property<string>("Cvc")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("Expire")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
@@ -214,7 +222,7 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
 
                     b.HasIndex("OrderId");
 
-                    b.ToTable("OrderPayments");
+                    b.ToTable("OrderPayment", (string)null);
                 });
 
             modelBuilder.Entity("Antree_Ecommerce_BE.Domain.Entities.Product", b =>
@@ -231,8 +239,8 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasMaxLength(250)
-                        .HasColumnType("nvarchar(250)");
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
@@ -281,7 +289,8 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
@@ -291,14 +300,15 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<Guid?>("UpdatedBy")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
-                    b.ToTable("ProductCategorys");
+                    b.ToTable("ProductCategory", (string)null);
                 });
 
             modelBuilder.Entity("Antree_Ecommerce_BE.Domain.Entities.ProductDiscount", b =>
@@ -315,7 +325,8 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<decimal>("DiscountPercent")
                         .HasColumnType("decimal(18,2)");
@@ -331,7 +342,8 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<Guid>("ProductId")
                         .HasColumnType("uniqueidentifier");
@@ -346,7 +358,7 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("ProductDiscounts");
+                    b.ToTable("ProductDiscount", (string)null);
                 });
 
             modelBuilder.Entity("Antree_Ecommerce_BE.Domain.Entities.ProductFeedback", b =>
@@ -377,7 +389,7 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("ProductFeedbacks");
+                    b.ToTable("ProductFeedback", (string)null);
                 });
 
             modelBuilder.Entity("Antree_Ecommerce_BE.Domain.Entities.User", b =>
@@ -394,44 +406,49 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Firstname")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
                     b.Property<string>("Lastname")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<DateTimeOffset?>("ModifiedOnUtc")
                         .HasColumnType("datetimeoffset");
 
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<string>("Phonenumber")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
-                    b.Property<string>("Role")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Role")
+                        .HasColumnType("int");
 
                     b.Property<Guid?>("UpdatedBy")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Username")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("User", (string)null);
                 });
 
             modelBuilder.Entity("Antree_Ecommerce_BE.Domain.Entities.UserAddress", b =>
@@ -442,11 +459,13 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
 
                     b.Property<string>("Address")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<string>("City")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<DateTimeOffset>("CreatedOnUtc")
                         .HasColumnType("datetimeoffset");
@@ -454,7 +473,7 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("IsOrderd")
+                    b.Property<bool>("IsOrder")
                         .HasColumnType("bit");
 
                     b.Property<DateTimeOffset?>("ModifiedOnUtc")
@@ -462,11 +481,13 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
 
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("Province")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<Guid>("UserId")
                         .HasColumnType("uniqueidentifier");
@@ -475,7 +496,7 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("UserAddresses");
+                    b.ToTable("UserAddress", (string)null);
                 });
 
             modelBuilder.Entity("Antree_Ecommerce_BE.Domain.Entities.UserPayment", b =>
@@ -486,19 +507,25 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
 
                     b.Property<string>("CardNumber")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<DateTimeOffset>("CreatedOnUtc")
                         .HasColumnType("datetimeoffset");
 
                     b.Property<string>("Cvc")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<DateTimeOffset>("Expire")
+                        .HasMaxLength(20)
                         .HasColumnType("datetimeoffset");
 
                     b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsOrder")
                         .HasColumnType("bit");
 
                     b.Property<DateTimeOffset?>("ModifiedOnUtc")
@@ -519,13 +546,13 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("UserPayments");
+                    b.ToTable("UserPayment", (string)null);
                 });
 
             modelBuilder.Entity("Antree_Ecommerce_BE.Domain.Entities.Order", b =>
                 {
                     b.HasOne("Antree_Ecommerce_BE.Domain.Entities.Discount", "Discount")
-                        .WithMany()
+                        .WithMany("OrderList")
                         .HasForeignKey("DiscountId");
 
                     b.HasOne("Antree_Ecommerce_BE.Domain.Entities.User", "User")
@@ -633,6 +660,11 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                         .IsRequired();
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Antree_Ecommerce_BE.Domain.Entities.Discount", b =>
+                {
+                    b.Navigation("OrderList");
                 });
 
             modelBuilder.Entity("Antree_Ecommerce_BE.Domain.Entities.Order", b =>
