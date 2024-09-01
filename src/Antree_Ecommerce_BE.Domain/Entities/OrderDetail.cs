@@ -9,4 +9,7 @@ public class OrderDetail :  Entity<Guid>, IAuditableEntity
     public Guid ProductQuantity { get; set; }
     public DateTimeOffset CreatedOnUtc { get; set; }
     public DateTimeOffset? ModifiedOnUtc { get; set; }
+
+    public virtual Order Order { get; set; }
+    public virtual Product Product { get; set; }
 }

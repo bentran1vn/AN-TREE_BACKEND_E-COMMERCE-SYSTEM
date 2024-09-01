@@ -12,4 +12,6 @@ public class UserPayment : Entity<Guid>, IAuditableEntity
     public DateTimeOffset Expire { set; get; }
     public DateTimeOffset CreatedOnUtc { get; set; }
     public DateTimeOffset? ModifiedOnUtc { get; set; }
+    
+    public virtual User User { get; set; }
 }

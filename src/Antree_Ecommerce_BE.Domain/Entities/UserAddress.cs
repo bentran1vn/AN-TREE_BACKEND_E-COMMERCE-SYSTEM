@@ -12,4 +12,6 @@ public class UserAddress : Entity<Guid>, IAuditableEntity
     public bool IsOrderd { get; set; }
     public DateTimeOffset CreatedOnUtc { get; set; }
     public DateTimeOffset? ModifiedOnUtc { get; set; }
+    
+    public virtual User User { get; set; }
 }

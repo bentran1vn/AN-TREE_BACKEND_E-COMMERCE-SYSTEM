@@ -13,5 +13,7 @@ public class Order : Entity<Guid>, IAuditableEntity
     public DateTimeOffset CreatedOnUtc { get; set; }
     public DateTimeOffset? ModifiedOnUtc { get; set; }
     
-    public IReadOnlyCollection<OrderDetail> OrderDetailList { get; set; } = default!;
+    public virtual Discount? Discount { get; set; }
+    public virtual User User { get; set; }
+    public virtual IReadOnlyCollection<OrderDetail> OrderDetailList { get; set; } = default!;
 }

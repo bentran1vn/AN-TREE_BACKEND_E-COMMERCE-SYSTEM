@@ -9,4 +9,6 @@ public class OrderDetailFeedback : Entity<Guid>, IAuditableEntity
     public int Rating { get; set; }
     public DateTimeOffset CreatedOnUtc { get; set; }
     public DateTimeOffset? ModifiedOnUtc { get; set; }
+    
+    public virtual OrderDetail OrderDetail { get; set; }
 }

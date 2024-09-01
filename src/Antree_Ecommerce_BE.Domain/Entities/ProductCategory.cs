@@ -11,5 +11,5 @@ public class ProductCategory : Entity<Guid>, IAuditableEntity, ICreatedByEntity<
     public Guid CreatedBy { get; set; }
     public Guid? UpdatedBy { get; set; }
 
-    public IReadOnlyCollection<Product> ProductList { get; set; } = default!;
+    public virtual IReadOnlyCollection<Product> ProductList { get; set; } = default!;
 }

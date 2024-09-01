@@ -14,4 +14,6 @@ public class ProductDiscount : Entity<Guid>, IAuditableEntity, ICreatedByEntity<
     public DateTimeOffset? ModifiedOnUtc { get; set; }
     public Guid CreatedBy { get; set; }
     public Guid? UpdatedBy { get; set; }
+    
+    public virtual Product Product { get; set; }
 }

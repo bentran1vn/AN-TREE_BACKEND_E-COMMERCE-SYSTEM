@@ -16,6 +16,6 @@ public class User : Entity<Guid>, IAuditableEntity, ICreatedByEntity<Guid>, IUpd
     public Guid CreatedBy { get; set; }
     public Guid? UpdatedBy { get; set; }
     
-    public IReadOnlyCollection<UserAddress> UserAddressList { get; set; } = default!;
-    public IReadOnlyCollection<UserPayment> UserPaymentList { get; set; } = default!;
+    public virtual IReadOnlyCollection<UserAddress> UserAddressList { get; set; } = default!;
+    public virtual IReadOnlyCollection<UserPayment> UserPaymentList { get; set; } = default!;
 }

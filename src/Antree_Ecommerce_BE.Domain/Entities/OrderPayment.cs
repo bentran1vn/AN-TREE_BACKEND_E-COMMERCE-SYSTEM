@@ -10,4 +10,6 @@ public class OrderPayment :  Entity<Guid>, IAuditableEntity
     public string Expire { set; get; }
     public DateTimeOffset CreatedOnUtc { get; set; }
     public DateTimeOffset? ModifiedOnUtc { get; set; }
+    
+    public virtual Order Order { get; set; }
 }
