@@ -11,5 +11,5 @@ public class OrderPayment :  Entity<Guid>, IAuditableEntity
     public DateTimeOffset CreatedOnUtc { get; set; }
     public DateTimeOffset? ModifiedOnUtc { get; set; }
     
-    public virtual Order Order { get; set; }
+    public virtual Order Order { get; set; } = default!;
 }

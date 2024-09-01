@@ -10,5 +10,5 @@ public class OrderDetailFeedback : Entity<Guid>, IAuditableEntity
     public DateTimeOffset CreatedOnUtc { get; set; }
     public DateTimeOffset? ModifiedOnUtc { get; set; }
     
-    public virtual OrderDetail OrderDetail { get; set; }
+    public virtual OrderDetail OrderDetail { get; set; } = default!;
 }

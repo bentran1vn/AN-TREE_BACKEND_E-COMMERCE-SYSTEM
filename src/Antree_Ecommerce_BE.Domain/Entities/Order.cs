@@ -1,4 +1,5 @@
 using Antree_Ecommerce_BE.Domain.Abstractions.Entities;
+using Antree_Ecommerce_BE.Domain.Enumerations;
 
 namespace Antree_Ecommerce_BE.Domain.Entities;
 
@@ -13,7 +14,7 @@ public class Order : Entity<Guid>, IAuditableEntity
     public DateTimeOffset CreatedOnUtc { get; set; }
     public DateTimeOffset? ModifiedOnUtc { get; set; }
     
-    public virtual Discount? Discount { get; set; }
-    public virtual User User { get; set; }
+    public virtual Discount? Discount { get; set; } 
+    public virtual User User { get; set; } = default!;
     public virtual IReadOnlyCollection<OrderDetail> OrderDetailList { get; set; } = default!;
 }

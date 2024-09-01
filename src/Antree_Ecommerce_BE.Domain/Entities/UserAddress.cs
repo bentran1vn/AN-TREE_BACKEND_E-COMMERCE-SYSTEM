@@ -9,9 +9,9 @@ public class UserAddress : Entity<Guid>, IAuditableEntity
     public string City { get; set; }
     public string Province { get; set; }
     public string PhoneNumber { get; set; }
-    public bool IsOrderd { get; set; }
+    public bool IsOrder { get; set; }
     public DateTimeOffset CreatedOnUtc { get; set; }
     public DateTimeOffset? ModifiedOnUtc { get; set; }
     
-    public virtual User User { get; set; }
+    public virtual User User { get; set; } = default!;
 }

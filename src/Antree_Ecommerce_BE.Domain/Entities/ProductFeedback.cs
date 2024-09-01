@@ -10,5 +10,5 @@ public class ProductFeedback: Entity<Guid>, IAuditableEntity
     public DateTimeOffset CreatedOnUtc { get; set; }
     public DateTimeOffset? ModifiedOnUtc { get; set; }
     
-    public virtual Product Product { get; set; }
+    public virtual Product Product { get; set; } = default!;
 }

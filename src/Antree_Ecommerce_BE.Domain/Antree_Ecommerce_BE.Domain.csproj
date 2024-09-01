@@ -10,4 +10,8 @@
       <ProjectReference Include="..\Antree_Ecommerce_BE.Contract\Antree_Ecommerce_BE.Contract.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Ardalis.SmartEnum" Version="8.0.0" />
+    </ItemGroup>
+
 </Project>

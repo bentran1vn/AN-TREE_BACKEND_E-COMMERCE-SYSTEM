@@ -15,5 +15,5 @@ public class ProductDiscount : Entity<Guid>, IAuditableEntity, ICreatedByEntity<
     public Guid CreatedBy { get; set; }
     public Guid? UpdatedBy { get; set; }
     
-    public virtual Product Product { get; set; }
+    public virtual Product Product { get; set; } = default!;
 }

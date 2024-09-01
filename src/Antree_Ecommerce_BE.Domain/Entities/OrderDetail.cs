@@ -10,6 +10,6 @@ public class OrderDetail :  Entity<Guid>, IAuditableEntity
     public DateTimeOffset CreatedOnUtc { get; set; }
     public DateTimeOffset? ModifiedOnUtc { get; set; }
 
-    public virtual Order Order { get; set; }
-    public virtual Product Product { get; set; }
+    public virtual Order Order { get; set; } = default!;
+    public virtual Product Product { get; set; } = default!;
 }
