@@ -1,8 +1,11 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace Antree_Ecommerce_BE.Domain.Abstractions.Entities;
 
 public abstract class Entity<T> : IEntity<T>
 {
-    public T Id { get; protected set; }
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public T Id { get; set; }
 
     public bool IsDeleted { get; protected set; }
 }

@@ -14,5 +14,30 @@ public class ProductCategoryConfiguration : IEntityTypeConfiguration<ProductCate
         builder.HasKey(x => x.Id);
         builder.Property(x => x.Name).HasMaxLength(200).IsRequired(true);
         builder.Property(x => x.Description).HasMaxLength(500).IsRequired(true);
+        
+        builder.HasData(
+            new ProductCategory()
+            {
+                Id = Guid.Parse("26df3c94-715f-4048-a96a-04a6e80bbd15"),
+                Name = "Cate1",
+                Description = "Des1",
+                CreatedBy = Guid.Parse("2cd8a571-f443-4623-97dd-c8d4a41a80bf")
+            },
+            new ProductCategory()
+            {
+                Id = Guid.Parse("acc02cc0-825a-4453-b923-e6ae7f4007a4"),
+                Name = "Cate2",
+                Description = "Des2",
+                CreatedBy = Guid.Parse("2cd8a571-f443-4623-97dd-c8d4a41a80bf")
+            },
+            new ProductCategory()
+            {
+                Id = Guid.Parse("8d81bd6c-b108-4611-acee-ef78286eec24"),
+                Name = "Cate3",
+                Description = "Des3",
+                CreatedBy = Guid.Parse("2cd8a571-f443-4623-97dd-c8d4a41a80bf")
+            }
+        );
+        
     }
 }

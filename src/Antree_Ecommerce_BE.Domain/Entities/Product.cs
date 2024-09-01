@@ -5,15 +5,7 @@ namespace Antree_Ecommerce_BE.Domain.Entities;
 
 public class Product : Entity<Guid>, IAuditableEntity, ICreatedByEntity<Guid>, IUpdatedByEnity<Guid?>
 {
-    public Product(string name, decimal price, string description, int sku, int sold)
-    {
-        Name = name;
-        Price = price;
-        Description = description;
-        Sku = sku;
-        Sold = sold;
-    }
-
+    
     public Guid ProductCategoryId { get; set; }
     public string Name { get; set; }
     public decimal Price { get; set; }
