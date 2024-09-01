@@ -18,5 +18,9 @@ Descriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondes
 - Minimal API
 
 ## ERD
+![ERD_Image](./items/ProjectInfor/Image/ERD.png)
+
+## Relational
+![Relational_Image](./items/ProjectInfor/Image/Relational.png)
 
 ## Demo Video
