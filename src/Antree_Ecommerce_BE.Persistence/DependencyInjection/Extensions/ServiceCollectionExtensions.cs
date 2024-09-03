@@ -18,6 +18,7 @@ public static class ServiceCollectionExtensions
         {
             // Interceptor
             var auditableInterceptor = provider.GetService<UpdateAuditableEntitiesInterceptor>();
+            var deletableInterceptor = provider.GetService<DeleteAuditableEntitiesInterceptor>();
 
             var configuration = provider.GetRequiredService<IConfiguration>();
             var options = provider.GetRequiredService<IOptionsMonitor<SqlServerRetryOptions>>();
@@ -38,7 +39,7 @@ public static class ServiceCollectionExtensions
                                     maxRetryDelay: options.CurrentValue.MaxRetryDelay,
                                     errorNumbersToAdd: options.CurrentValue.ErrorNumbersToAdd))
                             .MigrationsAssembly(typeof(ApplicationDbContext).Assembly.GetName().Name))
-            .AddInterceptors(auditableInterceptor);
+            .AddInterceptors(auditableInterceptor, deletableInterceptor);
 
             #endregion ============== SQL-SERVER-STRATEGY-1 ==============
 
@@ -61,6 +62,7 @@ public static class ServiceCollectionExtensions
     public static void AddInterceptorPersistence(this IServiceCollection services)
     {
         services.AddSingleton<UpdateAuditableEntitiesInterceptor>();
+        services.AddSingleton<DeleteAuditableEntitiesInterceptor>();
     }
 
     public static void AddRepositoryPersistence(this IServiceCollection services)

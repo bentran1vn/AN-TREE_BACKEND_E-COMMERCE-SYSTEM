@@ -45,7 +45,7 @@ builder.Services.ConfigureSqlServerRetryOptionsPersistence(builder.Configuration
 builder.Services.AddSqlServerPersistence();
 builder.Services.AddRepositoryPersistence();
 
-builder.Services.AddJwtAuthenticationAPI(builder.Configuration);
+//builder.Services.AddJwtAuthenticationAPI(builder.Configuration);
 
 // Add Middleware => Remember using middleware
 builder.Services.AddTransient<ExceptionHandlingMiddleware>();
@@ -61,8 +61,8 @@ if (builder.Environment.IsDevelopment() || builder.Environment.IsStaging())
 
 // app.UseHttpsRedirection();
 
-app.UseAuthentication(); // Need to be before app.UseAuthorization();
-app.UseAuthorization();
+//app.UseAuthentication(); // Need to be before app.UseAuthorization();
+//app.UseAuthorization();
 
 
 // Add API Endpoint with carter module

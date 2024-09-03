@@ -1,0 +1,500 @@
+2024-09-03 22:49:35.068 +07:00 [ERR] Value cannot be null. (Parameter 's')
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.ArgumentNullException.Throw(String paramName)
+   at System.Text.Encoding.GetBytes(String s)
+   at Antree_Ecommerce_BE.API.DependencyInjection.Extensions.JwtExtensions.<>c__DisplayClass0_0.<AddJwtAuthenticationAPI>b__1(JwtBearerOptions o) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/DependencyInjection/Extensions/JwtExtensions.cs:line 33
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd[TArg](String name, Func`3 createOptions, TArg factoryArgument)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.InitializeAsync(AuthenticationScheme scheme, HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandlerProvider.GetHandlerAsync(HttpContext context, String authenticationScheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-03 22:49:44.656 +07:00 [ERR] Value cannot be null. (Parameter 's')
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.ArgumentNullException.Throw(String paramName)
+   at System.Text.Encoding.GetBytes(String s)
+   at Antree_Ecommerce_BE.API.DependencyInjection.Extensions.JwtExtensions.<>c__DisplayClass0_0.<AddJwtAuthenticationAPI>b__1(JwtBearerOptions o) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/DependencyInjection/Extensions/JwtExtensions.cs:line 33
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd[TArg](String name, Func`3 createOptions, TArg factoryArgument)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.InitializeAsync(AuthenticationScheme scheme, HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandlerProvider.GetHandlerAsync(HttpContext context, String authenticationScheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-03 22:49:45.318 +07:00 [ERR] Value cannot be null. (Parameter 's')
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.ArgumentNullException.Throw(String paramName)
+   at System.Text.Encoding.GetBytes(String s)
+   at Antree_Ecommerce_BE.API.DependencyInjection.Extensions.JwtExtensions.<>c__DisplayClass0_0.<AddJwtAuthenticationAPI>b__1(JwtBearerOptions o) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/DependencyInjection/Extensions/JwtExtensions.cs:line 33
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd[TArg](String name, Func`3 createOptions, TArg factoryArgument)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.InitializeAsync(AuthenticationScheme scheme, HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandlerProvider.GetHandlerAsync(HttpContext context, String authenticationScheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-03 22:49:45.826 +07:00 [ERR] Value cannot be null. (Parameter 's')
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.ArgumentNullException.Throw(String paramName)
+   at System.Text.Encoding.GetBytes(String s)
+   at Antree_Ecommerce_BE.API.DependencyInjection.Extensions.JwtExtensions.<>c__DisplayClass0_0.<AddJwtAuthenticationAPI>b__1(JwtBearerOptions o) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/DependencyInjection/Extensions/JwtExtensions.cs:line 33
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd[TArg](String name, Func`3 createOptions, TArg factoryArgument)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.InitializeAsync(AuthenticationScheme scheme, HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandlerProvider.GetHandlerAsync(HttpContext context, String authenticationScheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-03 22:49:46.021 +07:00 [ERR] Value cannot be null. (Parameter 's')
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.ArgumentNullException.Throw(String paramName)
+   at System.Text.Encoding.GetBytes(String s)
+   at Antree_Ecommerce_BE.API.DependencyInjection.Extensions.JwtExtensions.<>c__DisplayClass0_0.<AddJwtAuthenticationAPI>b__1(JwtBearerOptions o) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/DependencyInjection/Extensions/JwtExtensions.cs:line 33
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd[TArg](String name, Func`3 createOptions, TArg factoryArgument)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.InitializeAsync(AuthenticationScheme scheme, HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandlerProvider.GetHandlerAsync(HttpContext context, String authenticationScheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-03 22:49:46.220 +07:00 [ERR] Value cannot be null. (Parameter 's')
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.ArgumentNullException.Throw(String paramName)
+   at System.Text.Encoding.GetBytes(String s)
+   at Antree_Ecommerce_BE.API.DependencyInjection.Extensions.JwtExtensions.<>c__DisplayClass0_0.<AddJwtAuthenticationAPI>b__1(JwtBearerOptions o) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/DependencyInjection/Extensions/JwtExtensions.cs:line 33
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd[TArg](String name, Func`3 createOptions, TArg factoryArgument)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.InitializeAsync(AuthenticationScheme scheme, HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandlerProvider.GetHandlerAsync(HttpContext context, String authenticationScheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-03 22:50:13.815 +07:00 [ERR] Value cannot be null. (Parameter 's')
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.ArgumentNullException.Throw(String paramName)
+   at System.Text.Encoding.GetBytes(String s)
+   at Antree_Ecommerce_BE.API.DependencyInjection.Extensions.JwtExtensions.<>c__DisplayClass0_0.<AddJwtAuthenticationAPI>b__1(JwtBearerOptions o) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/DependencyInjection/Extensions/JwtExtensions.cs:line 33
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd[TArg](String name, Func`3 createOptions, TArg factoryArgument)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.InitializeAsync(AuthenticationScheme scheme, HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandlerProvider.GetHandlerAsync(HttpContext context, String authenticationScheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-03 22:50:14.327 +07:00 [ERR] Value cannot be null. (Parameter 's')
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.ArgumentNullException.Throw(String paramName)
+   at System.Text.Encoding.GetBytes(String s)
+   at Antree_Ecommerce_BE.API.DependencyInjection.Extensions.JwtExtensions.<>c__DisplayClass0_0.<AddJwtAuthenticationAPI>b__1(JwtBearerOptions o) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/DependencyInjection/Extensions/JwtExtensions.cs:line 33
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd[TArg](String name, Func`3 createOptions, TArg factoryArgument)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.InitializeAsync(AuthenticationScheme scheme, HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandlerProvider.GetHandlerAsync(HttpContext context, String authenticationScheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-03 22:50:14.534 +07:00 [ERR] Value cannot be null. (Parameter 's')
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.ArgumentNullException.Throw(String paramName)
+   at System.Text.Encoding.GetBytes(String s)
+   at Antree_Ecommerce_BE.API.DependencyInjection.Extensions.JwtExtensions.<>c__DisplayClass0_0.<AddJwtAuthenticationAPI>b__1(JwtBearerOptions o) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/DependencyInjection/Extensions/JwtExtensions.cs:line 33
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd[TArg](String name, Func`3 createOptions, TArg factoryArgument)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.InitializeAsync(AuthenticationScheme scheme, HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandlerProvider.GetHandlerAsync(HttpContext context, String authenticationScheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-03 22:50:14.692 +07:00 [ERR] Value cannot be null. (Parameter 's')
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.ArgumentNullException.Throw(String paramName)
+   at System.Text.Encoding.GetBytes(String s)
+   at Antree_Ecommerce_BE.API.DependencyInjection.Extensions.JwtExtensions.<>c__DisplayClass0_0.<AddJwtAuthenticationAPI>b__1(JwtBearerOptions o) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/DependencyInjection/Extensions/JwtExtensions.cs:line 33
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd[TArg](String name, Func`3 createOptions, TArg factoryArgument)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.InitializeAsync(AuthenticationScheme scheme, HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandlerProvider.GetHandlerAsync(HttpContext context, String authenticationScheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-03 22:51:18.452 +07:00 [ERR] Value cannot be null. (Parameter 's')
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.ArgumentNullException.Throw(String paramName)
+   at System.ArgumentNullException.ThrowIfNull(Object argument, String paramName)
+   at System.Text.Encoding.GetBytes(String s)
+   at Antree_Ecommerce_BE.API.DependencyInjection.Extensions.JwtExtensions.<>c__DisplayClass0_0.<AddJwtAuthenticationAPI>b__1(JwtBearerOptions o) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/DependencyInjection/Extensions/JwtExtensions.cs:line 33
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd[TArg](String name, Func`3 createOptions, TArg factoryArgument)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.InitializeAsync(AuthenticationScheme scheme, HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandlerProvider.GetHandlerAsync(HttpContext context, String authenticationScheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-03 22:52:47.589 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-03 22:52:47.636 +07:00 [ERR] The seed entity for entity type 'Product' cannot be added because a default value was provided for the required property 'Id'. Please provide a value different from '00000000-0000-0000-0000-000000000000'.
+System.InvalidOperationException: The seed entity for entity type 'Product' cannot be added because a default value was provided for the required property 'Id'. Please provide a value different from '00000000-0000-0000-0000-000000000000'.
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.ValidateData(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.ValidateData(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.SqlServer.Infrastructure.Internal.SqlServerModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelRuntimeInitializer.Initialize(IModel model, Boolean designTime, IDiagnosticsLogger`1 validationLogger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, ModelCreationDependencies modelCreationDependencies, Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel(Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__8_4(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure<System.IServiceProvider>.get_Instance()
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService(IInfrastructure`1 accessor, Type serviceType)
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService[TService](IInfrastructure`1 accessor)
+   at Microsoft.EntityFrameworkCore.Infrastructure.AccessorExtensions.GetService[TService](IInfrastructure`1 accessor)
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.get_Dependencies()
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.CreateExecutionStrategy()
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 31
+   at Antree_Ecommerce_BE.Application.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/PerformancePipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.ValidationDefaultBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/ValidationDefaultBehavior.cs:line 17
+   at Antree_Ecommerce_BE.Presentation.APIs.Products.ProductApi.CreateProductsV1(ISender sender, CreateProductCommand createProduct) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Presentation/APIs/Products/ProductApi.cs:line 31
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass102_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-03 22:52:47.713 +07:00 [ERR] Connection id "0HN6C61PBOTII", Request id "0HN6C61PBOTII:00000003": An unhandled exception was thrown by the application.
+System.InvalidOperationException: The seed entity for entity type 'Product' cannot be added because a default value was provided for the required property 'Id'. Please provide a value different from '00000000-0000-0000-0000-000000000000'.
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.ValidateData(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.ValidateData(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.SqlServer.Infrastructure.Internal.SqlServerModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelRuntimeInitializer.Initialize(IModel model, Boolean designTime, IDiagnosticsLogger`1 validationLogger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, ModelCreationDependencies modelCreationDependencies, Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel(Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__8_4(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__8_9(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitIEnumerable(IEnumerableCallSite enumerableCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IResettableService.ResetStateAsync(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextPool`1.ReturnAsync(IDbContextPoolable context, CancellationToken cancellationToken)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.<DisposeAsync>g__Await|26_0(Int32 i, ValueTask vt, List`1 toDispose)
+   at Microsoft.AspNetCore.Http.Features.RequestServicesFeature.<DisposeAsync>g__Awaited|9_0(RequestServicesFeature servicesFeature, ValueTask vt)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.<FireOnCompleted>g__ProcessEvents|242_0(HttpProtocol protocol, Stack`1 events)
+2024-09-03 22:52:55.309 +07:00 [ERR] The seed entity for entity type 'Product' cannot be added because a default value was provided for the required property 'Id'. Please provide a value different from '00000000-0000-0000-0000-000000000000'.
+System.InvalidOperationException: The seed entity for entity type 'Product' cannot be added because a default value was provided for the required property 'Id'. Please provide a value different from '00000000-0000-0000-0000-000000000000'.
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.ValidateData(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.ValidateData(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.SqlServer.Infrastructure.Internal.SqlServerModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelRuntimeInitializer.Initialize(IModel model, Boolean designTime, IDiagnosticsLogger`1 validationLogger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, ModelCreationDependencies modelCreationDependencies, Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel(Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__8_4(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure<System.IServiceProvider>.get_Instance()
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService(IInfrastructure`1 accessor, Type serviceType)
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService[TService](IInfrastructure`1 accessor)
+   at Microsoft.EntityFrameworkCore.Infrastructure.AccessorExtensions.GetService[TService](IInfrastructure`1 accessor)
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.get_Dependencies()
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.CreateExecutionStrategy()
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 31
+   at Antree_Ecommerce_BE.Application.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/PerformancePipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.ValidationDefaultBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/ValidationDefaultBehavior.cs:line 17
+   at Antree_Ecommerce_BE.Presentation.APIs.Products.ProductApi.CreateProductsV1(ISender sender, CreateProductCommand createProduct) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Presentation/APIs/Products/ProductApi.cs:line 31
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass102_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-03 22:52:55.346 +07:00 [ERR] Connection id "0HN6C61PBOTIJ", Request id "0HN6C61PBOTIJ:00000001": An unhandled exception was thrown by the application.
+System.InvalidOperationException: The seed entity for entity type 'Product' cannot be added because a default value was provided for the required property 'Id'. Please provide a value different from '00000000-0000-0000-0000-000000000000'.
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.ValidateData(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.ValidateData(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.SqlServer.Infrastructure.Internal.SqlServerModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelRuntimeInitializer.Initialize(IModel model, Boolean designTime, IDiagnosticsLogger`1 validationLogger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, ModelCreationDependencies modelCreationDependencies, Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel(Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__8_4(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__8_9(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitIEnumerable(IEnumerableCallSite enumerableCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IResettableService.ResetStateAsync(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextPool`1.ReturnAsync(IDbContextPoolable context, CancellationToken cancellationToken)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.<DisposeAsync>g__Await|26_0(Int32 i, ValueTask vt, List`1 toDispose)
+   at Microsoft.AspNetCore.Http.Features.RequestServicesFeature.<DisposeAsync>g__Awaited|9_0(RequestServicesFeature servicesFeature, ValueTask vt)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.<FireOnCompleted>g__ProcessEvents|242_0(HttpProtocol protocol, Stack`1 events)
+2024-09-03 22:58:12.503 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-03 22:58:12.645 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-03 22:58:12.646 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-03 22:58:12.646 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-03 22:58:12.646 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-03 23:14:15.014 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-03 23:14:15.124 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-03 23:14:15.126 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-03 23:14:15.126 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-03 23:14:15.126 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-03 23:37:55.645 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-03 23:37:55.753 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-03 23:37:55.754 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-03 23:37:55.754 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-03 23:37:55.754 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-03 23:37:56.407 +07:00 [ERR] The product with the id 7633aab1-2e5a-4f28-ac11-7760d25ae201 was not found.
+Antree_Ecommerce_BE.Domain.Exceptions.ProductException+ProductNotFoundException: The product with the id 7633aab1-2e5a-4f28-ac11-7760d25ae201 was not found.
+   at Antree_Ecommerce_BE.Application.UserCases.Commands.Products.DeleteProductCommandHandler.Handle(DeleteProductCommand request, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/UserCases/Commands/Products/DeleteProductCommandHandler.cs:line 20
+   at Antree_Ecommerce_BE.Application.Behaviors.TracingPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TracingPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.<>c__DisplayClass2_0.<<Handle>b__0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 36
+--- End of stack trace from previous location ---
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.<>c__DisplayClass2_0.<<Handle>b__0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 39
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 32
+   at Antree_Ecommerce_BE.Application.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/PerformancePipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.ValidationDefaultBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/ValidationDefaultBehavior.cs:line 17
+   at Antree_Ecommerce_BE.Presentation.APIs.Products.ProductApi.DeleteProductsV1(ISender sender, Guid productId) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Presentation/APIs/Products/ProductApi.cs:line 48
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-03 23:40:36.392 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-03 23:40:36.502 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-03 23:40:36.504 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-03 23:40:36.504 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-03 23:40:36.504 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-03 23:43:44.573 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-03 23:43:44.733 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-03 23:43:44.734 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-03 23:43:44.734 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-03 23:43:44.734 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-03 23:51:11.046 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-03 23:51:11.255 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-03 23:51:11.256 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-03 23:51:11.256 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-03 23:51:11.256 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-03 23:53:45.238 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-03 23:53:45.391 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-03 23:53:45.392 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-03 23:53:45.396 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-03 23:53:45.396 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-03 23:54:02.292 +07:00 [WRN] Long Time Running - Request Details: CreateProductCommand (17561 milliseconds) {"ProductCategoryId":"26df3c94-715f-4048-a96a-04a6e80bbd15","Name":"string","Price":0,"Description":"string","Sku":0,"Sold":0,"$type":"CreateProductCommand"}
+2024-09-03 23:56:08.320 +07:00 [WRN] Long Time Running - Request Details: DeleteProductCommand (98414 milliseconds) {"Id":"35607e4b-4030-48e4-8024-e2fb3c87f78b","$type":"DeleteProductCommand"}
+2024-09-03 23:56:14.311 +07:00 [ERR] The product with the id 35607e4b-4030-48e4-8024-e2fb3c87f78b was not found.
+Antree_Ecommerce_BE.Domain.Exceptions.ProductException+ProductNotFoundException: The product with the id 35607e4b-4030-48e4-8024-e2fb3c87f78b was not found.
+   at Antree_Ecommerce_BE.Application.UserCases.Commands.Products.DeleteProductCommandHandler.Handle(DeleteProductCommand request, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/UserCases/Commands/Products/DeleteProductCommandHandler.cs:line 20
+   at Antree_Ecommerce_BE.Application.Behaviors.TracingPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TracingPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.<>c__DisplayClass2_0.<<Handle>b__0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 36
+--- End of stack trace from previous location ---
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.<>c__DisplayClass2_0.<<Handle>b__0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 39
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 32
+   at Antree_Ecommerce_BE.Application.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/PerformancePipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.ValidationDefaultBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/ValidationDefaultBehavior.cs:line 17
+   at Antree_Ecommerce_BE.Presentation.APIs.Products.ProductApi.DeleteProductsV1(ISender sender, Guid productId) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Presentation/APIs/Products/ProductApi.cs:line 48
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-03 23:56:18.687 +07:00 [ERR] The product with the id 35607e4b-4030-48e4-8024-e2fb3c87f78b was not found.
+Antree_Ecommerce_BE.Domain.Exceptions.ProductException+ProductNotFoundException: The product with the id 35607e4b-4030-48e4-8024-e2fb3c87f78b was not found.
+   at Antree_Ecommerce_BE.Application.UserCases.Commands.Products.DeleteProductCommandHandler.Handle(DeleteProductCommand request, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/UserCases/Commands/Products/DeleteProductCommandHandler.cs:line 20
+   at Antree_Ecommerce_BE.Application.Behaviors.TracingPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TracingPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.<>c__DisplayClass2_0.<<Handle>b__0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 36
+--- End of stack trace from previous location ---
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.<>c__DisplayClass2_0.<<Handle>b__0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 39
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 32
+   at Antree_Ecommerce_BE.Application.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/PerformancePipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.ValidationDefaultBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/ValidationDefaultBehavior.cs:line 17
+   at Antree_Ecommerce_BE.Presentation.APIs.Products.ProductApi.DeleteProductsV1(ISender sender, Guid productId) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Presentation/APIs/Products/ProductApi.cs:line 48
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-03 23:58:18.683 +07:00 [WRN] Long Time Running - Request Details: DeleteProductCommand (105500 milliseconds) {"Id":"7b6b0621-a0b7-4ad3-b01d-2e890cd4bb67","$type":"DeleteProductCommand"}
+2024-09-03 23:59:53.752 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-03 23:59:53.885 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-03 23:59:53.886 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-03 23:59:53.886 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-03 23:59:53.886 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.

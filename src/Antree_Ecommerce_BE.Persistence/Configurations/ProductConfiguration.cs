@@ -21,20 +21,18 @@ public class ProductConfiguration : IEntityTypeConfiguration<Product>
 
         for (int i = 0; i <= 40; i++)
         {
+            var id = Guid.NewGuid();
+            var name = "Name" + i.ToString();
+            var description = "Description" + i.ToString();
+            var price = decimal.Parse(i.ToString());
+            var sku = i;
+            var sold = i;
+            var createdBy = Guid.NewGuid();
+            var productCategoryId = i % 2 == 0
+                ? Guid.Parse("26df3c94-715f-4048-a96a-04a6e80bbd15")
+                : Guid.Parse("acc02cc0-825a-4453-b923-e6ae7f4007a4");
             builder.HasData(
-                new Product
-                {
-                    Id = Guid.NewGuid(),
-                    Name = "Name" + i.ToString(),
-                    Description = "Description" + i.ToString(),
-                    Price = decimal.Parse(i.ToString()),
-                    Sku = i,
-                    Sold = i,
-                    CreatedBy = Guid.NewGuid(),
-                    ProductCategoryId = i % 2 == 0 ?
-                        Guid.Parse("26df3c94-715f-4048-a96a-04a6e80bbd15") 
-                        : Guid.Parse("acc02cc0-825a-4453-b923-e6ae7f4007a4"),
-                }
+                new Product(id, productCategoryId, name, price, description, sku, sold, createdBy, Guid.Empty)
             );
         }
     }
