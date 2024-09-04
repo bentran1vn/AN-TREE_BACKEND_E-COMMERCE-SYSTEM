@@ -14,4 +14,16 @@
       <PackageReference Include="Ardalis.SmartEnum" Version="8.0.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Compile Remove="Abstractions\Dappers\Repositories\Product\IProductRepository\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="Abstractions\Dappers\Repositories\Product\IProductRepository\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Abstractions\Dappers\Repositories\Product\IProductRepository\**" />
+    </ItemGroup>
+
 </Project>

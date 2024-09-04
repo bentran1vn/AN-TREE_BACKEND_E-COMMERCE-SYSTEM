@@ -1,3 +1,4 @@
+using Antree_Ecommerce_BE.Contract.Extensions;
 using Antree_Ecommerce_BE.Presentation.Abstractions;
 using Carter;
 using MediatR;
@@ -18,7 +19,8 @@ public class ProductApi : ApiEndpoint, ICarterModule
         var group1 = app.NewVersionedApi("Products")
             .MapGroup(BaseUrl).HasApiVersion(1);
         //.RequireAuthorization();
-
+        group1.MapGet(string.Empty, GetProductsV1);
+        group1.MapGet("{productId}", GetProductV1);
         group1.MapPost(string.Empty, CreateProductsV1);
         group1.MapDelete("{productId}", DeleteProductsV1);
         group1.MapPut("{productId}", UpdateProductsV1);
@@ -26,6 +28,35 @@ public class ProductApi : ApiEndpoint, ICarterModule
 
     #region ====== version 1 ======
 
+    public static async Task<IResult> GetProductsV1(ISender sender, string? serchTerm = null,
+        string? sortColumn = null,
+        string? sortOrder = null,
+        string? sortColumnAndOrder = null,
+        int pageIndex = 1,
+        int pageSize = 10)
+    {
+        var result = await sender.Send(new CommandV1.Query.GetProductsQuery(serchTerm, sortColumn,
+            SortOrderExtension.ConvertStringToSortOrder(sortOrder),
+            SortOrderExtension.ConvertStringToSortOrderV2(sortColumnAndOrder),
+            pageIndex,
+            pageSize));
+
+        if (result.IsFailure)
+            return HandlerFailure(result);
+
+        return Results.Ok(result);
+    }
+    
+    public static async Task<IResult> GetProductV1(ISender sender, Guid productId)
+    {
+        var result = await sender.Send(new CommandV1.Query.GetProductByIdQuery(productId));
+
+        if (result.IsFailure)
+            return HandlerFailure(result);
+
+        return Results.Ok(result);
+    }
+    
     public static async Task<IResult> CreateProductsV1(ISender sender, [FromBody] CommandV1.Command.CreateProductCommand createProduct)
     {
         var result = await sender.Send(createProduct);
@@ -48,6 +79,7 @@ public class ProductApi : ApiEndpoint, ICarterModule
         var result = await sender.Send(new CommandV1.Command.DeleteProductCommand(productId));
         return Results.Ok(result);
     }
+    
     #endregion ====== version 1 ======
 
 }
