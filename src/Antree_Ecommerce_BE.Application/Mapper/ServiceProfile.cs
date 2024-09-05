@@ -10,10 +10,23 @@ public class ServiceProfile : Profile
     public ServiceProfile()
     {
          //V1
-         CreateMap<Product, Response.ProductResponse>().ReverseMap();
-         CreateMap<PagedResult<Product>, PagedResult<Response.ProductResponse>>().ReverseMap();
+         // Mapping for individual items
+         CreateMap<ProductCategory, Response.ProductCategory>()
+             .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name))
+             .ForMember(dest => dest.Description, opt => opt.MapFrom(src => src.Description));
 
-        // V2
-        //CreateMap<Product, Contract.Services.V2.Product.Response.ProductResponse>().ReverseMap();
+
+         CreateMap<Product, Response.ProductResponse>()
+             .ForMember(dest => dest.ProductCategory,
+                 opt =>
+                     opt.MapFrom(src => src.ProductCategory));
+
+        // Mapping for PagedResult with list
+         CreateMap<PagedResult<Product>, PagedResult<Response.ProductResponse>>()
+             .ForMember(dest => dest.Items, opt => opt.MapFrom(src => src.Items));
+         // Other existing mappings...
+         // CreateMap<PagedResult<Product>, PagedResult<Response.ProductResponse>>().ReverseMap();
+         // V2
+         //CreateMap<Product, Contract.Services.V2.Product.Response.ProductResponse>().ReverseMap();
     }
 }

@@ -1,6 +1,7 @@
 using Antree_Ecommerce_BE.Contract.Abstractions.Messages;
 using Antree_Ecommerce_BE.Contract.Abstractions.Shared;
 using Antree_Ecommerce_BE.Contract.Services.Products;
+using Antree_Ecommerce_BE.Domain.Abstractions.Repositories;
 using Antree_Ecommerce_BE.Persistence;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
@@ -9,23 +10,19 @@ namespace Antree_Ecommerce_BE.Application.UserCases.Queries.Products;
 
 public class GetProductByIdHandler : IQueryHandler<Query.GetProductByIdQuery, Response.ProductResponse>
 {
+    private readonly IRepositoryBase<Domain.Entities.Product, Guid> _productRepository;
     private readonly IMapper _mapper;
-    private readonly ApplicationDbContext _context;
-    
-    public GetProductByIdHandler(ApplicationDbContext context, IMapper mapper)
+    public GetProductByIdHandler(IRepositoryBase<Domain.Entities.Product, Guid> productRepository, IMapper mapper)
     {
         _mapper = mapper;
-        _context = context;
+        _productRepository = productRepository;
     }
 
     public async Task<Result<Response.ProductResponse>> Handle(Query.GetProductByIdQuery request, CancellationToken cancellationToken)
     {
-        var productsQuery = @$"SELECT * FROM {nameof(Domain.Entities.Product)}
-                        WHERE {nameof(Domain.Entities.Product.Id)} = '{request.Id.ToString()}'";
-
-        var productResult = await _context.Products.FromSqlRaw(productsQuery).FirstAsync(cancellationToken);
+        var product = await _productRepository.FindSingleAsync(x => x.Id.Equals(request.Id), cancellationToken, x => x.ProductCategory);
         
-        var result = _mapper.Map<Response.ProductResponse>(productResult);
+        var result = _mapper.Map<Response.ProductResponse>(product);
 
         return Result.Success(result);
     }

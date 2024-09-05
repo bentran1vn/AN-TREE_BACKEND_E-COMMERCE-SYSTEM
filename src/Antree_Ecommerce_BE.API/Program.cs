@@ -56,7 +56,7 @@ var app = builder.Build();
 app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 // Configure the HTTP request pipeline. 
-if (builder.Environment.IsDevelopment() || builder.Environment.IsStaging())
+// if (builder.Environment.IsDevelopment() || builder.Environment.IsStaging())
     app.UseSwaggerAPI(); // => After MapCarter => Show Version
 
 // app.UseHttpsRedirection();

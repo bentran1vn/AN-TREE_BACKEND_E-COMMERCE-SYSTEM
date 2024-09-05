@@ -1,6 +1,0 @@
-@Antree_Ecommerce_BE.API_HostAddress = http://localhost:5090
-
-GET {{Antree_Ecommerce_BE.API_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
