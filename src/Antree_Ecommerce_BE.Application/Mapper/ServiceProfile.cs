@@ -14,8 +14,7 @@ public class ServiceProfile : Profile
          CreateMap<ProductCategory, ProductSerivces.Response.ProductCategory>()
              .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name))
              .ForMember(dest => dest.Description, opt => opt.MapFrom(src => src.Description));
-
-
+         
          CreateMap<Product, ProductSerivces.Response.ProductResponse>()
              .ForMember(dest => dest.ProductCategory,
                  opt =>
@@ -25,6 +24,9 @@ public class ServiceProfile : Profile
              .ForMember(dest => dest.Items, opt => opt.MapFrom(src => src.Items));
 
          CreateMap<ProductCategory, CategorySerivces.Response.CategoryResponse>().ReverseMap();
+
+         CreateMap<ListResult<ProductCategory>, ListResult<CategorySerivces.Response.CategoryResponse>>()
+             .ForMember(dest => dest.Items, opt => opt.MapFrom(src => src.Items));
 
          // V2
          //CreateMap<Product, Contract.Services.V2.Product.Response.ProductResponse>().ReverseMap();

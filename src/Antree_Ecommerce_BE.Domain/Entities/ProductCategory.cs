@@ -29,6 +29,16 @@ public class ProductCategory : Entity<Guid>, IAuditableEntity, ICreatedByEntity<
         
         return productCategory;
     }
+    
+    public void UpdateProductCategory(string? name, string? description, Guid? updatedBy, bool? isDeleted)
+    {
+        // if (name.Length > 50)
+        //     throw new ProductException.ProductFieldException(nameof(Name));
+        if (name is not null) Name = name;
+        if (description is not null ) Description = description;
+        if (isDeleted != null ) IsDeleted = (bool)isDeleted;
+        if (name is not null && description is not null && isDeleted is not null) UpdatedBy = updatedBy;
+    }
 
     public virtual IReadOnlyCollection<Product> ProductList { get; set; } = default!;
 }

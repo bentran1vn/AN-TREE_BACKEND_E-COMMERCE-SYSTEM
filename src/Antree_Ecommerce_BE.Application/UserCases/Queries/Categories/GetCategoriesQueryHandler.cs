@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Antree_Ecommerce_BE.Application.UserCases.Queries.Categories;
 
-public class GetCategoriesQueryHandler : IQueryHandler<Query.GetCategoriesQuery, List<Response.CategoryResponse>>
+public class GetCategoriesQueryHandler : IQueryHandler<Query.GetCategoriesQuery, ListResult<Response.CategoryResponse>>
 {
     private readonly IRepositoryBase<Domain.Entities.ProductCategory, Guid> _productCategoryRepository;
     private readonly IMapper _mapper;
@@ -19,10 +19,14 @@ public class GetCategoriesQueryHandler : IQueryHandler<Query.GetCategoriesQuery,
         _mapper = mapper;
     }
 
-    public async Task<Result<List<Response.CategoryResponse>>> Handle(Query.GetCategoriesQuery request, CancellationToken cancellationToken)
+    public async Task<Result<ListResult<Response.CategoryResponse>>> Handle(Query.GetCategoriesQuery request, CancellationToken cancellationToken)
     {
-        var productCategories = await _productCategoryRepository.FindAll(null).ToListAsync();
-        var result = _mapper.Map<List<Response.CategoryResponse>>(productCategories);
+        var productQuery =  _productCategoryRepository.FindAll(null);
+
+        var products = await ListResult<ProductCategory>.CreateAsync(productQuery);
+        
+        var result = _mapper.Map<ListResult<Response.CategoryResponse>>(products);
+        
         return result;
     }
 }

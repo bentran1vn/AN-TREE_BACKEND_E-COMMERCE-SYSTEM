@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Routing;
 
 namespace Antree_Ecommerce_BE.Presentation.APIs.Products;
 
-using CommandV1 = Antree_Ecommerce_BE.Contract.Services.Categories;
+using CommandV1 = Contract.Services.Categories;
 
 public class CategoryApi : ApiEndpoint, ICarterModule
 {
@@ -20,10 +20,10 @@ public class CategoryApi : ApiEndpoint, ICarterModule
             .MapGroup(BaseUrl).HasApiVersion(1);
         
         group1.MapGet(string.Empty, GetCategoriesV1);
-        group1.MapGet("{categoryId}", () => { });
+        // group1.MapGet("{categoryId}", () => { });
         group1.MapPost(string.Empty, CreateCategoryV1);
-        group1.MapDelete("{categoryId}", () => { });
-        group1.MapPut("{categoryId}", () => { });
+        group1.MapDelete("{categoryId}", DeleteCategoryV1);
+        group1.MapPut("{categoryId}", UpdateCategoryV1);
     }
 
     #region ====== version 1 ======
@@ -41,6 +41,26 @@ public class CategoryApi : ApiEndpoint, ICarterModule
     public static async Task<IResult> CreateCategoryV1(ISender sender, [FromBody]CommandV1.Command.CreateCategoryCommand request)
     {
         var result = await sender.Send(request);
+        
+        if (result.IsFailure)
+            return HandlerFailure(result);
+
+        return Results.Ok(result);
+    }
+    
+    public static async Task<IResult> UpdateCategoryV1(ISender sender, Guid categoryId, [FromBody]CommandV1.Command.UpdateCategoryCommand request)
+    {
+        var result = await sender.Send(new CommandV1.Command.UpdateCategoryCommand(categoryId, request.Name, request.Description, request.IsDeleted));
+        
+        if (result.IsFailure)
+            return HandlerFailure(result);
+
+        return Results.Ok(result);
+    }
+    
+    public static async Task<IResult> DeleteCategoryV1(ISender sender, Guid categoryId)
+    {
+        var result = await sender.Send(new CommandV1.Command.DeleteCategoryCommand(categoryId));
         
         if (result.IsFailure)
             return HandlerFailure(result);

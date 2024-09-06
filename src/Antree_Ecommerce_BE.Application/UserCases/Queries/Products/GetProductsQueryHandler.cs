@@ -41,7 +41,7 @@ public class GetProductsQueryHandler : IQueryHandler<Query.GetProductsQuery, Pag
         return Result.Success(result);
     }
     
-    private static Expression<Func<Domain.Entities.Product, object>> GetSortProperty(Query.GetProductsQuery request)
+    private static Expression<Func<Product, object>> GetSortProperty(Query.GetProductsQuery request)
         => request.SortColumn?.ToLower() switch
         {
             "name" => product => product.Name,
