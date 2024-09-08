@@ -36,6 +36,8 @@ builder.Services
         options.SubstituteApiVersionInUrl = true;
     });
 
+builder.Services.ConfigureCors();
+
 builder.Services.AddMediatRApplication();
 builder.Services.AddAutoMapperApplication();
 
@@ -58,6 +60,8 @@ app.UseMiddleware<ExceptionHandlingMiddleware>();
 // Configure the HTTP request pipeline. 
 // if (builder.Environment.IsDevelopment() || builder.Environment.IsStaging())
     app.UseSwaggerAPI(); // => After MapCarter => Show Version
+
+app.UseCors("CorsPolicy");
 
 // app.UseHttpsRedirection();
 
