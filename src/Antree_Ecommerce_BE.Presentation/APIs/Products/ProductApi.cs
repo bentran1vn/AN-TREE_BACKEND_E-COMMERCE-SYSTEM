@@ -29,15 +29,15 @@ public class ProductApi : ApiEndpoint, ICarterModule
     #region ====== version 1 ======
 
     public static async Task<IResult> GetProductsV1(ISender sender, string? serchTerm = null,
+        Guid? categoryId = null,
         string? sortColumn = null,
         string? sortOrder = null,
         string? sortColumnAndOrder = null,
         int pageIndex = 1,
         int pageSize = 10)
     {
-        var result = await sender.Send(new CommandV1.Query.GetProductsQuery(serchTerm, sortColumn,
+        var result = await sender.Send(new CommandV1.Query.GetProductsQuery(serchTerm, categoryId, sortColumn,
             SortOrderExtension.ConvertStringToSortOrder(sortOrder),
-            SortOrderExtension.ConvertStringToSortOrderV2(sortColumnAndOrder),
             pageIndex,
             pageSize));
 

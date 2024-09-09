@@ -27,8 +27,12 @@ public class GetProductsQueryHandler : IQueryHandler<Query.GetProductsQuery, Pag
     {
         var productsQuery = string.IsNullOrWhiteSpace(request.SearchTerm)
             ? _productRepository.FindAll(null, x => x.ProductCategory)
-            : _productRepository.FindAll(x => x.Name.Contains(request.SearchTerm) || x.Description.Contains(request.SearchTerm), x => x.ProductCategory);
+            : _productRepository.FindAll(x => x.Name.Contains(request.SearchTerm) || x.ProductCategory.Name.Contains(request.SearchTerm), x => x.ProductCategory);
 
+        productsQuery = request.CategoryId == null
+            ? productsQuery
+            : productsQuery.Where(x => x.ProductCategory.Id.Equals(request.CategoryId));
+        
         productsQuery = request.SortOrder == SortOrder.Descending
             ? productsQuery.OrderByDescending(GetSortProperty(request))
             : productsQuery.OrderBy(GetSortProperty(request));
@@ -46,7 +50,7 @@ public class GetProductsQueryHandler : IQueryHandler<Query.GetProductsQuery, Pag
         {
             "name" => product => product.Name,
             "price" => product => product.Price,
-            "description" => product => product.Description,
+            "sold" => product => product.Sold,
             _ => product => product.Id
             //_ => product => product.CreatedDate // Default Sort Descending on CreatedDate column
         };
