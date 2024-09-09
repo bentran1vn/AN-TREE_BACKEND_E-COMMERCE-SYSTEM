@@ -25,7 +25,7 @@ public class FeedbackApi : ApiEndpoint, ICarterModule
         group1.MapPut("{orderId}", () => { });
     }
 
-    public async static Task<IResult> GetFeedbacksV1(ISender sender, Guid? productId = null,
+    public async static Task<IResult> GetFeedbacksV1(ISender sender, Guid productId,
         string? sortColumn = null,
         string? sortOrder = null,
         int pageIndex = 1,

@@ -23,9 +23,7 @@ public class GetFeedbacksQueryHandler : IQueryHandler<Query.GetFeedbacksQuery, P
 
     public async Task<Result<PagedResult<Response.FeedbackResonse>>> Handle(Query.GetFeedbacksQuery request, CancellationToken cancellationToken)
     {
-        var feedbacksQuery = request.ProductId == null
-            ? _orderDetailRepository.FindAll(x => x.OrderDetailFeedbackId != null)
-            : _orderDetailRepository.FindAll(x => 
+        var feedbacksQuery = _orderDetailRepository.FindAll(x => 
                 x.OrderDetailFeedbackId != null &&
                 x.ProductId.Equals(request.ProductId));
 
