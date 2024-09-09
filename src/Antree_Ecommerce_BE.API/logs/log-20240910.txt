@@ -1,0 +1,588 @@
+2024-09-10 01:10:26.522 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-10 01:10:26.587 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:10:26.587 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:10:26.587 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:10:26.587 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:10:42.998 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-10 01:10:43.067 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:10:43.068 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:10:43.068 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:10:43.068 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:10:43.166 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:10:43.166 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:10:43.166 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:10:43.166 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:11:09.496 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-10 01:11:09.565 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:11:09.565 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:11:09.565 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:11:09.565 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:11:09.659 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:11:09.659 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:11:09.660 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:11:09.660 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:11:36.482 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-10 01:11:36.546 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:11:36.546 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:11:36.547 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:11:36.547 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:11:36.637 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:11:36.637 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:11:36.637 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:11:36.637 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:11:48.531 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-10 01:11:48.592 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:11:48.593 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:11:48.593 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:11:48.593 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:11:48.678 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:11:48.678 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:11:48.678 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:11:48.678 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:12:29.210 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-10 01:12:29.273 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:12:29.274 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:12:29.274 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:12:29.274 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:12:29.362 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:12:29.362 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:12:29.363 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:12:29.363 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:12:37.102 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-10 01:12:37.165 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:12:37.165 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:12:37.165 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:12:37.165 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:12:37.398 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:12:37.399 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:12:37.399 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:12:37.399 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:29:52.392 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-10 01:29:52.504 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:29:52.505 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:29:52.505 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:29:52.505 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:32:22.657 +07:00 [ERR] Failed executing DbCommand (2ms) [Parameters=[@__get_Item_0='4c777a60-1599-48dc-8de2-8fd56cd9ad58' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[Address], [u].[City], [u].[CreatedOnUtc], [u].[IsDeleted], [u].[IsOrder], [u].[ModifiedOnUtc], [u].[PhoneNumber], [u].[Province], [u].[UserId]
+FROM [UserAddress] AS [u]
+WHERE [u].[UserId] = @__get_Item_0
+2024-09-10 01:32:22.671 +07:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Antree_Ecommerce_BE.Persistence.ApplicationDbContext'.
+System.InvalidOperationException: There is already an open DataReader associated with this Connection which must be closed first.
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.ValidateConnectionForExecute(SqlCommand command)
+   at Microsoft.Data.SqlClient.SqlConnection.ValidateConnectionForExecute(String method, SqlCommand command)
+   at Microsoft.Data.SqlClient.SqlCommand.ValidateCommand(Boolean isAsync, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+System.InvalidOperationException: There is already an open DataReader associated with this Connection which must be closed first.
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.ValidateConnectionForExecute(SqlCommand command)
+   at Microsoft.Data.SqlClient.SqlConnection.ValidateConnectionForExecute(String method, SqlCommand command)
+   at Microsoft.Data.SqlClient.SqlCommand.ValidateCommand(Boolean isAsync, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+2024-09-10 01:32:22.687 +07:00 [ERR] Failed executing DbCommand (0ms) [Parameters=[@__get_Item_0='4c777a60-1599-48dc-8de2-8fd56cd9ad58' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CardNumber], [u].[CreatedOnUtc], [u].[Cvc], [u].[Expire], [u].[IsDeleted], [u].[IsOrder], [u].[ModifiedOnUtc], [u].[PaymentType], [u].[Provider], [u].[UserId]
+FROM [UserPayment] AS [u]
+WHERE [u].[UserId] = @__get_Item_0
+2024-09-10 01:32:22.687 +07:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Antree_Ecommerce_BE.Persistence.ApplicationDbContext'.
+System.InvalidOperationException: There is already an open DataReader associated with this Connection which must be closed first.
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.ValidateConnectionForExecute(SqlCommand command)
+   at Microsoft.Data.SqlClient.SqlConnection.ValidateConnectionForExecute(String method, SqlCommand command)
+   at Microsoft.Data.SqlClient.SqlCommand.ValidateCommand(Boolean isAsync, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+System.InvalidOperationException: There is already an open DataReader associated with this Connection which must be closed first.
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.ValidateConnectionForExecute(SqlCommand command)
+   at Microsoft.Data.SqlClient.SqlConnection.ValidateConnectionForExecute(String method, SqlCommand command)
+   at Microsoft.Data.SqlClient.SqlCommand.ValidateCommand(Boolean isAsync, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+2024-09-10 01:32:36.835 +07:00 [ERR] Missing type map configuration or unsupported mapping.
+
+Mapping types:
+PagedResult`1 -> PagedResult`1
+Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Domain.Entities.OrderDetail, Antree_Ecommerce_BE.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse, Antree_Ecommerce_BE.Contract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+PagedResult`1 -> PagedResult`1
+Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Domain.Entities.OrderDetail, Antree_Ecommerce_BE.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse, Antree_Ecommerce_BE.Contract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+   at lambda_method386(Closure, Object, PagedResult`1, ResolutionContext)
+   at Antree_Ecommerce_BE.Application.UserCases.Queries.Feedbacks.GetFeedbacksQueryHandler.Handle(GetFeedbacksQuery request, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/UserCases/Queries/Feedbacks/GetFeedbacksQueryHandler.cs:line 44
+   at Antree_Ecommerce_BE.Application.Behaviors.TracingPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TracingPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 25
+   at Antree_Ecommerce_BE.Application.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/PerformancePipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.ValidationDefaultBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/ValidationDefaultBehavior.cs:line 17
+   at Antree_Ecommerce_BE.Presentation.APIs.Products.FeedbackApi.GetFeedbacksV1(ISender sender, Nullable`1 productId, String sortColumn, String sortOrder, Int32 pageIndex, Int32 pageSize) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Presentation/APIs/Products/FeedbackApi.cs:line 34
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-10 01:42:20.893 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-10 01:42:20.996 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:42:20.997 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:42:20.997 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:42:20.997 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:42:21.710 +07:00 [ERR] Missing type map configuration or unsupported mapping.
+
+Mapping types:
+PagedResult`1 -> PagedResult`1
+Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Domain.Entities.OrderDetail, Antree_Ecommerce_BE.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse, Antree_Ecommerce_BE.Contract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+PagedResult`1 -> PagedResult`1
+Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Domain.Entities.OrderDetail, Antree_Ecommerce_BE.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse, Antree_Ecommerce_BE.Contract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+   at lambda_method317(Closure, Object, PagedResult`1, ResolutionContext)
+   at Antree_Ecommerce_BE.Application.UserCases.Queries.Feedbacks.GetFeedbacksQueryHandler.Handle(GetFeedbacksQuery request, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/UserCases/Queries/Feedbacks/GetFeedbacksQueryHandler.cs:line 44
+   at Antree_Ecommerce_BE.Application.Behaviors.TracingPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TracingPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 25
+   at Antree_Ecommerce_BE.Application.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/PerformancePipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.ValidationDefaultBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/ValidationDefaultBehavior.cs:line 17
+   at Antree_Ecommerce_BE.Presentation.APIs.Products.FeedbackApi.GetFeedbacksV1(ISender sender, Nullable`1 productId, String sortColumn, String sortOrder, Int32 pageIndex, Int32 pageSize) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Presentation/APIs/Products/FeedbackApi.cs:line 34
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-10 01:43:22.301 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-10 01:43:22.400 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:43:22.401 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:43:22.401 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:43:22.401 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:43:23.116 +07:00 [ERR] Error mapping types.
+
+Mapping types:
+PagedResult`1 -> PagedResult`1
+Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Domain.Entities.OrderDetail, Antree_Ecommerce_BE.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse, Antree_Ecommerce_BE.Contract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+
+Type Map configuration:
+PagedResult`1 -> PagedResult`1
+Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Domain.Entities.OrderDetail, Antree_Ecommerce_BE.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse, Antree_Ecommerce_BE.Contract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+
+Destination Member:
+Void .ctor(System.Collections.Generic.List`1[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse], Int32, Int32, Int32), parameter items
+
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+PagedResult`1 -> PagedResult`1
+Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Domain.Entities.OrderDetail, Antree_Ecommerce_BE.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse, Antree_Ecommerce_BE.Contract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+
+Type Map configuration:
+PagedResult`1 -> PagedResult`1
+Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Domain.Entities.OrderDetail, Antree_Ecommerce_BE.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse, Antree_Ecommerce_BE.Contract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+
+Destination Member:
+Void .ctor(System.Collections.Generic.List`1[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse], Int32, Int32, Int32), parameter items
+
+ ---> System.ArgumentException: Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse needs to have a constructor with 0 args or only optional args. Validate your configuration for details. (Parameter 'type')
+   at lambda_method317(Closure, Object, PagedResult`1, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method317(Closure, Object, PagedResult`1, ResolutionContext)
+   at Antree_Ecommerce_BE.Application.UserCases.Queries.Feedbacks.GetFeedbacksQueryHandler.Handle(GetFeedbacksQuery request, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/UserCases/Queries/Feedbacks/GetFeedbacksQueryHandler.cs:line 44
+   at Antree_Ecommerce_BE.Application.Behaviors.TracingPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TracingPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 25
+   at Antree_Ecommerce_BE.Application.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/PerformancePipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.ValidationDefaultBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/ValidationDefaultBehavior.cs:line 17
+   at Antree_Ecommerce_BE.Presentation.APIs.Products.FeedbackApi.GetFeedbacksV1(ISender sender, Nullable`1 productId, String sortColumn, String sortOrder, Int32 pageIndex, Int32 pageSize) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Presentation/APIs/Products/FeedbackApi.cs:line 34
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-10 01:43:24.900 +07:00 [ERR] Error mapping types.
+
+Mapping types:
+PagedResult`1 -> PagedResult`1
+Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Domain.Entities.OrderDetail, Antree_Ecommerce_BE.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse, Antree_Ecommerce_BE.Contract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+
+Type Map configuration:
+PagedResult`1 -> PagedResult`1
+Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Domain.Entities.OrderDetail, Antree_Ecommerce_BE.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse, Antree_Ecommerce_BE.Contract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+
+Destination Member:
+Void .ctor(System.Collections.Generic.List`1[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse], Int32, Int32, Int32), parameter items
+
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+PagedResult`1 -> PagedResult`1
+Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Domain.Entities.OrderDetail, Antree_Ecommerce_BE.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse, Antree_Ecommerce_BE.Contract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+
+Type Map configuration:
+PagedResult`1 -> PagedResult`1
+Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Domain.Entities.OrderDetail, Antree_Ecommerce_BE.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse, Antree_Ecommerce_BE.Contract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+
+Destination Member:
+Void .ctor(System.Collections.Generic.List`1[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse], Int32, Int32, Int32), parameter items
+
+ ---> System.ArgumentException: Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse needs to have a constructor with 0 args or only optional args. Validate your configuration for details. (Parameter 'type')
+   at lambda_method317(Closure, Object, PagedResult`1, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method317(Closure, Object, PagedResult`1, ResolutionContext)
+   at Antree_Ecommerce_BE.Application.UserCases.Queries.Feedbacks.GetFeedbacksQueryHandler.Handle(GetFeedbacksQuery request, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/UserCases/Queries/Feedbacks/GetFeedbacksQueryHandler.cs:line 44
+   at Antree_Ecommerce_BE.Application.Behaviors.TracingPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TracingPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 25
+   at Antree_Ecommerce_BE.Application.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/PerformancePipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.ValidationDefaultBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/ValidationDefaultBehavior.cs:line 17
+   at Antree_Ecommerce_BE.Presentation.APIs.Products.FeedbackApi.GetFeedbacksV1(ISender sender, Nullable`1 productId, String sortColumn, String sortOrder, Int32 pageIndex, Int32 pageSize) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Presentation/APIs/Products/FeedbackApi.cs:line 34
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-10 01:43:29.313 +07:00 [ERR] Error mapping types.
+
+Mapping types:
+PagedResult`1 -> PagedResult`1
+Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Domain.Entities.OrderDetail, Antree_Ecommerce_BE.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse, Antree_Ecommerce_BE.Contract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+
+Type Map configuration:
+PagedResult`1 -> PagedResult`1
+Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Domain.Entities.OrderDetail, Antree_Ecommerce_BE.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse, Antree_Ecommerce_BE.Contract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+
+Destination Member:
+Void .ctor(System.Collections.Generic.List`1[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse], Int32, Int32, Int32), parameter items
+
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+PagedResult`1 -> PagedResult`1
+Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Domain.Entities.OrderDetail, Antree_Ecommerce_BE.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse, Antree_Ecommerce_BE.Contract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+
+Type Map configuration:
+PagedResult`1 -> PagedResult`1
+Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Domain.Entities.OrderDetail, Antree_Ecommerce_BE.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse, Antree_Ecommerce_BE.Contract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+
+Destination Member:
+Void .ctor(System.Collections.Generic.List`1[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse], Int32, Int32, Int32), parameter items
+
+ ---> System.ArgumentException: Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse needs to have a constructor with 0 args or only optional args. Validate your configuration for details. (Parameter 'type')
+   at lambda_method317(Closure, Object, PagedResult`1, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method317(Closure, Object, PagedResult`1, ResolutionContext)
+   at Antree_Ecommerce_BE.Application.UserCases.Queries.Feedbacks.GetFeedbacksQueryHandler.Handle(GetFeedbacksQuery request, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/UserCases/Queries/Feedbacks/GetFeedbacksQueryHandler.cs:line 44
+   at Antree_Ecommerce_BE.Application.Behaviors.TracingPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TracingPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 25
+   at Antree_Ecommerce_BE.Application.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/PerformancePipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.ValidationDefaultBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/ValidationDefaultBehavior.cs:line 17
+   at Antree_Ecommerce_BE.Presentation.APIs.Products.FeedbackApi.GetFeedbacksV1(ISender sender, Nullable`1 productId, String sortColumn, String sortOrder, Int32 pageIndex, Int32 pageSize) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Presentation/APIs/Products/FeedbackApi.cs:line 34
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-10 01:45:02.649 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-10 01:45:02.752 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:45:02.753 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:45:02.753 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:45:02.753 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:45:47.597 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-10 01:45:47.696 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:45:47.697 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:45:47.697 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:45:47.697 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:45:48.419 +07:00 [ERR] Error mapping types.
+
+Mapping types:
+PagedResult`1 -> PagedResult`1
+Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Domain.Entities.OrderDetail, Antree_Ecommerce_BE.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse, Antree_Ecommerce_BE.Contract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+
+Type Map configuration:
+PagedResult`1 -> PagedResult`1
+Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Domain.Entities.OrderDetail, Antree_Ecommerce_BE.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse, Antree_Ecommerce_BE.Contract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+
+Destination Member:
+Void .ctor(System.Collections.Generic.List`1[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse], Int32, Int32, Int32), parameter items
+
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+PagedResult`1 -> PagedResult`1
+Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Domain.Entities.OrderDetail, Antree_Ecommerce_BE.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse, Antree_Ecommerce_BE.Contract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+
+Type Map configuration:
+PagedResult`1 -> PagedResult`1
+Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Domain.Entities.OrderDetail, Antree_Ecommerce_BE.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse, Antree_Ecommerce_BE.Contract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+
+Destination Member:
+Void .ctor(System.Collections.Generic.List`1[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse], Int32, Int32, Int32), parameter items
+
+ ---> System.ArgumentException: Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse needs to have a constructor with 0 args or only optional args. Validate your configuration for details. (Parameter 'type')
+   at lambda_method317(Closure, Object, PagedResult`1, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method317(Closure, Object, PagedResult`1, ResolutionContext)
+   at Antree_Ecommerce_BE.Application.UserCases.Queries.Feedbacks.GetFeedbacksQueryHandler.Handle(GetFeedbacksQuery request, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/UserCases/Queries/Feedbacks/GetFeedbacksQueryHandler.cs:line 44
+   at Antree_Ecommerce_BE.Application.Behaviors.TracingPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TracingPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 25
+   at Antree_Ecommerce_BE.Application.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/PerformancePipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.ValidationDefaultBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/ValidationDefaultBehavior.cs:line 17
+   at Antree_Ecommerce_BE.Presentation.APIs.Products.FeedbackApi.GetFeedbacksV1(ISender sender, Nullable`1 productId, String sortColumn, String sortOrder, Int32 pageIndex, Int32 pageSize) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Presentation/APIs/Products/FeedbackApi.cs:line 34
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-10 01:49:25.006 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-10 01:49:25.108 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:49:25.109 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:49:25.109 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:49:25.109 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:49:25.826 +07:00 [ERR] Error mapping types.
+
+Mapping types:
+PagedResult`1 -> PagedResult`1
+Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Domain.Entities.OrderDetail, Antree_Ecommerce_BE.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse, Antree_Ecommerce_BE.Contract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+
+Type Map configuration:
+PagedResult`1 -> PagedResult`1
+Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Domain.Entities.OrderDetail, Antree_Ecommerce_BE.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse, Antree_Ecommerce_BE.Contract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+
+Destination Member:
+Void .ctor(System.Collections.Generic.List`1[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse], Int32, Int32, Int32), parameter items
+
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+PagedResult`1 -> PagedResult`1
+Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Domain.Entities.OrderDetail, Antree_Ecommerce_BE.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse, Antree_Ecommerce_BE.Contract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+
+Type Map configuration:
+PagedResult`1 -> PagedResult`1
+Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Domain.Entities.OrderDetail, Antree_Ecommerce_BE.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse, Antree_Ecommerce_BE.Contract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+
+Destination Member:
+Void .ctor(System.Collections.Generic.List`1[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse], Int32, Int32, Int32), parameter items
+
+ ---> System.ArgumentException: Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse needs to have a constructor with 0 args or only optional args. Validate your configuration for details. (Parameter 'type')
+   at lambda_method317(Closure, Object, PagedResult`1, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method317(Closure, Object, PagedResult`1, ResolutionContext)
+   at Antree_Ecommerce_BE.Application.UserCases.Queries.Feedbacks.GetFeedbacksQueryHandler.Handle(GetFeedbacksQuery request, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/UserCases/Queries/Feedbacks/GetFeedbacksQueryHandler.cs:line 44
+   at Antree_Ecommerce_BE.Application.Behaviors.TracingPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TracingPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 25
+   at Antree_Ecommerce_BE.Application.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/PerformancePipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.ValidationDefaultBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/ValidationDefaultBehavior.cs:line 17
+   at Antree_Ecommerce_BE.Presentation.APIs.Products.FeedbackApi.GetFeedbacksV1(ISender sender, Nullable`1 productId, String sortColumn, String sortOrder, Int32 pageIndex, Int32 pageSize) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Presentation/APIs/Products/FeedbackApi.cs:line 34
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-10 01:50:55.329 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-10 01:50:55.435 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:50:55.436 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:50:55.436 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:50:55.436 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:50:56.152 +07:00 [ERR] Error mapping types.
+
+Mapping types:
+PagedResult`1 -> PagedResult`1
+Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Domain.Entities.OrderDetail, Antree_Ecommerce_BE.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse, Antree_Ecommerce_BE.Contract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+
+Type Map configuration:
+PagedResult`1 -> PagedResult`1
+Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Domain.Entities.OrderDetail, Antree_Ecommerce_BE.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse, Antree_Ecommerce_BE.Contract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+
+Destination Member:
+Void .ctor(System.Collections.Generic.List`1[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse], Int32, Int32, Int32), parameter items
+
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+PagedResult`1 -> PagedResult`1
+Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Domain.Entities.OrderDetail, Antree_Ecommerce_BE.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse, Antree_Ecommerce_BE.Contract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+
+Type Map configuration:
+PagedResult`1 -> PagedResult`1
+Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Domain.Entities.OrderDetail, Antree_Ecommerce_BE.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse, Antree_Ecommerce_BE.Contract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+
+Destination Member:
+Void .ctor(System.Collections.Generic.List`1[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse], Int32, Int32, Int32), parameter items
+
+ ---> System.ArgumentException: Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse needs to have a constructor with 0 args or only optional args. Validate your configuration for details. (Parameter 'type')
+   at lambda_method317(Closure, Object, PagedResult`1, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method317(Closure, Object, PagedResult`1, ResolutionContext)
+   at Antree_Ecommerce_BE.Application.UserCases.Queries.Feedbacks.GetFeedbacksQueryHandler.Handle(GetFeedbacksQuery request, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/UserCases/Queries/Feedbacks/GetFeedbacksQueryHandler.cs:line 44
+   at Antree_Ecommerce_BE.Application.Behaviors.TracingPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TracingPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 25
+   at Antree_Ecommerce_BE.Application.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/PerformancePipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.ValidationDefaultBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/ValidationDefaultBehavior.cs:line 17
+   at Antree_Ecommerce_BE.Presentation.APIs.Products.FeedbackApi.GetFeedbacksV1(ISender sender, Nullable`1 productId, String sortColumn, String sortOrder, Int32 pageIndex, Int32 pageSize) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Presentation/APIs/Products/FeedbackApi.cs:line 34
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-10 01:51:34.400 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-10 01:51:34.505 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:51:34.506 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:51:34.506 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:51:34.506 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:53:40.739 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-10 01:53:40.840 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:53:40.841 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:53:40.841 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:53:40.841 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:53:41.559 +07:00 [ERR] Error mapping types.
+
+Mapping types:
+PagedResult`1 -> PagedResult`1
+Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Domain.Entities.OrderDetail, Antree_Ecommerce_BE.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse, Antree_Ecommerce_BE.Contract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+
+Type Map configuration:
+PagedResult`1 -> PagedResult`1
+Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Domain.Entities.OrderDetail, Antree_Ecommerce_BE.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse, Antree_Ecommerce_BE.Contract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+
+Destination Member:
+Void .ctor(System.Collections.Generic.List`1[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse], Int32, Int32, Int32), parameter items
+
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+PagedResult`1 -> PagedResult`1
+Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Domain.Entities.OrderDetail, Antree_Ecommerce_BE.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse, Antree_Ecommerce_BE.Contract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+
+Type Map configuration:
+PagedResult`1 -> PagedResult`1
+Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Domain.Entities.OrderDetail, Antree_Ecommerce_BE.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse, Antree_Ecommerce_BE.Contract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+
+Destination Member:
+Void .ctor(System.Collections.Generic.List`1[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse], Int32, Int32, Int32), parameter items
+
+ ---> System.ArgumentException: Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse needs to have a constructor with 0 args or only optional args. Validate your configuration for details. (Parameter 'type')
+   at lambda_method317(Closure, Object, PagedResult`1, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method317(Closure, Object, PagedResult`1, ResolutionContext)
+   at Antree_Ecommerce_BE.Application.UserCases.Queries.Feedbacks.GetFeedbacksQueryHandler.Handle(GetFeedbacksQuery request, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/UserCases/Queries/Feedbacks/GetFeedbacksQueryHandler.cs:line 44
+   at Antree_Ecommerce_BE.Application.Behaviors.TracingPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TracingPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 25
+   at Antree_Ecommerce_BE.Application.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/PerformancePipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.ValidationDefaultBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/ValidationDefaultBehavior.cs:line 17
+   at Antree_Ecommerce_BE.Presentation.APIs.Products.FeedbackApi.GetFeedbacksV1(ISender sender, Nullable`1 productId, String sortColumn, String sortOrder, Int32 pageIndex, Int32 pageSize) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Presentation/APIs/Products/FeedbackApi.cs:line 34
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-10 01:55:45.940 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-10 01:55:46.049 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:55:46.050 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:55:46.050 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:55:46.050 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:56:37.595 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-10 01:56:37.698 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:56:37.699 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:56:37.699 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:56:37.699 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:56:38.413 +07:00 [ERR] Error mapping types.
+
+Mapping types:
+PagedResult`1 -> PagedResult`1
+Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Domain.Entities.OrderDetail, Antree_Ecommerce_BE.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse, Antree_Ecommerce_BE.Contract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+
+Type Map configuration:
+PagedResult`1 -> PagedResult`1
+Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Domain.Entities.OrderDetail, Antree_Ecommerce_BE.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse, Antree_Ecommerce_BE.Contract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+
+Destination Member:
+Void .ctor(System.Collections.Generic.List`1[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse], Int32, Int32, Int32), parameter items
+
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+PagedResult`1 -> PagedResult`1
+Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Domain.Entities.OrderDetail, Antree_Ecommerce_BE.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse, Antree_Ecommerce_BE.Contract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+
+Type Map configuration:
+PagedResult`1 -> PagedResult`1
+Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Domain.Entities.OrderDetail, Antree_Ecommerce_BE.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse, Antree_Ecommerce_BE.Contract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+
+Destination Member:
+Void .ctor(System.Collections.Generic.List`1[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse], Int32, Int32, Int32), parameter items
+
+ ---> System.ArgumentException: Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse needs to have a constructor with 0 args or only optional args. Validate your configuration for details. (Parameter 'type')
+   at lambda_method317(Closure, Object, PagedResult`1, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method317(Closure, Object, PagedResult`1, ResolutionContext)
+   at Antree_Ecommerce_BE.Application.UserCases.Queries.Feedbacks.GetFeedbacksQueryHandler.Handle(GetFeedbacksQuery request, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/UserCases/Queries/Feedbacks/GetFeedbacksQueryHandler.cs:line 44
+   at Antree_Ecommerce_BE.Application.Behaviors.TracingPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TracingPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 25
+   at Antree_Ecommerce_BE.Application.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/PerformancePipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.ValidationDefaultBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/ValidationDefaultBehavior.cs:line 17
+   at Antree_Ecommerce_BE.Presentation.APIs.Products.FeedbackApi.GetFeedbacksV1(ISender sender, Nullable`1 productId, String sortColumn, String sortOrder, Int32 pageIndex, Int32 pageSize) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Presentation/APIs/Products/FeedbackApi.cs:line 34
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-10 01:59:41.998 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-10 01:59:42.100 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:59:42.101 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:59:42.102 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:59:42.102 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 01:59:42.815 +07:00 [ERR] Error mapping types.
+
+Mapping types:
+PagedResult`1 -> PagedResult`1
+Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Domain.Entities.OrderDetail, Antree_Ecommerce_BE.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse, Antree_Ecommerce_BE.Contract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+
+Type Map configuration:
+PagedResult`1 -> PagedResult`1
+Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Domain.Entities.OrderDetail, Antree_Ecommerce_BE.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse, Antree_Ecommerce_BE.Contract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+
+Destination Member:
+Void .ctor(System.Collections.Generic.List`1[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse], Int32, Int32, Int32), parameter items
+
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+PagedResult`1 -> PagedResult`1
+Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Domain.Entities.OrderDetail, Antree_Ecommerce_BE.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse, Antree_Ecommerce_BE.Contract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+
+Type Map configuration:
+PagedResult`1 -> PagedResult`1
+Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Domain.Entities.OrderDetail, Antree_Ecommerce_BE.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse, Antree_Ecommerce_BE.Contract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+
+Destination Member:
+Void .ctor(System.Collections.Generic.List`1[Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse], Int32, Int32, Int32), parameter items
+
+ ---> System.ArgumentException: Antree_Ecommerce_BE.Contract.Services.Feedbacks.Response+FeedbackResonse needs to have a constructor with 0 args or only optional args. Validate your configuration for details. (Parameter 'type')
+   at lambda_method317(Closure, Object, PagedResult`1, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method317(Closure, Object, PagedResult`1, ResolutionContext)
+   at Antree_Ecommerce_BE.Application.UserCases.Queries.Feedbacks.GetFeedbacksQueryHandler.Handle(GetFeedbacksQuery request, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/UserCases/Queries/Feedbacks/GetFeedbacksQueryHandler.cs:line 44
+   at Antree_Ecommerce_BE.Application.Behaviors.TracingPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TracingPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 25
+   at Antree_Ecommerce_BE.Application.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/PerformancePipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.ValidationDefaultBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/ValidationDefaultBehavior.cs:line 17
+   at Antree_Ecommerce_BE.Presentation.APIs.Products.FeedbackApi.GetFeedbacksV1(ISender sender, Nullable`1 productId, String sortColumn, String sortOrder, Int32 pageIndex, Int32 pageSize) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Presentation/APIs/Products/FeedbackApi.cs:line 34
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-10 02:06:58.165 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-10 02:06:58.265 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 02:06:58.265 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 02:06:58.266 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-10 02:06:58.266 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.

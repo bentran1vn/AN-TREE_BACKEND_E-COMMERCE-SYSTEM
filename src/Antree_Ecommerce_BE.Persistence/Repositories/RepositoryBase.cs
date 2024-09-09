@@ -17,7 +17,7 @@ public class RepositoryBase<TEntity, TKey> : IRepositoryBase<TEntity, TKey>, IDi
         => _dbContext?.Dispose();
 
     public IQueryable<TEntity> FindAll(Expression<Func<TEntity, bool>>? predicate = null,
-        params Expression<Func<TEntity, object>>[] includeProperties)
+        params Expression<Func<TEntity, object>>[]? includeProperties)
     {
         IQueryable<TEntity> items = _dbContext.Set<TEntity>().AsNoTracking(); // Importance Always include AsNoTracking for Query Side
         if (includeProperties != null)

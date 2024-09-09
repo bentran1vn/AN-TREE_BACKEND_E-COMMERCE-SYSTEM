@@ -1,4 +1,5 @@
 using System.Linq.Expressions;
+using Antree_Ecommerce_BE.Domain.Entities;
 
 namespace Antree_Ecommerce_BE.Domain.Abstractions.Repositories;
 
@@ -8,7 +9,8 @@ public interface IRepositoryBase<TEntity, in TKey> where TEntity : class
 
     Task<TEntity> FindSingleAsync(Expression<Func<TEntity, bool>>? predicate = null, CancellationToken cancellationToken = default, params Expression<Func<TEntity, object>>[] includeProperties);
 
-    IQueryable<TEntity> FindAll(Expression<Func<TEntity, bool>>? predicate = null, params Expression<Func<TEntity, object>>[] includeProperties);
+    IQueryable<TEntity> FindAll(Expression<Func<TEntity, bool>>? predicate = null,
+        params Expression<Func<TEntity, object>>[]? includeProperties);
 
     void Add(TEntity entity);
 
