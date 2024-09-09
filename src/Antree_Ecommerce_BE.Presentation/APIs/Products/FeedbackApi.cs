@@ -19,10 +19,9 @@ public class FeedbackApi : ApiEndpoint, ICarterModule
             .MapGroup(BaseUrl).HasApiVersion(1);
         
         group1.MapGet(string.Empty, GetFeedbacksV1);
-        group1.MapGet("{productId}", () => { });
         group1.MapPost(string.Empty, () => { });
         group1.MapDelete("{feedbackId}", () => { });
-        group1.MapPut("{orderId}", () => { });
+        group1.MapPut(string.Empty, () => { });
     }
 
     public async static Task<IResult> GetFeedbacksV1(ISender sender, Guid productId,
