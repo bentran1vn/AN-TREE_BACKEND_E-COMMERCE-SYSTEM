@@ -25,7 +25,10 @@ public class GetLoginQueryHandler : IQueryHandler<Query.Login, Response.Authenti
         var claims = new List<Claim>
         {
             new Claim(ClaimTypes.Email, request.Email),
-            new Claim(ClaimTypes.Role, "Senior .NET Leader")
+            new Claim(ClaimTypes.Role, "Senior .NET Leader"),
+            new Claim("Role", "hâhhah"),
+            new Claim(ClaimTypes.Name, request.Email),
+            // new Claim(ClaimTypes.Expired, DateTime.Now.AddMinutes(5).ToString())
         };
 
         var accessToken = _jwtTokenService.GenerateAccessToken(claims);

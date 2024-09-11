@@ -45,26 +45,53 @@ public class JwtTokenService : IJwtTokenService
         }
     }
 
-    public ClaimsPrincipal GetPrincipalFromExpiredToken(string token)
+    public (ClaimsPrincipal, bool) GetPrincipalFromExpiredToken(string token)
     {
         var Key = Encoding.UTF8.GetBytes(jwtOption.SecretKey);
 
         var tokenValidationParameters = new TokenValidationParameters
         {
-            ValidateAudience = false, //you might want to validate the audience and issuer depending on your use case
+            ValidateAudience = false,
             ValidateIssuer = false,
-            ValidateLifetime = false, //here we are saying that we don't care about the token's expiration date
             ValidateIssuerSigningKey = true,
             IssuerSigningKey = new SymmetricSecurityKey(Key),
             ClockSkew = TimeSpan.Zero
         };
 
         var tokenHandler = new JwtSecurityTokenHandler();
-        var principal = tokenHandler.ValidateToken(token, tokenValidationParameters, out SecurityToken securityToken);
-        JwtSecurityToken jwtSecurityToken = securityToken as JwtSecurityToken;
-        if (jwtSecurityToken == null || !jwtSecurityToken.Header.Alg.Equals(SecurityAlgorithms.HmacSha256, StringComparison.InvariantCultureIgnoreCase))
+    
+        try
+        {
+            // First, try to validate the token with lifetime validation
+            tokenValidationParameters.ValidateLifetime = true;
+            var principal = tokenHandler.ValidateToken(token, tokenValidationParameters, out SecurityToken securityToken);
+        
+            if (!(securityToken is JwtSecurityToken jwtSecurityToken) || 
+                !jwtSecurityToken.Header.Alg.Equals(SecurityAlgorithms.HmacSha256, StringComparison.InvariantCultureIgnoreCase))
+            {
+                throw new SecurityTokenException("Invalid token");
+            }
+        
+            return (principal, false); // Token is valid and not expired
+        }
+        catch (SecurityTokenExpiredException)
+        {
+            // Token is expired, validate without lifetime check
+            tokenValidationParameters.ValidateLifetime = false;
+            var principal = tokenHandler.ValidateToken(token, tokenValidationParameters, out SecurityToken securityToken);
+        
+            if (!(securityToken is JwtSecurityToken jwtSecurityToken) || 
+                !jwtSecurityToken.Header.Alg.Equals(SecurityAlgorithms.HmacSha256, StringComparison.InvariantCultureIgnoreCase))
+            {
+                throw new SecurityTokenException("Invalid token");
+            }
+        
+            return (principal, true); // Token is valid but expired
+        }
+        catch (Exception)
+        {
+            // Any other exception means the token is invalid
             throw new SecurityTokenException("Invalid token");
-
-        return principal;
+        }
     }
 }

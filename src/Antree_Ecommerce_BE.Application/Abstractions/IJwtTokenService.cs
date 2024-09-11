@@ -6,5 +6,5 @@ public interface IJwtTokenService
 {
     string GenerateAccessToken(IEnumerable<Claim> claims);
     string GenerateRefreshToken();
-    ClaimsPrincipal GetPrincipalFromExpiredToken(string token);
+    (ClaimsPrincipal, bool) GetPrincipalFromExpiredToken(string token);
 }
