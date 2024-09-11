@@ -1,6 +1,7 @@
 using Antree_Ecommerce_BE.API.DependencyInjection.Extensions;
 using Antree_Ecommerce_BE.API.Middlewares;
 using Antree_Ecommerce_BE.Application.DependencyInjection.Extensions;
+using Antree_Ecommerce_BE.Infrastructure.DependencyInjection.Extensions;
 using Antree_Ecommerce_BE.Persistence.DependencyInjection.Extensions;
 using Antree_Ecommerce_BE.Persistence.DependencyInjection.Options;
 using Carter;
@@ -47,7 +48,10 @@ builder.Services.ConfigureSqlServerRetryOptionsPersistence(builder.Configuration
 builder.Services.AddSqlServerPersistence();
 builder.Services.AddRepositoryPersistence();
 
-//builder.Services.AddJwtAuthenticationAPI(builder.Configuration);
+builder.Services.AddJwtAuthenticationAPI(builder.Configuration);
+builder.Services.AddServicesInfrastructure();
+builder.Services.AddRedisInfrastructure(builder.Configuration);
+
 
 // Add Middleware => Remember using middleware
 builder.Services.AddTransient<ExceptionHandlingMiddleware>();
@@ -65,8 +69,8 @@ app.UseCors("CorsPolicy");
 
 // app.UseHttpsRedirection();
 
-//app.UseAuthentication(); // Need to be before app.UseAuthorization();
-//app.UseAuthorization();
+app.UseAuthentication(); // Need to be before app.UseAuthorization();
+app.UseAuthorization();
 
 
 // Add API Endpoint with carter module
