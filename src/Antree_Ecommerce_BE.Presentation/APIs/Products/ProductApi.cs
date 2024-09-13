@@ -19,7 +19,7 @@ public class ProductApi : ApiEndpoint, ICarterModule
         var group1 = app.NewVersionedApi("Products")
             .MapGroup(BaseUrl).HasApiVersion(1);
         //.RequireAuthorization();
-        group1.MapGet(string.Empty, GetProductsV1).RequireAuthorization();
+        group1.MapGet(string.Empty, GetProductsV1);//.RequireAuthorization();
         group1.MapGet("{productId}", GetProductV1);
         group1.MapPost(string.Empty, CreateProductsV1);
         group1.MapDelete("{productId}", DeleteProductsV1);

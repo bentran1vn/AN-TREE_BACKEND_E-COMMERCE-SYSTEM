@@ -2,6 +2,7 @@ using System.Collections.Concurrent;
 using Antree_Ecommerce_BE.Application.Abstractions;
 using Microsoft.Extensions.Caching.Distributed;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 namespace Antree_Ecommerce_BE.Infrastructure.Caching;
 
@@ -28,13 +29,27 @@ public class CacheService : ICacheService
 
         if (cacheValue is null)
             return null;
-        T? value = JsonConvert.DeserializeObject<T>(cacheValue);
+        T? value = JsonConvert.DeserializeObject<T>(cacheValue, new JsonSerializerSettings
+        {
+            ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor,
+            ContractResolver = new DefaultContractResolver
+            {
+                NamingStrategy = new CamelCaseNamingStrategy()
+            }
+        });
         return value;
     }
 
     public async Task SetAsync<T>(string key, T value, CancellationToken cancellationToken = default) where T : class
     {
-        string cacheValue = JsonConvert.SerializeObject(value);
+        string cacheValue = JsonConvert.SerializeObject(value, new JsonSerializerSettings
+        {
+            ContractResolver = new DefaultContractResolver
+            {
+                NamingStrategy = new CamelCaseNamingStrategy()
+            }
+        });
+        
         await _distributedCache.SetStringAsync(key, cacheValue, cancellationToken);
 
         CacheKeys.TryAdd(key, false);

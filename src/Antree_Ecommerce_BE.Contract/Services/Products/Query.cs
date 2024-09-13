@@ -1,3 +1,4 @@
+using System.Text;
 using Antree_Ecommerce_BE.Contract.Abstractions.Messages;
 using Antree_Ecommerce_BE.Contract.Abstractions.Shared;
 using Antree_Ecommerce_BE.Contract.Enumerations;
@@ -8,6 +9,45 @@ namespace Antree_Ecommerce_BE.Contract.Services.Products;
 public static class Query
 {
     // public record GetProductsQuery(string? SearchTerm, Guid? CategoryId, string? SortColumn, SortOrder? SortOrder, IDictionary<string, SortOrder>? SortColumnAndOrder, int PageIndex, int PageSize) : IQuery<PagedResult<ProductResponse>>;
-    public record GetProductsQuery(string? SearchTerm, Guid? CategoryId, string? SortColumn, SortOrder? SortOrder, int PageIndex, int PageSize) : IQuery<PagedResult<ProductResponse>>;
+    public record GetProductsQuery : IQuery<PagedResult<ProductResponse>>, ICacheable
+    {
+        public GetProductsQuery(string? searchTerm, Guid? categoryId, string? sortColumn, SortOrder? sortOrder, int pageIndex, int pageSize)
+        {
+            SearchTerm = searchTerm;
+            CategoryId = categoryId;
+            SortColumn = sortColumn;
+            SortOrder = sortOrder;
+            PageIndex = pageIndex;
+            PageSize = pageSize;
+        }
+
+        public string? SearchTerm { get; init; }
+        public Guid? CategoryId { get; init; }
+        public string? SortColumn { get; init; }
+        public SortOrder? SortOrder { get; init; }
+        public int PageIndex { get; init; }
+        public int PageSize { get; init; }
+        public bool BypassCache => false;
+        public string CacheKey
+        {
+            get
+            {
+                var builder = new StringBuilder();
+                builder.Append($"{nameof(GetProductsQuery)}");
+                if (SearchTerm != null)
+                {
+                    builder.Append($"-SearchTerm:{SearchTerm}");
+                }
+                if (CategoryId.HasValue)
+                {
+                    builder.Append($"-CategoryId:{CategoryId}");
+                }
+                builder.Append($"-Sort:{SortColumn}:{SortOrder}");
+                builder.Append($"-Page:{PageIndex}:{PageSize}");
+                return builder.ToString();
+            }
+        }
+    }
+
     public record GetProductByIdQuery(Guid Id) : IQuery<ProductResponse>;
 }

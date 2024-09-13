@@ -5,19 +5,16 @@ using Antree_Ecommerce_BE.Contract.Enumerations;
 using Antree_Ecommerce_BE.Contract.Services.Products;
 using Antree_Ecommerce_BE.Domain.Abstractions.Repositories;
 using Antree_Ecommerce_BE.Domain.Entities;
-using Antree_Ecommerce_BE.Persistence;
 using AutoMapper;
-using Microsoft.EntityFrameworkCore;
-using ProductCategory = Antree_Ecommerce_BE.Domain.Entities.ProductCategory;
 
 namespace Antree_Ecommerce_BE.Application.UserCases.Queries.Products;
 
 public class GetProductsQueryHandler : IQueryHandler<Query.GetProductsQuery, PagedResult<Response.ProductResponse>>
 {
-    private readonly IRepositoryBase<Domain.Entities.Product, Guid> _productRepository;
+    private readonly IRepositoryBase<Product, Guid> _productRepository;
     private readonly IMapper _mapper;
     
-    public GetProductsQueryHandler(IRepositoryBase<Domain.Entities.Product, Guid> productRepository, IMapper mapper)
+    public GetProductsQueryHandler(IRepositoryBase<Product, Guid> productRepository, IMapper mapper)
     {
         _productRepository = productRepository;
         _mapper = mapper;

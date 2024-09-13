@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 namespace Antree_Ecommerce_BE.Contract.Abstractions.Shared;
 
 public class Result<TValue> : Result
@@ -9,6 +11,9 @@ public class Result<TValue> : Result
     }
 
     public TValue Value => IsSuccess ? _value! : throw new InvalidOperationException("The value of failure result can not be access");
-
+    
+    [JsonConstructor]
+    public Result(TValue value) : this(value, true, Error.None) { }
+    
     public static implicit operator Result<TValue>(TValue? value) => Create(value)!;
 }
