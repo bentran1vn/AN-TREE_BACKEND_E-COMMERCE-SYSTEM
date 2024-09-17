@@ -25,4 +25,6 @@ public class ApplicationDbContext : DbContext
     public DbSet<User> Users { get; set; }
     public DbSet<UserAddress> UserAddresses { get; set; }
     public DbSet<UserPayment> UserPayments { get; set; }
+    public DbSet<ProductMedia> ProductMedias { get; set; }
+    public DbSet<OrderDetailFeedbackMedia> OrderDetailFeedbackMedias { get; set; }
 }

@@ -47,6 +47,9 @@ public static class Query
                 return builder.ToString();
             }
         }
+
+        public int SlidingExpirationInMinutes => 30;
+        public int AbsoluteExpirationInMinutes => 60;
     }
 
     public record GetProductByIdQuery(Guid Id) : IQuery<ProductResponse>;

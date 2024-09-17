@@ -1,6 +1,7 @@
 using Antree_Ecommerce_BE.Application.Abstractions;
 using Antree_Ecommerce_BE.Contract.Abstractions.Shared;
 using MediatR;
+using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Logging;
 
 namespace Antree_Ecommerce_BE.Application.Behaviors;
@@ -22,7 +23,13 @@ public class CachingPipelineBehaviorCachingBehavior<TRequest, TResponse>(
             response = await next();
             if (response != null)
             {
-                await cacheService.SetAsync(request.CacheKey, response, cancellationToken);
+                var slidingExpiration = request.SlidingExpirationInMinutes == 0 ? 30 : request.SlidingExpirationInMinutes;
+                var absoluteExpiration = request.AbsoluteExpirationInMinutes == 0 ? 60 : request.AbsoluteExpirationInMinutes;
+                var options = new DistributedCacheEntryOptions()
+                    .SetSlidingExpiration(TimeSpan.FromMinutes(slidingExpiration))
+                    .SetAbsoluteExpiration(TimeSpan.FromMinutes(absoluteExpiration));
+                
+                await cacheService.SetAsync(request.CacheKey, response, options, cancellationToken);
             }
             return response;
         }

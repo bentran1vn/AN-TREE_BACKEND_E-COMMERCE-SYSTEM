@@ -40,7 +40,7 @@ public class CacheService : ICacheService
         return value;
     }
 
-    public async Task SetAsync<T>(string key, T value, CancellationToken cancellationToken = default) where T : class
+    public async Task SetAsync<T>(string key, T value, DistributedCacheEntryOptions? options, CancellationToken cancellationToken = default) where T : class
     {
         string cacheValue = JsonConvert.SerializeObject(value, new JsonSerializerSettings
         {
@@ -49,6 +49,11 @@ public class CacheService : ICacheService
                 NamingStrategy = new CamelCaseNamingStrategy()
             }
         });
+
+        if (options != null)
+        {
+            await _distributedCache.SetStringAsync(key, cacheValue, options, cancellationToken);
+        }
         
         await _distributedCache.SetStringAsync(key, cacheValue, cancellationToken);
 

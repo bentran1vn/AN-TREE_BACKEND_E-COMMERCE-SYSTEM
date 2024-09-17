@@ -40,7 +40,7 @@ public class GetTokenQueryHandler : IQueryHandler<Query.Token, Response.Authenti
             RefreshToken = cacheData.RefreshToken,
             RefreshTokenExpiryTime = DateTime.Now.AddMinutes(5)
         };
-        await _cacheService.SetAsync(email, response, cancellationToken);
+        await _cacheService.SetAsync(email, response, null,cancellationToken);
 
         return Result.Success(response);
     }

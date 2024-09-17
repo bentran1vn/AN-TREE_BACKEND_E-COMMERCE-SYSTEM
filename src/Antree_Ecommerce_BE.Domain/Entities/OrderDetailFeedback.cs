@@ -11,4 +11,6 @@ public class OrderDetailFeedback : Entity<Guid>, IAuditableEntity
     public DateTimeOffset? ModifiedOnUtc { get; set; }
     
     // public virtual OrderDetail OrderDetail { get; set; } = default!;
+    
+    public virtual IReadOnlyCollection<OrderDetailFeedbackMedia> OrderDetailFeedbackMediaList { get; set; } = default!;
 }

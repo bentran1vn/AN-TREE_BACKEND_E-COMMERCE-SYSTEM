@@ -1,5 +1,6 @@
 using Antree_Ecommerce_BE.API.DependencyInjection.Options;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
@@ -43,6 +44,8 @@ Example: 'Bearer 12345abcdef'",
                     new List<string>()
                 }
             });
+            
+            c.OperationFilter<SwaggerFormDataOperationFilter>();
         });
         services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
     }
@@ -62,5 +65,33 @@ Example: 'Bearer 12345abcdef'",
 
         app.MapGet("/", () => Results.Redirect("/swagger/index.html"))
             .WithTags(string.Empty);
+    }
+    
+    public class SwaggerFormDataOperationFilter : IOperationFilter
+    {
+        public void Apply(OpenApiOperation operation, OperationFilterContext context)
+        {
+            var formParameters = context.MethodInfo
+                .GetParameters()
+                .Where(p => p.GetCustomAttributes(true)
+                    .Any(attr => attr.GetType() == typeof(FromFormAttribute)))
+                .ToList();
+
+            if (formParameters.Any())
+            {
+                foreach (var param in formParameters)
+                {
+                    operation.RequestBody = new OpenApiRequestBody
+                    {
+                        Content = {
+                            ["multipart/form-data"] = new OpenApiMediaType
+                            {
+                                Schema = context.SchemaGenerator.GenerateSchema(param.ParameterType, context.SchemaRepository)
+                            }
+                        }
+                    };
+                }
+            }
+        }
     }
 }

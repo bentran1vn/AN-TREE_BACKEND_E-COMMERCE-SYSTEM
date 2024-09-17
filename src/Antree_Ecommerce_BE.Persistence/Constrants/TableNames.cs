@@ -14,4 +14,6 @@ public class TableNames
     internal const string ProductCategory = nameof(ProductCategory);
     internal const string ProductDiscount = nameof(ProductDiscount);
     internal const string ProductFeedback = nameof(ProductFeedback);
+    internal const string OrderDetailFeedbackMedia = nameof(OrderDetailFeedbackMedia);
+    internal const string ProductMedia = nameof(ProductMedia);
 }

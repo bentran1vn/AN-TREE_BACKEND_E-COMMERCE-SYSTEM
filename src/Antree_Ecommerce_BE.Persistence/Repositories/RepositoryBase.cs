@@ -43,6 +43,9 @@ public class RepositoryBase<TEntity, TKey> : IRepositoryBase<TEntity, TKey>, IDi
     public void Add(TEntity entity)
         => _dbContext.Add(entity);
 
+    public void AddRange(IEnumerable<TEntity> entities)
+        => _dbContext.AddRange(entities);
+
     public void Remove(TEntity entity)
         => _dbContext.Set<TEntity>().Remove(entity);
 

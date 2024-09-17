@@ -32,7 +32,7 @@ public class ProductConfiguration : IEntityTypeConfiguration<Product>
                 ? Guid.Parse("26df3c94-715f-4048-a96a-04a6e80bbd15")
                 : Guid.Parse("acc02cc0-825a-4453-b923-e6ae7f4007a4");
             builder.HasData(
-                new Product(id, productCategoryId, name, price, description, sku, sold, createdBy, Guid.Empty)
+                new Product(id, productCategoryId, name, price, price, description, sku, sold, "", createdBy, Guid.Empty)
             );
         }
     }

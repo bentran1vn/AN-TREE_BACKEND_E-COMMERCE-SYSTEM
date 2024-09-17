@@ -41,7 +41,7 @@ public class GetLoginQueryHandler : IQueryHandler<Query.Login, Response.Authenti
             RefreshTokenExpiryTime = DateTime.Now.AddMinutes(5)
         };
 
-        await _cacheService.SetAsync(request.Email, response, cancellationToken);
+        await _cacheService.SetAsync(request.Email, response, null, cancellationToken);
 
         return Result.Success(response);
     }

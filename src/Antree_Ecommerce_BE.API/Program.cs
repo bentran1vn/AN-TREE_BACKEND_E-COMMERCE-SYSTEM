@@ -2,10 +2,12 @@ using Antree_Ecommerce_BE.API.DependencyInjection.Extensions;
 using Antree_Ecommerce_BE.API.Middlewares;
 using Antree_Ecommerce_BE.Application.DependencyInjection.Extensions;
 using Antree_Ecommerce_BE.Infrastructure.DependencyInjection.Extensions;
+using Antree_Ecommerce_BE.Infrastructure.DependencyInjection.Options;
 using Antree_Ecommerce_BE.Persistence.DependencyInjection.Extensions;
 using Antree_Ecommerce_BE.Persistence.DependencyInjection.Options;
 using Carter;
 using MicroElements.Swashbuckle.FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Http.Features;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -42,6 +44,13 @@ builder.Services.ConfigureCors();
 builder.Services.AddMediatRApplication();
 builder.Services.AddAutoMapperApplication();
 
+builder.Services.Configure<FormOptions>(options =>
+{
+    options.ValueLengthLimit = int.MaxValue;
+    options.MultipartBodyLengthLimit = long.MaxValue;
+    options.MultipartHeadersLengthLimit = int.MaxValue;
+});
+
 // Configure Options and SQL => Remember mapcarter
 builder.Services.AddInterceptorPersistence();
 builder.Services.ConfigureSqlServerRetryOptionsPersistence(builder.Configuration.GetSection(nameof(SqlServerRetryOptions)));
@@ -51,6 +60,8 @@ builder.Services.AddRepositoryPersistence();
 builder.Services.AddJwtAuthenticationAPI(builder.Configuration);
 builder.Services.AddServicesInfrastructure();
 builder.Services.AddRedisInfrastructure(builder.Configuration);
+builder.Services.ConfigureCloudinaryOptionsInfrastucture(
+    builder.Configuration.GetSection(nameof(CloudinaryOptions)));
 
 
 // Add Middleware => Remember using middleware
@@ -70,6 +81,7 @@ app.UseCors("CorsPolicy");
 // app.UseHttpsRedirection();
 
 app.UseAuthentication(); // Need to be before app.UseAuthorization();
+// app.UseAntiforgery();
 app.UseAuthorization();
 
 

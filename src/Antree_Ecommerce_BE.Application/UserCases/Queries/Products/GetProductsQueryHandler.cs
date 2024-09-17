@@ -6,6 +6,7 @@ using Antree_Ecommerce_BE.Contract.Services.Products;
 using Antree_Ecommerce_BE.Domain.Abstractions.Repositories;
 using Antree_Ecommerce_BE.Domain.Entities;
 using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 
 namespace Antree_Ecommerce_BE.Application.UserCases.Queries.Products;
 
@@ -23,9 +24,13 @@ public class GetProductsQueryHandler : IQueryHandler<Query.GetProductsQuery, Pag
     public async Task<Result<PagedResult<Response.ProductResponse>>> Handle(Query.GetProductsQuery request, CancellationToken cancellationToken)
     {
         var productsQuery = string.IsNullOrWhiteSpace(request.SearchTerm)
-            ? _productRepository.FindAll(null, x => x.ProductCategory)
-            : _productRepository.FindAll(x => x.Name.Contains(request.SearchTerm) || x.ProductCategory.Name.Contains(request.SearchTerm), x => x.ProductCategory);
+            ? _productRepository.FindAll(null)
+            : _productRepository.FindAll(x => x.Name.Contains(request.SearchTerm) || x.ProductCategory.Name.Contains(request.SearchTerm));
 
+        productsQuery = productsQuery
+            .Include(x=> x.ProductCategory)
+            .Include(x => x.ProductImageList);
+        
         productsQuery = request.CategoryId == null
             ? productsQuery
             : productsQuery.Where(x => x.ProductCategory.Id.Equals(request.CategoryId));

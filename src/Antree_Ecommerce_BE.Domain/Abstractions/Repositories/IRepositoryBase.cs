@@ -13,6 +13,8 @@ public interface IRepositoryBase<TEntity, in TKey> where TEntity : class
         params Expression<Func<TEntity, object>>[]? includeProperties);
 
     void Add(TEntity entity);
+    
+    void AddRange(IEnumerable<TEntity> entities);
 
     void Update(TEntity entity);
 
