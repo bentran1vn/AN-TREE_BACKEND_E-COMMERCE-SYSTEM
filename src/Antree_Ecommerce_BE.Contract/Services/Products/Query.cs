@@ -11,7 +11,7 @@ public static class Query
     // public record GetProductsQuery(string? SearchTerm, Guid? CategoryId, string? SortColumn, SortOrder? SortOrder, IDictionary<string, SortOrder>? SortColumnAndOrder, int PageIndex, int PageSize) : IQuery<PagedResult<ProductResponse>>;
     public record GetProductsQuery : IQuery<PagedResult<ProductResponse>>, ICacheable
     {
-        public GetProductsQuery(string? searchTerm, Guid? categoryId, string? sortColumn, bool? isSale, SortOrder? sortOrder, int pageIndex, int pageSize)
+        public GetProductsQuery(string? searchTerm, Guid? categoryId, string? sortColumn, bool isSale, SortOrder? sortOrder, int pageIndex, int pageSize)
         {
             SearchTerm = searchTerm;
             CategoryId = categoryId;
@@ -26,7 +26,7 @@ public static class Query
         public Guid? CategoryId { get; init; }
         public string? SortColumn { get; init; }
         
-        public bool? IsSale { get; init; }
+        public bool IsSale { get; init; }
         public SortOrder? SortOrder { get; init; }
         public int PageIndex { get; init; }
         public int PageSize { get; init; }
@@ -45,6 +45,7 @@ public static class Query
                 {
                     builder.Append($"-CategoryId:{CategoryId}");
                 }
+                builder.Append($"-IsSale:{IsSale}");
                 builder.Append($"-Sort:{SortColumn}:{SortOrder}");
                 builder.Append($"-Page:{PageIndex}:{PageSize}");
                 return builder.ToString();

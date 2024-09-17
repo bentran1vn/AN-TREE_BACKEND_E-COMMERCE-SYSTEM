@@ -32,7 +32,7 @@ public class ProductApi : ApiEndpoint, ICarterModule
         Guid? categoryId = null,
         string? sortColumn = null,
         string? sortOrder = null,
-        bool? isSale = null,
+        bool isSale = false,
         int pageIndex = 1,
         int pageSize = 10)
     {
