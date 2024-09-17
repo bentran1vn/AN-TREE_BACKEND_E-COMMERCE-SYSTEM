@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
 
-namespace Antree_Ecommerce_BE.Presentation.APIs.Products;
+namespace Antree_Ecommerce_BE.Presentation.APIs.Categorys;
 
 using CommandV1 = Contract.Services.Categories;
 

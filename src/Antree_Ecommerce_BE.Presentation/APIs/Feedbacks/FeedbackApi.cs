@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
 
-namespace Antree_Ecommerce_BE.Presentation.APIs.Products;
+namespace Antree_Ecommerce_BE.Presentation.APIs.Feedbacks;
 
 using CommandV1 = Antree_Ecommerce_BE.Contract.Services.Feedbacks;
 public class FeedbackApi : ApiEndpoint, ICarterModule
@@ -19,9 +19,9 @@ public class FeedbackApi : ApiEndpoint, ICarterModule
             .MapGroup(BaseUrl).HasApiVersion(1);
         
         group1.MapGet(string.Empty, GetFeedbacksV1);
-        group1.MapPost(string.Empty, () => { });
-        group1.MapDelete("{feedbackId}", () => { });
-        group1.MapPut(string.Empty, () => { });
+        // group1.MapPost(string.Empty, () => { });
+        // group1.MapDelete("{feedbackId}", () => { });
+        // group1.MapPut(string.Empty, () => { });
     }
 
     public async static Task<IResult> GetFeedbacksV1(ISender sender, Guid productId,

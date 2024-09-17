@@ -32,10 +32,12 @@ public class ProductApi : ApiEndpoint, ICarterModule
         Guid? categoryId = null,
         string? sortColumn = null,
         string? sortOrder = null,
+        bool? isSale = null,
         int pageIndex = 1,
         int pageSize = 10)
     {
         var result = await sender.Send(new CommandV1.Query.GetProductsQuery(serchTerm, categoryId, sortColumn,
+            isSale,
             SortOrderExtension.ConvertStringToSortOrder(sortOrder),
             pageIndex,
             pageSize));

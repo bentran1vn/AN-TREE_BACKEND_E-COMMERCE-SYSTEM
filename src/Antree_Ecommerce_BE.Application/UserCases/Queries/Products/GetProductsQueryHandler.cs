@@ -31,6 +31,13 @@ public class GetProductsQueryHandler : IQueryHandler<Query.GetProductsQuery, Pag
             .Include(x=> x.ProductCategory)
             .Include(x => x.ProductImageList);
         
+        productsQuery = request.IsSale == null
+            ? productsQuery
+            : request.IsSale == true ? 
+                productsQuery.Where(x => x.ProductDiscountList
+                .Any(x => !x.IsDeleted && x.CreatedOnUtc > DateTimeOffset.Now.AddDays(-7) ))
+                : productsQuery ;
+        
         productsQuery = request.CategoryId == null
             ? productsQuery
             : productsQuery.Where(x => x.ProductCategory.Id.Equals(request.CategoryId));

@@ -11,11 +11,12 @@ public static class Query
     // public record GetProductsQuery(string? SearchTerm, Guid? CategoryId, string? SortColumn, SortOrder? SortOrder, IDictionary<string, SortOrder>? SortColumnAndOrder, int PageIndex, int PageSize) : IQuery<PagedResult<ProductResponse>>;
     public record GetProductsQuery : IQuery<PagedResult<ProductResponse>>, ICacheable
     {
-        public GetProductsQuery(string? searchTerm, Guid? categoryId, string? sortColumn, SortOrder? sortOrder, int pageIndex, int pageSize)
+        public GetProductsQuery(string? searchTerm, Guid? categoryId, string? sortColumn, bool? isSale, SortOrder? sortOrder, int pageIndex, int pageSize)
         {
             SearchTerm = searchTerm;
             CategoryId = categoryId;
             SortColumn = sortColumn;
+            IsSale = isSale;
             SortOrder = sortOrder;
             PageIndex = pageIndex;
             PageSize = pageSize;
@@ -24,10 +25,12 @@ public static class Query
         public string? SearchTerm { get; init; }
         public Guid? CategoryId { get; init; }
         public string? SortColumn { get; init; }
+        
+        public bool? IsSale { get; init; }
         public SortOrder? SortOrder { get; init; }
         public int PageIndex { get; init; }
         public int PageSize { get; init; }
-        public bool BypassCache => false;
+        public bool BypassCache => true;
         public string CacheKey
         {
             get

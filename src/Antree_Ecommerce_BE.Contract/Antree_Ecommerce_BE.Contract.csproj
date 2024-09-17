@@ -29,7 +29,6 @@
 
     <ItemGroup>
       <Folder Include="Services\Categories\Validators\" />
-      <Folder Include="Services\Discounts\" />
       <Folder Include="Services\Orders\" />
     </ItemGroup>
 
