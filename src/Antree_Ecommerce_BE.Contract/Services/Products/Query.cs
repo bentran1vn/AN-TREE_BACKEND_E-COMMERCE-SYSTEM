@@ -30,7 +30,7 @@ public static class Query
         public SortOrder? SortOrder { get; init; }
         public int PageIndex { get; init; }
         public int PageSize { get; init; }
-        public bool BypassCache => true;
+        public bool BypassCache => false;
         public string CacheKey
         {
             get
