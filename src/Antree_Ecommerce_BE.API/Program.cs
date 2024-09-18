@@ -62,8 +62,11 @@ builder.Services.AddServicesInfrastructure();
 builder.Services.AddRedisInfrastructure(builder.Configuration);
 builder.Services.ConfigureCloudinaryOptionsInfrastucture(
     builder.Configuration.GetSection(nameof(CloudinaryOptions)));
+builder.Services.ConfigureVnPayOptionsInfrastucture(
+    builder.Configuration.GetSection(nameof(VnPayOption)));
 
-
+builder.Services.AddHttpContextAccessor();
+ 
 // Add Middleware => Remember using middleware
 builder.Services.AddTransient<ExceptionHandlingMiddleware>();
 

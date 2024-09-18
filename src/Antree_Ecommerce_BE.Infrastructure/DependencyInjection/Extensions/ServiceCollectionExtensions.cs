@@ -2,6 +2,7 @@ using Antree_Ecommerce_BE.Application.Abstractions;
 using Microsoft.Extensions.DependencyInjection;
 using Antree_Ecommerce_BE.Infrastructure.Authentication;
 using Antree_Ecommerce_BE.Infrastructure.Caching;
+using Antree_Ecommerce_BE.Infrastructure.Payment.VnPay;
 using Antree_Ecommerce_BE.Infrastructure.DependencyInjection.Options;
 using Antree_Ecommerce_BE.Infrastructure.Media;
 using CloudinaryDotNet;
@@ -16,6 +17,7 @@ public static class ServiceCollectionExtensions
         => services.AddTransient<IJwtTokenService, JwtTokenService>()
         .AddTransient<ICacheService, CacheService>()
         .AddSingleton<IMediaService, CloudinaryService>()
+        .AddSingleton<IVnPayService, VnPayService>()
         .AddSingleton<Cloudinary>((provider) =>
         {
             var options = provider.GetRequiredService<IOptionsMonitor<CloudinaryOptions>>();
@@ -37,6 +39,12 @@ public static class ServiceCollectionExtensions
     public static OptionsBuilder<CloudinaryOptions> ConfigureCloudinaryOptionsInfrastucture(this IServiceCollection services, IConfigurationSection section)
         => services
             .AddOptions<CloudinaryOptions>()
+            .Bind(section)
+            .ValidateDataAnnotations()
+            .ValidateOnStart();
+    public static OptionsBuilder<VnPayOption> ConfigureVnPayOptionsInfrastucture(this IServiceCollection services, IConfigurationSection section)
+        => services
+            .AddOptions<VnPayOption>()
             .Bind(section)
             .ValidateDataAnnotations()
             .ValidateOnStart();
