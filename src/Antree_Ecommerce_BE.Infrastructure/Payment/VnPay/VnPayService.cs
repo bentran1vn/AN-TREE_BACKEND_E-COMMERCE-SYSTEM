@@ -32,12 +32,11 @@ public class VnPayService : IVnPayService
         pay.AddRequestData("vnp_Version", _vnPayOptions.Version);
         pay.AddRequestData("vnp_Command", _vnPayOptions.Command);
         pay.AddRequestData("vnp_TmnCode", _vnPayOptions.TmnCode);
-        pay.AddRequestData("vnp_Amount", (10000 * 100).ToString());
+        pay.AddRequestData("vnp_Amount", ((int)model.Total * 100).ToString());
         pay.AddRequestData("vnp_CreateDate", timeNow.ToString("yyyyMMddHHmmss"));
         pay.AddRequestData("vnp_CurrCode", _vnPayOptions.CurrCode);
         pay.AddRequestData("vnp_BankCode", "NCB");
         pay.AddRequestData("vnp_IpAddr", _httpContextAccessor.HttpContext.Connection.RemoteIpAddress.ToString());
-        // pay.AddRequestData("vnp_IpAddr", "14.225.205.54");
         pay.AddRequestData("vnp_Locale", _vnPayOptions.Locale);
         pay.AddRequestData("vnp_OrderInfo", $"{model.Id} {model.Address} {model.Total}");
         pay.AddRequestData("vnp_OrderType", "250000");
