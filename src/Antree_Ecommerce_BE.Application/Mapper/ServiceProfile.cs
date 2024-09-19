@@ -21,13 +21,27 @@ public class ServiceProfile : Profile
          CreateMap<ProductMedia, ProductSerivces.Response.ProductMedia>()
              .ForMember(dest => dest.ImageUrl, opt => opt.MapFrom(src => src.ImageUrl));
          
+         CreateMap<ProductFeedback, ProductSerivces.Response.ProductFeedback>()
+             .ForMember(dest => dest.Total, opt => opt.MapFrom(src => src.Total))
+             .ForMember(dest => dest.Rate, opt => opt.MapFrom(src => src.Rate));
+         
          CreateMap<Product, ProductSerivces.Response.ProductResponse>()
              .ForMember(dest => dest.ProductCategory,
                  opt =>
                      opt.MapFrom(src => src.ProductCategory))
              .ForMember(dest => dest.ProductImageList,
                  opt =>
-                     opt.MapFrom(src => src.ProductImageList));
+                     opt.MapFrom(src => src.ProductImageList))
+             .ForMember(dest => dest.ProductFeedbackList,
+                 opt =>
+                     opt.MapFrom(src =>
+                         src.ProductFeedbackList.Any() 
+                             ? src.ProductFeedbackList.ToList()
+                             : new List<ProductFeedback>()
+             ));
+             // .ForMember(dest => dest.ProductFeedbackList,
+             // opt =>
+             //     opt.MapFrom(src => src.ProductFeedbackList))
          
          CreateMap<PagedResult<Product>, PagedResult<ProductSerivces.Response.ProductResponse>>()
              .ForMember(dest => dest.Items, opt => opt.MapFrom(src => src.Items));

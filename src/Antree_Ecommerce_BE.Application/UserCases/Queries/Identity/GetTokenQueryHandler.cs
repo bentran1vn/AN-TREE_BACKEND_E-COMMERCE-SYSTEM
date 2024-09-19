@@ -20,8 +20,8 @@ public class GetTokenQueryHandler : IQueryHandler<Query.Token, Response.Authenti
     public async Task<Result<Response.Authenticated>> Handle(Query.Token request, CancellationToken cancellationToken)
     {
         var (claimPrincipal, isExpired)  = _jwtTokenService.GetPrincipalFromExpiredToken(request.AccessToken);
-        var email = claimPrincipal.Identity!.Name;
-        var cacheData = await _cacheService.GetAsync<Response.Authenticated>(email, cancellationToken);
+        var userAccount = claimPrincipal.Identity!.Name;
+        var cacheData = await _cacheService.GetAsync<Response.Authenticated>($"{nameof(Query.Login)}-UserAccount:{userAccount}", cancellationToken);
         
         if (cacheData == null || !cacheData.RefreshToken!.Equals(request.RefreshToken))
         {
@@ -30,7 +30,7 @@ public class GetTokenQueryHandler : IQueryHandler<Query.Token, Response.Authenti
         
         if (!isExpired)
         {
-            return Result.Success(cacheData!);
+            return Result.Success(cacheData);
         }
         
         var accessToken = _jwtTokenService.GenerateAccessToken(claimPrincipal.Claims);
@@ -40,7 +40,8 @@ public class GetTokenQueryHandler : IQueryHandler<Query.Token, Response.Authenti
             RefreshToken = cacheData.RefreshToken,
             RefreshTokenExpiryTime = DateTime.Now.AddMinutes(5)
         };
-        await _cacheService.SetAsync(email, response, null,cancellationToken);
+        
+        await _cacheService.SetAsync($"{nameof(Query.Login)}-UserAccount:{userAccount}", response, null,cancellationToken);
 
         return Result.Success(response);
     }

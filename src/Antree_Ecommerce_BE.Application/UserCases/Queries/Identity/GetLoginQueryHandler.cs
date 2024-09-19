@@ -5,6 +5,7 @@ using Antree_Ecommerce_BE.Contract.Abstractions.Shared;
 using Antree_Ecommerce_BE.Contract.Services.Identity;
 using Antree_Ecommerce_BE.Domain.Abstractions.Repositories;
 using Antree_Ecommerce_BE.Domain.Entities;
+using Microsoft.Extensions.Caching.Distributed;
 
 namespace Antree_Ecommerce_BE.Application.UserCases.Queries.Identity;
 
@@ -44,8 +45,8 @@ public class GetLoginQueryHandler : IQueryHandler<Query.Login, Response.Authenti
         var claims = new List<Claim>
         {
             new Claim(ClaimTypes.Email, request.EmailOrUserName),
-            new Claim(ClaimTypes.Role, "Senior .NET Leader"),
-            new Claim("Role", "hâhhah"),
+            new Claim(ClaimTypes.Role, user.Role.ToString()),
+            new Claim("Role", user.Role.ToString()),
             new Claim(ClaimTypes.Name, request.EmailOrUserName),
             // new Claim(ClaimTypes.Expired, DateTime.Now.AddMinutes(5).ToString())
         };
@@ -57,10 +58,16 @@ public class GetLoginQueryHandler : IQueryHandler<Query.Login, Response.Authenti
         {
             AccessToken = accessToken,
             RefreshToken = refreshToken,
-            RefreshTokenExpiryTime = DateTime.Now.AddMinutes(5)
+            RefreshTokenExpiryTime = DateTime.Now.AddMinutes(15)
         };
-
-        await _cacheService.SetAsync(request.EmailOrUserName, response, null, cancellationToken);
+        
+        var slidingExpiration = request.SlidingExpirationInMinutes == 0 ? 10 : request.SlidingExpirationInMinutes;
+        var absoluteExpiration = request.AbsoluteExpirationInMinutes == 0 ? 15 : request.AbsoluteExpirationInMinutes;
+        var options = new DistributedCacheEntryOptions()
+            .SetSlidingExpiration(TimeSpan.FromMinutes(slidingExpiration))
+            .SetAbsoluteExpiration(TimeSpan.FromMinutes(absoluteExpiration));
+        
+        await _cacheService.SetAsync($"{nameof(Query.Login)}-UserAccount:{request.EmailOrUserName}", response, options, cancellationToken);
 
         return Result.Success(response);
     }

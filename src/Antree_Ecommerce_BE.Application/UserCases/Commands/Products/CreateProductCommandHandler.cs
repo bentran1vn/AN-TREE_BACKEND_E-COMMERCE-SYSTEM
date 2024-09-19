@@ -26,6 +26,9 @@ public sealed class CreateProductCommandHandler : ICommandHandler<Command.Create
     {
         var coverImage = await _mediaService.UploadImageAsync(request.ProductImageCover);
         
+        // IEnumerable<Task<string>> imageUrlListTask = request.ProductImages?.Any() != true ? []
+        //     : request.ProductImages.Select(image => _mediaService.UploadImageAsync(image));
+        
         var imageUrlListTask = new List<Task<string>>();
         
         foreach (var requestProductImage in request.ProductImages)
@@ -56,6 +59,6 @@ public sealed class CreateProductCommandHandler : ICommandHandler<Command.Create
 
         await _cacheService.RemoveByPrefixAsync($"{nameof(Query.GetProductsQuery)}", cancellationToken);
 
-        return Result.Success();
+        return Result.Success("Create Product Successfully !");
     }
 }

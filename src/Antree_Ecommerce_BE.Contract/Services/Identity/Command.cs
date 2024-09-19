@@ -8,4 +8,10 @@ public static class Command
         string Email, string Username, string Password,
         string FirstName, string LastName, string Phonenumber
     ) : ICommand;
+    
+    public record LogoutCommand(
+        string UserAccount
+    ) : ICommand;
+    
+    
 }

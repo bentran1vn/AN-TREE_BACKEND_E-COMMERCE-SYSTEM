@@ -8,7 +8,8 @@ public static class Response
         decimal DiscountSold, decimal DiscountPercent, string CoverImage,
         DateTimeOffset CreatedOnUtc, DateTimeOffset ModifiedOnUtc,
         Guid CreatedBy, Guid UpdatedBy, ProductCategory ProductCategory,
-        IReadOnlyCollection<ProductMedia> ProductImageList
+        IReadOnlyCollection<ProductMedia> ProductImageList,
+        IReadOnlyCollection<ProductFeedback> ProductFeedbackList
     );
     public class ProductCategory
     {
@@ -19,6 +20,13 @@ public static class Response
     public class ProductMedia
     {
         public string ImageUrl { get; set; }
+    }
+    
+    public class ProductFeedback
+    {
+        public int Rate { get; set; }
+        public int Total { get; set; }
+        
     }
 }
 

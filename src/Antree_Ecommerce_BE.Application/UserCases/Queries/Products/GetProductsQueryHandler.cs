@@ -29,7 +29,8 @@ public class GetProductsQueryHandler : IQueryHandler<Query.GetProductsQuery, Pag
 
         productsQuery = productsQuery
             .Include(x=> x.ProductCategory)
-            .Include(x => x.ProductImageList);
+            .Include(x => x.ProductImageList)
+            .Include(x => x.ProductFeedbackList);
 
         productsQuery = request.IsSale == false
             ? productsQuery
