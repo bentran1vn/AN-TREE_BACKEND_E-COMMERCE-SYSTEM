@@ -3,6 +3,8 @@ using Antree_Ecommerce_BE.Application.Abstractions;
 using Antree_Ecommerce_BE.Contract.Abstractions.Messages;
 using Antree_Ecommerce_BE.Contract.Abstractions.Shared;
 using Antree_Ecommerce_BE.Contract.Services.Identity;
+using Antree_Ecommerce_BE.Domain.Abstractions.Repositories;
+using Antree_Ecommerce_BE.Domain.Entities;
 
 namespace Antree_Ecommerce_BE.Application.UserCases.Queries.Identity;
 
@@ -10,24 +12,41 @@ public class GetLoginQueryHandler : IQueryHandler<Query.Login, Response.Authenti
 {
     private readonly IJwtTokenService _jwtTokenService;
     private readonly ICacheService _cacheService;
+    private readonly IRepositoryBase<User, Guid> _userRepository;
+    private readonly IPasswordHasherService _passwordHasherService;
 
-    public GetLoginQueryHandler(IJwtTokenService jwtTokenService, ICacheService cacheService)
+    public GetLoginQueryHandler(IJwtTokenService jwtTokenService, ICacheService cacheService, IRepositoryBase<User, Guid> userRepository, IPasswordHasherService passwordHasherService)
     {
         _jwtTokenService = jwtTokenService;
         _cacheService = cacheService;
+        _userRepository = userRepository;
+        _passwordHasherService = passwordHasherService;
     }
 
     public async Task<Result<Response.Authenticated>> Handle(Query.Login request, CancellationToken cancellationToken)
     {
         // Check User
+        var user =
+            await _userRepository.FindSingleAsync(x =>
+                x.Email.Equals(request.EmailOrUserName) || x.Username.Equals(request.EmailOrUserName), cancellationToken);
+        
+        if (user is null)
+        {
+            throw new Exception("User Not Existed !");
+        }
 
+        if (!_passwordHasherService.VerifyPassword(request.Password, user.Password))
+        {
+            throw new UnauthorizedAccessException("UnAuthorize !");
+        }
+        
         // Generate JWT Token
         var claims = new List<Claim>
         {
-            new Claim(ClaimTypes.Email, request.Email),
+            new Claim(ClaimTypes.Email, request.EmailOrUserName),
             new Claim(ClaimTypes.Role, "Senior .NET Leader"),
             new Claim("Role", "hâhhah"),
-            new Claim(ClaimTypes.Name, request.Email),
+            new Claim(ClaimTypes.Name, request.EmailOrUserName),
             // new Claim(ClaimTypes.Expired, DateTime.Now.AddMinutes(5).ToString())
         };
 
@@ -41,7 +60,7 @@ public class GetLoginQueryHandler : IQueryHandler<Query.Login, Response.Authenti
             RefreshTokenExpiryTime = DateTime.Now.AddMinutes(5)
         };
 
-        await _cacheService.SetAsync(request.Email, response, null, cancellationToken);
+        await _cacheService.SetAsync(request.EmailOrUserName, response, null, cancellationToken);
 
         return Result.Success(response);
     }

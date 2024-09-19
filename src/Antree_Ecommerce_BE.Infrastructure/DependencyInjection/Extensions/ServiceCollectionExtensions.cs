@@ -2,6 +2,7 @@ using Antree_Ecommerce_BE.Application.Abstractions;
 using Microsoft.Extensions.DependencyInjection;
 using Antree_Ecommerce_BE.Infrastructure.Authentication;
 using Antree_Ecommerce_BE.Infrastructure.Caching;
+using Antree_Ecommerce_BE.Infrastructure.PasswordHasher;
 using Antree_Ecommerce_BE.Infrastructure.Payment.VnPay;
 using Antree_Ecommerce_BE.Infrastructure.DependencyInjection.Options;
 using Antree_Ecommerce_BE.Infrastructure.Media;
@@ -15,8 +16,9 @@ public static class ServiceCollectionExtensions
 {
     public static void AddServicesInfrastructure(this IServiceCollection services)
         => services.AddTransient<IJwtTokenService, JwtTokenService>()
+        .AddTransient<IPasswordHasherService, PasswordHasherService>()
         .AddTransient<ICacheService, CacheService>()
-        .AddSingleton<IMediaService, CloudinaryService>()
+        .AddTransient<IMediaService, CloudinaryService>()
         .AddSingleton<IVnPayService, VnPayService>()
         .AddSingleton<Cloudinary>((provider) =>
         {

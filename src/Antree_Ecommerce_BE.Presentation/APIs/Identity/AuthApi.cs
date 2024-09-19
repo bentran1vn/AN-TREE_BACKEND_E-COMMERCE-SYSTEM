@@ -1,7 +1,7 @@
 using Antree_Ecommerce_BE.Presentation.Abstractions;
 using Carter;
 using MediatR;
-using Microsoft.AspNetCore.Authentication;
+//using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -24,6 +24,7 @@ public class AuthApi : ApiEndpoint, ICarterModule
         // group1.MapGet("{categoryId}", () => { });
         group1.MapPost("login", LoginV1);
         group1.MapPost("refresh_token", RefreshTokenV1);
+        group1.MapPost("", RegisterV1);
     }
 
     public static async Task<IResult> LoginV1(ISender sender, [FromBody] CommandV1.Query.Login login)
@@ -45,6 +46,14 @@ public class AuthApi : ApiEndpoint, ICarterModule
 
         return Results.Ok(result);
     }
-}
 
-public record RefreshTokenQuery(string RefreshToken);
+    public static async Task<IResult> RegisterV1(ISender sender, [FromBody] CommandV1.Command.RegisterCommand command)
+    {
+        var result = await sender.Send(command);
+        
+        if (result.IsFailure)
+            return HandlerFailure(result);
+
+        return Results.Ok(result);
+    }
+}
