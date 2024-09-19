@@ -23,7 +23,7 @@ public class ProductApi : ApiEndpoint, ICarterModule
         group1.MapGet("{productId}", GetProductV1);
         group1.MapPost(string.Empty, CreateProductsV1).Accepts<CommandV1.Command.CreateProductCommand>("multipart/form-data").DisableAntiforgery();;
         group1.MapDelete("{productId}", DeleteProductsV1);
-        group1.MapPut("{productId}", UpdateProductsV1);
+        // group1.MapPut("{productId}", UpdateProductsV1);
     }
 
     #region ====== version 1 ======

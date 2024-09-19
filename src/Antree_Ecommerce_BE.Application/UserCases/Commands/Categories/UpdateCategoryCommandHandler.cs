@@ -18,7 +18,7 @@ public class UpdateCategoryCommandHandler : ICommandHandler<Command.UpdateCatego
     public async Task<Result> Handle(Command.UpdateCategoryCommand request, CancellationToken cancellationToken)
     {
         var productCategory =
-            await _productCategoryRepository.FindByIdAsync(request.Id, cancellationToken) ?? throw new Exception("hahah");
+            await _productCategoryRepository.FindByIdAsync(request.CategoryId, cancellationToken) ?? throw new Exception("hahah");
         productCategory.UpdateProductCategory(request.Name, request.Description, Guid.NewGuid(), request.IsDeleted);
         return Result.Success();
     }

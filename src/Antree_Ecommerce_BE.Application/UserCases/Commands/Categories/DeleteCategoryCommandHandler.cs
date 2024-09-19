@@ -18,7 +18,7 @@ public class DeleteCategoryCommandHandler : ICommandHandler<Command.DeleteCatego
     public async Task<Result> Handle(Command.DeleteCategoryCommand request, CancellationToken cancellationToken)
     {
         var productCategory =
-            await _productCategoryRepository.FindByIdAsync(request.Id, cancellationToken) ?? throw new Exception("hahah");
+            await _productCategoryRepository.FindByIdAsync(request.CategoryId, cancellationToken) ?? throw new Exception("hahah");
         _productCategoryRepository.Remove(productCategory);
         return Result.Success();
     }

@@ -2,7 +2,7 @@ using FluentValidation;
 
 namespace Antree_Ecommerce_BE.Contract.Services.Identity.Validators;
 
-public class TokenValidators : AbstractValidator<Query.Token>
+public class  TokenValidators : AbstractValidator<Query.Token>
 {
     public TokenValidators()
     {
