@@ -46,6 +46,8 @@ Example: 'Bearer 12345abcdef'",
             });
             
             c.OperationFilter<SwaggerFormDataOperationFilter>();
+            
+            
         });
         services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
     }
@@ -60,7 +62,7 @@ Example: 'Bearer 12345abcdef'",
 
             options.DisplayRequestDuration();
             options.EnableTryItOutByDefault();
-            options.DocExpansion(DocExpansion.None);
+            options.DocExpansion(DocExpansion.List);
         });
 
         app.MapGet("/", () => Results.Redirect("/swagger/index.html"))
