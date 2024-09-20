@@ -14,7 +14,19 @@ public class ServiceProfile : Profile
     public ServiceProfile()
     {
         // ============= ProductSerivces =============
-        CreateMap<Product, ProductSerivces.Response.ProductsResponse>().ReverseMap();
+        CreateMap<ProductFeedback, ProductSerivces.Response.ProductFeedback>()
+            .ForMember(dest => dest.Total, opt => opt.MapFrom(src => src.Total))
+            .ForMember(dest => dest.Rate, opt => opt.MapFrom(src => src.Rate));
+        
+        //Get All
+        CreateMap<Product, ProductSerivces.Response.ProductsResponse>()
+            .ForMember(dest => dest.ProductFeedbackList,
+            opt =>
+                opt.MapFrom(src =>
+                    src.ProductFeedbackList.Any() 
+                        ? src.ProductFeedbackList.ToList()
+                        : new List<ProductFeedback>()
+            ));
         
         CreateMap<PagedResult<Product>, PagedResult<ProductSerivces.Response.ProductsResponse>>()
             .ForMember(dest => dest.Items, opt => opt.MapFrom(src => src.Items));
@@ -26,10 +38,6 @@ public class ServiceProfile : Profile
 
          CreateMap<ProductMedia, ProductSerivces.Response.ProductMedia>()
              .ForMember(dest => dest.ImageUrl, opt => opt.MapFrom(src => src.ImageUrl));
-         
-         CreateMap<ProductFeedback, ProductSerivces.Response.ProductFeedback>()
-             .ForMember(dest => dest.Total, opt => opt.MapFrom(src => src.Total))
-             .ForMember(dest => dest.Rate, opt => opt.MapFrom(src => src.Rate));
          
          CreateMap<Product, ProductSerivces.Response.ProductResponse>()
              .ForMember(dest => dest.ProductCategory,
