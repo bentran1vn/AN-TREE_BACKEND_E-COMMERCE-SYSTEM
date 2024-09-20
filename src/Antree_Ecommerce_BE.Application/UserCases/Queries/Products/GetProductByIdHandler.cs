@@ -20,7 +20,13 @@ public class GetProductByIdHandler : IQueryHandler<Query.GetProductByIdQuery, Re
 
     public async Task<Result<Response.ProductResponse>> Handle(Query.GetProductByIdQuery request, CancellationToken cancellationToken)
     {
-        var product = await _productRepository.FindSingleAsync(x => x.Id.Equals(request.Id), cancellationToken, x => x.ProductCategory);
+        var product = await _productRepository.FindSingleAsync(
+            x => x.Id.Equals(request.Id),
+            cancellationToken,
+            x => x.ProductCategory,
+            x => x.ProductImageList,
+            x => x.ProductFeedbackList
+        );
         
         var result = _mapper.Map<Response.ProductResponse>(product);
 

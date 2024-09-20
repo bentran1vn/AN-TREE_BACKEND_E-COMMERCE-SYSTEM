@@ -14,6 +14,12 @@ public class ServiceProfile : Profile
     public ServiceProfile()
     {
         // ============= ProductSerivces =============
+        CreateMap<Product, ProductSerivces.Response.ProductsResponse>().ReverseMap();
+        
+        CreateMap<PagedResult<Product>, PagedResult<ProductSerivces.Response.ProductsResponse>>()
+            .ForMember(dest => dest.Items, opt => opt.MapFrom(src => src.Items));
+        
+        // Get By Detail
          CreateMap<ProductCategory, ProductSerivces.Response.ProductCategory>()
              .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name))
              .ForMember(dest => dest.Description, opt => opt.MapFrom(src => src.Description));

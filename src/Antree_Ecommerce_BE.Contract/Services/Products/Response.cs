@@ -2,6 +2,11 @@ namespace Antree_Ecommerce_BE.Contract.Services.Products;
 
 public static class Response
 {
+    public record ProductsResponse(
+        Guid Id, string Name, decimal Price, int Sku, int Sold,
+        decimal DiscountSold, decimal DiscountPercent, string CoverImage
+    );
+    
     public record ProductResponse(
         Guid Id, Guid ProductCategoryId, string Name,
         decimal Price, string Description, int Sku, int Sold,

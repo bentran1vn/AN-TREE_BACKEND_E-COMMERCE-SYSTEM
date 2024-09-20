@@ -9,7 +9,7 @@ namespace Antree_Ecommerce_BE.Contract.Services.Products;
 public static class Query
 {
     // public record GetProductsQuery(string? SearchTerm, Guid? CategoryId, string? SortColumn, SortOrder? SortOrder, IDictionary<string, SortOrder>? SortColumnAndOrder, int PageIndex, int PageSize) : IQuery<PagedResult<ProductResponse>>;
-    public record GetProductsQuery : IQuery<PagedResult<ProductResponse>>, ICacheable
+    public record GetProductsQuery : IQuery<PagedResult<ProductsResponse>>, ICacheable
     {
         public GetProductsQuery(string? searchTerm, Guid? categoryId, string? sortColumn, bool isSale, SortOrder? sortOrder, int pageIndex, int pageSize)
         {

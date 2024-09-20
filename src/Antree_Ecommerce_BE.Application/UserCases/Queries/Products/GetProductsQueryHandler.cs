@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Antree_Ecommerce_BE.Application.UserCases.Queries.Products;
 
-public class GetProductsQueryHandler : IQueryHandler<Query.GetProductsQuery, PagedResult<Response.ProductResponse>>
+public class GetProductsQueryHandler : IQueryHandler<Query.GetProductsQuery, PagedResult<Response.ProductsResponse>>
 {
     private readonly IRepositoryBase<Product, Guid> _productRepository;
     private readonly IMapper _mapper;
@@ -21,16 +21,16 @@ public class GetProductsQueryHandler : IQueryHandler<Query.GetProductsQuery, Pag
         _mapper = mapper;
     }
     
-    public async Task<Result<PagedResult<Response.ProductResponse>>> Handle(Query.GetProductsQuery request, CancellationToken cancellationToken)
+    public async Task<Result<PagedResult<Response.ProductsResponse>>> Handle(Query.GetProductsQuery request, CancellationToken cancellationToken)
     {
         var productsQuery = string.IsNullOrWhiteSpace(request.SearchTerm)
             ? _productRepository.FindAll(null)
             : _productRepository.FindAll(x => x.Name.Contains(request.SearchTerm) || x.ProductCategory.Name.Contains(request.SearchTerm));
 
-        productsQuery = productsQuery
-            .Include(x=> x.ProductCategory)
-            .Include(x => x.ProductImageList)
-            .Include(x => x.ProductFeedbackList);
+        // productsQuery = productsQuery
+        //     .Include(x=> x.ProductCategory)
+        //     .Include(x => x.ProductImageList)
+        //     .Include(x => x.ProductFeedbackList);
 
         productsQuery = request.IsSale == false
             ? productsQuery
@@ -49,7 +49,7 @@ public class GetProductsQueryHandler : IQueryHandler<Query.GetProductsQuery, Pag
             request.PageIndex,
             request.PageSize);
 
-        var result = _mapper.Map<PagedResult<Response.ProductResponse>>(products);
+        var result = _mapper.Map<PagedResult<Response.ProductsResponse>>(products);
         return Result.Success(result);
     }
     
