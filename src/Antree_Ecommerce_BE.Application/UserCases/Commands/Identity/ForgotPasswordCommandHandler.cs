@@ -44,7 +44,7 @@ public class ForgotPasswordCommandHandler : ICommandHandler<Command.ForgotPasswo
         
         await _cacheService.SetAsync($"{nameof(Command.ForgotPasswordCommand)}-UserAccount:{user.Email}", randomNumber, options, cancellationToken);
         
-        await _mailService.SendMail(EmailExtensions.ForgotPasswordBody(randomNumber, "Tân Trần", request.Email));
+        await _mailService.SendMail(EmailExtensions.ForgotPasswordBody(randomNumber, $"{user.Firstname} {user.Lastname}", request.Email));
         
         return Result.Success("Send Mail Successfully !");
     }
