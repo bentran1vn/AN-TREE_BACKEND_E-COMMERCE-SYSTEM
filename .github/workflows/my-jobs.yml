@@ -38,4 +38,4 @@ jobs:
           fi
           # Run new container
           echo ":: Running new container - $CNAME"
-          docker run -d -p 5000:5000 --name $CNAME $INAME
+          docker run -d -p 5000:8080 --name $CNAME $INAME
