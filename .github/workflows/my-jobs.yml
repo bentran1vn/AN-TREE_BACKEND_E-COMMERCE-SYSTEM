@@ -1,0 +1,41 @@
+name: My Jobs
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build_and_deploy:
+    runs-on: [self-hosted]
+    env:
+      CONTAINER_NAME: myappAntreeContainer
+      IMAGE_NAME: myapp-antree:latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build Docker Image
+        run:
+          INAME=${{ env.IMAGE_NAME }}
+          docker build -t $INAME -f src/Antree_Ecommerce_BE.API/Dockerfile .
+      - name: Manage Docker Container and Build
+        run: |
+          CNAME=${{ env.CONTAINER_NAME }}
+          INAME=${{ env.IMAGE_NAME }}
+
+          # Check if the container exists
+          if [ "$(docker ps -aq -f name=$CNAME)" ]; then
+              if [ "$(docker ps -aq -f status=exited -f name=$CNAME)" ]; then
+                  echo ":: Container $CNAME exists and is exited"
+                  echo ":: Removing exited container - $CNAME"
+                  docker rm $CNAME
+              else
+                  echo ":: Container $CNAME exists and is running"
+                  echo ":: Stopping running container - $CNAME"
+                  docker stop $CNAME
+                  echo ":: Removing stopped container - $CNAME"
+                  docker rm $CNAME
+              fi
+          else
+              echo ":: No existing container named $CNAME"
+          fi
+          # Run new container
+          echo ":: Running new container - $CNAME"
+          docker run -d -p 5000:5000 --name $CNAME $INAME
