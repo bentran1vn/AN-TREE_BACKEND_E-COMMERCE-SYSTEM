@@ -16,4 +16,5 @@ public class TableNames
     internal const string ProductFeedback = nameof(ProductFeedback);
     internal const string OrderDetailFeedbackMedia = nameof(OrderDetailFeedbackMedia);
     internal const string ProductMedia = nameof(ProductMedia);
+    internal const string Vendor = nameof(Vendor);
 }

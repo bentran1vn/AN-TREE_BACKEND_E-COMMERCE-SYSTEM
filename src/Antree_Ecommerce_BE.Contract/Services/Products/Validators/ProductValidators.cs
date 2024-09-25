@@ -12,6 +12,7 @@ public class ProductValidators : AbstractValidator<Command.CreateProductCommand>
         RuleFor(x => x.Sku).GreaterThanOrEqualTo(0).NotNull();;
         RuleFor(x => x.Sold).GreaterThanOrEqualTo(0).NotNull();;
         RuleFor(x => x.ProductCategoryId).NotEmpty();
+        RuleFor(x => x.VendorId).NotEmpty();
         RuleFor(x => x.ProductImageCover).NotEmpty();
         RuleFor(x => x.ProductImages).NotEmpty();
     }

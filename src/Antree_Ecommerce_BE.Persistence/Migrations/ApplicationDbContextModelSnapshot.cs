@@ -260,6 +260,7 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                         .HasDefaultValueSql("NEWID()");
 
                     b.Property<string>("CoverImage")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<Guid>("CreatedBy")
@@ -305,17 +306,23 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                     b.Property<Guid?>("UpdatedBy")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<Guid>("VendorId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.HasKey("Id");
 
                     b.HasIndex("ProductCategoryId");
+
+                    b.HasIndex("VendorId");
 
                     b.ToTable("Product", (string)null);
 
                     b.HasData(
                         new
                         {
-                            Id = new Guid("77561842-2bd5-4cab-b681-45e12ba8bc5c"),
-                            CreatedBy = new Guid("4a9375f0-2cec-4a96-a509-023156d58502"),
+                            Id = new Guid("ba421a59-3fad-44a7-b534-d27bbc63d7e2"),
+                            CoverImage = "",
+                            CreatedBy = new Guid("a623c774-b551-4ce7-889f-f3a1d6e600a5"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description0",
                             DiscountPercent = 0m,
@@ -326,647 +333,728 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                             ProductCategoryId = new Guid("26df3c94-715f-4048-a96a-04a6e80bbd15"),
                             Sku = 0,
                             Sold = 0,
-                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000")
+                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            VendorId = new Guid("f5ef2d83-48fd-41ea-952b-c3803a59b2c1")
                         },
                         new
                         {
-                            Id = new Guid("26571685-371a-49cb-975b-22da56818683"),
-                            CreatedBy = new Guid("7462ceb4-0400-45b3-8aee-090da20cd216"),
+                            Id = new Guid("84448fee-fd79-4248-80fa-bfaad87092e7"),
+                            CoverImage = "",
+                            CreatedBy = new Guid("2e4c39f5-95d5-4a62-9be2-154cf999e3f5"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description1",
                             DiscountPercent = 0m,
-                            DiscountSold = 0m,
+                            DiscountSold = 1000m,
                             IsDeleted = false,
                             Name = "Name1",
-                            Price = 1m,
+                            Price = 1000m,
                             ProductCategoryId = new Guid("acc02cc0-825a-4453-b923-e6ae7f4007a4"),
                             Sku = 1,
-                            Sold = 1,
-                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000")
+                            Sold = 0,
+                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            VendorId = new Guid("d5ab34c8-d8ce-4e30-9446-13735a334ef2")
                         },
                         new
                         {
-                            Id = new Guid("e907d8cb-7711-4ab1-9fdd-32c4a50d7bb9"),
-                            CreatedBy = new Guid("c91d8390-3869-410c-af33-81044a529453"),
+                            Id = new Guid("75f4e811-77ac-4c5e-b41a-7f3fb2ad8de7"),
+                            CoverImage = "",
+                            CreatedBy = new Guid("adcebe3e-918e-4ae5-b379-b2098f506a59"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description2",
                             DiscountPercent = 0m,
-                            DiscountSold = 0m,
+                            DiscountSold = 2000m,
                             IsDeleted = false,
                             Name = "Name2",
-                            Price = 2m,
+                            Price = 2000m,
                             ProductCategoryId = new Guid("26df3c94-715f-4048-a96a-04a6e80bbd15"),
                             Sku = 2,
-                            Sold = 2,
-                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000")
+                            Sold = 0,
+                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            VendorId = new Guid("f5ef2d83-48fd-41ea-952b-c3803a59b2c1")
                         },
                         new
                         {
-                            Id = new Guid("e3ccd4ec-d2e6-48e9-9cdb-451755668cad"),
-                            CreatedBy = new Guid("b3612fc8-3051-4709-89b6-23ff7caa90fd"),
+                            Id = new Guid("33ab047f-e978-42e7-9f2d-5061779ef21b"),
+                            CoverImage = "",
+                            CreatedBy = new Guid("f374cc00-440d-4530-9731-f5b12c108aa9"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description3",
                             DiscountPercent = 0m,
-                            DiscountSold = 0m,
+                            DiscountSold = 3000m,
                             IsDeleted = false,
                             Name = "Name3",
-                            Price = 3m,
+                            Price = 3000m,
                             ProductCategoryId = new Guid("acc02cc0-825a-4453-b923-e6ae7f4007a4"),
                             Sku = 3,
-                            Sold = 3,
-                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000")
+                            Sold = 0,
+                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            VendorId = new Guid("d5ab34c8-d8ce-4e30-9446-13735a334ef2")
                         },
                         new
                         {
-                            Id = new Guid("ff69176c-d94b-4c59-83a2-c127c48a9716"),
-                            CreatedBy = new Guid("ebb3d828-538a-4598-9581-2f022e0a9307"),
+                            Id = new Guid("d028fc93-6c94-414e-b06a-010930ba3d67"),
+                            CoverImage = "",
+                            CreatedBy = new Guid("9ec71f21-d73d-46d0-9b77-342d2a6061fc"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description4",
                             DiscountPercent = 0m,
-                            DiscountSold = 0m,
+                            DiscountSold = 4000m,
                             IsDeleted = false,
                             Name = "Name4",
-                            Price = 4m,
+                            Price = 4000m,
                             ProductCategoryId = new Guid("26df3c94-715f-4048-a96a-04a6e80bbd15"),
                             Sku = 4,
-                            Sold = 4,
-                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000")
+                            Sold = 0,
+                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            VendorId = new Guid("f5ef2d83-48fd-41ea-952b-c3803a59b2c1")
                         },
                         new
                         {
-                            Id = new Guid("dc2fd23b-f7a0-4f5c-b08f-b9daa28fec40"),
-                            CreatedBy = new Guid("f291bf4e-f3ed-4c54-92a6-dd66484b05fe"),
+                            Id = new Guid("b5ba5b6d-0959-4e96-a6bd-3f9b3fd0af76"),
+                            CoverImage = "",
+                            CreatedBy = new Guid("34ac2e9d-cdcf-42db-b63f-33e3beac9315"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description5",
                             DiscountPercent = 0m,
-                            DiscountSold = 0m,
+                            DiscountSold = 5000m,
                             IsDeleted = false,
                             Name = "Name5",
-                            Price = 5m,
+                            Price = 5000m,
                             ProductCategoryId = new Guid("acc02cc0-825a-4453-b923-e6ae7f4007a4"),
                             Sku = 5,
-                            Sold = 5,
-                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000")
+                            Sold = 0,
+                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            VendorId = new Guid("d5ab34c8-d8ce-4e30-9446-13735a334ef2")
                         },
                         new
                         {
-                            Id = new Guid("6577bec9-c554-44c4-b1ef-970dee1f30ee"),
-                            CreatedBy = new Guid("44112d8c-0075-4be4-a1b9-afccb5f08b88"),
+                            Id = new Guid("16b5922d-d5d2-4656-85cb-807fe2e92c3d"),
+                            CoverImage = "",
+                            CreatedBy = new Guid("f9e91a96-96e8-4c2b-b492-2e1ee426f2b3"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description6",
                             DiscountPercent = 0m,
-                            DiscountSold = 0m,
+                            DiscountSold = 6000m,
                             IsDeleted = false,
                             Name = "Name6",
-                            Price = 6m,
+                            Price = 6000m,
                             ProductCategoryId = new Guid("26df3c94-715f-4048-a96a-04a6e80bbd15"),
                             Sku = 6,
-                            Sold = 6,
-                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000")
+                            Sold = 0,
+                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            VendorId = new Guid("f5ef2d83-48fd-41ea-952b-c3803a59b2c1")
                         },
                         new
                         {
-                            Id = new Guid("709a765e-08ce-44db-926e-b56dd1a44d1a"),
-                            CreatedBy = new Guid("d66250b7-0a94-4b50-a34a-7d5b6a394c88"),
+                            Id = new Guid("14cddbfc-03be-49f4-8728-d00d0960e351"),
+                            CoverImage = "",
+                            CreatedBy = new Guid("3d753863-de76-44b1-a04c-50a967d89683"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description7",
                             DiscountPercent = 0m,
-                            DiscountSold = 0m,
+                            DiscountSold = 7000m,
                             IsDeleted = false,
                             Name = "Name7",
-                            Price = 7m,
+                            Price = 7000m,
                             ProductCategoryId = new Guid("acc02cc0-825a-4453-b923-e6ae7f4007a4"),
                             Sku = 7,
-                            Sold = 7,
-                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000")
+                            Sold = 0,
+                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            VendorId = new Guid("d5ab34c8-d8ce-4e30-9446-13735a334ef2")
                         },
                         new
                         {
-                            Id = new Guid("c7a0dcad-4951-4cd3-92d5-1273edb3f0b8"),
-                            CreatedBy = new Guid("f5eb25c7-2156-4645-9e29-fc958a9e0e69"),
+                            Id = new Guid("52c57d4e-21d7-4a74-bdfd-77647b4cd2dc"),
+                            CoverImage = "",
+                            CreatedBy = new Guid("3a7f6b05-f463-4a01-986d-919692b4e152"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description8",
                             DiscountPercent = 0m,
-                            DiscountSold = 0m,
+                            DiscountSold = 8000m,
                             IsDeleted = false,
                             Name = "Name8",
-                            Price = 8m,
+                            Price = 8000m,
                             ProductCategoryId = new Guid("26df3c94-715f-4048-a96a-04a6e80bbd15"),
                             Sku = 8,
-                            Sold = 8,
-                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000")
+                            Sold = 0,
+                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            VendorId = new Guid("f5ef2d83-48fd-41ea-952b-c3803a59b2c1")
                         },
                         new
                         {
-                            Id = new Guid("93843421-dd98-4f3b-9c6e-481876adf258"),
-                            CreatedBy = new Guid("7699500b-5c7a-47ed-96c5-55efbb4ee92c"),
+                            Id = new Guid("9f69371a-277a-4e93-88fe-1ae6c3840c70"),
+                            CoverImage = "",
+                            CreatedBy = new Guid("b2a846c6-8a45-4830-9eb7-d7b3d9a7ecf8"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description9",
                             DiscountPercent = 0m,
-                            DiscountSold = 0m,
+                            DiscountSold = 9000m,
                             IsDeleted = false,
                             Name = "Name9",
-                            Price = 9m,
+                            Price = 9000m,
                             ProductCategoryId = new Guid("acc02cc0-825a-4453-b923-e6ae7f4007a4"),
                             Sku = 9,
-                            Sold = 9,
-                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000")
+                            Sold = 0,
+                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            VendorId = new Guid("d5ab34c8-d8ce-4e30-9446-13735a334ef2")
                         },
                         new
                         {
-                            Id = new Guid("1c9d6005-420b-4c41-a77e-58e046cfea5b"),
-                            CreatedBy = new Guid("c86c5e48-b62b-405b-9ed6-19c86025c9d6"),
+                            Id = new Guid("dd4b6e72-bbb2-4142-8f38-667b5d3f4cb5"),
+                            CoverImage = "",
+                            CreatedBy = new Guid("11e3c4dd-d453-4c8f-95da-2cf27e582645"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description10",
                             DiscountPercent = 0m,
-                            DiscountSold = 0m,
+                            DiscountSold = 10000m,
                             IsDeleted = false,
                             Name = "Name10",
-                            Price = 10m,
+                            Price = 10000m,
                             ProductCategoryId = new Guid("26df3c94-715f-4048-a96a-04a6e80bbd15"),
                             Sku = 10,
-                            Sold = 10,
-                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000")
+                            Sold = 0,
+                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            VendorId = new Guid("f5ef2d83-48fd-41ea-952b-c3803a59b2c1")
                         },
                         new
                         {
-                            Id = new Guid("03ce518c-6671-4d9f-bdf4-242c99fcec5d"),
-                            CreatedBy = new Guid("d51f7f65-57fe-4179-a67f-f8f215d28d12"),
+                            Id = new Guid("0126d70c-2f4f-458e-8995-c661f0720a8c"),
+                            CoverImage = "",
+                            CreatedBy = new Guid("a9fe607d-dbd6-4bf4-baef-f8f3c8340e63"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description11",
                             DiscountPercent = 0m,
-                            DiscountSold = 0m,
+                            DiscountSold = 11000m,
                             IsDeleted = false,
                             Name = "Name11",
-                            Price = 11m,
+                            Price = 11000m,
                             ProductCategoryId = new Guid("acc02cc0-825a-4453-b923-e6ae7f4007a4"),
                             Sku = 11,
-                            Sold = 11,
-                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000")
+                            Sold = 0,
+                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            VendorId = new Guid("d5ab34c8-d8ce-4e30-9446-13735a334ef2")
                         },
                         new
                         {
-                            Id = new Guid("1f50ad67-a7d1-479c-8e1d-9cad20147199"),
-                            CreatedBy = new Guid("83d9776f-96c4-40af-870b-afcbae26ebe7"),
+                            Id = new Guid("0f277a2a-55e9-4493-9719-c5cee7ded213"),
+                            CoverImage = "",
+                            CreatedBy = new Guid("1748d601-8613-44d8-97a6-3d54cb965c27"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description12",
                             DiscountPercent = 0m,
-                            DiscountSold = 0m,
+                            DiscountSold = 12000m,
                             IsDeleted = false,
                             Name = "Name12",
-                            Price = 12m,
+                            Price = 12000m,
                             ProductCategoryId = new Guid("26df3c94-715f-4048-a96a-04a6e80bbd15"),
                             Sku = 12,
-                            Sold = 12,
-                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000")
+                            Sold = 0,
+                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            VendorId = new Guid("f5ef2d83-48fd-41ea-952b-c3803a59b2c1")
                         },
                         new
                         {
-                            Id = new Guid("82126b00-2cc9-4eef-9f8f-3268010eaf16"),
-                            CreatedBy = new Guid("d7ae8baa-e097-485a-8525-6ae1cd2c3519"),
+                            Id = new Guid("54f6b031-df03-48e8-b22d-fc9aee69dc7d"),
+                            CoverImage = "",
+                            CreatedBy = new Guid("19e65e98-99a5-4422-8c09-cd0a85ecf20c"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description13",
                             DiscountPercent = 0m,
-                            DiscountSold = 0m,
+                            DiscountSold = 13000m,
                             IsDeleted = false,
                             Name = "Name13",
-                            Price = 13m,
+                            Price = 13000m,
                             ProductCategoryId = new Guid("acc02cc0-825a-4453-b923-e6ae7f4007a4"),
                             Sku = 13,
-                            Sold = 13,
-                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000")
+                            Sold = 0,
+                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            VendorId = new Guid("d5ab34c8-d8ce-4e30-9446-13735a334ef2")
                         },
                         new
                         {
-                            Id = new Guid("abd42b41-2f46-43bf-b4c6-6289c3a9bf83"),
-                            CreatedBy = new Guid("730eba57-da8d-404b-856f-976d082bff9d"),
+                            Id = new Guid("97440e23-efc1-4768-ba4f-fa51754c43b5"),
+                            CoverImage = "",
+                            CreatedBy = new Guid("4544c1a3-e63c-4572-bdf5-e022db99f55a"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description14",
                             DiscountPercent = 0m,
-                            DiscountSold = 0m,
+                            DiscountSold = 14000m,
                             IsDeleted = false,
                             Name = "Name14",
-                            Price = 14m,
+                            Price = 14000m,
                             ProductCategoryId = new Guid("26df3c94-715f-4048-a96a-04a6e80bbd15"),
                             Sku = 14,
-                            Sold = 14,
-                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000")
+                            Sold = 0,
+                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            VendorId = new Guid("f5ef2d83-48fd-41ea-952b-c3803a59b2c1")
                         },
                         new
                         {
-                            Id = new Guid("83e647a9-37df-4add-912a-d02600279dff"),
-                            CreatedBy = new Guid("9dcf59b2-ab59-472c-9c38-49c5888e5c0c"),
+                            Id = new Guid("939f2a6e-671f-4d42-a75b-296afac16602"),
+                            CoverImage = "",
+                            CreatedBy = new Guid("35dea305-d69a-4c2f-b47d-37cac9c3b65f"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description15",
                             DiscountPercent = 0m,
-                            DiscountSold = 0m,
+                            DiscountSold = 15000m,
                             IsDeleted = false,
                             Name = "Name15",
-                            Price = 15m,
+                            Price = 15000m,
                             ProductCategoryId = new Guid("acc02cc0-825a-4453-b923-e6ae7f4007a4"),
                             Sku = 15,
-                            Sold = 15,
-                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000")
+                            Sold = 0,
+                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            VendorId = new Guid("d5ab34c8-d8ce-4e30-9446-13735a334ef2")
                         },
                         new
                         {
-                            Id = new Guid("cf36187c-6a60-4818-bc99-8b2245341326"),
-                            CreatedBy = new Guid("42b19fdf-d811-4874-9c09-55c73b90f6a9"),
+                            Id = new Guid("31d815bb-b0ce-461d-acb9-5b2e7b273fb5"),
+                            CoverImage = "",
+                            CreatedBy = new Guid("dd32a56d-28db-4244-9b9c-464d631a43c9"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description16",
                             DiscountPercent = 0m,
-                            DiscountSold = 0m,
+                            DiscountSold = 16000m,
                             IsDeleted = false,
                             Name = "Name16",
-                            Price = 16m,
+                            Price = 16000m,
                             ProductCategoryId = new Guid("26df3c94-715f-4048-a96a-04a6e80bbd15"),
                             Sku = 16,
-                            Sold = 16,
-                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000")
+                            Sold = 0,
+                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            VendorId = new Guid("f5ef2d83-48fd-41ea-952b-c3803a59b2c1")
                         },
                         new
                         {
-                            Id = new Guid("2250a1d7-6419-4ec8-a3ba-20e668bb848b"),
-                            CreatedBy = new Guid("48cbf99b-0df4-46b3-bfa4-ffd1921c28d5"),
+                            Id = new Guid("3d51c8e3-0df9-4ca8-89a4-6704d1a37efc"),
+                            CoverImage = "",
+                            CreatedBy = new Guid("cb1c600c-f4ba-4696-91e4-37b1ff64c726"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description17",
                             DiscountPercent = 0m,
-                            DiscountSold = 0m,
+                            DiscountSold = 17000m,
                             IsDeleted = false,
                             Name = "Name17",
-                            Price = 17m,
+                            Price = 17000m,
                             ProductCategoryId = new Guid("acc02cc0-825a-4453-b923-e6ae7f4007a4"),
                             Sku = 17,
-                            Sold = 17,
-                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000")
+                            Sold = 0,
+                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            VendorId = new Guid("d5ab34c8-d8ce-4e30-9446-13735a334ef2")
                         },
                         new
                         {
-                            Id = new Guid("100feeff-a7a5-4945-90ce-2e633aa8c4e2"),
-                            CreatedBy = new Guid("2c6a9a6a-1d76-409a-8992-993eee55b939"),
+                            Id = new Guid("7b38672f-940f-46d8-9dd0-980b10d71c41"),
+                            CoverImage = "",
+                            CreatedBy = new Guid("c1543d4e-6ce0-4c58-bd50-62baafdce132"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description18",
                             DiscountPercent = 0m,
-                            DiscountSold = 0m,
+                            DiscountSold = 18000m,
                             IsDeleted = false,
                             Name = "Name18",
-                            Price = 18m,
+                            Price = 18000m,
                             ProductCategoryId = new Guid("26df3c94-715f-4048-a96a-04a6e80bbd15"),
                             Sku = 18,
-                            Sold = 18,
-                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000")
+                            Sold = 0,
+                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            VendorId = new Guid("f5ef2d83-48fd-41ea-952b-c3803a59b2c1")
                         },
                         new
                         {
-                            Id = new Guid("8c22fc71-006a-4a4b-820c-b68d030dcd93"),
-                            CreatedBy = new Guid("bdeac5aa-b2d8-49cb-b608-2560267f80bd"),
+                            Id = new Guid("17c2c719-74a0-427e-a589-6f04039a77d1"),
+                            CoverImage = "",
+                            CreatedBy = new Guid("e8336faa-f174-4b4b-9511-e0d09d89fbd4"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description19",
                             DiscountPercent = 0m,
-                            DiscountSold = 0m,
+                            DiscountSold = 19000m,
                             IsDeleted = false,
                             Name = "Name19",
-                            Price = 19m,
+                            Price = 19000m,
                             ProductCategoryId = new Guid("acc02cc0-825a-4453-b923-e6ae7f4007a4"),
                             Sku = 19,
-                            Sold = 19,
-                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000")
+                            Sold = 0,
+                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            VendorId = new Guid("d5ab34c8-d8ce-4e30-9446-13735a334ef2")
                         },
                         new
                         {
-                            Id = new Guid("d67495bd-86e5-4df5-809d-0fbf9521692a"),
-                            CreatedBy = new Guid("3be253c2-8213-4d55-a84d-8bcdec857906"),
+                            Id = new Guid("642012f0-d835-4462-907d-96d0c36b53b4"),
+                            CoverImage = "",
+                            CreatedBy = new Guid("8b3cd537-76b4-4793-8492-32df4db40a42"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description20",
                             DiscountPercent = 0m,
-                            DiscountSold = 0m,
+                            DiscountSold = 20000m,
                             IsDeleted = false,
                             Name = "Name20",
-                            Price = 20m,
+                            Price = 20000m,
                             ProductCategoryId = new Guid("26df3c94-715f-4048-a96a-04a6e80bbd15"),
                             Sku = 20,
-                            Sold = 20,
-                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000")
+                            Sold = 0,
+                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            VendorId = new Guid("f5ef2d83-48fd-41ea-952b-c3803a59b2c1")
                         },
                         new
                         {
-                            Id = new Guid("7f1ed892-5eb4-401e-b577-d08cd3f7ffdb"),
-                            CreatedBy = new Guid("e87a65a1-9d35-4729-baed-e5e821d6aa00"),
+                            Id = new Guid("1030c2b6-3cf5-4f2f-8aca-eef34a7fc661"),
+                            CoverImage = "",
+                            CreatedBy = new Guid("6d92a7d6-1b1d-4194-b3d7-810da6ddb964"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description21",
                             DiscountPercent = 0m,
-                            DiscountSold = 0m,
+                            DiscountSold = 21000m,
                             IsDeleted = false,
                             Name = "Name21",
-                            Price = 21m,
+                            Price = 21000m,
                             ProductCategoryId = new Guid("acc02cc0-825a-4453-b923-e6ae7f4007a4"),
                             Sku = 21,
-                            Sold = 21,
-                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000")
+                            Sold = 0,
+                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            VendorId = new Guid("d5ab34c8-d8ce-4e30-9446-13735a334ef2")
                         },
                         new
                         {
-                            Id = new Guid("1ca8a14e-41ee-4b9f-8843-7d94708307ec"),
-                            CreatedBy = new Guid("dd0ac4ee-a5d0-436f-bafb-3427fa7a327e"),
+                            Id = new Guid("bdb873ed-d11d-454b-9c21-fa466afe3d39"),
+                            CoverImage = "",
+                            CreatedBy = new Guid("5e99b617-1964-46f1-97b4-d2eb1d7ad698"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description22",
                             DiscountPercent = 0m,
-                            DiscountSold = 0m,
+                            DiscountSold = 22000m,
                             IsDeleted = false,
                             Name = "Name22",
-                            Price = 22m,
+                            Price = 22000m,
                             ProductCategoryId = new Guid("26df3c94-715f-4048-a96a-04a6e80bbd15"),
                             Sku = 22,
-                            Sold = 22,
-                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000")
+                            Sold = 0,
+                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            VendorId = new Guid("f5ef2d83-48fd-41ea-952b-c3803a59b2c1")
                         },
                         new
                         {
-                            Id = new Guid("6b721afd-0b77-4e9d-a64b-14ed21114ce5"),
-                            CreatedBy = new Guid("0cb329b8-7836-4be3-becc-6f27e743d19d"),
+                            Id = new Guid("d6fb5d3c-976d-430c-b4da-a9a9ddc657d2"),
+                            CoverImage = "",
+                            CreatedBy = new Guid("479f1319-afd0-40a5-b271-1de73934a57c"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description23",
                             DiscountPercent = 0m,
-                            DiscountSold = 0m,
+                            DiscountSold = 23000m,
                             IsDeleted = false,
                             Name = "Name23",
-                            Price = 23m,
+                            Price = 23000m,
                             ProductCategoryId = new Guid("acc02cc0-825a-4453-b923-e6ae7f4007a4"),
                             Sku = 23,
-                            Sold = 23,
-                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000")
+                            Sold = 0,
+                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            VendorId = new Guid("d5ab34c8-d8ce-4e30-9446-13735a334ef2")
                         },
                         new
                         {
-                            Id = new Guid("6f330295-3e5b-4fdb-aa69-46334b06efe9"),
-                            CreatedBy = new Guid("7cc374b1-7feb-4542-bbf3-a5e957a1904d"),
+                            Id = new Guid("bc31e3ab-eec0-4afd-b7de-211a9fa34aaa"),
+                            CoverImage = "",
+                            CreatedBy = new Guid("96eb9d93-d84c-4752-a39d-91c72ce85300"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description24",
                             DiscountPercent = 0m,
-                            DiscountSold = 0m,
+                            DiscountSold = 24000m,
                             IsDeleted = false,
                             Name = "Name24",
-                            Price = 24m,
+                            Price = 24000m,
                             ProductCategoryId = new Guid("26df3c94-715f-4048-a96a-04a6e80bbd15"),
                             Sku = 24,
-                            Sold = 24,
-                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000")
+                            Sold = 0,
+                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            VendorId = new Guid("f5ef2d83-48fd-41ea-952b-c3803a59b2c1")
                         },
                         new
                         {
-                            Id = new Guid("6a9fe691-456e-4d00-9500-235b409d1b7e"),
-                            CreatedBy = new Guid("e853dd7b-3d99-4252-824b-03f138caa827"),
+                            Id = new Guid("1b556ad8-5f32-4430-8796-39cbf90ad71b"),
+                            CoverImage = "",
+                            CreatedBy = new Guid("7872920c-6744-46ef-9926-b2532518ff7d"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description25",
                             DiscountPercent = 0m,
-                            DiscountSold = 0m,
+                            DiscountSold = 25000m,
                             IsDeleted = false,
                             Name = "Name25",
-                            Price = 25m,
+                            Price = 25000m,
                             ProductCategoryId = new Guid("acc02cc0-825a-4453-b923-e6ae7f4007a4"),
                             Sku = 25,
-                            Sold = 25,
-                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000")
+                            Sold = 0,
+                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            VendorId = new Guid("d5ab34c8-d8ce-4e30-9446-13735a334ef2")
                         },
                         new
                         {
-                            Id = new Guid("9ec6ed90-d738-4e57-afab-9736b97d570d"),
-                            CreatedBy = new Guid("e81dfa30-2a87-4cdc-b88a-2ee8ab515ced"),
+                            Id = new Guid("cc54d1ab-fb3c-437c-a467-9275b5c1e21a"),
+                            CoverImage = "",
+                            CreatedBy = new Guid("8fdd0b5b-5cfe-4c9e-b8bb-c088f6a45be2"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description26",
                             DiscountPercent = 0m,
-                            DiscountSold = 0m,
+                            DiscountSold = 26000m,
                             IsDeleted = false,
                             Name = "Name26",
-                            Price = 26m,
+                            Price = 26000m,
                             ProductCategoryId = new Guid("26df3c94-715f-4048-a96a-04a6e80bbd15"),
                             Sku = 26,
-                            Sold = 26,
-                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000")
+                            Sold = 0,
+                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            VendorId = new Guid("f5ef2d83-48fd-41ea-952b-c3803a59b2c1")
                         },
                         new
                         {
-                            Id = new Guid("7868dca1-c519-426c-90c8-1d1325d03f9e"),
-                            CreatedBy = new Guid("825b7237-b967-468d-8047-3eba183698f1"),
+                            Id = new Guid("c87eed72-9870-4c80-9ce2-d44f474ea081"),
+                            CoverImage = "",
+                            CreatedBy = new Guid("33e847f6-e6f8-4142-a83c-4bd08d71769b"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description27",
                             DiscountPercent = 0m,
-                            DiscountSold = 0m,
+                            DiscountSold = 27000m,
                             IsDeleted = false,
                             Name = "Name27",
-                            Price = 27m,
+                            Price = 27000m,
                             ProductCategoryId = new Guid("acc02cc0-825a-4453-b923-e6ae7f4007a4"),
                             Sku = 27,
-                            Sold = 27,
-                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000")
+                            Sold = 0,
+                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            VendorId = new Guid("d5ab34c8-d8ce-4e30-9446-13735a334ef2")
                         },
                         new
                         {
-                            Id = new Guid("2f1bde85-bd2e-4b5f-b1b3-2eafd1ce5a2e"),
-                            CreatedBy = new Guid("dedd2700-1c64-46d0-94d8-b3454791d6d0"),
+                            Id = new Guid("010b1cce-ffb0-4945-a68d-a19d2fcc08c8"),
+                            CoverImage = "",
+                            CreatedBy = new Guid("3c20d52d-9199-46b3-b3df-bf7f0d02a930"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description28",
                             DiscountPercent = 0m,
-                            DiscountSold = 0m,
+                            DiscountSold = 28000m,
                             IsDeleted = false,
                             Name = "Name28",
-                            Price = 28m,
+                            Price = 28000m,
                             ProductCategoryId = new Guid("26df3c94-715f-4048-a96a-04a6e80bbd15"),
                             Sku = 28,
-                            Sold = 28,
-                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000")
+                            Sold = 0,
+                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            VendorId = new Guid("f5ef2d83-48fd-41ea-952b-c3803a59b2c1")
                         },
                         new
                         {
-                            Id = new Guid("d0ec46ee-5904-496b-95b5-7b6bec227449"),
-                            CreatedBy = new Guid("683d654a-f643-484f-be24-7d669349fe59"),
+                            Id = new Guid("f408d5f0-234a-4361-b74a-caf5f20859ee"),
+                            CoverImage = "",
+                            CreatedBy = new Guid("c74f45f7-4f73-4a7c-a563-e34849bad1eb"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description29",
                             DiscountPercent = 0m,
-                            DiscountSold = 0m,
+                            DiscountSold = 29000m,
                             IsDeleted = false,
                             Name = "Name29",
-                            Price = 29m,
+                            Price = 29000m,
                             ProductCategoryId = new Guid("acc02cc0-825a-4453-b923-e6ae7f4007a4"),
                             Sku = 29,
-                            Sold = 29,
-                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000")
+                            Sold = 0,
+                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            VendorId = new Guid("d5ab34c8-d8ce-4e30-9446-13735a334ef2")
                         },
                         new
                         {
-                            Id = new Guid("9cfad9a6-1991-4b07-9eef-262b4d61f699"),
-                            CreatedBy = new Guid("eef06ef4-f36b-4c1a-8388-5b59e4d56048"),
+                            Id = new Guid("105d1034-2d7f-4ed3-9c0d-8a01bfcc4028"),
+                            CoverImage = "",
+                            CreatedBy = new Guid("c3f54dc8-546b-433f-866f-f8a3d0c1e016"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description30",
                             DiscountPercent = 0m,
-                            DiscountSold = 0m,
+                            DiscountSold = 30000m,
                             IsDeleted = false,
                             Name = "Name30",
-                            Price = 30m,
+                            Price = 30000m,
                             ProductCategoryId = new Guid("26df3c94-715f-4048-a96a-04a6e80bbd15"),
                             Sku = 30,
-                            Sold = 30,
-                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000")
+                            Sold = 0,
+                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            VendorId = new Guid("f5ef2d83-48fd-41ea-952b-c3803a59b2c1")
                         },
                         new
                         {
-                            Id = new Guid("79b64785-4f6d-4feb-8ded-00cd6dc8382f"),
-                            CreatedBy = new Guid("6f6549db-bda5-49fb-9c88-35e57d6a1645"),
+                            Id = new Guid("bcd98393-f1b9-4a27-b656-494fcb7e7507"),
+                            CoverImage = "",
+                            CreatedBy = new Guid("e253b3f3-a72c-4709-991d-8881ad3352be"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description31",
                             DiscountPercent = 0m,
-                            DiscountSold = 0m,
+                            DiscountSold = 31000m,
                             IsDeleted = false,
                             Name = "Name31",
-                            Price = 31m,
+                            Price = 31000m,
                             ProductCategoryId = new Guid("acc02cc0-825a-4453-b923-e6ae7f4007a4"),
                             Sku = 31,
-                            Sold = 31,
-                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000")
+                            Sold = 0,
+                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            VendorId = new Guid("d5ab34c8-d8ce-4e30-9446-13735a334ef2")
                         },
                         new
                         {
-                            Id = new Guid("4333730f-9f6a-4e1e-81eb-39f4d4026de0"),
-                            CreatedBy = new Guid("1b702c33-8460-41d1-8278-811c35ec9fc4"),
+                            Id = new Guid("15018153-5e0d-4938-94f0-fc18f6b6d162"),
+                            CoverImage = "",
+                            CreatedBy = new Guid("c4218af0-cda3-4760-8db4-f33783e2d94f"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description32",
                             DiscountPercent = 0m,
-                            DiscountSold = 0m,
+                            DiscountSold = 32000m,
                             IsDeleted = false,
                             Name = "Name32",
-                            Price = 32m,
+                            Price = 32000m,
                             ProductCategoryId = new Guid("26df3c94-715f-4048-a96a-04a6e80bbd15"),
                             Sku = 32,
-                            Sold = 32,
-                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000")
+                            Sold = 0,
+                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            VendorId = new Guid("f5ef2d83-48fd-41ea-952b-c3803a59b2c1")
                         },
                         new
                         {
-                            Id = new Guid("c986b4b9-f4ea-4b3a-83c2-77ce3e86d0b7"),
-                            CreatedBy = new Guid("85a5242e-44be-4297-be8b-7f24981779a1"),
+                            Id = new Guid("3e767575-2f84-4049-becb-29d40234f60a"),
+                            CoverImage = "",
+                            CreatedBy = new Guid("a231b2ae-f7ee-4fa4-b3e4-c30dc99a2247"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description33",
                             DiscountPercent = 0m,
-                            DiscountSold = 0m,
+                            DiscountSold = 33000m,
                             IsDeleted = false,
                             Name = "Name33",
-                            Price = 33m,
+                            Price = 33000m,
                             ProductCategoryId = new Guid("acc02cc0-825a-4453-b923-e6ae7f4007a4"),
                             Sku = 33,
-                            Sold = 33,
-                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000")
+                            Sold = 0,
+                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            VendorId = new Guid("d5ab34c8-d8ce-4e30-9446-13735a334ef2")
                         },
                         new
                         {
-                            Id = new Guid("b6fcd825-601a-454b-8df6-0a309f45760f"),
-                            CreatedBy = new Guid("86634a78-d0a2-4369-9960-1e4e615964de"),
+                            Id = new Guid("01c6fead-a82e-44bd-a098-488885f8657b"),
+                            CoverImage = "",
+                            CreatedBy = new Guid("9f7a3c76-01da-4e23-8b08-1abc2009287a"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description34",
                             DiscountPercent = 0m,
-                            DiscountSold = 0m,
+                            DiscountSold = 34000m,
                             IsDeleted = false,
                             Name = "Name34",
-                            Price = 34m,
+                            Price = 34000m,
                             ProductCategoryId = new Guid("26df3c94-715f-4048-a96a-04a6e80bbd15"),
                             Sku = 34,
-                            Sold = 34,
-                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000")
+                            Sold = 0,
+                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            VendorId = new Guid("f5ef2d83-48fd-41ea-952b-c3803a59b2c1")
                         },
                         new
                         {
-                            Id = new Guid("7d97ea60-2ad3-443f-a127-adbded02786d"),
-                            CreatedBy = new Guid("95c57bc6-48b3-4ca4-8340-9c9ff4cbd124"),
+                            Id = new Guid("2cfda511-6778-4ca9-b50e-34c7add5d463"),
+                            CoverImage = "",
+                            CreatedBy = new Guid("24f1a1b3-d27a-48ad-901d-795c9f51299f"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description35",
                             DiscountPercent = 0m,
-                            DiscountSold = 0m,
+                            DiscountSold = 35000m,
                             IsDeleted = false,
                             Name = "Name35",
-                            Price = 35m,
+                            Price = 35000m,
                             ProductCategoryId = new Guid("acc02cc0-825a-4453-b923-e6ae7f4007a4"),
                             Sku = 35,
-                            Sold = 35,
-                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000")
+                            Sold = 0,
+                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            VendorId = new Guid("d5ab34c8-d8ce-4e30-9446-13735a334ef2")
                         },
                         new
                         {
-                            Id = new Guid("c3f5de65-866a-4e7d-b864-b9ad2649f731"),
-                            CreatedBy = new Guid("77512fe4-5e32-4b31-91ba-e228efe63374"),
+                            Id = new Guid("fc9a9a18-154e-4212-bfb0-5993d5def275"),
+                            CoverImage = "",
+                            CreatedBy = new Guid("3be88443-6664-407c-988f-7d3dc9b07350"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description36",
                             DiscountPercent = 0m,
-                            DiscountSold = 0m,
+                            DiscountSold = 36000m,
                             IsDeleted = false,
                             Name = "Name36",
-                            Price = 36m,
+                            Price = 36000m,
                             ProductCategoryId = new Guid("26df3c94-715f-4048-a96a-04a6e80bbd15"),
                             Sku = 36,
-                            Sold = 36,
-                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000")
+                            Sold = 0,
+                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            VendorId = new Guid("f5ef2d83-48fd-41ea-952b-c3803a59b2c1")
                         },
                         new
                         {
-                            Id = new Guid("e3e03ee0-4650-4c09-a6ea-6f3c831a7709"),
-                            CreatedBy = new Guid("609b6141-3ecc-4be9-ba4f-0badcb52599f"),
+                            Id = new Guid("7650732b-3bd4-4e46-98b9-10f282c2c1c8"),
+                            CoverImage = "",
+                            CreatedBy = new Guid("dd2afb5b-9829-4dba-b352-37e3dc337fb4"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description37",
                             DiscountPercent = 0m,
-                            DiscountSold = 0m,
+                            DiscountSold = 37000m,
                             IsDeleted = false,
                             Name = "Name37",
-                            Price = 37m,
+                            Price = 37000m,
                             ProductCategoryId = new Guid("acc02cc0-825a-4453-b923-e6ae7f4007a4"),
                             Sku = 37,
-                            Sold = 37,
-                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000")
+                            Sold = 0,
+                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            VendorId = new Guid("d5ab34c8-d8ce-4e30-9446-13735a334ef2")
                         },
                         new
                         {
-                            Id = new Guid("7263ac58-402b-4cb8-b46d-7747cf73eba3"),
-                            CreatedBy = new Guid("26b17607-0bb6-412c-a4c0-9e47618e88ea"),
+                            Id = new Guid("2d5d15e5-60c4-49cc-9c88-c5aa1a07c38e"),
+                            CoverImage = "",
+                            CreatedBy = new Guid("92771083-230d-496a-aff4-6c7ced7237f6"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description38",
                             DiscountPercent = 0m,
-                            DiscountSold = 0m,
+                            DiscountSold = 38000m,
                             IsDeleted = false,
                             Name = "Name38",
-                            Price = 38m,
+                            Price = 38000m,
                             ProductCategoryId = new Guid("26df3c94-715f-4048-a96a-04a6e80bbd15"),
                             Sku = 38,
-                            Sold = 38,
-                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000")
+                            Sold = 0,
+                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            VendorId = new Guid("f5ef2d83-48fd-41ea-952b-c3803a59b2c1")
                         },
                         new
                         {
-                            Id = new Guid("9ce7f16c-88d7-46c3-8fd9-3cdc210f4e25"),
-                            CreatedBy = new Guid("ae8c89fd-d949-46c5-90e7-aba26ecb0e53"),
+                            Id = new Guid("68ecc07e-b0d0-4159-a5d1-deeca783ad17"),
+                            CoverImage = "",
+                            CreatedBy = new Guid("859d09a3-a79e-4856-bec9-bdc2170f0487"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description39",
                             DiscountPercent = 0m,
-                            DiscountSold = 0m,
+                            DiscountSold = 39000m,
                             IsDeleted = false,
                             Name = "Name39",
-                            Price = 39m,
+                            Price = 39000m,
                             ProductCategoryId = new Guid("acc02cc0-825a-4453-b923-e6ae7f4007a4"),
                             Sku = 39,
-                            Sold = 39,
-                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000")
+                            Sold = 0,
+                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            VendorId = new Guid("d5ab34c8-d8ce-4e30-9446-13735a334ef2")
                         },
                         new
                         {
-                            Id = new Guid("365a149d-2b6f-47c4-bdaf-df47a54c3987"),
-                            CreatedBy = new Guid("1bd8d0f0-b687-4f15-bc64-2033ea54f75d"),
+                            Id = new Guid("71129ab2-456f-47ff-af45-4d751f06f1c3"),
+                            CoverImage = "",
+                            CreatedBy = new Guid("d47962fc-e218-4789-a81b-c66c82f8123a"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description40",
                             DiscountPercent = 0m,
-                            DiscountSold = 0m,
+                            DiscountSold = 40000m,
                             IsDeleted = false,
                             Name = "Name40",
-                            Price = 40m,
+                            Price = 40000m,
                             ProductCategoryId = new Guid("26df3c94-715f-4048-a96a-04a6e80bbd15"),
                             Sku = 40,
-                            Sold = 40,
-                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000")
+                            Sold = 0,
+                            UpdatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            VendorId = new Guid("f5ef2d83-48fd-41ea-952b-c3803a59b2c1")
                         });
                 });
 
@@ -1203,7 +1291,15 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
+                    b.Property<Guid?>("VendorId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("VentorId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("VendorId");
 
                     b.ToTable("User", (string)null);
                 });
@@ -1306,6 +1402,88 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                     b.ToTable("UserPayment", (string)null);
                 });
 
+            modelBuilder.Entity("Antree_Ecommerce_BE.Domain.Entities.Vendor", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("City")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTimeOffset>("CreatedOnUtc")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTimeOffset?>("ModifiedOnUtc")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phonenumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Province")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Vendor", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("f5ef2d83-48fd-41ea-952b-c3803a59b2c1"),
+                            Address = "VendorAddress1",
+                            City = "VendorCity1",
+                            CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Email = "Vendor1@gmail.com",
+                            IsDeleted = false,
+                            Name = "Vendor1",
+                            Phonenumber = "VendorPhone1",
+                            Province = "VendorProvince1"
+                        },
+                        new
+                        {
+                            Id = new Guid("d5ab34c8-d8ce-4e30-9446-13735a334ef2"),
+                            Address = "VendorAddress2",
+                            City = "VendorCity2",
+                            CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Email = "Vendor2@gmail.com",
+                            IsDeleted = false,
+                            Name = "Vendor2",
+                            Phonenumber = "VendorPhone2",
+                            Province = "VendorProvince2"
+                        },
+                        new
+                        {
+                            Id = new Guid("f5565937-575b-462a-903c-404727ba3765"),
+                            Address = "VendorAddress3",
+                            City = "VendorCity3",
+                            CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Email = "Vendor3@gmail.com",
+                            IsDeleted = false,
+                            Name = "Vendor3",
+                            Phonenumber = "VendorPhone3",
+                            Province = "VendorProvince3"
+                        });
+                });
+
             modelBuilder.Entity("Antree_Ecommerce_BE.Domain.Entities.Order", b =>
                 {
                     b.HasOne("Antree_Ecommerce_BE.Domain.Entities.Discount", "Discount")
@@ -1378,7 +1556,15 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Antree_Ecommerce_BE.Domain.Entities.Vendor", "Vendor")
+                        .WithMany("ProductList")
+                        .HasForeignKey("VendorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("ProductCategory");
+
+                    b.Navigation("Vendor");
                 });
 
             modelBuilder.Entity("Antree_Ecommerce_BE.Domain.Entities.ProductDiscount", b =>
@@ -1412,6 +1598,15 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                         .IsRequired();
 
                     b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("Antree_Ecommerce_BE.Domain.Entities.User", b =>
+                {
+                    b.HasOne("Antree_Ecommerce_BE.Domain.Entities.Vendor", "Vendor")
+                        .WithMany()
+                        .HasForeignKey("VendorId");
+
+                    b.Navigation("Vendor");
                 });
 
             modelBuilder.Entity("Antree_Ecommerce_BE.Domain.Entities.UserAddress", b =>
@@ -1472,6 +1667,11 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                     b.Navigation("UserAddressList");
 
                     b.Navigation("UserPaymentList");
+                });
+
+            modelBuilder.Entity("Antree_Ecommerce_BE.Domain.Entities.Vendor", b =>
+                {
+                    b.Navigation("ProductList");
                 });
 #pragma warning restore 612, 618
         }

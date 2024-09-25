@@ -32,6 +32,5 @@ public class ProductCategoryConfiguration : IEntityTypeConfiguration<ProductCate
                 Guid.Empty
             )
         );
-        
     }
 }

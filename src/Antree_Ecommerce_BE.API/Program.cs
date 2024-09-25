@@ -60,10 +60,9 @@ builder.Services.AddRepositoryPersistence();
 builder.Services.AddJwtAuthenticationAPI(builder.Configuration);
 builder.Services.AddServicesInfrastructure();
 builder.Services.AddRedisInfrastructure(builder.Configuration);
-builder.Services.ConfigureCloudinaryOptionsInfrastucture(
-    builder.Configuration.GetSection(nameof(CloudinaryOptions)));
-builder.Services.ConfigureVnPayOptionsInfrastucture(
-    builder.Configuration.GetSection(nameof(VnPayOption)));
+builder.Services.ConfigureCloudinaryOptionsInfrastucture(builder.Configuration.GetSection(nameof(CloudinaryOptions)));
+builder.Services.ConfigureVnPayOptionsInfrastucture(builder.Configuration.GetSection(nameof(VnPayOption)));
+builder.Services.ConfigureMailOptionsInfrastucture(builder.Configuration.GetSection(nameof(MailOption)));
 
 builder.Services.AddHttpContextAccessor();
  

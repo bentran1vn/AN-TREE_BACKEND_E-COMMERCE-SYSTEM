@@ -6,5 +6,6 @@ namespace Antree_Ecommerce_BE.Application.Abstractions;
 public interface IVnPayService
 {
     string CreatePaymentUrl(Order model);
-    Order PaymentExecute(IQueryCollection collections);
+
+    Task<(bool IsValid, string Message)> ValidateCallback(Dictionary<string, string> vnpayData);
 }

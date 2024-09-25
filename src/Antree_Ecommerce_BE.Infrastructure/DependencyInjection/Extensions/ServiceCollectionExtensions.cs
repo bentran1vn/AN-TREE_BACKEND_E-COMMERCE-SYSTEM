@@ -4,6 +4,7 @@ using Antree_Ecommerce_BE.Infrastructure.Authentication;
 using Antree_Ecommerce_BE.Infrastructure.Caching;
 using Antree_Ecommerce_BE.Infrastructure.PasswordHasher;
 using Antree_Ecommerce_BE.Infrastructure.Payment.VnPay;
+using Antree_Ecommerce_BE.Infrastructure.Mail;
 using Antree_Ecommerce_BE.Infrastructure.DependencyInjection.Options;
 using Antree_Ecommerce_BE.Infrastructure.Media;
 using CloudinaryDotNet;
@@ -20,6 +21,7 @@ public static class ServiceCollectionExtensions
         .AddTransient<ICacheService, CacheService>()
         .AddTransient<IMediaService, CloudinaryService>()
         .AddSingleton<IVnPayService, VnPayService>()
+        .AddSingleton<IMailService, MailService>()
         .AddSingleton<Cloudinary>((provider) =>
         {
             var options = provider.GetRequiredService<IOptionsMonitor<CloudinaryOptions>>();
@@ -47,6 +49,13 @@ public static class ServiceCollectionExtensions
     public static OptionsBuilder<VnPayOption> ConfigureVnPayOptionsInfrastucture(this IServiceCollection services, IConfigurationSection section)
         => services
             .AddOptions<VnPayOption>()
+            .Bind(section)
+            .ValidateDataAnnotations()
+            .ValidateOnStart();
+    
+    public static OptionsBuilder<MailOption> ConfigureMailOptionsInfrastucture(this IServiceCollection services, IConfigurationSection section)
+        => services
+            .AddOptions<MailOption>()
             .Bind(section)
             .ValidateDataAnnotations()
             .ValidateOnStart();

@@ -12,7 +12,9 @@
 
     <ItemGroup>
       <PackageReference Include="CloudinaryDotNet" Version="1.26.2" />
+      <PackageReference Include="MailKit" Version="4.7.1.1" />
       <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="8.0.7" />
+      <PackageReference Include="MimeKit" Version="4.7.1" />
       <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
       <PackageReference Include="VNPayPackage" Version="2.1.0" />
     </ItemGroup>

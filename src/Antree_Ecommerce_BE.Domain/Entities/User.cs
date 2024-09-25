@@ -11,10 +11,12 @@ public class User : Entity<Guid>, IAuditableEntity, ICreatedByEntity<Guid>, IUpd
     public string Lastname { get; set; }
     public string Phonenumber { get; set; }
     public int Role { get; set; }
+    public Guid? VentorId { get; set; }
     public DateTimeOffset CreatedOnUtc { get; set; }
     public DateTimeOffset? ModifiedOnUtc { get; set; }
     public Guid CreatedBy { get; set; }
     public Guid? UpdatedBy { get; set; }
+    public virtual Vendor? Vendor { get; set; } = default!;
     
     public virtual IReadOnlyCollection<UserAddress> UserAddressList { get; set; } = default!;
     public virtual IReadOnlyCollection<UserPayment> UserPaymentList { get; set; } = default!;

@@ -1,6 +1,9 @@
+using System.Security.Claims;
+using Antree_Ecommerce_BE.Application.Abstractions;
 using Antree_Ecommerce_BE.Presentation.Abstractions;
 using Carter;
 using MediatR;
+using Microsoft.AspNetCore.Authentication;
 //using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
@@ -25,6 +28,9 @@ public class AuthApi : ApiEndpoint, ICarterModule
         group1.MapPost("login", LoginV1);
         group1.MapPost("refresh_token", RefreshTokenV1);
         group1.MapPost("register", RegisterV1);
+        group1.MapPost("forgot_password", ForgotPasswordV1);
+        group1.MapPost("verify_code", VerifyCodeV1);
+        group1.MapPost("change_password", ChangePasswordV1).RequireAuthorization();
         group1.MapPost("logout", LogoutV1);
     }
 
@@ -61,6 +67,39 @@ public class AuthApi : ApiEndpoint, ICarterModule
     public static async Task<IResult> LogoutV1(ISender sender, [FromBody] CommandV1.Command.LogoutCommand command)
     {
         var result = await sender.Send(command);
+        
+        if (result.IsFailure)
+            return HandlerFailure(result);
+
+        return Results.Ok(result);
+    }
+    
+    public static async Task<IResult> ForgotPasswordV1(ISender sender, [FromBody] CommandV1.Command.ForgotPasswordCommand command)
+    {
+        var result = await sender.Send(command);
+        
+        if (result.IsFailure)
+            return HandlerFailure(result);
+
+        return Results.Ok(result);
+    }
+    
+    public static async Task<IResult> VerifyCodeV1(ISender sender, [FromBody] CommandV1.Command.VerifyCodeCommand command)
+    {
+        var result = await sender.Send(command);
+        
+        if (result.IsFailure)
+            return HandlerFailure(result);
+
+        return Results.Ok(result);
+    }
+    
+    public static async Task<IResult> ChangePasswordV1(ISender sender, HttpContext context, IJwtTokenService jwtTokenService, [FromBody] CommandV1.Command.ChangePasswordCommand command)
+    {
+        var accessToken = await context.GetTokenAsync("access_token");
+        var (claimPrincipal, _)  = jwtTokenService.GetPrincipalFromExpiredToken(accessToken!);
+        var email = claimPrincipal.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)!.Value;
+        var result = await sender.Send(new CommandV1.Command.ChangePasswordCommand(email, command.NewPassword));
         
         if (result.IsFailure)
             return HandlerFailure(result);

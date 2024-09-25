@@ -38,7 +38,7 @@ public class VnPayService : IVnPayService
         pay.AddRequestData("vnp_BankCode", "NCB");
         pay.AddRequestData("vnp_IpAddr", _httpContextAccessor.HttpContext.Connection.RemoteIpAddress.ToString());
         pay.AddRequestData("vnp_Locale", _vnPayOptions.Locale);
-        pay.AddRequestData("vnp_OrderInfo", $"{model.Id} {model.Address} {model.Total}");
+        pay.AddRequestData("vnp_OrderInfo", $"{model.Id}-{model.Address}-{model.Total}"); 
         pay.AddRequestData("vnp_OrderType", "250000");
         pay.AddRequestData("vnp_ExpireDate", timeNow.AddMinutes(2).ToString("yyyyMMddHHmmss"));
         // pay.AddRequestData("vnp_Inv_Phone", model.User.Phonenumber.Trim());
@@ -52,18 +52,13 @@ public class VnPayService : IVnPayService
 
         return paymentUrl;
     }
-
-    public Order PaymentExecute(IQueryCollection collections)
-    {
-        throw new NotImplementedException();
-    }
-
-    public async Task<(bool IsValid, string Message)> ValidateCallback(Dictionary<string, string> vnpayData, VnPayOption options)
+    
+    public async Task<(bool IsValid, string Message)> ValidateCallback(Dictionary<string, string> vnpayData)
     {
         string vnp_SecureHash = vnpayData.FirstOrDefault(x => x.Key == "vnp_SecureHash").Value;
         if (string.IsNullOrEmpty(vnp_SecureHash))
         {
-            return (false, "Invalid signature");
+            throw new Exception("Invalid signature");
         }
 
         VnPayLibrary vnpay = new VnPayLibrary();
@@ -74,17 +69,14 @@ public class VnPayService : IVnPayService
                 vnpay.AddResponseData(key, value);
             }
         }
+        
 
-        // string signValue = vnpay.GetResponseData();
-
-        bool checkSignature = vnpay.ValidateSignature(vnp_SecureHash, options.HashSecret);
+        bool checkSignature = vnpay.ValidateSignature(vnp_SecureHash, _vnPayOptions.HashSecret);
         if (!checkSignature)
         {
-            return (false, "Invalid signature");
+            throw new Exception("Invalid signature");
         }
-
-        string orderId = vnpay.GetResponseData("vnp_TxnRef");
-        long vnpayTranId = Convert.ToInt64(vnpay.GetResponseData("vnp_TransactionNo"));
+        
         string vnp_ResponseCode = vnpay.GetResponseData("vnp_ResponseCode");
         string vnp_TransactionStatus = vnpay.GetResponseData("vnp_TransactionStatus");
 
@@ -92,12 +84,10 @@ public class VnPayService : IVnPayService
 
         if (isSuccess)
         {
-            //await _paymentRepository.UpdatePaymentStatusAsync(orderId, PaymentStatus.Successful, vnpayTranId);
             return (true, "Payment successful");
         }
         else
         {
-           // await _paymentRepository.UpdatePaymentStatusAsync(orderId, PaymentStatus.Failed, vnpayTranId);
             return (false, $"Payment failed. Response Code: {vnp_ResponseCode}");
         }
     }

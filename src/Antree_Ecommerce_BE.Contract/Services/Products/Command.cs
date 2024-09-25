@@ -8,6 +8,7 @@ public static class Command
     public record CreateProductCommand : ICommand
     {
         public Guid ProductCategoryId { get; set; }
+        public Guid VendorId { get; set; }
         public string Name { get; set; }
         public decimal Price { get; set; }
         public string Description { get; set; }

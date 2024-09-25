@@ -15,7 +15,7 @@ public static class JwtExtensions
             options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
             options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
         }).AddJwtBearer(o =>
-        { 
+        {
             JwtOption jwtOption = new JwtOption();
             configuration.GetSection(nameof(JwtOption)).Bind(jwtOption);
 
@@ -31,7 +31,7 @@ public static class JwtExtensions
             o.SaveToken = true; // Save token into AuthenticationProperties
 
             var Key = Encoding.UTF8.GetBytes(jwtOption.SecretKey);
-            
+
             o.TokenValidationParameters = new TokenValidationParameters
             {
                 ValidateIssuer = true, // on production make it true
@@ -52,6 +52,7 @@ public static class JwtExtensions
                     {
                         context.Response.Headers.Add("IS-TOKEN-EXPIRED", "true");
                     }
+
                     return Task.CompletedTask;
                 }
             };
@@ -59,7 +60,12 @@ public static class JwtExtensions
             // o.EventsType = typeof(CustomJwtBearerEvents);
         });
 
-        services.AddAuthorization();
+        services.AddAuthorization(opts =>
+        {
+            opts.AddPolicy("0", policy => policy.RequireRole("0")); //Customer
+            opts.AddPolicy("1", policy => policy.RequireRole("1")); //Seller
+            opts.AddPolicy("2", policy => policy.RequireRole("2")); //Admin
+        });
         // services.AddScoped<CustomJwtBearerEvents>();
     }
 }

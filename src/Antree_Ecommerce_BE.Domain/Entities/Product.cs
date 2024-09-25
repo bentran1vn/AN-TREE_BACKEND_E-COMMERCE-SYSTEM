@@ -7,11 +7,12 @@ namespace Antree_Ecommerce_BE.Domain.Entities;
 public class Product : Entity<Guid>, IAuditableEntity, ICreatedByEntity<Guid>, IUpdatedByEnity<Guid?>
 {
     public Guid ProductCategoryId { get; set; }
+    public Guid VendorId { get; set; }
     public string Name { get; set; }
     public decimal Price { get; set; }
     public decimal DiscountSold { get; set; }
     public decimal DiscountPercent { get; set; }
-    public string? CoverImage { get; set; } 
+    public string CoverImage { get; set; } 
     public string Description { get; set; }
     public int Sku { get; set; }
     public int Sold { get; set; }
@@ -19,16 +20,18 @@ public class Product : Entity<Guid>, IAuditableEntity, ICreatedByEntity<Guid>, I
     public DateTimeOffset? ModifiedOnUtc { get; set; }
     public Guid CreatedBy { get; set; }
     public Guid? UpdatedBy { get; set; }
-
+    
+    public virtual Vendor Vendor { get; set; } = default!;
     public virtual ProductCategory ProductCategory { get; set; } = default!;
     public virtual IReadOnlyCollection<OrderDetail> OrderDetailList { get; set; } = default!;
     public virtual IReadOnlyCollection<ProductDiscount> ProductDiscountList { get; set; } = default!;
     public virtual IReadOnlyCollection<ProductFeedback> ProductFeedbackList { get; set; } = default!;
     public virtual IReadOnlyCollection<ProductMedia> ProductImageList { get; set; } = default!;
-    public Product(Guid id, Guid productCategoryId, string name, decimal price, decimal discountSold, string description, int sku, int sold, string coverImage, Guid createdBy, Guid? updatedBy)
+    public Product(Guid id, Guid productCategoryId, Guid vendorId, string name, decimal price, decimal discountSold, string description, int sku, int sold, string coverImage, Guid createdBy, Guid? updatedBy)
     {
         Id = id;
         ProductCategoryId = productCategoryId;
+        VendorId = vendorId;
         Name = name;
         Price = price;
         Description = description;
@@ -40,12 +43,12 @@ public class Product : Entity<Guid>, IAuditableEntity, ICreatedByEntity<Guid>, I
         UpdatedBy = updatedBy;
     }
 
-    public static Product CreateProduct(Guid id, Guid productCategoryId, string name, decimal price, string description, int sku, int sold, string coverImage, Guid createdBy, Guid? updatedBy)
+    public static Product CreateProduct(Guid id, Guid productCategoryId, Guid vendorId, string name, decimal price, string description, int sku, int sold, string coverImage, Guid createdBy, Guid? updatedBy)
     {
         if (name.Length > 50)
             throw new ProductException.ProductFieldException(nameof(Name));
 
-        var product = new Product(id, productCategoryId, name, price, price, description, sku, sold, coverImage, createdBy, updatedBy);
+        var product = new Product(id, productCategoryId, vendorId, name, price, price, description, sku, sold, coverImage, createdBy, updatedBy);
         
         return product;
     }

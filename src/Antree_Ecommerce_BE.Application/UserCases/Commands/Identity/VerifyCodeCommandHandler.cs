@@ -1,54 +1,54 @@
-using System.Security.Claims;
 using Antree_Ecommerce_BE.Application.Abstractions;
 using Antree_Ecommerce_BE.Contract.Abstractions.Messages;
 using Antree_Ecommerce_BE.Contract.Abstractions.Shared;
 using Antree_Ecommerce_BE.Contract.Services.Identity;
+using System.Security.Claims;
 using Antree_Ecommerce_BE.Domain.Abstractions.Repositories;
 using Antree_Ecommerce_BE.Domain.Entities;
 using Microsoft.Extensions.Caching.Distributed;
 
-namespace Antree_Ecommerce_BE.Application.UserCases.Queries.Identity;
+namespace Antree_Ecommerce_BE.Application.UserCases.Commands.Identity;
 
-public class GetLoginQueryHandler : IQueryHandler<Query.Login, Response.Authenticated>
+public class VerifyCodeCommandHandler : ICommandHandler<Command.VerifyCodeCommand>
 {
-    private readonly IJwtTokenService _jwtTokenService;
     private readonly ICacheService _cacheService;
+    private readonly IJwtTokenService _jwtTokenService;
     private readonly IRepositoryBase<User, Guid> _userRepository;
-    private readonly IPasswordHasherService _passwordHasherService;
 
-    public GetLoginQueryHandler(IJwtTokenService jwtTokenService, ICacheService cacheService, IRepositoryBase<User, Guid> userRepository, IPasswordHasherService passwordHasherService)
+    public VerifyCodeCommandHandler(ICacheService cacheService, IJwtTokenService jwtTokenService, IRepositoryBase<User, Guid> userRepository)
     {
-        _jwtTokenService = jwtTokenService;
         _cacheService = cacheService;
+        _jwtTokenService = jwtTokenService;
         _userRepository = userRepository;
-        _passwordHasherService = passwordHasherService;
     }
 
-    public async Task<Result<Response.Authenticated>> Handle(Query.Login request, CancellationToken cancellationToken)
+    public async Task<Result> Handle(Command.VerifyCodeCommand request, CancellationToken cancellationToken)
     {
-        // Check User
         var user =
             await _userRepository.FindSingleAsync(x =>
-                x.Email.Equals(request.EmailOrUserName) || x.Username.Equals(request.EmailOrUserName), cancellationToken);
+                x.Email.Equals(request.Email), cancellationToken);
         
         if (user is null)
         {
             throw new Exception("User Not Existed !");
         }
+        
+        var code = await _cacheService.GetAsync<string>(
+            $"{nameof(Command.ForgotPasswordCommand)}-UserAccount:{request.Email}", cancellationToken);
 
-        if (!_passwordHasherService.VerifyPassword(request.Password, user.Password))
+        if (code == null || !code.Equals(request.Code))
         {
-            throw new UnauthorizedAccessException("UnAuthorize !");
+            return Result.Failure(new Error("500", "Verify Code is Wrong !"));
         }
         
-        // Generate JWT Token
         var claims = new List<Claim>
         {
-            new Claim(ClaimTypes.Email, request.EmailOrUserName),
+            new Claim(ClaimTypes.Email, user.Email),
             new Claim(ClaimTypes.Role, user.Role.ToString()),
             new Claim("Role", user.Role.ToString()),
             new Claim("UserId", user.Id.ToString()),
-            new Claim(ClaimTypes.Name, request.EmailOrUserName),
+            new Claim(ClaimTypes.Name, user.Email),
+            new Claim(ClaimTypes.Name, user.Username),
             new Claim(ClaimTypes.Expired, DateTime.Now.AddMinutes(5).ToString())
         };
 
@@ -62,13 +62,13 @@ public class GetLoginQueryHandler : IQueryHandler<Query.Login, Response.Authenti
             RefreshTokenExpiryTime = DateTime.Now.AddMinutes(15)
         };
         
-        var slidingExpiration = request.SlidingExpirationInMinutes == 0 ? 10 : request.SlidingExpirationInMinutes;
-        var absoluteExpiration = request.AbsoluteExpirationInMinutes == 0 ? 15 : request.AbsoluteExpirationInMinutes;
+        var slidingExpiration = 10;
+        var absoluteExpiration = 15;
         var options = new DistributedCacheEntryOptions()
             .SetSlidingExpiration(TimeSpan.FromMinutes(slidingExpiration))
             .SetAbsoluteExpiration(TimeSpan.FromMinutes(absoluteExpiration));
         
-        await _cacheService.SetAsync($"{nameof(Query.Login)}-UserAccount:{request.EmailOrUserName}", response, options, cancellationToken);
+        await _cacheService.SetAsync($"{nameof(Query.Login)}-UserAccount:{user.Email}", response, options, cancellationToken);
 
         return Result.Success(response);
     }
