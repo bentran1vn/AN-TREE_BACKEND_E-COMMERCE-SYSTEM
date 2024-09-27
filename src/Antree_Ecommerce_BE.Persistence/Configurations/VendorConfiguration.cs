@@ -21,15 +21,18 @@ public class VendorConfiguration : IEntityTypeConfiguration<Vendor>
             new Vendor(
                 Guid.Parse("f5ef2d83-48fd-41ea-952b-c3803a59b2c1"), "Vendor1@gmail.com",
                 "Vendor1", "VendorAddress1", "VendorCity1", "VendorProvince1",
-                "VendorPhone1"),
+                "VendorPhone1", "123", "123", "123",
+                "123", "123", new Guid()),
             new Vendor(
                 Guid.Parse("d5ab34c8-d8ce-4e30-9446-13735a334ef2"), "Vendor2@gmail.com",
                 "Vendor2", "VendorAddress2", "VendorCity2", "VendorProvince2",
-                "VendorPhone2"),
+                "VendorPhone2", "123", "123", "123",
+                "123", "123", new Guid()),
             new Vendor(
                 Guid.Parse("f5565937-575b-462a-903c-404727ba3765"), "Vendor3@gmail.com",
                 "Vendor3", "VendorAddress3", "VendorCity3", "VendorProvince3",
-                "VendorPhone3")
+                "VendorPhone3", "123", "123", "123",
+                "123", "123", new Guid())
         );
     }
 }

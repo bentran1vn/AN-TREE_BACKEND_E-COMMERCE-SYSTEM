@@ -33,8 +33,11 @@ public class OrderApi : ApiEndpoint, ICarterModule
         var accessToken = await context.GetTokenAsync("access_token");
         var (claimPrincipal, _)  = jwtTokenService.GetPrincipalFromExpiredToken(accessToken!);
         var UserId = claimPrincipal.Claims.FirstOrDefault(c => c.Type == "UserId")!.Value;
-        var result = await sender.Send(new CommandV1.Command.CreateOrderCommand(request.OrderItems,
-            new Guid(UserId)));
+        var result = await sender.Send(new CommandV1.Command.CreateOrderCommand()
+        {
+            OrderItems = request.OrderItems,
+            UserId = new Guid(UserId)
+        });
         
         if (result.IsFailure)
             return HandlerFailure(result);

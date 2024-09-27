@@ -24,9 +24,12 @@ internal sealed class ExceptionHandlingMiddleware : IMiddleware
         }
     }
 
-    private static async Task HandleExceptionAsync(HttpContext httpContext, Exception exception)
+    private async Task HandleExceptionAsync(HttpContext httpContext, Exception exception)
     {
         var statusCode = GetStatusCode(exception);
+
+        _logger.LogError("Handling exception: {ExceptionType}, Status Code: {StatusCode}, Message: {Message}", 
+            exception.GetType().Name, statusCode, exception.Message);
 
         var response = new
         {
@@ -37,8 +40,22 @@ internal sealed class ExceptionHandlingMiddleware : IMiddleware
         };
 
         httpContext.Response.ContentType = "application/json";
-
         httpContext.Response.StatusCode = statusCode;
+
+        // Log request details
+        var request = httpContext.Request;
+        _logger.LogInformation("Request Method: {Method}, Path: {Path}, ContentType: {ContentType}", 
+            request.Method, request.Path, request.ContentType);
+
+        // Log form data if present
+        if (request.HasFormContentType)
+        {
+            var form = await request.ReadFormAsync();
+            foreach (var key in form.Keys)
+            {
+                _logger.LogInformation("Form Data - Key: {Key}, Value: {Value}", key, form[key]);
+            }
+        }
 
         await httpContext.Response.WriteAsync(JsonSerializer.Serialize(response));
     }

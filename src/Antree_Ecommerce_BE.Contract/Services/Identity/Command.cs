@@ -6,7 +6,7 @@ public static class Command
 {
     public record RegisterCommand(
         string Email, string Username, string Password,
-        string FirstName, string LastName, string Phonenumber
+        string FirstName, string LastName, string Phonenumber, int Role
     ) : ICommand;
     
     public record ForgotPasswordCommand(

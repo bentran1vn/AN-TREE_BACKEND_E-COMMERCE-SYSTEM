@@ -21,7 +21,10 @@ public class ProductApi : ApiEndpoint, ICarterModule
         
         group1.MapGet(string.Empty, GetProductsV1);//.RequireAuthorization();
         group1.MapGet("{productId}", GetProductV1);
-        group1.MapPost(string.Empty, CreateProductsV1).Accepts<CommandV1.Command.CreateProductCommand>("multipart/form-data").DisableAntiforgery();;
+        group1.MapPost(string.Empty, CreateProductsV1)
+            .RequireAuthorization()
+            .Accepts<CommandV1.Command.CreateProductCommand>("multipart/form-data")
+            .DisableAntiforgery();;
         group1.MapDelete("{productId}", DeleteProductsV1);
         // group1.MapPut("{productId}", UpdateProductsV1);
     }
@@ -72,12 +75,18 @@ public class ProductApi : ApiEndpoint, ICarterModule
     {
         var updateProductCommand = new CommandV1.Command.UpdateProductCommand(productId, updateProduct.ProductCategoryId, updateProduct.Name, updateProduct.Price, updateProduct.Description, updateProduct.Sku, updateProduct.Sold);
         var result = await sender.Send(updateProductCommand);
+        if (result.IsFailure)
+            return HandlerFailure(result);
+
         return Results.Ok(result);
     }
 
     public static async Task<IResult> DeleteProductsV1(ISender sender, Guid productId)
     {
         var result = await sender.Send(new CommandV1.Command.DeleteProductCommand(productId));
+        if (result.IsFailure)
+            return HandlerFailure(result);
+
         return Results.Ok(result);
     }
     

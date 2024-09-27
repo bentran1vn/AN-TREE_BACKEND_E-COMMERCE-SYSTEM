@@ -98,6 +98,7 @@ try
 catch (Exception ex)
 {
     Log.Fatal(ex, "An unhandled exception occured during bootstrapping");
+    Console.WriteLine(ex.Message);
     await app.StopAsync();
 }
 finally

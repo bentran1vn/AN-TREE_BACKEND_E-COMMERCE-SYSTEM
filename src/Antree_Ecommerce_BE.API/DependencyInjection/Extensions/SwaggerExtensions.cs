@@ -47,6 +47,8 @@ Example: 'Bearer 12345abcdef'",
             
             c.OperationFilter<SwaggerFormDataOperationFilter>();
             
+            c.EnableAnnotations();
+            
             
         });
         services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();

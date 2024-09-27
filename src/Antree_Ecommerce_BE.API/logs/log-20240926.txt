@@ -130,3 +130,966 @@ StackExchange.Redis.RedisConnectionException: The message timed out in the backl
 2024-09-26 00:55:16.981 +07:00 [WRN] No store type was specified for the decimal property 'DiscountSold' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
 2024-09-26 00:55:16.981 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
 2024-09-26 00:55:16.981 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:13:34.138 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-26 12:13:34.275 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:13:34.277 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:13:34.277 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:13:34.277 +07:00 [WRN] No store type was specified for the decimal property 'DiscountSold' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:13:34.277 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:13:34.277 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:14:48.950 +07:00 [ERR] User Not Existed !
+System.Exception: User Not Existed !
+   at Antree_Ecommerce_BE.Application.UserCases.Commands.Vendors.CreateVendorCommandHandler.Handle(CreateVendorCommand request, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/UserCases/Commands/Vendors/CreateVendorCommandHandler.cs:line 27
+   at Antree_Ecommerce_BE.Application.Behaviors.TracingPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TracingPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.<>c__DisplayClass2_0.<<Handle>b__0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 36
+--- End of stack trace from previous location ---
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.<>c__DisplayClass2_0.<<Handle>b__0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 39
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 32
+   at Antree_Ecommerce_BE.Application.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/PerformancePipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.ValidationPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/ValidationPipelineBehavior.cs:line 41
+   at Antree_Ecommerce_BE.Presentation.APIs.Vendors.VendorApi.CreateVendorV1(ISender sender, HttpContext context, IJwtTokenService jwtTokenService, CreateVendorCommand command) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Presentation/APIs/Vendors/VendorApi.cs:line 33
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass102_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-26 12:14:53.134 +07:00 [ERR] User Not Existed !
+System.Exception: User Not Existed !
+   at Antree_Ecommerce_BE.Application.UserCases.Commands.Vendors.CreateVendorCommandHandler.Handle(CreateVendorCommand request, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/UserCases/Commands/Vendors/CreateVendorCommandHandler.cs:line 27
+   at Antree_Ecommerce_BE.Application.Behaviors.TracingPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TracingPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.<>c__DisplayClass2_0.<<Handle>b__0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 36
+--- End of stack trace from previous location ---
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.<>c__DisplayClass2_0.<<Handle>b__0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 39
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 32
+   at Antree_Ecommerce_BE.Application.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/PerformancePipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.ValidationPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/ValidationPipelineBehavior.cs:line 41
+   at Antree_Ecommerce_BE.Presentation.APIs.Vendors.VendorApi.CreateVendorV1(ISender sender, HttpContext context, IJwtTokenService jwtTokenService, CreateVendorCommand command) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Presentation/APIs/Vendors/VendorApi.cs:line 33
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass102_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-26 12:15:28.895 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-26 12:15:29.019 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:15:29.020 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:15:29.020 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:15:29.020 +07:00 [WRN] No store type was specified for the decimal property 'DiscountSold' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:15:29.020 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:15:29.020 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:26:53.005 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-26 12:26:53.080 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:26:53.081 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:26:53.081 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:26:53.081 +07:00 [WRN] No store type was specified for the decimal property 'DiscountSold' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:26:53.081 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:26:53.082 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:26:53.200 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:26:53.200 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:26:53.200 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:26:53.200 +07:00 [WRN] No store type was specified for the decimal property 'DiscountSold' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:26:53.200 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:26:53.200 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:27:05.981 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-26 12:27:06.057 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:27:06.057 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:27:06.057 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:27:06.058 +07:00 [WRN] No store type was specified for the decimal property 'DiscountSold' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:27:06.058 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:27:06.058 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:30:19.606 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-26 12:30:19.733 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:30:19.735 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:30:19.735 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:30:19.735 +07:00 [WRN] No store type was specified for the decimal property 'DiscountSold' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:30:19.735 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:30:19.735 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:30:40.207 +07:00 [ERR] Please Remove Your Vendor First !
+System.Exception: Please Remove Your Vendor First !
+   at Antree_Ecommerce_BE.Application.UserCases.Commands.Vendors.CreateVendorCommandHandler.Handle(CreateVendorCommand request, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/UserCases/Commands/Vendors/CreateVendorCommandHandler.cs:line 32
+   at Antree_Ecommerce_BE.Application.Behaviors.TracingPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TracingPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.<>c__DisplayClass2_0.<<Handle>b__0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 36
+--- End of stack trace from previous location ---
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.<>c__DisplayClass2_0.<<Handle>b__0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 39
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 32
+   at Antree_Ecommerce_BE.Application.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/PerformancePipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.ValidationPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/ValidationPipelineBehavior.cs:line 41
+   at Antree_Ecommerce_BE.Presentation.APIs.Vendors.VendorApi.CreateVendorV1(ISender sender, HttpContext context, IJwtTokenService jwtTokenService, CreateVendorCommand command) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Presentation/APIs/Vendors/VendorApi.cs:line 33
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass102_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-26 12:31:34.762 +07:00 [ERR] Please Remove Your Vendor First !
+System.Exception: Please Remove Your Vendor First !
+   at Antree_Ecommerce_BE.Application.UserCases.Commands.Vendors.CreateVendorCommandHandler.Handle(CreateVendorCommand request, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/UserCases/Commands/Vendors/CreateVendorCommandHandler.cs:line 32
+   at Antree_Ecommerce_BE.Application.Behaviors.TracingPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TracingPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.<>c__DisplayClass2_0.<<Handle>b__0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 36
+--- End of stack trace from previous location ---
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.<>c__DisplayClass2_0.<<Handle>b__0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 39
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 32
+   at Antree_Ecommerce_BE.Application.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/PerformancePipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.ValidationPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/ValidationPipelineBehavior.cs:line 41
+   at Antree_Ecommerce_BE.Presentation.APIs.Vendors.VendorApi.CreateVendorV1(ISender sender, HttpContext context, IJwtTokenService jwtTokenService, CreateVendorCommand command) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Presentation/APIs/Vendors/VendorApi.cs:line 33
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass102_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-26 12:31:38.380 +07:00 [ERR] Please Remove Your Vendor First !
+System.Exception: Please Remove Your Vendor First !
+   at Antree_Ecommerce_BE.Application.UserCases.Commands.Vendors.CreateVendorCommandHandler.Handle(CreateVendorCommand request, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/UserCases/Commands/Vendors/CreateVendorCommandHandler.cs:line 32
+   at Antree_Ecommerce_BE.Application.Behaviors.TracingPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TracingPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.<>c__DisplayClass2_0.<<Handle>b__0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 36
+--- End of stack trace from previous location ---
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.<>c__DisplayClass2_0.<<Handle>b__0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 39
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 32
+   at Antree_Ecommerce_BE.Application.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/PerformancePipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.ValidationPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/ValidationPipelineBehavior.cs:line 41
+   at Antree_Ecommerce_BE.Presentation.APIs.Vendors.VendorApi.CreateVendorV1(ISender sender, HttpContext context, IJwtTokenService jwtTokenService, CreateVendorCommand command) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Presentation/APIs/Vendors/VendorApi.cs:line 33
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass102_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-26 12:33:01.885 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-26 12:33:02.003 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:33:02.004 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:33:02.004 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:33:02.004 +07:00 [WRN] No store type was specified for the decimal property 'DiscountSold' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:33:02.004 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:33:02.004 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:33:21.837 +07:00 [ERR] Please Remove Your Vendor First !
+System.Exception: Please Remove Your Vendor First !
+   at Antree_Ecommerce_BE.Application.UserCases.Commands.Vendors.CreateVendorCommandHandler.Handle(CreateVendorCommand request, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/UserCases/Commands/Vendors/CreateVendorCommandHandler.cs:line 32
+   at Antree_Ecommerce_BE.Application.Behaviors.TracingPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TracingPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.<>c__DisplayClass2_0.<<Handle>b__0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 36
+--- End of stack trace from previous location ---
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.<>c__DisplayClass2_0.<<Handle>b__0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 39
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 32
+   at Antree_Ecommerce_BE.Application.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/PerformancePipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.ValidationPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/ValidationPipelineBehavior.cs:line 41
+   at Antree_Ecommerce_BE.Presentation.APIs.Vendors.VendorApi.CreateVendorV1(ISender sender, HttpContext context, IJwtTokenService jwtTokenService, CreateVendorCommand command) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Presentation/APIs/Vendors/VendorApi.cs:line 33
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass102_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-26 12:36:36.739 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-26 12:36:36.821 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:36:36.821 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:36:36.821 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:36:36.822 +07:00 [WRN] No store type was specified for the decimal property 'DiscountSold' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:36:36.822 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:36:36.823 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:36:36.962 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:36:36.962 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:36:36.962 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:36:36.963 +07:00 [WRN] No store type was specified for the decimal property 'DiscountSold' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:36:36.963 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:36:36.963 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:36:47.981 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-26 12:36:48.051 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:36:48.052 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:36:48.052 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:36:48.052 +07:00 [WRN] No store type was specified for the decimal property 'DiscountSold' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:36:48.052 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:36:48.052 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:38:12.844 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-26 12:38:12.966 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:38:12.967 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:38:12.967 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:38:12.967 +07:00 [WRN] No store type was specified for the decimal property 'DiscountSold' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:38:12.967 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:38:12.968 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:45:27.692 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-26 12:45:27.807 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:45:27.808 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:45:27.808 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:45:27.808 +07:00 [WRN] No store type was specified for the decimal property 'DiscountSold' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:45:27.808 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:45:27.809 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:45:44.374 +07:00 [ERR] Please Remove Your Vendor First !
+System.Exception: Please Remove Your Vendor First !
+   at Antree_Ecommerce_BE.Application.UserCases.Commands.Vendors.CreateVendorCommandHandler.Handle(CreateVendorCommand request, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/UserCases/Commands/Vendors/CreateVendorCommandHandler.cs:line 34
+   at Antree_Ecommerce_BE.Application.Behaviors.TracingPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TracingPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.<>c__DisplayClass2_0.<<Handle>b__0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 36
+--- End of stack trace from previous location ---
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.<>c__DisplayClass2_0.<<Handle>b__0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 39
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 32
+   at Antree_Ecommerce_BE.Application.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/PerformancePipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.ValidationPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/ValidationPipelineBehavior.cs:line 41
+   at Antree_Ecommerce_BE.Presentation.APIs.Vendors.VendorApi.CreateVendorV1(ISender sender, HttpContext context, IJwtTokenService jwtTokenService, CreateVendorCommand command) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Presentation/APIs/Vendors/VendorApi.cs:line 33
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass102_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-26 12:53:35.202 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-26 12:53:35.316 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:53:35.317 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:53:35.317 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:53:35.318 +07:00 [WRN] No store type was specified for the decimal property 'DiscountSold' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:53:35.318 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:53:35.318 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 12:53:55.712 +07:00 [ERR] Please Remove Your Vendor First !
+System.Exception: Please Remove Your Vendor First !
+   at Antree_Ecommerce_BE.Application.UserCases.Commands.Vendors.CreateVendorCommandHandler.Handle(CreateVendorCommand request, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/UserCases/Commands/Vendors/CreateVendorCommandHandler.cs:line 33
+   at Antree_Ecommerce_BE.Application.Behaviors.TracingPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TracingPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.<>c__DisplayClass2_0.<<Handle>b__0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 36
+--- End of stack trace from previous location ---
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.<>c__DisplayClass2_0.<<Handle>b__0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 39
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 32
+   at Antree_Ecommerce_BE.Application.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/PerformancePipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.ValidationPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/ValidationPipelineBehavior.cs:line 41
+   at Antree_Ecommerce_BE.Presentation.APIs.Vendors.VendorApi.CreateVendorV1(ISender sender, HttpContext context, IJwtTokenService jwtTokenService, CreateVendorCommand command) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Presentation/APIs/Vendors/VendorApi.cs:line 33
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass102_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-26 12:53:59.113 +07:00 [ERR] Please Remove Your Vendor First !
+System.Exception: Please Remove Your Vendor First !
+   at Antree_Ecommerce_BE.Application.UserCases.Commands.Vendors.CreateVendorCommandHandler.Handle(CreateVendorCommand request, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/UserCases/Commands/Vendors/CreateVendorCommandHandler.cs:line 33
+   at Antree_Ecommerce_BE.Application.Behaviors.TracingPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TracingPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.<>c__DisplayClass2_0.<<Handle>b__0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 36
+--- End of stack trace from previous location ---
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.<>c__DisplayClass2_0.<<Handle>b__0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 39
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 32
+   at Antree_Ecommerce_BE.Application.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/PerformancePipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.ValidationPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/ValidationPipelineBehavior.cs:line 41
+   at Antree_Ecommerce_BE.Presentation.APIs.Vendors.VendorApi.CreateVendorV1(ISender sender, HttpContext context, IJwtTokenService jwtTokenService, CreateVendorCommand command) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Presentation/APIs/Vendors/VendorApi.cs:line 33
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass102_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-26 12:53:59.310 +07:00 [ERR] Please Remove Your Vendor First !
+System.Exception: Please Remove Your Vendor First !
+   at Antree_Ecommerce_BE.Application.UserCases.Commands.Vendors.CreateVendorCommandHandler.Handle(CreateVendorCommand request, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/UserCases/Commands/Vendors/CreateVendorCommandHandler.cs:line 33
+   at Antree_Ecommerce_BE.Application.Behaviors.TracingPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TracingPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.<>c__DisplayClass2_0.<<Handle>b__0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 36
+--- End of stack trace from previous location ---
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.<>c__DisplayClass2_0.<<Handle>b__0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 39
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 32
+   at Antree_Ecommerce_BE.Application.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/PerformancePipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.ValidationPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/ValidationPipelineBehavior.cs:line 41
+   at Antree_Ecommerce_BE.Presentation.APIs.Vendors.VendorApi.CreateVendorV1(ISender sender, HttpContext context, IJwtTokenService jwtTokenService, CreateVendorCommand command) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Presentation/APIs/Vendors/VendorApi.cs:line 33
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass102_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-26 12:53:59.493 +07:00 [ERR] Please Remove Your Vendor First !
+System.Exception: Please Remove Your Vendor First !
+   at Antree_Ecommerce_BE.Application.UserCases.Commands.Vendors.CreateVendorCommandHandler.Handle(CreateVendorCommand request, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/UserCases/Commands/Vendors/CreateVendorCommandHandler.cs:line 33
+   at Antree_Ecommerce_BE.Application.Behaviors.TracingPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TracingPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.<>c__DisplayClass2_0.<<Handle>b__0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 36
+--- End of stack trace from previous location ---
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.<>c__DisplayClass2_0.<<Handle>b__0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 39
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 32
+   at Antree_Ecommerce_BE.Application.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/PerformancePipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.ValidationPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/ValidationPipelineBehavior.cs:line 41
+   at Antree_Ecommerce_BE.Presentation.APIs.Vendors.VendorApi.CreateVendorV1(ISender sender, HttpContext context, IJwtTokenService jwtTokenService, CreateVendorCommand command) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Presentation/APIs/Vendors/VendorApi.cs:line 33
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass102_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-26 12:53:59.672 +07:00 [ERR] Please Remove Your Vendor First !
+System.Exception: Please Remove Your Vendor First !
+   at Antree_Ecommerce_BE.Application.UserCases.Commands.Vendors.CreateVendorCommandHandler.Handle(CreateVendorCommand request, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/UserCases/Commands/Vendors/CreateVendorCommandHandler.cs:line 33
+   at Antree_Ecommerce_BE.Application.Behaviors.TracingPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TracingPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.<>c__DisplayClass2_0.<<Handle>b__0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 36
+--- End of stack trace from previous location ---
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.<>c__DisplayClass2_0.<<Handle>b__0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 39
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 32
+   at Antree_Ecommerce_BE.Application.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/PerformancePipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.ValidationPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/ValidationPipelineBehavior.cs:line 41
+   at Antree_Ecommerce_BE.Presentation.APIs.Vendors.VendorApi.CreateVendorV1(ISender sender, HttpContext context, IJwtTokenService jwtTokenService, CreateVendorCommand command) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Presentation/APIs/Vendors/VendorApi.cs:line 33
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass102_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-26 12:53:59.826 +07:00 [ERR] Please Remove Your Vendor First !
+System.Exception: Please Remove Your Vendor First !
+   at Antree_Ecommerce_BE.Application.UserCases.Commands.Vendors.CreateVendorCommandHandler.Handle(CreateVendorCommand request, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/UserCases/Commands/Vendors/CreateVendorCommandHandler.cs:line 33
+   at Antree_Ecommerce_BE.Application.Behaviors.TracingPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TracingPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.<>c__DisplayClass2_0.<<Handle>b__0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 36
+--- End of stack trace from previous location ---
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.<>c__DisplayClass2_0.<<Handle>b__0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 39
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 32
+   at Antree_Ecommerce_BE.Application.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/PerformancePipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.ValidationPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/ValidationPipelineBehavior.cs:line 41
+   at Antree_Ecommerce_BE.Presentation.APIs.Vendors.VendorApi.CreateVendorV1(ISender sender, HttpContext context, IJwtTokenService jwtTokenService, CreateVendorCommand command) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Presentation/APIs/Vendors/VendorApi.cs:line 33
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass102_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-26 12:53:59.994 +07:00 [ERR] Please Remove Your Vendor First !
+System.Exception: Please Remove Your Vendor First !
+   at Antree_Ecommerce_BE.Application.UserCases.Commands.Vendors.CreateVendorCommandHandler.Handle(CreateVendorCommand request, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/UserCases/Commands/Vendors/CreateVendorCommandHandler.cs:line 33
+   at Antree_Ecommerce_BE.Application.Behaviors.TracingPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TracingPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.<>c__DisplayClass2_0.<<Handle>b__0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 36
+--- End of stack trace from previous location ---
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.<>c__DisplayClass2_0.<<Handle>b__0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 39
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 32
+   at Antree_Ecommerce_BE.Application.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/PerformancePipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.ValidationPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/ValidationPipelineBehavior.cs:line 41
+   at Antree_Ecommerce_BE.Presentation.APIs.Vendors.VendorApi.CreateVendorV1(ISender sender, HttpContext context, IJwtTokenService jwtTokenService, CreateVendorCommand command) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Presentation/APIs/Vendors/VendorApi.cs:line 33
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass102_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-26 13:09:12.431 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-26 13:09:12.511 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:09:12.511 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:09:12.511 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:09:12.511 +07:00 [WRN] No store type was specified for the decimal property 'DiscountSold' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:09:12.512 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:09:12.512 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:09:12.636 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:09:12.636 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:09:12.636 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:09:12.636 +07:00 [WRN] No store type was specified for the decimal property 'DiscountSold' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:09:12.636 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:09:12.636 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:09:24.030 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-26 13:09:24.108 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:09:24.108 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:09:24.108 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:09:24.108 +07:00 [WRN] No store type was specified for the decimal property 'DiscountSold' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:09:24.108 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:09:24.109 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:19:42.454 +07:00 [FTL] Application startup exception
+System.InvalidOperationException: Body was inferred but the method does not allow inferred body parameters.
+Below is the list of parameters that we found: 
+
+Parameter           | Source                        
+---------------------------------------------------------------------------------
+sender              | Services (Inferred)
+jwtTokenService     | Services (Inferred)
+command             | Body (Inferred)
+
+
+Did you mean to register the "Body (Inferred)" parameter(s) as a Service or apply the [FromServices] or [FromBody] attribute?
+
+
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.CreateArguments(ParameterInfo[] parameters, RequestDelegateFactoryContext factoryContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.CreateArgumentsAndInferMetadata(MethodInfo methodInfo, RequestDelegateFactoryContext factoryContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.InferMetadata(MethodInfo methodInfo, RequestDelegateFactoryOptions options)
+   at Microsoft.AspNetCore.Routing.RouteEndpointDataSource.CreateRouteEndpointBuilder(RouteEntry entry, RoutePattern groupPrefix, IReadOnlyList`1 groupConventions, IReadOnlyList`1 groupFinallyConventions)
+   at Microsoft.AspNetCore.Routing.RouteEndpointDataSource.GetGroupedEndpoints(RouteGroupContext context)
+   at Microsoft.AspNetCore.Routing.RouteGroupBuilder.GroupEndpointDataSource.GetGroupedEndpointsWithNullablePrefix(RoutePattern prefix, IReadOnlyList`1 conventions, IReadOnlyList`1 finallyConventions, IServiceProvider applicationServices)
+   at Asp.Versioning.Builder.VersionedEndpointRouteBuilder.EndpointDataSourceDecorator.get_Endpoints()
+   at Asp.Versioning.Builder.VersionedEndpointRouteBuilder.EndpointDataSourceDecorator.CollateGroupApiVersions()
+   at Asp.Versioning.Builder.VersionedEndpointRouteBuilder.EndpointDataSourceDecorator.GetGroupedEndpoints(RouteGroupContext context)
+   at Microsoft.AspNetCore.Routing.RouteGroupBuilder.GroupEndpointDataSource.GetGroupedEndpointsWithNullablePrefix(RoutePattern prefix, IReadOnlyList`1 conventions, IReadOnlyList`1 finallyConventions, IServiceProvider applicationServices)
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.CreateEndpointsUnsynchronized()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.HandleChange(Boolean collectionChanged)
+   at System.Collections.ObjectModel.ObservableCollection`1.OnCollectionChanged(NotifyCollectionChangedEventArgs e)
+   at Microsoft.AspNetCore.Builder.EndpointRoutingApplicationBuilderExtensions.UseEndpoints(IApplicationBuilder builder, Action`1 configure)
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.ConfigureApplication(WebHostBuilderContext context, IApplicationBuilder app, Boolean allowDeveloperExceptionPage)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+2024-09-26 13:19:42.492 +07:00 [ERR] Hosting failed to start
+System.InvalidOperationException: Body was inferred but the method does not allow inferred body parameters.
+Below is the list of parameters that we found: 
+
+Parameter           | Source                        
+---------------------------------------------------------------------------------
+sender              | Services (Inferred)
+jwtTokenService     | Services (Inferred)
+command             | Body (Inferred)
+
+
+Did you mean to register the "Body (Inferred)" parameter(s) as a Service or apply the [FromServices] or [FromBody] attribute?
+
+
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.CreateArguments(ParameterInfo[] parameters, RequestDelegateFactoryContext factoryContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.CreateArgumentsAndInferMetadata(MethodInfo methodInfo, RequestDelegateFactoryContext factoryContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.InferMetadata(MethodInfo methodInfo, RequestDelegateFactoryOptions options)
+   at Microsoft.AspNetCore.Routing.RouteEndpointDataSource.CreateRouteEndpointBuilder(RouteEntry entry, RoutePattern groupPrefix, IReadOnlyList`1 groupConventions, IReadOnlyList`1 groupFinallyConventions)
+   at Microsoft.AspNetCore.Routing.RouteEndpointDataSource.GetGroupedEndpoints(RouteGroupContext context)
+   at Microsoft.AspNetCore.Routing.RouteGroupBuilder.GroupEndpointDataSource.GetGroupedEndpointsWithNullablePrefix(RoutePattern prefix, IReadOnlyList`1 conventions, IReadOnlyList`1 finallyConventions, IServiceProvider applicationServices)
+   at Asp.Versioning.Builder.VersionedEndpointRouteBuilder.EndpointDataSourceDecorator.get_Endpoints()
+   at Asp.Versioning.Builder.VersionedEndpointRouteBuilder.EndpointDataSourceDecorator.CollateGroupApiVersions()
+   at Asp.Versioning.Builder.VersionedEndpointRouteBuilder.EndpointDataSourceDecorator.GetGroupedEndpoints(RouteGroupContext context)
+   at Microsoft.AspNetCore.Routing.RouteGroupBuilder.GroupEndpointDataSource.GetGroupedEndpointsWithNullablePrefix(RoutePattern prefix, IReadOnlyList`1 conventions, IReadOnlyList`1 finallyConventions, IServiceProvider applicationServices)
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.CreateEndpointsUnsynchronized()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.HandleChange(Boolean collectionChanged)
+   at System.Collections.ObjectModel.ObservableCollection`1.OnCollectionChanged(NotifyCollectionChangedEventArgs e)
+   at Microsoft.AspNetCore.Builder.EndpointRoutingApplicationBuilderExtensions.UseEndpoints(IApplicationBuilder builder, Action`1 configure)
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.ConfigureApplication(WebHostBuilderContext context, IApplicationBuilder app, Boolean allowDeveloperExceptionPage)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2024-09-26 13:19:42.495 +07:00 [FTL] An unhandled exception occured during bootstrapping
+System.InvalidOperationException: Body was inferred but the method does not allow inferred body parameters.
+Below is the list of parameters that we found: 
+
+Parameter           | Source                        
+---------------------------------------------------------------------------------
+sender              | Services (Inferred)
+jwtTokenService     | Services (Inferred)
+command             | Body (Inferred)
+
+
+Did you mean to register the "Body (Inferred)" parameter(s) as a Service or apply the [FromServices] or [FromBody] attribute?
+
+
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.CreateArguments(ParameterInfo[] parameters, RequestDelegateFactoryContext factoryContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.CreateArgumentsAndInferMetadata(MethodInfo methodInfo, RequestDelegateFactoryContext factoryContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.InferMetadata(MethodInfo methodInfo, RequestDelegateFactoryOptions options)
+   at Microsoft.AspNetCore.Routing.RouteEndpointDataSource.CreateRouteEndpointBuilder(RouteEntry entry, RoutePattern groupPrefix, IReadOnlyList`1 groupConventions, IReadOnlyList`1 groupFinallyConventions)
+   at Microsoft.AspNetCore.Routing.RouteEndpointDataSource.GetGroupedEndpoints(RouteGroupContext context)
+   at Microsoft.AspNetCore.Routing.RouteGroupBuilder.GroupEndpointDataSource.GetGroupedEndpointsWithNullablePrefix(RoutePattern prefix, IReadOnlyList`1 conventions, IReadOnlyList`1 finallyConventions, IServiceProvider applicationServices)
+   at Asp.Versioning.Builder.VersionedEndpointRouteBuilder.EndpointDataSourceDecorator.get_Endpoints()
+   at Asp.Versioning.Builder.VersionedEndpointRouteBuilder.EndpointDataSourceDecorator.CollateGroupApiVersions()
+   at Asp.Versioning.Builder.VersionedEndpointRouteBuilder.EndpointDataSourceDecorator.GetGroupedEndpoints(RouteGroupContext context)
+   at Microsoft.AspNetCore.Routing.RouteGroupBuilder.GroupEndpointDataSource.GetGroupedEndpointsWithNullablePrefix(RoutePattern prefix, IReadOnlyList`1 conventions, IReadOnlyList`1 finallyConventions, IServiceProvider applicationServices)
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.CreateEndpointsUnsynchronized()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.HandleChange(Boolean collectionChanged)
+   at System.Collections.ObjectModel.ObservableCollection`1.OnCollectionChanged(NotifyCollectionChangedEventArgs e)
+   at Microsoft.AspNetCore.Builder.EndpointRoutingApplicationBuilderExtensions.UseEndpoints(IApplicationBuilder builder, Action`1 configure)
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.ConfigureApplication(WebHostBuilderContext context, IApplicationBuilder app, Boolean allowDeveloperExceptionPage)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Program.<Main>$(String[] args) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Program.cs:line 95
+2024-09-26 13:19:58.772 +07:00 [FTL] Application startup exception
+System.InvalidOperationException: Body was inferred but the method does not allow inferred body parameters.
+Below is the list of parameters that we found: 
+
+Parameter           | Source                        
+---------------------------------------------------------------------------------
+sender              | Services (Inferred)
+jwtTokenService     | Services (Inferred)
+command             | Body (Inferred)
+
+
+Did you mean to register the "Body (Inferred)" parameter(s) as a Service or apply the [FromServices] or [FromBody] attribute?
+
+
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.CreateArguments(ParameterInfo[] parameters, RequestDelegateFactoryContext factoryContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.CreateArgumentsAndInferMetadata(MethodInfo methodInfo, RequestDelegateFactoryContext factoryContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.InferMetadata(MethodInfo methodInfo, RequestDelegateFactoryOptions options)
+   at Microsoft.AspNetCore.Routing.RouteEndpointDataSource.CreateRouteEndpointBuilder(RouteEntry entry, RoutePattern groupPrefix, IReadOnlyList`1 groupConventions, IReadOnlyList`1 groupFinallyConventions)
+   at Microsoft.AspNetCore.Routing.RouteEndpointDataSource.GetGroupedEndpoints(RouteGroupContext context)
+   at Microsoft.AspNetCore.Routing.RouteGroupBuilder.GroupEndpointDataSource.GetGroupedEndpointsWithNullablePrefix(RoutePattern prefix, IReadOnlyList`1 conventions, IReadOnlyList`1 finallyConventions, IServiceProvider applicationServices)
+   at Asp.Versioning.Builder.VersionedEndpointRouteBuilder.EndpointDataSourceDecorator.get_Endpoints()
+   at Asp.Versioning.Builder.VersionedEndpointRouteBuilder.EndpointDataSourceDecorator.CollateGroupApiVersions()
+   at Asp.Versioning.Builder.VersionedEndpointRouteBuilder.EndpointDataSourceDecorator.GetGroupedEndpoints(RouteGroupContext context)
+   at Microsoft.AspNetCore.Routing.RouteGroupBuilder.GroupEndpointDataSource.GetGroupedEndpointsWithNullablePrefix(RoutePattern prefix, IReadOnlyList`1 conventions, IReadOnlyList`1 finallyConventions, IServiceProvider applicationServices)
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.CreateEndpointsUnsynchronized()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.HandleChange(Boolean collectionChanged)
+   at System.Collections.ObjectModel.ObservableCollection`1.OnCollectionChanged(NotifyCollectionChangedEventArgs e)
+   at Microsoft.AspNetCore.Builder.EndpointRoutingApplicationBuilderExtensions.UseEndpoints(IApplicationBuilder builder, Action`1 configure)
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.ConfigureApplication(WebHostBuilderContext context, IApplicationBuilder app, Boolean allowDeveloperExceptionPage)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+2024-09-26 13:19:58.808 +07:00 [ERR] Hosting failed to start
+System.InvalidOperationException: Body was inferred but the method does not allow inferred body parameters.
+Below is the list of parameters that we found: 
+
+Parameter           | Source                        
+---------------------------------------------------------------------------------
+sender              | Services (Inferred)
+jwtTokenService     | Services (Inferred)
+command             | Body (Inferred)
+
+
+Did you mean to register the "Body (Inferred)" parameter(s) as a Service or apply the [FromServices] or [FromBody] attribute?
+
+
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.CreateArguments(ParameterInfo[] parameters, RequestDelegateFactoryContext factoryContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.CreateArgumentsAndInferMetadata(MethodInfo methodInfo, RequestDelegateFactoryContext factoryContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.InferMetadata(MethodInfo methodInfo, RequestDelegateFactoryOptions options)
+   at Microsoft.AspNetCore.Routing.RouteEndpointDataSource.CreateRouteEndpointBuilder(RouteEntry entry, RoutePattern groupPrefix, IReadOnlyList`1 groupConventions, IReadOnlyList`1 groupFinallyConventions)
+   at Microsoft.AspNetCore.Routing.RouteEndpointDataSource.GetGroupedEndpoints(RouteGroupContext context)
+   at Microsoft.AspNetCore.Routing.RouteGroupBuilder.GroupEndpointDataSource.GetGroupedEndpointsWithNullablePrefix(RoutePattern prefix, IReadOnlyList`1 conventions, IReadOnlyList`1 finallyConventions, IServiceProvider applicationServices)
+   at Asp.Versioning.Builder.VersionedEndpointRouteBuilder.EndpointDataSourceDecorator.get_Endpoints()
+   at Asp.Versioning.Builder.VersionedEndpointRouteBuilder.EndpointDataSourceDecorator.CollateGroupApiVersions()
+   at Asp.Versioning.Builder.VersionedEndpointRouteBuilder.EndpointDataSourceDecorator.GetGroupedEndpoints(RouteGroupContext context)
+   at Microsoft.AspNetCore.Routing.RouteGroupBuilder.GroupEndpointDataSource.GetGroupedEndpointsWithNullablePrefix(RoutePattern prefix, IReadOnlyList`1 conventions, IReadOnlyList`1 finallyConventions, IServiceProvider applicationServices)
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.CreateEndpointsUnsynchronized()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.HandleChange(Boolean collectionChanged)
+   at System.Collections.ObjectModel.ObservableCollection`1.OnCollectionChanged(NotifyCollectionChangedEventArgs e)
+   at Microsoft.AspNetCore.Builder.EndpointRoutingApplicationBuilderExtensions.UseEndpoints(IApplicationBuilder builder, Action`1 configure)
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.ConfigureApplication(WebHostBuilderContext context, IApplicationBuilder app, Boolean allowDeveloperExceptionPage)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2024-09-26 13:19:58.811 +07:00 [FTL] An unhandled exception occured during bootstrapping
+System.InvalidOperationException: Body was inferred but the method does not allow inferred body parameters.
+Below is the list of parameters that we found: 
+
+Parameter           | Source                        
+---------------------------------------------------------------------------------
+sender              | Services (Inferred)
+jwtTokenService     | Services (Inferred)
+command             | Body (Inferred)
+
+
+Did you mean to register the "Body (Inferred)" parameter(s) as a Service or apply the [FromServices] or [FromBody] attribute?
+
+
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.CreateArguments(ParameterInfo[] parameters, RequestDelegateFactoryContext factoryContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.CreateArgumentsAndInferMetadata(MethodInfo methodInfo, RequestDelegateFactoryContext factoryContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.InferMetadata(MethodInfo methodInfo, RequestDelegateFactoryOptions options)
+   at Microsoft.AspNetCore.Routing.RouteEndpointDataSource.CreateRouteEndpointBuilder(RouteEntry entry, RoutePattern groupPrefix, IReadOnlyList`1 groupConventions, IReadOnlyList`1 groupFinallyConventions)
+   at Microsoft.AspNetCore.Routing.RouteEndpointDataSource.GetGroupedEndpoints(RouteGroupContext context)
+   at Microsoft.AspNetCore.Routing.RouteGroupBuilder.GroupEndpointDataSource.GetGroupedEndpointsWithNullablePrefix(RoutePattern prefix, IReadOnlyList`1 conventions, IReadOnlyList`1 finallyConventions, IServiceProvider applicationServices)
+   at Asp.Versioning.Builder.VersionedEndpointRouteBuilder.EndpointDataSourceDecorator.get_Endpoints()
+   at Asp.Versioning.Builder.VersionedEndpointRouteBuilder.EndpointDataSourceDecorator.CollateGroupApiVersions()
+   at Asp.Versioning.Builder.VersionedEndpointRouteBuilder.EndpointDataSourceDecorator.GetGroupedEndpoints(RouteGroupContext context)
+   at Microsoft.AspNetCore.Routing.RouteGroupBuilder.GroupEndpointDataSource.GetGroupedEndpointsWithNullablePrefix(RoutePattern prefix, IReadOnlyList`1 conventions, IReadOnlyList`1 finallyConventions, IServiceProvider applicationServices)
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.CreateEndpointsUnsynchronized()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.HandleChange(Boolean collectionChanged)
+   at System.Collections.ObjectModel.ObservableCollection`1.OnCollectionChanged(NotifyCollectionChangedEventArgs e)
+   at Microsoft.AspNetCore.Builder.EndpointRoutingApplicationBuilderExtensions.UseEndpoints(IApplicationBuilder builder, Action`1 configure)
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.ConfigureApplication(WebHostBuilderContext context, IApplicationBuilder app, Boolean allowDeveloperExceptionPage)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Program.<Main>$(String[] args) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Program.cs:line 95
+2024-09-26 13:20:06.424 +07:00 [FTL] Application startup exception
+System.InvalidOperationException: Body was inferred but the method does not allow inferred body parameters.
+Below is the list of parameters that we found: 
+
+Parameter           | Source                        
+---------------------------------------------------------------------------------
+sender              | Services (Inferred)
+jwtTokenService     | Services (Inferred)
+command             | Body (Inferred)
+
+
+Did you mean to register the "Body (Inferred)" parameter(s) as a Service or apply the [FromServices] or [FromBody] attribute?
+
+
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.CreateArguments(ParameterInfo[] parameters, RequestDelegateFactoryContext factoryContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.CreateArgumentsAndInferMetadata(MethodInfo methodInfo, RequestDelegateFactoryContext factoryContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.InferMetadata(MethodInfo methodInfo, RequestDelegateFactoryOptions options)
+   at Microsoft.AspNetCore.Routing.RouteEndpointDataSource.CreateRouteEndpointBuilder(RouteEntry entry, RoutePattern groupPrefix, IReadOnlyList`1 groupConventions, IReadOnlyList`1 groupFinallyConventions)
+   at Microsoft.AspNetCore.Routing.RouteEndpointDataSource.GetGroupedEndpoints(RouteGroupContext context)
+   at Microsoft.AspNetCore.Routing.RouteGroupBuilder.GroupEndpointDataSource.GetGroupedEndpointsWithNullablePrefix(RoutePattern prefix, IReadOnlyList`1 conventions, IReadOnlyList`1 finallyConventions, IServiceProvider applicationServices)
+   at Asp.Versioning.Builder.VersionedEndpointRouteBuilder.EndpointDataSourceDecorator.get_Endpoints()
+   at Asp.Versioning.Builder.VersionedEndpointRouteBuilder.EndpointDataSourceDecorator.CollateGroupApiVersions()
+   at Asp.Versioning.Builder.VersionedEndpointRouteBuilder.EndpointDataSourceDecorator.GetGroupedEndpoints(RouteGroupContext context)
+   at Microsoft.AspNetCore.Routing.RouteGroupBuilder.GroupEndpointDataSource.GetGroupedEndpointsWithNullablePrefix(RoutePattern prefix, IReadOnlyList`1 conventions, IReadOnlyList`1 finallyConventions, IServiceProvider applicationServices)
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.CreateEndpointsUnsynchronized()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.HandleChange(Boolean collectionChanged)
+   at System.Collections.ObjectModel.ObservableCollection`1.OnCollectionChanged(NotifyCollectionChangedEventArgs e)
+   at Microsoft.AspNetCore.Builder.EndpointRoutingApplicationBuilderExtensions.UseEndpoints(IApplicationBuilder builder, Action`1 configure)
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.ConfigureApplication(WebHostBuilderContext context, IApplicationBuilder app, Boolean allowDeveloperExceptionPage)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+2024-09-26 13:20:06.461 +07:00 [ERR] Hosting failed to start
+System.InvalidOperationException: Body was inferred but the method does not allow inferred body parameters.
+Below is the list of parameters that we found: 
+
+Parameter           | Source                        
+---------------------------------------------------------------------------------
+sender              | Services (Inferred)
+jwtTokenService     | Services (Inferred)
+command             | Body (Inferred)
+
+
+Did you mean to register the "Body (Inferred)" parameter(s) as a Service or apply the [FromServices] or [FromBody] attribute?
+
+
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.CreateArguments(ParameterInfo[] parameters, RequestDelegateFactoryContext factoryContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.CreateArgumentsAndInferMetadata(MethodInfo methodInfo, RequestDelegateFactoryContext factoryContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.InferMetadata(MethodInfo methodInfo, RequestDelegateFactoryOptions options)
+   at Microsoft.AspNetCore.Routing.RouteEndpointDataSource.CreateRouteEndpointBuilder(RouteEntry entry, RoutePattern groupPrefix, IReadOnlyList`1 groupConventions, IReadOnlyList`1 groupFinallyConventions)
+   at Microsoft.AspNetCore.Routing.RouteEndpointDataSource.GetGroupedEndpoints(RouteGroupContext context)
+   at Microsoft.AspNetCore.Routing.RouteGroupBuilder.GroupEndpointDataSource.GetGroupedEndpointsWithNullablePrefix(RoutePattern prefix, IReadOnlyList`1 conventions, IReadOnlyList`1 finallyConventions, IServiceProvider applicationServices)
+   at Asp.Versioning.Builder.VersionedEndpointRouteBuilder.EndpointDataSourceDecorator.get_Endpoints()
+   at Asp.Versioning.Builder.VersionedEndpointRouteBuilder.EndpointDataSourceDecorator.CollateGroupApiVersions()
+   at Asp.Versioning.Builder.VersionedEndpointRouteBuilder.EndpointDataSourceDecorator.GetGroupedEndpoints(RouteGroupContext context)
+   at Microsoft.AspNetCore.Routing.RouteGroupBuilder.GroupEndpointDataSource.GetGroupedEndpointsWithNullablePrefix(RoutePattern prefix, IReadOnlyList`1 conventions, IReadOnlyList`1 finallyConventions, IServiceProvider applicationServices)
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.CreateEndpointsUnsynchronized()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.HandleChange(Boolean collectionChanged)
+   at System.Collections.ObjectModel.ObservableCollection`1.OnCollectionChanged(NotifyCollectionChangedEventArgs e)
+   at Microsoft.AspNetCore.Builder.EndpointRoutingApplicationBuilderExtensions.UseEndpoints(IApplicationBuilder builder, Action`1 configure)
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.ConfigureApplication(WebHostBuilderContext context, IApplicationBuilder app, Boolean allowDeveloperExceptionPage)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2024-09-26 13:20:06.597 +07:00 [FTL] An unhandled exception occured during bootstrapping
+System.InvalidOperationException: Body was inferred but the method does not allow inferred body parameters.
+Below is the list of parameters that we found: 
+
+Parameter           | Source                        
+---------------------------------------------------------------------------------
+sender              | Services (Inferred)
+jwtTokenService     | Services (Inferred)
+command             | Body (Inferred)
+
+
+Did you mean to register the "Body (Inferred)" parameter(s) as a Service or apply the [FromServices] or [FromBody] attribute?
+
+
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.CreateArguments(ParameterInfo[] parameters, RequestDelegateFactoryContext factoryContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.CreateArgumentsAndInferMetadata(MethodInfo methodInfo, RequestDelegateFactoryContext factoryContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.InferMetadata(MethodInfo methodInfo, RequestDelegateFactoryOptions options)
+   at Microsoft.AspNetCore.Routing.RouteEndpointDataSource.CreateRouteEndpointBuilder(RouteEntry entry, RoutePattern groupPrefix, IReadOnlyList`1 groupConventions, IReadOnlyList`1 groupFinallyConventions)
+   at Microsoft.AspNetCore.Routing.RouteEndpointDataSource.GetGroupedEndpoints(RouteGroupContext context)
+   at Microsoft.AspNetCore.Routing.RouteGroupBuilder.GroupEndpointDataSource.GetGroupedEndpointsWithNullablePrefix(RoutePattern prefix, IReadOnlyList`1 conventions, IReadOnlyList`1 finallyConventions, IServiceProvider applicationServices)
+   at Asp.Versioning.Builder.VersionedEndpointRouteBuilder.EndpointDataSourceDecorator.get_Endpoints()
+   at Asp.Versioning.Builder.VersionedEndpointRouteBuilder.EndpointDataSourceDecorator.CollateGroupApiVersions()
+   at Asp.Versioning.Builder.VersionedEndpointRouteBuilder.EndpointDataSourceDecorator.GetGroupedEndpoints(RouteGroupContext context)
+   at Microsoft.AspNetCore.Routing.RouteGroupBuilder.GroupEndpointDataSource.GetGroupedEndpointsWithNullablePrefix(RoutePattern prefix, IReadOnlyList`1 conventions, IReadOnlyList`1 finallyConventions, IServiceProvider applicationServices)
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.CreateEndpointsUnsynchronized()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.HandleChange(Boolean collectionChanged)
+   at System.Collections.ObjectModel.ObservableCollection`1.OnCollectionChanged(NotifyCollectionChangedEventArgs e)
+   at Microsoft.AspNetCore.Builder.EndpointRoutingApplicationBuilderExtensions.UseEndpoints(IApplicationBuilder builder, Action`1 configure)
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.ConfigureApplication(WebHostBuilderContext context, IApplicationBuilder app, Boolean allowDeveloperExceptionPage)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Program.<Main>$(String[] args) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Program.cs:line 95
+2024-09-26 13:21:47.339 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-26 13:21:47.453 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:21:47.454 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:21:47.455 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:21:47.455 +07:00 [WRN] No store type was specified for the decimal property 'DiscountSold' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:21:47.455 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:21:47.455 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:22:06.974 +07:00 [ERR] Not Exist Vendor !
+System.Exception: Not Exist Vendor !
+   at Antree_Ecommerce_BE.Application.UserCases.Commands.Vendors.DeleteVendorCommandHandler.Handle(DeleteVendorCommand request, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/UserCases/Commands/Vendors/DeleteVendorCommandHandler.cs:line 32
+   at Antree_Ecommerce_BE.Application.Behaviors.TracingPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TracingPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.<>c__DisplayClass2_0.<<Handle>b__0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 36
+--- End of stack trace from previous location ---
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.<>c__DisplayClass2_0.<<Handle>b__0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 39
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 32
+   at Antree_Ecommerce_BE.Application.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/PerformancePipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.ValidationPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/ValidationPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Presentation.APIs.Vendors.VendorApi.DeleteVendorV1(ISender sender, HttpContext context, IJwtTokenService jwtTokenService) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Presentation/APIs/Vendors/VendorApi.cs:line 56
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-26 13:22:09.045 +07:00 [ERR] Not Exist Vendor !
+System.Exception: Not Exist Vendor !
+   at Antree_Ecommerce_BE.Application.UserCases.Commands.Vendors.DeleteVendorCommandHandler.Handle(DeleteVendorCommand request, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/UserCases/Commands/Vendors/DeleteVendorCommandHandler.cs:line 32
+   at Antree_Ecommerce_BE.Application.Behaviors.TracingPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TracingPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.<>c__DisplayClass2_0.<<Handle>b__0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 36
+--- End of stack trace from previous location ---
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.<>c__DisplayClass2_0.<<Handle>b__0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 39
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 32
+   at Antree_Ecommerce_BE.Application.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/PerformancePipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.ValidationPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/ValidationPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Presentation.APIs.Vendors.VendorApi.DeleteVendorV1(ISender sender, HttpContext context, IJwtTokenService jwtTokenService) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Presentation/APIs/Vendors/VendorApi.cs:line 56
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-26 13:22:09.213 +07:00 [ERR] Not Exist Vendor !
+System.Exception: Not Exist Vendor !
+   at Antree_Ecommerce_BE.Application.UserCases.Commands.Vendors.DeleteVendorCommandHandler.Handle(DeleteVendorCommand request, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/UserCases/Commands/Vendors/DeleteVendorCommandHandler.cs:line 32
+   at Antree_Ecommerce_BE.Application.Behaviors.TracingPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TracingPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.<>c__DisplayClass2_0.<<Handle>b__0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 36
+--- End of stack trace from previous location ---
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.<>c__DisplayClass2_0.<<Handle>b__0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 39
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 32
+   at Antree_Ecommerce_BE.Application.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/PerformancePipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.ValidationPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/ValidationPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Presentation.APIs.Vendors.VendorApi.DeleteVendorV1(ISender sender, HttpContext context, IJwtTokenService jwtTokenService) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Presentation/APIs/Vendors/VendorApi.cs:line 56
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-26 13:22:09.398 +07:00 [ERR] Not Exist Vendor !
+System.Exception: Not Exist Vendor !
+   at Antree_Ecommerce_BE.Application.UserCases.Commands.Vendors.DeleteVendorCommandHandler.Handle(DeleteVendorCommand request, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/UserCases/Commands/Vendors/DeleteVendorCommandHandler.cs:line 32
+   at Antree_Ecommerce_BE.Application.Behaviors.TracingPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TracingPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.<>c__DisplayClass2_0.<<Handle>b__0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 36
+--- End of stack trace from previous location ---
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.<>c__DisplayClass2_0.<<Handle>b__0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 39
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 32
+   at Antree_Ecommerce_BE.Application.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/PerformancePipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.ValidationPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/ValidationPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Presentation.APIs.Vendors.VendorApi.DeleteVendorV1(ISender sender, HttpContext context, IJwtTokenService jwtTokenService) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Presentation/APIs/Vendors/VendorApi.cs:line 56
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-26 13:22:09.564 +07:00 [ERR] Not Exist Vendor !
+System.Exception: Not Exist Vendor !
+   at Antree_Ecommerce_BE.Application.UserCases.Commands.Vendors.DeleteVendorCommandHandler.Handle(DeleteVendorCommand request, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/UserCases/Commands/Vendors/DeleteVendorCommandHandler.cs:line 32
+   at Antree_Ecommerce_BE.Application.Behaviors.TracingPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TracingPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.<>c__DisplayClass2_0.<<Handle>b__0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 36
+--- End of stack trace from previous location ---
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.<>c__DisplayClass2_0.<<Handle>b__0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 39
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 32
+   at Antree_Ecommerce_BE.Application.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/PerformancePipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.ValidationPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/ValidationPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Presentation.APIs.Vendors.VendorApi.DeleteVendorV1(ISender sender, HttpContext context, IJwtTokenService jwtTokenService) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Presentation/APIs/Vendors/VendorApi.cs:line 56
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-26 13:24:48.762 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-26 13:24:48.870 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:24:48.871 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:24:48.871 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:24:48.871 +07:00 [WRN] No store type was specified for the decimal property 'DiscountSold' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:24:48.871 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:24:48.871 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:27:27.015 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-26 13:27:27.165 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:27:27.167 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:27:27.167 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:27:27.167 +07:00 [WRN] No store type was specified for the decimal property 'DiscountSold' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:27:27.167 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:27:27.167 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:30:54.102 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-26 13:30:54.216 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:30:54.217 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:30:54.217 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:30:54.217 +07:00 [WRN] No store type was specified for the decimal property 'DiscountSold' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:30:54.217 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:30:54.217 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:32:43.309 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-26 13:32:43.416 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:32:43.418 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:32:43.418 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:32:43.418 +07:00 [WRN] No store type was specified for the decimal property 'DiscountSold' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:32:43.418 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:32:43.418 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:32:46.635 +07:00 [ERR] Not Exist Vendor !
+System.Exception: Not Exist Vendor !
+   at Antree_Ecommerce_BE.Application.UserCases.Commands.Vendors.DeleteVendorCommandHandler.Handle(DeleteVendorCommand request, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/UserCases/Commands/Vendors/DeleteVendorCommandHandler.cs:line 32
+   at Antree_Ecommerce_BE.Application.Behaviors.TracingPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TracingPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.<>c__DisplayClass2_0.<<Handle>b__0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 36
+--- End of stack trace from previous location ---
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.<>c__DisplayClass2_0.<<Handle>b__0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 39
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 32
+   at Antree_Ecommerce_BE.Application.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/PerformancePipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.ValidationPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/ValidationPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Presentation.APIs.Vendors.VendorApi.DeleteVendorV1(ISender sender, HttpContext context, IJwtTokenService jwtTokenService) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Presentation/APIs/Vendors/VendorApi.cs:line 56
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-26 13:33:22.268 +07:00 [ERR] Not Exist Vendor !
+System.Exception: Not Exist Vendor !
+   at Antree_Ecommerce_BE.Application.UserCases.Commands.Vendors.DeleteVendorCommandHandler.Handle(DeleteVendorCommand request, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/UserCases/Commands/Vendors/DeleteVendorCommandHandler.cs:line 32
+   at Antree_Ecommerce_BE.Application.Behaviors.TracingPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TracingPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.<>c__DisplayClass2_0.<<Handle>b__0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 36
+--- End of stack trace from previous location ---
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.<>c__DisplayClass2_0.<<Handle>b__0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 39
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 32
+   at Antree_Ecommerce_BE.Application.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/PerformancePipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.ValidationPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/ValidationPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Presentation.APIs.Vendors.VendorApi.DeleteVendorV1(ISender sender, HttpContext context, IJwtTokenService jwtTokenService) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Presentation/APIs/Vendors/VendorApi.cs:line 56
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-26 13:35:46.186 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-26 13:35:46.311 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:35:46.312 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:35:46.312 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:35:46.313 +07:00 [WRN] No store type was specified for the decimal property 'DiscountSold' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:35:46.313 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:35:46.313 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:42:21.698 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-26 13:42:21.813 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:42:21.814 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:42:21.814 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:42:21.814 +07:00 [WRN] No store type was specified for the decimal property 'DiscountSold' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:42:21.815 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-26 13:42:21.815 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
