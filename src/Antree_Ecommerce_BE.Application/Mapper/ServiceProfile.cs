@@ -8,6 +8,7 @@ using CategorySerivces = Contract.Services.Categories;
 using ProductSerivces = Contract.Services.Products;
 using FeedbackServices = Contract.Services.Feedbacks;
 using VendorServices = Contract.Services.Vendors;
+using OrderServices = Contract.Services.Orders;
 // using ProducMediaServices = Antree_Ecommerce_BE.Contract.Services.ProducMedia;
 
 public class ServiceProfile : Profile
@@ -92,5 +93,28 @@ public class ServiceProfile : Profile
          CreateMap<PagedResult<Vendor>, PagedResult<VendorServices.Response.VendorResponse>>()
              .ForMember(dest => dest.Items, opt => opt.MapFrom(src => src.Items));
          
+         // ============= OrderServices =============
+         CreateMap<Discount, OrderServices.Response.Discount>().ReverseMap();
+         
+         CreateMap<User, OrderServices.Response.User>().ReverseMap();
+         
+         CreateMap<Order, OrderServices.Response.VendorOrdersResponse>()
+             .ForMember(dest => dest.User,
+                 opt =>
+                     opt.MapFrom(src => src.User))
+             .ForMember(dest => dest.Discount,
+                 opt =>
+                     opt.MapFrom(src => src.Discount));
+         
+         CreateMap<Order, OrderServices.Response.CustomerOrdersResponse>()
+             .ForMember(dest => dest.Discount,
+                 opt =>
+                     opt.MapFrom(src => src.Discount));
+         
+         CreateMap<PagedResult<Order>, PagedResult<OrderServices.Response.VendorOrdersResponse>>()
+             .ForMember(dest => dest.Items, opt => opt.MapFrom(src => src.Items));
+         
+         CreateMap<PagedResult<Order>, PagedResult<OrderServices.Response.CustomerOrdersResponse>>()
+             .ForMember(dest => dest.Items, opt => opt.MapFrom(src => src.Items));
     }
 }

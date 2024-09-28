@@ -6,7 +6,7 @@ using Antree_Ecommerce_BE.Contract.Services.Products;
 using Antree_Ecommerce_BE.Domain.Abstractions.Repositories;
 using Antree_Ecommerce_BE.Domain.Entities;
 using AutoMapper;
-using Microsoft.EntityFrameworkCore;
+
 
 namespace Antree_Ecommerce_BE.Application.UserCases.Queries.Products;
 

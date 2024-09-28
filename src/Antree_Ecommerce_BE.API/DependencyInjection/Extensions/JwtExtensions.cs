@@ -66,6 +66,7 @@ public static class JwtExtensions
             opts.AddPolicy(RoleNames.Customer, policy => policy.RequireRole("0")); //Customer
             opts.AddPolicy(RoleNames.Seller, policy => policy.RequireRole("1")); //Seller
             opts.AddPolicy(RoleNames.Admin, policy => policy.RequireRole("2")); //Admin
+            opts.AddPolicy(RoleNames.CustomerAndSeller, policy => policy.RequireRole("0", "1")); //CustomerAndSeller
         });
         // services.AddScoped<CustomJwtBearerEvents>();
     }

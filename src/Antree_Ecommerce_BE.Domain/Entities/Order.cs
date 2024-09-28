@@ -11,13 +11,12 @@ public class Order : Entity<Guid>, IAuditableEntity
     public string Address { get; set; }
     public string Note { get; set; }
     public decimal Total { get; set; }
-    
     public int Status { get; set; }
+    public bool IsFeedback { get; set; }
     public DateTimeOffset CreatedOnUtc { get; set; }
     public DateTimeOffset? ModifiedOnUtc { get; set; }
     
     public virtual Discount? Discount { get; set; } 
-    
     public virtual User User { get; set; } = default!;
     
     public virtual IReadOnlyCollection<OrderDetail> OrderDetailList { get; set; } = default!;
