@@ -10,7 +10,8 @@ using Microsoft.AspNetCore.Routing;
 namespace Antree_Ecommerce_BE.Presentation.APIs.Products;
 
 
-using CommandV1 = Antree_Ecommerce_BE.Contract.Services.Products;
+using CommandV1 = Antree_Ecommerce_BE.Contract.Services.Products.Command;
+using QueryV1 = Antree_Ecommerce_BE.Contract.Services.Products.Query;
 public class ProductApi : ApiEndpoint, ICarterModule
 {
     private const string BaseUrl = "/api/v{version:apiVersion}/products";
@@ -23,7 +24,7 @@ public class ProductApi : ApiEndpoint, ICarterModule
         group1.MapGet("{productId}", GetProductV1);
         group1.MapPost(string.Empty, CreateProductsV1)
             .RequireAuthorization()
-            .Accepts<CommandV1.Command.CreateProductCommand>("multipart/form-data")
+            .Accepts<CommandV1.CreateProductCommand>("multipart/form-data")
             .DisableAntiforgery();;
         group1.MapDelete("{productId}", DeleteProductsV1);
         // group1.MapPut("{productId}", UpdateProductsV1);
@@ -31,17 +32,23 @@ public class ProductApi : ApiEndpoint, ICarterModule
 
     #region ====== version 1 ======
 
-    public static async Task<IResult> GetProductsV1(ISender sender, string? serchTerm = null,
-        Guid? categoryId = null,
+    public static async Task<IResult> GetProductsV1(ISender sender,
+        string? serchTerm = null,
+        string? categoryName = null,
+        string? vendorName = null,
         string? sortColumn = null,
         string? sortOrder = null,
         bool isSale = false,
         int pageIndex = 1,
         int pageSize = 10)
     {
-        var result = await sender.Send(new CommandV1.Query.GetProductsQuery(serchTerm, categoryId, sortColumn,
+        var result = await sender.Send(new QueryV1.GetProductsQuery(
+            serchTerm,
+            categoryName,
+            sortColumn,
             isSale,
             SortOrderExtension.ConvertStringToSortOrder(sortOrder),
+            vendorName,
             pageIndex,
             pageSize));
 
@@ -53,7 +60,7 @@ public class ProductApi : ApiEndpoint, ICarterModule
     
     public static async Task<IResult> GetProductV1(ISender sender, Guid productId)
     {
-        var result = await sender.Send(new CommandV1.Query.GetProductByIdQuery(productId));
+        var result = await sender.Send(new QueryV1.GetProductByIdQuery(productId));
 
         if (result.IsFailure)
             return HandlerFailure(result);
@@ -61,7 +68,7 @@ public class ProductApi : ApiEndpoint, ICarterModule
         return Results.Ok(result); 
     }
     
-    public static async Task<IResult> CreateProductsV1(ISender sender, [FromForm] CommandV1.Command.CreateProductCommand createProduct)
+    public static async Task<IResult> CreateProductsV1(ISender sender, [FromForm] CommandV1.CreateProductCommand createProduct)
     {
         var result = await sender.Send(createProduct);
 
@@ -71,9 +78,9 @@ public class ProductApi : ApiEndpoint, ICarterModule
         return Results.Ok(result);
     }
     
-    public static async Task<IResult> UpdateProductsV1(ISender sender, Guid productId, [FromBody] CommandV1.Command.UpdateProductCommand updateProduct)
+    public static async Task<IResult> UpdateProductsV1(ISender sender, Guid productId, [FromBody] CommandV1.UpdateProductCommand updateProduct)
     {
-        var updateProductCommand = new CommandV1.Command.UpdateProductCommand(productId, updateProduct.ProductCategoryId, updateProduct.Name, updateProduct.Price, updateProduct.Description, updateProduct.Sku, updateProduct.Sold);
+        var updateProductCommand = new CommandV1.UpdateProductCommand(productId, updateProduct.ProductCategoryId, updateProduct.Name, updateProduct.Price, updateProduct.Description, updateProduct.Sku, updateProduct.Sold);
         var result = await sender.Send(updateProductCommand);
         if (result.IsFailure)
             return HandlerFailure(result);
@@ -83,7 +90,7 @@ public class ProductApi : ApiEndpoint, ICarterModule
 
     public static async Task<IResult> DeleteProductsV1(ISender sender, Guid productId)
     {
-        var result = await sender.Send(new CommandV1.Command.DeleteProductCommand(productId));
+        var result = await sender.Send(new CommandV1.DeleteProductCommand(productId));
         if (result.IsFailure)
             return HandlerFailure(result);
 

@@ -27,8 +27,8 @@ public class GetProductsQueryHandler : IQueryHandler<Query.GetProductsQuery, Pag
             ? _productRepository.FindAll(null,
                 x => x.ProductFeedbackList)
             : _productRepository.FindAll(
-                x => x.Name.Contains(request.SearchTerm)
-                || x.ProductCategory.Name.Contains(request.SearchTerm),
+                x => x.Name.ToLower().Contains(request.SearchTerm.ToLower())
+                     || x.ProductCategory.Name.ToLower().Contains(request.SearchTerm.ToLower()),
                 x => x.ProductFeedbackList
             );
 
@@ -37,9 +37,13 @@ public class GetProductsQueryHandler : IQueryHandler<Query.GetProductsQuery, Pag
             : productsQuery.Where(x => x.ProductDiscountList
                 .Any(productDiscount => !productDiscount.IsDeleted && productDiscount.CreatedOnUtc > DateTimeOffset.Now.AddDays(-7)));
         
-        productsQuery = request.CategoryId == null
+        productsQuery = string.IsNullOrWhiteSpace(request.CategoryName)
             ? productsQuery
-            : productsQuery.Where(x => x.ProductCategory.Id.Equals(request.CategoryId));
+            : productsQuery.Where(x => x.ProductCategory.Name.ToLower() == request.CategoryName.ToLower());
+        
+        productsQuery = string.IsNullOrWhiteSpace(request.VendorName)
+            ? productsQuery
+            : productsQuery.Where(x => x.Vendor.Name.ToLower() == request.VendorName.ToLower());
         
         productsQuery = request.SortOrder == SortOrder.Descending
             ? productsQuery.OrderByDescending(GetSortProperty(request))

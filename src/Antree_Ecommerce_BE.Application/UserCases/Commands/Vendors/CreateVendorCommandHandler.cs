@@ -23,8 +23,25 @@ public class CreateVendorCommandHandler : ICommandHandler<Command.CreateVendorCo
 
     public async Task<Result> Handle(Command.CreateVendorCommand request, CancellationToken cancellationToken)
     {
-        var user = await _userRepository.FindByIdAsync(
-            request.UserId ?? Guid.NewGuid(), cancellationToken, x => x.Vendor!);
+        var vendorTask = _vendorRepository.FindSingleAsync(
+            x => x.Name.Equals(request.VendorName, StringComparison.OrdinalIgnoreCase), 
+            cancellationToken
+        );
+        var userTask = _userRepository.FindByIdAsync(
+            request.UserId ?? Guid.NewGuid(), 
+            cancellationToken, 
+            x => x.Vendor!
+        );
+
+        await Task.WhenAll(vendorTask, userTask);
+        
+        var existingVendor = await vendorTask;
+        var user = await userTask;
+
+        if (existingVendor is not null)
+        {
+            throw new Exception($"Exist Vendor has name: {request.VendorName}");
+        }
         
         if (user is null)
         {
@@ -36,15 +53,18 @@ public class CreateVendorCommandHandler : ICommandHandler<Command.CreateVendorCo
             throw new Exception("Please Remove Your Vendor First !");
         }
         
-        var result = await Task.WhenAll(
+        var imageUploadTasks = await Task.WhenAll(
             _mediaService.UploadImageAsync(request.AvatarImage),
             _mediaService.UploadImageAsync(request.CoverImage)
         );
 
+        var avatarUrl = imageUploadTasks[0];
+        var coverUrl = imageUploadTasks[1];
+
         if (user.VendorId == null)
         {
             var vendor = new Vendor(request.Id ?? Guid.NewGuid(), request.VendorEmail, request.VendorName, request.Address,
-                request.City, request.Province, request.PhoneNumber, result[0], result[1],
+                request.City, request.Province, request.PhoneNumber, avatarUrl, coverUrl,
                 request.BankName, request.BankOwnerName, request.BankAccountNumber, request.UserId ?? Guid.NewGuid());
         
             _vendorRepository.Add(vendor);
@@ -54,7 +74,7 @@ public class CreateVendorCommandHandler : ICommandHandler<Command.CreateVendorCo
         else if(user.VendorId != null)
         {
             user.Vendor!.UpdateVendor(request.VendorEmail, request.VendorName, request.Address,
-                request.City, request.Province, request.PhoneNumber, result[0], result[1],
+                request.City, request.Province, request.PhoneNumber, avatarUrl, coverUrl,
                 request.BankName, request.BankOwnerName, request.BankAccountNumber, request.UserId ?? Guid.NewGuid(), false);
 
         }

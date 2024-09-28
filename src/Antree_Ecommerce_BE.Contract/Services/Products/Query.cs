@@ -11,10 +11,11 @@ public static class Query
     // public record GetProductsQuery(string? SearchTerm, Guid? CategoryId, string? SortColumn, SortOrder? SortOrder, IDictionary<string, SortOrder>? SortColumnAndOrder, int PageIndex, int PageSize) : IQuery<PagedResult<ProductResponse>>;
     public record GetProductsQuery : IQuery<PagedResult<ProductsResponse>>, ICacheable
     {
-        public GetProductsQuery(string? searchTerm, Guid? categoryId, string? sortColumn, bool isSale, SortOrder? sortOrder, int pageIndex, int pageSize)
+        public GetProductsQuery(string? searchTerm, string? categoryName, string? sortColumn, bool isSale, SortOrder? sortOrder, string? vendorName  , int pageIndex, int pageSize)
         {
             SearchTerm = searchTerm;
-            CategoryId = categoryId;
+            CategoryName = categoryName;
+            VendorName = vendorName;
             SortColumn = sortColumn;
             IsSale = isSale;
             SortOrder = sortOrder;
@@ -23,11 +24,11 @@ public static class Query
         }
 
         public string? SearchTerm { get; init; }
-        public Guid? CategoryId { get; init; }
+        public string? CategoryName { get; init; }
         public string? SortColumn { get; init; }
-        
         public bool IsSale { get; init; }
         public SortOrder? SortOrder { get; init; }
+        public string? VendorName { get; init; }
         public int PageIndex { get; init; }
         public int PageSize { get; init; }
         public bool BypassCache => false;
@@ -41,9 +42,13 @@ public static class Query
                 {
                     builder.Append($"-SearchTerm:{SearchTerm}");
                 }
-                if (CategoryId.HasValue)
+                if (CategoryName != null)
                 {
-                    builder.Append($"-CategoryId:{CategoryId}");
+                    builder.Append($"-CategoryName:{CategoryName}");
+                }
+                if (VendorName != null)
+                {
+                    builder.Append($"-VendorName:{VendorName}");
                 }
                 builder.Append($"-IsSale:{IsSale}");
                 builder.Append($"-Sort:{SortColumn}:{SortOrder}");
