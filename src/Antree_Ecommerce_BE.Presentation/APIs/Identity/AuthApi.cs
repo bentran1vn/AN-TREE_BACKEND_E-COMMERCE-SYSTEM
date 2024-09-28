@@ -31,7 +31,7 @@ public class AuthApi : ApiEndpoint, ICarterModule
         group1.MapPost("forgot_password", ForgotPasswordV1);
         group1.MapPost("verify_code", VerifyCodeV1);
         group1.MapPost("change_password", ChangePasswordV1).RequireAuthorization();
-        group1.MapPost("logout", LogoutV1);
+        group1.MapPost("logout", LogoutV1).RequireAuthorization();
     }
 
     public static async Task<IResult> LoginV1(ISender sender, [FromBody] CommandV1.Query.Login login)

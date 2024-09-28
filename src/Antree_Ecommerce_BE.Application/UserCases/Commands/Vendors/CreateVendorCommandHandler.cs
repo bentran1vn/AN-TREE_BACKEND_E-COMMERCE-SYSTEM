@@ -24,9 +24,10 @@ public class CreateVendorCommandHandler : ICommandHandler<Command.CreateVendorCo
     public async Task<Result> Handle(Command.CreateVendorCommand request, CancellationToken cancellationToken)
     {
         var vendorTask = _vendorRepository.FindSingleAsync(
-            x => x.Name.Equals(request.VendorName, StringComparison.OrdinalIgnoreCase), 
+            x => x.Name.Equals(request.VendorName), 
             cancellationToken
         );
+        
         var userTask = _userRepository.FindByIdAsync(
             request.UserId ?? Guid.NewGuid(), 
             cancellationToken, 

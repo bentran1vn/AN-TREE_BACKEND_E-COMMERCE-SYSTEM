@@ -20,7 +20,9 @@ public static class Command
         public IFormFileCollection ProductImages { get; set; }
     };
 
-    public record UpdateProductCommand(Guid Id, Guid ProductCategoryId, string Name, decimal Price, string Description, int Sku, int Sold) : ICommand;
+    public record UpdateProductCommand(Guid Id, Guid? ProductCategoryId, string? Name,
+        decimal? Price, string? Description, int? Sku, IFormFile? ProductImageCover,
+        IFormFileCollection? ProductImages) : ICommand;
 
-    public record DeleteProductCommand(Guid Id) : ICommand;
+    public record DeleteProductCommand(Guid Id, Guid VendorId) : ICommand;
 }

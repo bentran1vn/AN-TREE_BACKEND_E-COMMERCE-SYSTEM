@@ -1,3 +1,4 @@
+using System.Globalization;
 using System.Security.Claims;
 using Antree_Ecommerce_BE.Application.Abstractions;
 using Antree_Ecommerce_BE.Contract.Abstractions.Messages;
@@ -49,8 +50,13 @@ public class GetLoginQueryHandler : IQueryHandler<Query.Login, Response.Authenti
             new Claim("Role", user.Role.ToString()),
             new Claim("UserId", user.Id.ToString()),
             new Claim(ClaimTypes.Name, request.EmailOrUserName),
-            new Claim(ClaimTypes.Expired, DateTime.Now.AddMinutes(5).ToString())
+            new Claim(ClaimTypes.Expired, DateTime.Now.AddMinutes(5).ToString(CultureInfo.CurrentCulture))
         };
+
+        if (user.Role.Equals(1))
+        {
+            claims.Add(new Claim("VendorId", user.VendorId.ToString() ?? string.Empty));
+        }
 
         var accessToken = _jwtTokenService.GenerateAccessToken(claims);
         var refreshToken = _jwtTokenService.GenerateRefreshToken();

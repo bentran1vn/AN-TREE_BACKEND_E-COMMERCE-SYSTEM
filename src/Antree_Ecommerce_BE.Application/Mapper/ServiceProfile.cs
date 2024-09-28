@@ -4,9 +4,10 @@ using AutoMapper;
 
 namespace Antree_Ecommerce_BE.Application.Mapper;
 
-using CategorySerivces = Antree_Ecommerce_BE.Contract.Services.Categories;
-using ProductSerivces = Antree_Ecommerce_BE.Contract.Services.Products;
-using FeedbackServices = Antree_Ecommerce_BE.Contract.Services.Feedbacks;
+using CategorySerivces = Contract.Services.Categories;
+using ProductSerivces = Contract.Services.Products;
+using FeedbackServices = Contract.Services.Feedbacks;
+using VendorServices = Contract.Services.Vendors;
 // using ProducMediaServices = Antree_Ecommerce_BE.Contract.Services.ProducMedia;
 
 public class ServiceProfile : Profile
@@ -84,5 +85,12 @@ public class ServiceProfile : Profile
          
          CreateMap<PagedResult<OrderDetail>, PagedResult<FeedbackServices.Response.FeedbackResonse>>()
              .ForMember(dest => dest.Items, opt => opt.MapFrom(src => src.Items));
+         
+         // ============= VendorServices =============
+         CreateMap<Vendor, VendorServices.Response.VendorResponse>().ReverseMap();
+         
+         CreateMap<PagedResult<Vendor>, PagedResult<VendorServices.Response.VendorResponse>>()
+             .ForMember(dest => dest.Items, opt => opt.MapFrom(src => src.Items));
+         
     }
 }

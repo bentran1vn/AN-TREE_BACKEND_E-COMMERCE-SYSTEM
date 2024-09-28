@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Antree_Ecommerce_BE.Infrastructure.DependencyInjection.Options;
+using Antree_Ecommerce_BE.Presentation.Constrants;
 
 namespace Antree_Ecommerce_BE.API.DependencyInjection.Extensions;
 
@@ -62,9 +63,9 @@ public static class JwtExtensions
 
         services.AddAuthorization(opts =>
         {
-            opts.AddPolicy("0", policy => policy.RequireRole("0")); //Customer
-            opts.AddPolicy("1", policy => policy.RequireRole("1")); //Seller
-            opts.AddPolicy("2", policy => policy.RequireRole("2")); //Admin
+            opts.AddPolicy(RoleNames.Customer, policy => policy.RequireRole("0")); //Customer
+            opts.AddPolicy(RoleNames.Seller, policy => policy.RequireRole("1")); //Seller
+            opts.AddPolicy(RoleNames.Admin, policy => policy.RequireRole("2")); //Admin
         });
         // services.AddScoped<CustomJwtBearerEvents>();
     }

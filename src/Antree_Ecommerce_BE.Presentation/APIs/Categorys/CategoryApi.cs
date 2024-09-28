@@ -1,4 +1,5 @@
 using Antree_Ecommerce_BE.Presentation.Abstractions;
+using Antree_Ecommerce_BE.Presentation.Constrants;
 using Carter;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
@@ -21,9 +22,9 @@ public class CategoryApi : ApiEndpoint, ICarterModule
         
         group1.MapGet(string.Empty, GetCategoriesV1);
         // group1.MapGet("{categoryId}", () => { });
-        group1.MapPost(string.Empty, CreateCategoryV1);
-        group1.MapDelete("{categoryId}", DeleteCategoryV1);
-        group1.MapPut("{categoryId}", UpdateCategoryV1);
+        group1.MapPost(string.Empty, CreateCategoryV1).RequireAuthorization(RoleNames.Admin);
+        group1.MapDelete("{categoryId}", DeleteCategoryV1).RequireAuthorization(RoleNames.Admin);
+        group1.MapPut("{categoryId}", UpdateCategoryV1).RequireAuthorization(RoleNames.Admin);
     }
 
     #region ====== version 1 ======

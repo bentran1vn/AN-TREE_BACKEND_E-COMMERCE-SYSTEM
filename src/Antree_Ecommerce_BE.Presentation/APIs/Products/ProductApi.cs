@@ -1,7 +1,11 @@
+using Antree_Ecommerce_BE.Application.Abstractions;
+using Antree_Ecommerce_BE.Contract.Abstractions.Shared;
 using Antree_Ecommerce_BE.Contract.Extensions;
 using Antree_Ecommerce_BE.Presentation.Abstractions;
+using Antree_Ecommerce_BE.Presentation.Constrants;
 using Carter;
 using MediatR;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -20,14 +24,22 @@ public class ProductApi : ApiEndpoint, ICarterModule
         var group1 = app.NewVersionedApi("Products")
             .MapGroup(BaseUrl).HasApiVersion(1);
         
-        group1.MapGet(string.Empty, GetProductsV1);//.RequireAuthorization();
+        group1.MapGet(string.Empty, GetProductsV1);
+
         group1.MapGet("{productId}", GetProductV1);
+        
         group1.MapPost(string.Empty, CreateProductsV1)
-            .RequireAuthorization()
+            .RequireAuthorization(RoleNames.Seller)
             .Accepts<CommandV1.CreateProductCommand>("multipart/form-data")
-            .DisableAntiforgery();;
-        group1.MapDelete("{productId}", DeleteProductsV1);
-        // group1.MapPut("{productId}", UpdateProductsV1);
+            .DisableAntiforgery();
+        
+        group1.MapDelete("{productId}", DeleteProductsV1)
+            .RequireAuthorization(RoleNames.Seller);
+        
+        group1.MapPut("{productId}", UpdateProductsV1)
+            .RequireAuthorization(RoleNames.Seller)
+            .Accepts<CommandV1.UpdateProductCommand>("multipart/form-data")
+            .DisableAntiforgery();
     }
 
     #region ====== version 1 ======
@@ -78,19 +90,37 @@ public class ProductApi : ApiEndpoint, ICarterModule
         return Results.Ok(result);
     }
     
-    public static async Task<IResult> UpdateProductsV1(ISender sender, Guid productId, [FromBody] CommandV1.UpdateProductCommand updateProduct)
+    public static async Task<IResult> UpdateProductsV1(ISender sender, Guid productId, [FromForm] CommandV1.UpdateProductCommand updateProduct)
     {
-        var updateProductCommand = new CommandV1.UpdateProductCommand(productId, updateProduct.ProductCategoryId, updateProduct.Name, updateProduct.Price, updateProduct.Description, updateProduct.Sku, updateProduct.Sold);
-        var result = await sender.Send(updateProductCommand);
+        Result result;
+        
+        if (!productId.Equals(updateProduct.Id))
+        {
+            result = Result.Failure(new Error("500", "Invalid Product Id"));
+            return HandlerFailure(result);
+        }
+        
+        var updateProductCommand = new CommandV1.UpdateProductCommand(
+            productId, updateProduct.ProductCategoryId,
+            updateProduct.Name, updateProduct.Price,
+            updateProduct.Description, updateProduct.Sku,
+            updateProduct.ProductImageCover,
+            updateProduct.ProductImages
+        );
+        result = await sender.Send(updateProductCommand);
         if (result.IsFailure)
             return HandlerFailure(result);
 
         return Results.Ok(result);
     }
 
-    public static async Task<IResult> DeleteProductsV1(ISender sender, Guid productId)
+    public static async Task<IResult> DeleteProductsV1(ISender sender, HttpContext context, IJwtTokenService jwtTokenService, Guid productId)
     {
-        var result = await sender.Send(new CommandV1.DeleteProductCommand(productId));
+        var accessToken = await context.GetTokenAsync("access_token");
+        var (claimPrincipal, _)  = jwtTokenService.GetPrincipalFromExpiredToken(accessToken!);
+        var vendorId = claimPrincipal.Claims.FirstOrDefault(c => c.Type == "VendorId")!.Value;
+        
+        var result = await sender.Send(new CommandV1.DeleteProductCommand(productId, new Guid(vendorId)));
         if (result.IsFailure)
             return HandlerFailure(result);
 

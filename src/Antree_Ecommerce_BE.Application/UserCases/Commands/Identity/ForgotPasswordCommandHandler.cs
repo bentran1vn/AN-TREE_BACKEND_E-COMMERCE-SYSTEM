@@ -36,15 +36,15 @@ public class ForgotPasswordCommandHandler : ICommandHandler<Command.ForgotPasswo
         Random random = new Random();
         var randomNumber = random.Next(0, 100000).ToString("D5");
         
-        var slidingExpiration = 30;
-        var absoluteExpiration = 30;
+        var slidingExpiration = 120;
+        var absoluteExpiration = 120;
         var options = new DistributedCacheEntryOptions()
             .SetSlidingExpiration(TimeSpan.FromSeconds(slidingExpiration))
             .SetAbsoluteExpiration(TimeSpan.FromSeconds(absoluteExpiration));
         
-        await _cacheService.SetAsync($"{nameof(Command.ForgotPasswordCommand)}-UserAccount:{user.Email}", randomNumber, options, cancellationToken);
-        
         await _mailService.SendMail(EmailExtensions.ForgotPasswordBody(randomNumber, $"{user.Firstname} {user.Lastname}", request.Email));
+        
+        await _cacheService.SetAsync($"{nameof(Command.ForgotPasswordCommand)}-UserAccount:{user.Email}", randomNumber, options, cancellationToken);
         
         return Result.Success("Send Mail Successfully !");
     }

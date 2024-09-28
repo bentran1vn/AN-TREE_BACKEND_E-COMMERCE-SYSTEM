@@ -1,5 +1,6 @@
 using Antree_Ecommerce_BE.Application.Abstractions;
 using Antree_Ecommerce_BE.Presentation.Abstractions;
+using Antree_Ecommerce_BE.Presentation.Constrants;
 using Carter;
 using MediatR;
 using Microsoft.AspNetCore.Authentication;
@@ -23,7 +24,7 @@ public class OrderApi : ApiEndpoint, ICarterModule
         
         // group1.MapGet(string.Empty, () => { });
         group1.MapGet("vnpay-callback", VnPayCallBackV1);
-        group1.MapPost(string.Empty, CreateOrdersV1).RequireAuthorization();
+        group1.MapPost(string.Empty, CreateOrdersV1).RequireAuthorization(RoleNames.Seller);
         // group1.MapDelete("{orderId}", () => { });
         // group1.MapPut("{orderId}", () => { });
     }
