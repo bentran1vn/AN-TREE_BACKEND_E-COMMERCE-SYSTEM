@@ -27,8 +27,15 @@ public class OrderApi : ApiEndpoint, ICarterModule
         
         group1.MapGet(string.Empty, GetOrdersV1)
             .RequireAuthorization(RoleNames.CustomerAndSeller);
+        
+        group1.MapGet("{orderId}", GetOrderV1)
+            .RequireAuthorization(RoleNames.CustomerAndSeller);
+        
         group1.MapGet("vnpay-callback", VnPayCallBackV1);
-        group1.MapPost(string.Empty, CreateOrdersV1).RequireAuthorization(RoleNames.Customer);
+        
+        group1.MapPost(string.Empty, CreateOrdersV1)
+            .RequireAuthorization(RoleNames.Customer);
+        
         // group1.MapDelete("{orderId}", () => { });
         // group1.MapPut("{orderId}", () => { });
     }
@@ -86,7 +93,16 @@ public class OrderApi : ApiEndpoint, ICarterModule
 
         return Results.Ok(result);
     }
-    
+
+    public static async Task<IResult> GetOrderV1(ISender sender, Guid orderId)
+    {
+        var result = await sender.Send(new QueryV1.GetOrderQuery(orderId));
+        
+        if (result.IsFailure)
+            return HandlerFailure(result);
+
+        return Results.Ok(result);
+    }
     
     public static async Task<IResult> VnPayCallBackV1(ISender sender, string vnp_Amount, string vnp_BankCode, string vnp_BankTranNo,
     string vnp_CardType, string vnp_OrderInfo, string vnp_PayDate, string vnp_ResponseCode, string vnp_TmnCode, string vnp_TransactionNo,

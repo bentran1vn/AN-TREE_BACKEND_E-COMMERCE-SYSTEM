@@ -66,6 +66,8 @@ public class CreateOrderCommandHandler : ICommandHandler<Command.CreateOrderComm
             ProductId = x.ProductId,
             OrderId = order.Id,
             ProductQuantity = x.Quantity,
+            ProductPrice = products[x.ProductId].Price,
+            ProductPriceDiscount = products[x.ProductId].DiscountSold,
         }).ToList();
         
         _orderDetailRepository.AddRange(orderDetails);

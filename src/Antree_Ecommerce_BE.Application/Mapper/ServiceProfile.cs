@@ -116,5 +116,72 @@ public class ServiceProfile : Profile
          
          CreateMap<PagedResult<Order>, PagedResult<OrderServices.Response.CustomerOrdersResponse>>()
              .ForMember(dest => dest.Items, opt => opt.MapFrom(src => src.Items));
+         
+         // ============= OrderServices =============
+
+         CreateMap<OrderDetailFeedback, OrderServices.Response.OrderDetailFeedback>()
+             .ForMember(dest => dest.Content,
+                 opt =>
+                     opt.MapFrom(src => src.Content))
+             .ForMember(dest => dest.Rating,
+                 opt =>
+                     opt.MapFrom(src => src.Rating))
+             .ForMember(dest => dest.CreatedOnUtc,
+                 opt =>
+                     opt.MapFrom(src => src.CreatedOnUtc))
+             .ForMember(dest => dest.OrderDetailFeedbackMedia,
+                 opt =>
+                     opt.MapFrom(src => 
+                         src.OrderDetailFeedbackMediaList.Select(x => x.ImageUrl).ToList()));
+
+         CreateMap<OrderDetail, OrderServices.Response.OrderDetail>()
+             .ForMember(dest => dest.ProductQuantity,
+                 opt =>
+                     opt.MapFrom(src => src.ProductQuantity))
+             .ForMember(dest => dest.ProductPrice,
+                 opt =>
+                     opt.MapFrom(src => src.ProductPrice))
+             .ForMember(dest => dest.ProductPriceDiscount,
+                 opt =>
+                     opt.MapFrom(src => src.ProductPriceDiscount))
+             .ForMember(dest => dest.ProductName,
+                 opt =>
+                     opt.MapFrom(src => src.Product.Name))
+             .ForMember(dest => dest.OrderDetailFeedback,
+                 opt => opt.MapFrom(src => src.OrderDetailFeedback));;
+         
+         CreateMap<Order, OrderServices.Response.OrderResponse>()
+             .ConstructUsing(src => new OrderServices.Response.OrderResponse(
+                 src.Id,
+                 src.Address,
+                 src.Note,
+                 src.Total,
+                 src.Status,
+                 src.IsFeedback,
+                 src.CreatedOnUtc,
+                 src.Discount == null ? null : new OrderServices.Response.Discount()
+                 {
+                     Description = src.Discount.Description,
+                     Name = src.Discount.Name,
+                     DiscountPercent = src.Discount.DiscountPercent
+                 }, // Directly map Discount
+                 src.OrderDetailList == null ? null : src.OrderDetailList.Select(od => new OrderServices.Response.OrderDetail(){
+                     ProductQuantity = od.ProductQuantity,
+                     ProductName = od.Product.Name,  // Assuming Name is a string
+                     ProductPrice = od.ProductPrice,
+                     ProductPriceDiscount = od.ProductPriceDiscount,
+                     OrderDetailFeedback = od.OrderDetailFeedback == null ? null : new OrderServices.Response.OrderDetailFeedback()
+                     {
+                         Content = od.OrderDetailFeedback.Content,
+                         Rating = od.OrderDetailFeedback.Rating,
+                         CreatedOnUtc = od.OrderDetailFeedback.CreatedOnUtc,
+                         OrderDetailFeedbackMedia = od.OrderDetailFeedback.OrderDetailFeedbackMediaList == null ?
+                             null :
+                             od.OrderDetailFeedback.OrderDetailFeedbackMediaList
+                             .Select(x => x.ImageUrl).ToList()
+                     } // Assuming Feedback is nullable
+                 }).ToList() // Convert to List<OrderDetail> or desired collection type
+             ));
+         
     }
 }
