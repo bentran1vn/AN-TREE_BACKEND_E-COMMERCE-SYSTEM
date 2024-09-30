@@ -81,6 +81,13 @@ public class OrderApi : ApiEndpoint, ICarterModule
         else
         {
             var vendorId = claimPrincipal.Claims.FirstOrDefault(c => c.Type == "VendorId")!.Value;
+            if (string.IsNullOrWhiteSpace(vendorId))
+            {
+                var result1 = Result.Failure(new Error("404", "Please Create Vendor !"));
+            
+                if (result1.IsFailure)
+                    return HandlerFailure(result1);
+            }
             result = await sender.Send(new QueryV1.GetVendorOrdersQuery(
                 new Guid(vendorId), notFeedback, sortColumn,
                 SortOrderExtension.ConvertStringToSortOrder(sortOrder),
