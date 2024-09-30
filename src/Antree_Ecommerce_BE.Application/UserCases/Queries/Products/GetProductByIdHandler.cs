@@ -25,7 +25,8 @@ public class GetProductByIdHandler : IQueryHandler<Query.GetProductByIdQuery, Re
             cancellationToken,
             x => x.ProductCategory,
             x => x.ProductImageList,
-            x => x.ProductFeedbackList
+            x => x.ProductFeedbackList,
+            x => x.Vendor
         );
         
         var result = _mapper.Map<Response.ProductResponse>(product);

@@ -14,13 +14,26 @@ public static class Response
         decimal DiscountSold, decimal DiscountPercent, string CoverImage,
         DateTimeOffset CreatedOnUtc, DateTimeOffset ModifiedOnUtc,
         Guid CreatedBy, Guid UpdatedBy, ProductCategory ProductCategory,
-        IReadOnlyCollection<ProductMedia> ProductImageList,
+        Vendor Vendor, IReadOnlyCollection<ProductMedia> ProductImageList,
         IReadOnlyCollection<ProductFeedback> ProductFeedbackList
     );
     public class ProductCategory
     {
         public string Name { get; set; }
         public string Description { get; set; }
+    }
+    
+    public class Vendor
+    {
+        public string Email { get; set; }
+        public string Name { get; set; }
+        public string Address { get; set; }
+        public string City { get; set; }
+        public string Province { get; set; }
+        public string Phonenumber { get; set; }
+        public string AvatarImage { get; set; }
+        public string CoverImage { get; set; }
+        public DateTimeOffset CreatedOnUtc { get; set; }
     }
     
     public class ProductMedia

@@ -40,6 +40,8 @@ public class ServiceProfile : Profile
 
          CreateMap<ProductMedia, ProductSerivces.Response.ProductMedia>()
              .ForMember(dest => dest.ImageUrl, opt => opt.MapFrom(src => src.ImageUrl));
+
+         CreateMap<Vendor, ProductSerivces.Response.Vendor>().ReverseMap();
          
          CreateMap<Product, ProductSerivces.Response.ProductResponse>()
              .ForMember(dest => dest.ProductCategory,
@@ -48,6 +50,9 @@ public class ServiceProfile : Profile
              .ForMember(dest => dest.ProductImageList,
                  opt =>
                      opt.MapFrom(src => src.ProductImageList))
+             .ForMember(dest => dest.Vendor,
+                 opt =>
+                     opt.MapFrom(src => src.Vendor))
              .ForMember(dest => dest.ProductFeedbackList,
                  opt =>
                      opt.MapFrom(src =>
