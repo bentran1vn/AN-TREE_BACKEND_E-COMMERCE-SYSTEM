@@ -31,7 +31,7 @@ public class GetVendorOrdersQueryHandler : IQueryHandler<Query.GetVendorOrdersQu
         var ordersQuery = _orderRepository.FindAll(x => ordersList.Contains(x.Id),
             x => x.User, x => x.Discount!);
         
-        ordersQuery = !request.NotFeedback ? ordersQuery : ordersQuery.Where(x => !x.IsFeedback && x.Status.Equals(1));
+        ordersQuery = !request.NotFeedback ? ordersQuery : ordersQuery.Where(x => !x.IsFeedback && x.Status.Equals(2));
         
         var orders = await PagedResult<Order>.CreateAsync(ordersQuery,
             request.PageIndex,

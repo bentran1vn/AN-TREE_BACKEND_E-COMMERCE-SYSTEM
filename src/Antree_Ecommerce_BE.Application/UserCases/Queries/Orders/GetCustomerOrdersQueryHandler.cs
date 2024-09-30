@@ -25,7 +25,7 @@ public class GetCustomerOrdersQueryHandler : IQueryHandler<Query.GetCustomerOrde
             x => x.UserId.Equals(request.CustomerId), 
             x => x.Discount!);
 
-        ordersQuery = !request.NotFeedback ? ordersQuery : ordersQuery.Where(x => !x.IsFeedback && x.Status.Equals(1));
+        ordersQuery = !request.NotFeedback ? ordersQuery : ordersQuery.Where(x => !x.IsFeedback && x.Status.Equals(2));
         
         var orders = await PagedResult<Order>.CreateAsync(ordersQuery,
             request.PageIndex,

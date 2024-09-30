@@ -5,6 +5,7 @@ using Antree_Ecommerce_BE.Contract.Services.Orders;
 using Antree_Ecommerce_BE.Domain.Abstractions.Repositories;
 using Antree_Ecommerce_BE.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
+using Query = Antree_Ecommerce_BE.Contract.Services.Products.Query;
 
 namespace Antree_Ecommerce_BE.Application.UserCases.Commands.Orders;
 
@@ -14,13 +15,15 @@ public class CreateOrderCommandHandler : ICommandHandler<Command.CreateOrderComm
     private readonly IRepositoryBase<Order, Guid> _orderRepository;
     private readonly IRepositoryBase<OrderDetail, Guid> _orderDetailRepository;
     private readonly IRepositoryBase<Product, Guid> _productRepository;
+    private readonly ICacheService _cacheService;
 
-    public CreateOrderCommandHandler(IVnPayService vnPayService, IRepositoryBase<Order, Guid> orderRepository, IRepositoryBase<OrderDetail, Guid> orderDetailRepository, IRepositoryBase<Product, Guid> productRepository)
+    public CreateOrderCommandHandler(IVnPayService vnPayService, IRepositoryBase<Order, Guid> orderRepository, IRepositoryBase<OrderDetail, Guid> orderDetailRepository, IRepositoryBase<Product, Guid> productRepository, ICacheService cacheService)
     {
         _vnPayService = vnPayService;
         _orderRepository = orderRepository;
         _orderDetailRepository = orderDetailRepository;
         _productRepository = productRepository;
+        _cacheService = cacheService;
     }
 
     public async Task<Result> Handle(Command.CreateOrderCommand request, CancellationToken cancellationToken)
@@ -74,6 +77,8 @@ public class CreateOrderCommandHandler : ICommandHandler<Command.CreateOrderComm
         _productRepository.UpdateRange(updatedProducts);
         
         string url = _vnPayService.CreatePaymentUrl(order);
+        
+        await _cacheService.RemoveByPrefixAsync($"{nameof(Query.GetProductsQuery)}", cancellationToken);
         
         return Result.Success(url);
     }
