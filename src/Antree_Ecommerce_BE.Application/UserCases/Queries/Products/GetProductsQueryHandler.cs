@@ -31,11 +31,14 @@ public class GetProductsQueryHandler : IQueryHandler<Query.GetProductsQuery, Pag
                      || x.ProductCategory.Name.ToLower().Contains(request.SearchTerm.ToLower()),
                 x => x.ProductFeedbackList
             );
-
+        
+        TimeZoneInfo vietnamTimeZone = TimeZoneInfo.FindSystemTimeZoneById("SE Asia Standard Time");
+        var nowInVietnam = TimeZoneInfo.ConvertTime(DateTimeOffset.UtcNow, vietnamTimeZone).AddDays(-7);
+        
         productsQuery = request.IsSale == false
             ? productsQuery
             : productsQuery.Where(x => x.ProductDiscountList
-                .Any(productDiscount => !productDiscount.IsDeleted && productDiscount.CreatedOnUtc > DateTimeOffset.Now.AddDays(-7)));
+                .Any(productDiscount => !productDiscount.IsDeleted && productDiscount.CreatedOnUtc > nowInVietnam));
         
         productsQuery = string.IsNullOrWhiteSpace(request.CategoryName)
             ? productsQuery

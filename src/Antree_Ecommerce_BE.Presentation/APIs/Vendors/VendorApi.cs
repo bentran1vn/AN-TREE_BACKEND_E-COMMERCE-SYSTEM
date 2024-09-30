@@ -150,7 +150,7 @@ public class VendorApi : ApiEndpoint, ICarterModule
         int pageIndex = 1,
         int pageSize = 10)
     {
-        Result result =  await sender.Send(new QueryV1.GetVendorsQuery(
+        var result =  await sender.Send(new QueryV1.GetVendorsQuery(
             serchTerm,
             sortColumn,
             SortOrderExtension.ConvertStringToSortOrder(sortOrder),

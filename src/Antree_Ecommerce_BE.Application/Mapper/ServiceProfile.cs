@@ -9,6 +9,7 @@ using ProductSerivces = Contract.Services.Products;
 using FeedbackServices = Contract.Services.Feedbacks;
 using VendorServices = Contract.Services.Vendors;
 using OrderServices = Contract.Services.Orders;
+using ProductDiscountsServices = Contract.Services.ProductDiscounts;
 // using ProducMediaServices = Antree_Ecommerce_BE.Contract.Services.ProducMedia;
 
 public class ServiceProfile : Profile
@@ -190,5 +191,10 @@ public class ServiceProfile : Profile
                  }).ToList() // Convert to List<OrderDetail> or desired collection type
              ));
          
+         // ============= ProductDiscountServices =============
+         CreateMap<ProductDiscount, ProductDiscountsServices.Response.GetProductDiscountsResponse>().ReverseMap();
+         
+         CreateMap<PagedResult<ProductDiscount>, PagedResult<ProductDiscountsServices.Response.GetProductDiscountsResponse>>()
+             .ForMember(dest => dest.Items, opt => opt.MapFrom(src => src.Items));
     }
 }

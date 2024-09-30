@@ -4,6 +4,7 @@ using Antree_Ecommerce_BE.Contract.Abstractions.Shared;
 using Antree_Ecommerce_BE.Contract.Services.Vendors;
 using Antree_Ecommerce_BE.Domain.Abstractions.Repositories;
 using Antree_Ecommerce_BE.Domain.Entities;
+using Query = Antree_Ecommerce_BE.Contract.Services.Identity.Query;
 
 namespace Antree_Ecommerce_BE.Application.UserCases.Commands.Vendors;
 
@@ -12,12 +13,14 @@ public class CreateVendorCommandHandler : ICommandHandler<Command.CreateVendorCo
     private readonly IRepositoryBase<Vendor, Guid> _vendorRepository;
     private readonly IRepositoryBase<User, Guid> _userRepository;
     private readonly IMediaService _mediaService;
+    private readonly ICacheService _cacheService;
 
-    public CreateVendorCommandHandler(IRepositoryBase<Vendor, Guid> vendorRepository, IRepositoryBase<User, Guid> userRepository, IMediaService mediaService)
+    public CreateVendorCommandHandler(IRepositoryBase<Vendor, Guid> vendorRepository, IRepositoryBase<User, Guid> userRepository, IMediaService mediaService, ICacheService cacheService)
     {
         _vendorRepository = vendorRepository;
         _userRepository = userRepository;
         _mediaService = mediaService;
+        _cacheService = cacheService;
     }
 
 
@@ -71,6 +74,11 @@ public class CreateVendorCommandHandler : ICommandHandler<Command.CreateVendorCo
             _vendorRepository.Add(vendor);
             
             user.VendorId = vendor.Id;
+            
+            var removeEmail =  _cacheService.RemoveByPrefixAsync($"{nameof(Query.Login)}-UserAccount:{user.Email}", cancellationToken);
+            var removeUserName = _cacheService.RemoveByPrefixAsync($"{nameof(Query.Login)}-UserAccount:{user.Username}", cancellationToken);
+
+            await Task.WhenAll(removeEmail, removeUserName);
         }
         else if(user.VendorId != null)
         {

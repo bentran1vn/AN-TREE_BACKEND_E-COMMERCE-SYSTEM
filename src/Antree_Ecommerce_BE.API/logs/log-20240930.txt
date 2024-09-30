@@ -356,3 +356,734 @@ System.FormatException: Unrecognized Guid format.
 2024-09-30 15:05:01.074 +07:00 [WRN] No store type was specified for the decimal property 'DiscountSold' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
 2024-09-30 15:05:01.074 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
 2024-09-30 15:05:01.074 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-30 15:49:07.631 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-30 15:49:07.743 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-30 15:49:07.744 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-30 15:49:07.744 +07:00 [WRN] No store type was specified for the decimal property 'ProductPrice' on entity type 'OrderDetail'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-30 15:49:07.744 +07:00 [WRN] No store type was specified for the decimal property 'ProductPriceDiscount' on entity type 'OrderDetail'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-30 15:49:07.744 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-30 15:49:07.745 +07:00 [WRN] No store type was specified for the decimal property 'DiscountSold' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-30 15:49:07.745 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-30 15:49:07.745 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-30 15:49:11.240 +07:00 [ERR] The LINQ expression 'DbSet<ProductDiscount>()
+    .Where(p0 => EF.Property<Guid?>(StructuralTypeShaperExpression: 
+        Antree_Ecommerce_BE.Domain.Entities.Product
+        ValueBufferExpression: 
+            ProjectionBindingExpression: EmptyProjectionMember
+        IsNullable: False
+    , "Id") != null && object.Equals(
+        objA: (object)EF.Property<Guid?>(StructuralTypeShaperExpression: 
+            Antree_Ecommerce_BE.Domain.Entities.Product
+            ValueBufferExpression: 
+                ProjectionBindingExpression: EmptyProjectionMember
+            IsNullable: False
+        , "Id"), 
+        objB: (object)EF.Property<Guid?>(p0, "ProductId")))
+    .Any(p0 => !(p0.IsDeleted) && p0.CreatedOnUtc > TimeZoneInfo.ConvertTime(
+        dateTimeOffset: DateTimeOffset.UtcNow, 
+        destinationTimeZone: __vietnamTimeZone_0).AddDays(-7))' could not be translated. Additional information: Translation of method 'System.TimeZoneInfo.ConvertTime' failed. If this method can be mapped to your custom function, see https://go.microsoft.com/fwlink/?linkid=2132413 for more information. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+System.InvalidOperationException: The LINQ expression 'DbSet<ProductDiscount>()
+    .Where(p0 => EF.Property<Guid?>(StructuralTypeShaperExpression: 
+        Antree_Ecommerce_BE.Domain.Entities.Product
+        ValueBufferExpression: 
+            ProjectionBindingExpression: EmptyProjectionMember
+        IsNullable: False
+    , "Id") != null && object.Equals(
+        objA: (object)EF.Property<Guid?>(StructuralTypeShaperExpression: 
+            Antree_Ecommerce_BE.Domain.Entities.Product
+            ValueBufferExpression: 
+                ProjectionBindingExpression: EmptyProjectionMember
+            IsNullable: False
+        , "Id"), 
+        objB: (object)EF.Property<Guid?>(p0, "ProductId")))
+    .Any(p0 => !(p0.IsDeleted) && p0.CreatedOnUtc > TimeZoneInfo.ConvertTime(
+        dateTimeOffset: DateTimeOffset.UtcNow, 
+        destinationTimeZone: __vietnamTimeZone_0).AddDays(-7))' could not be translated. Additional information: Translation of method 'System.TimeZoneInfo.ConvertTime' failed. If this method can be mapped to your custom function, see https://go.microsoft.com/fwlink/?linkid=2132413 for more information. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.Translate(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.Translate(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.TranslateSubquery(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalSqlTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.SqlServer.Query.Internal.SqlServerSqlTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalSqlTranslatingExpressionVisitor.TranslateInternal(Expression expression, Boolean applyDefaultTypeMapping)
+   at Microsoft.EntityFrameworkCore.Query.RelationalSqlTranslatingExpressionVisitor.Translate(Expression expression, Boolean applyDefaultTypeMapping)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.TranslateExpression(Expression expression, Boolean applyDefaultTypeMapping)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.TranslateLambdaExpression(ShapedQueryExpression shapedQueryExpression, LambdaExpression lambdaExpression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.TranslateWhere(ShapedQueryExpression source, LambdaExpression predicate)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.Translate(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.Translate(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Storage.Database.CompileQuery[TResult](Expression query, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.CompileQueryCore[TResult](IDatabase database, Expression query, IModel model, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass12_0`1.<ExecuteAsync>b__0()
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.CountAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1.CreateAsync(IQueryable`1 query, Int32 pageIndex, Int32 pageSize)
+   at Antree_Ecommerce_BE.Application.UserCases.Queries.Products.GetProductsQueryHandler.Handle(GetProductsQuery request, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/UserCases/Queries/Products/GetProductsQueryHandler.cs:line 54
+   at Antree_Ecommerce_BE.Application.Behaviors.TracingPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TracingPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 25
+   at Antree_Ecommerce_BE.Application.Behaviors.CachingPipelineBehaviorCachingBehavior`2.<>c__DisplayClass2_0.<<Handle>g__GetResponseAndAddToCache|0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/CachingPipelineBehavior.cs:line 23
+--- End of stack trace from previous location ---
+   at Antree_Ecommerce_BE.Application.Behaviors.CachingPipelineBehaviorCachingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/CachingPipelineBehavior.cs:line 48
+   at Antree_Ecommerce_BE.Application.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/PerformancePipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.ValidationPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/ValidationPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Presentation.APIs.Products.ProductApi.GetProductsV1(ISender sender, String serchTerm, String categoryName, String vendorName, String sortColumn, String sortOrder, Boolean isSale, Int32 pageIndex, Int32 pageSize) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Presentation/APIs/Products/ProductApi.cs:line 57
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-30 15:49:11.259 +07:00 [ERR] Handling exception: InvalidOperationException, Status Code: 500, Message: The LINQ expression 'DbSet<ProductDiscount>()
+    .Where(p0 => EF.Property<Guid?>(StructuralTypeShaperExpression: 
+        Antree_Ecommerce_BE.Domain.Entities.Product
+        ValueBufferExpression: 
+            ProjectionBindingExpression: EmptyProjectionMember
+        IsNullable: False
+    , "Id") != null && object.Equals(
+        objA: (object)EF.Property<Guid?>(StructuralTypeShaperExpression: 
+            Antree_Ecommerce_BE.Domain.Entities.Product
+            ValueBufferExpression: 
+                ProjectionBindingExpression: EmptyProjectionMember
+            IsNullable: False
+        , "Id"), 
+        objB: (object)EF.Property<Guid?>(p0, "ProductId")))
+    .Any(p0 => !(p0.IsDeleted) && p0.CreatedOnUtc > TimeZoneInfo.ConvertTime(
+        dateTimeOffset: DateTimeOffset.UtcNow, 
+        destinationTimeZone: __vietnamTimeZone_0).AddDays(-7))' could not be translated. Additional information: Translation of method 'System.TimeZoneInfo.ConvertTime' failed. If this method can be mapped to your custom function, see https://go.microsoft.com/fwlink/?linkid=2132413 for more information. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+2024-09-30 15:49:13.451 +07:00 [ERR] The LINQ expression 'DbSet<ProductDiscount>()
+    .Where(p0 => EF.Property<Guid?>(StructuralTypeShaperExpression: 
+        Antree_Ecommerce_BE.Domain.Entities.Product
+        ValueBufferExpression: 
+            ProjectionBindingExpression: EmptyProjectionMember
+        IsNullable: False
+    , "Id") != null && object.Equals(
+        objA: (object)EF.Property<Guid?>(StructuralTypeShaperExpression: 
+            Antree_Ecommerce_BE.Domain.Entities.Product
+            ValueBufferExpression: 
+                ProjectionBindingExpression: EmptyProjectionMember
+            IsNullable: False
+        , "Id"), 
+        objB: (object)EF.Property<Guid?>(p0, "ProductId")))
+    .Any(p0 => !(p0.IsDeleted) && p0.CreatedOnUtc > TimeZoneInfo.ConvertTime(
+        dateTimeOffset: DateTimeOffset.UtcNow, 
+        destinationTimeZone: __vietnamTimeZone_0).AddDays(-7))' could not be translated. Additional information: Translation of method 'System.TimeZoneInfo.ConvertTime' failed. If this method can be mapped to your custom function, see https://go.microsoft.com/fwlink/?linkid=2132413 for more information. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+System.InvalidOperationException: The LINQ expression 'DbSet<ProductDiscount>()
+    .Where(p0 => EF.Property<Guid?>(StructuralTypeShaperExpression: 
+        Antree_Ecommerce_BE.Domain.Entities.Product
+        ValueBufferExpression: 
+            ProjectionBindingExpression: EmptyProjectionMember
+        IsNullable: False
+    , "Id") != null && object.Equals(
+        objA: (object)EF.Property<Guid?>(StructuralTypeShaperExpression: 
+            Antree_Ecommerce_BE.Domain.Entities.Product
+            ValueBufferExpression: 
+                ProjectionBindingExpression: EmptyProjectionMember
+            IsNullable: False
+        , "Id"), 
+        objB: (object)EF.Property<Guid?>(p0, "ProductId")))
+    .Any(p0 => !(p0.IsDeleted) && p0.CreatedOnUtc > TimeZoneInfo.ConvertTime(
+        dateTimeOffset: DateTimeOffset.UtcNow, 
+        destinationTimeZone: __vietnamTimeZone_0).AddDays(-7))' could not be translated. Additional information: Translation of method 'System.TimeZoneInfo.ConvertTime' failed. If this method can be mapped to your custom function, see https://go.microsoft.com/fwlink/?linkid=2132413 for more information. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.Translate(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.Translate(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.TranslateSubquery(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalSqlTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.SqlServer.Query.Internal.SqlServerSqlTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalSqlTranslatingExpressionVisitor.TranslateInternal(Expression expression, Boolean applyDefaultTypeMapping)
+   at Microsoft.EntityFrameworkCore.Query.RelationalSqlTranslatingExpressionVisitor.Translate(Expression expression, Boolean applyDefaultTypeMapping)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.TranslateExpression(Expression expression, Boolean applyDefaultTypeMapping)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.TranslateLambdaExpression(ShapedQueryExpression shapedQueryExpression, LambdaExpression lambdaExpression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.TranslateWhere(ShapedQueryExpression source, LambdaExpression predicate)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.Translate(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.Translate(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Storage.Database.CompileQuery[TResult](Expression query, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.CompileQueryCore[TResult](IDatabase database, Expression query, IModel model, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass12_0`1.<ExecuteAsync>b__0()
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.CountAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1.CreateAsync(IQueryable`1 query, Int32 pageIndex, Int32 pageSize)
+   at Antree_Ecommerce_BE.Application.UserCases.Queries.Products.GetProductsQueryHandler.Handle(GetProductsQuery request, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/UserCases/Queries/Products/GetProductsQueryHandler.cs:line 54
+   at Antree_Ecommerce_BE.Application.Behaviors.TracingPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TracingPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 25
+   at Antree_Ecommerce_BE.Application.Behaviors.CachingPipelineBehaviorCachingBehavior`2.<>c__DisplayClass2_0.<<Handle>g__GetResponseAndAddToCache|0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/CachingPipelineBehavior.cs:line 23
+--- End of stack trace from previous location ---
+   at Antree_Ecommerce_BE.Application.Behaviors.CachingPipelineBehaviorCachingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/CachingPipelineBehavior.cs:line 48
+   at Antree_Ecommerce_BE.Application.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/PerformancePipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.ValidationPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/ValidationPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Presentation.APIs.Products.ProductApi.GetProductsV1(ISender sender, String serchTerm, String categoryName, String vendorName, String sortColumn, String sortOrder, Boolean isSale, Int32 pageIndex, Int32 pageSize) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Presentation/APIs/Products/ProductApi.cs:line 57
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-30 15:49:13.454 +07:00 [ERR] Handling exception: InvalidOperationException, Status Code: 500, Message: The LINQ expression 'DbSet<ProductDiscount>()
+    .Where(p0 => EF.Property<Guid?>(StructuralTypeShaperExpression: 
+        Antree_Ecommerce_BE.Domain.Entities.Product
+        ValueBufferExpression: 
+            ProjectionBindingExpression: EmptyProjectionMember
+        IsNullable: False
+    , "Id") != null && object.Equals(
+        objA: (object)EF.Property<Guid?>(StructuralTypeShaperExpression: 
+            Antree_Ecommerce_BE.Domain.Entities.Product
+            ValueBufferExpression: 
+                ProjectionBindingExpression: EmptyProjectionMember
+            IsNullable: False
+        , "Id"), 
+        objB: (object)EF.Property<Guid?>(p0, "ProductId")))
+    .Any(p0 => !(p0.IsDeleted) && p0.CreatedOnUtc > TimeZoneInfo.ConvertTime(
+        dateTimeOffset: DateTimeOffset.UtcNow, 
+        destinationTimeZone: __vietnamTimeZone_0).AddDays(-7))' could not be translated. Additional information: Translation of method 'System.TimeZoneInfo.ConvertTime' failed. If this method can be mapped to your custom function, see https://go.microsoft.com/fwlink/?linkid=2132413 for more information. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+2024-09-30 15:49:13.932 +07:00 [ERR] The LINQ expression 'DbSet<ProductDiscount>()
+    .Where(p0 => EF.Property<Guid?>(StructuralTypeShaperExpression: 
+        Antree_Ecommerce_BE.Domain.Entities.Product
+        ValueBufferExpression: 
+            ProjectionBindingExpression: EmptyProjectionMember
+        IsNullable: False
+    , "Id") != null && object.Equals(
+        objA: (object)EF.Property<Guid?>(StructuralTypeShaperExpression: 
+            Antree_Ecommerce_BE.Domain.Entities.Product
+            ValueBufferExpression: 
+                ProjectionBindingExpression: EmptyProjectionMember
+            IsNullable: False
+        , "Id"), 
+        objB: (object)EF.Property<Guid?>(p0, "ProductId")))
+    .Any(p0 => !(p0.IsDeleted) && p0.CreatedOnUtc > TimeZoneInfo.ConvertTime(
+        dateTimeOffset: DateTimeOffset.UtcNow, 
+        destinationTimeZone: __vietnamTimeZone_0).AddDays(-7))' could not be translated. Additional information: Translation of method 'System.TimeZoneInfo.ConvertTime' failed. If this method can be mapped to your custom function, see https://go.microsoft.com/fwlink/?linkid=2132413 for more information. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+System.InvalidOperationException: The LINQ expression 'DbSet<ProductDiscount>()
+    .Where(p0 => EF.Property<Guid?>(StructuralTypeShaperExpression: 
+        Antree_Ecommerce_BE.Domain.Entities.Product
+        ValueBufferExpression: 
+            ProjectionBindingExpression: EmptyProjectionMember
+        IsNullable: False
+    , "Id") != null && object.Equals(
+        objA: (object)EF.Property<Guid?>(StructuralTypeShaperExpression: 
+            Antree_Ecommerce_BE.Domain.Entities.Product
+            ValueBufferExpression: 
+                ProjectionBindingExpression: EmptyProjectionMember
+            IsNullable: False
+        , "Id"), 
+        objB: (object)EF.Property<Guid?>(p0, "ProductId")))
+    .Any(p0 => !(p0.IsDeleted) && p0.CreatedOnUtc > TimeZoneInfo.ConvertTime(
+        dateTimeOffset: DateTimeOffset.UtcNow, 
+        destinationTimeZone: __vietnamTimeZone_0).AddDays(-7))' could not be translated. Additional information: Translation of method 'System.TimeZoneInfo.ConvertTime' failed. If this method can be mapped to your custom function, see https://go.microsoft.com/fwlink/?linkid=2132413 for more information. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.Translate(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.Translate(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.TranslateSubquery(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalSqlTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.SqlServer.Query.Internal.SqlServerSqlTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalSqlTranslatingExpressionVisitor.TranslateInternal(Expression expression, Boolean applyDefaultTypeMapping)
+   at Microsoft.EntityFrameworkCore.Query.RelationalSqlTranslatingExpressionVisitor.Translate(Expression expression, Boolean applyDefaultTypeMapping)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.TranslateExpression(Expression expression, Boolean applyDefaultTypeMapping)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.TranslateLambdaExpression(ShapedQueryExpression shapedQueryExpression, LambdaExpression lambdaExpression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.TranslateWhere(ShapedQueryExpression source, LambdaExpression predicate)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.Translate(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.Translate(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Storage.Database.CompileQuery[TResult](Expression query, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.CompileQueryCore[TResult](IDatabase database, Expression query, IModel model, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass12_0`1.<ExecuteAsync>b__0()
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.CountAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1.CreateAsync(IQueryable`1 query, Int32 pageIndex, Int32 pageSize)
+   at Antree_Ecommerce_BE.Application.UserCases.Queries.Products.GetProductsQueryHandler.Handle(GetProductsQuery request, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/UserCases/Queries/Products/GetProductsQueryHandler.cs:line 54
+   at Antree_Ecommerce_BE.Application.Behaviors.TracingPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TracingPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 25
+   at Antree_Ecommerce_BE.Application.Behaviors.CachingPipelineBehaviorCachingBehavior`2.<>c__DisplayClass2_0.<<Handle>g__GetResponseAndAddToCache|0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/CachingPipelineBehavior.cs:line 23
+--- End of stack trace from previous location ---
+   at Antree_Ecommerce_BE.Application.Behaviors.CachingPipelineBehaviorCachingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/CachingPipelineBehavior.cs:line 48
+   at Antree_Ecommerce_BE.Application.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/PerformancePipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.ValidationPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/ValidationPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Presentation.APIs.Products.ProductApi.GetProductsV1(ISender sender, String serchTerm, String categoryName, String vendorName, String sortColumn, String sortOrder, Boolean isSale, Int32 pageIndex, Int32 pageSize) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Presentation/APIs/Products/ProductApi.cs:line 57
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-30 15:49:13.934 +07:00 [ERR] Handling exception: InvalidOperationException, Status Code: 500, Message: The LINQ expression 'DbSet<ProductDiscount>()
+    .Where(p0 => EF.Property<Guid?>(StructuralTypeShaperExpression: 
+        Antree_Ecommerce_BE.Domain.Entities.Product
+        ValueBufferExpression: 
+            ProjectionBindingExpression: EmptyProjectionMember
+        IsNullable: False
+    , "Id") != null && object.Equals(
+        objA: (object)EF.Property<Guid?>(StructuralTypeShaperExpression: 
+            Antree_Ecommerce_BE.Domain.Entities.Product
+            ValueBufferExpression: 
+                ProjectionBindingExpression: EmptyProjectionMember
+            IsNullable: False
+        , "Id"), 
+        objB: (object)EF.Property<Guid?>(p0, "ProductId")))
+    .Any(p0 => !(p0.IsDeleted) && p0.CreatedOnUtc > TimeZoneInfo.ConvertTime(
+        dateTimeOffset: DateTimeOffset.UtcNow, 
+        destinationTimeZone: __vietnamTimeZone_0).AddDays(-7))' could not be translated. Additional information: Translation of method 'System.TimeZoneInfo.ConvertTime' failed. If this method can be mapped to your custom function, see https://go.microsoft.com/fwlink/?linkid=2132413 for more information. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+2024-09-30 15:49:14.088 +07:00 [ERR] The LINQ expression 'DbSet<ProductDiscount>()
+    .Where(p0 => EF.Property<Guid?>(StructuralTypeShaperExpression: 
+        Antree_Ecommerce_BE.Domain.Entities.Product
+        ValueBufferExpression: 
+            ProjectionBindingExpression: EmptyProjectionMember
+        IsNullable: False
+    , "Id") != null && object.Equals(
+        objA: (object)EF.Property<Guid?>(StructuralTypeShaperExpression: 
+            Antree_Ecommerce_BE.Domain.Entities.Product
+            ValueBufferExpression: 
+                ProjectionBindingExpression: EmptyProjectionMember
+            IsNullable: False
+        , "Id"), 
+        objB: (object)EF.Property<Guid?>(p0, "ProductId")))
+    .Any(p0 => !(p0.IsDeleted) && p0.CreatedOnUtc > TimeZoneInfo.ConvertTime(
+        dateTimeOffset: DateTimeOffset.UtcNow, 
+        destinationTimeZone: __vietnamTimeZone_0).AddDays(-7))' could not be translated. Additional information: Translation of method 'System.TimeZoneInfo.ConvertTime' failed. If this method can be mapped to your custom function, see https://go.microsoft.com/fwlink/?linkid=2132413 for more information. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+System.InvalidOperationException: The LINQ expression 'DbSet<ProductDiscount>()
+    .Where(p0 => EF.Property<Guid?>(StructuralTypeShaperExpression: 
+        Antree_Ecommerce_BE.Domain.Entities.Product
+        ValueBufferExpression: 
+            ProjectionBindingExpression: EmptyProjectionMember
+        IsNullable: False
+    , "Id") != null && object.Equals(
+        objA: (object)EF.Property<Guid?>(StructuralTypeShaperExpression: 
+            Antree_Ecommerce_BE.Domain.Entities.Product
+            ValueBufferExpression: 
+                ProjectionBindingExpression: EmptyProjectionMember
+            IsNullable: False
+        , "Id"), 
+        objB: (object)EF.Property<Guid?>(p0, "ProductId")))
+    .Any(p0 => !(p0.IsDeleted) && p0.CreatedOnUtc > TimeZoneInfo.ConvertTime(
+        dateTimeOffset: DateTimeOffset.UtcNow, 
+        destinationTimeZone: __vietnamTimeZone_0).AddDays(-7))' could not be translated. Additional information: Translation of method 'System.TimeZoneInfo.ConvertTime' failed. If this method can be mapped to your custom function, see https://go.microsoft.com/fwlink/?linkid=2132413 for more information. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.Translate(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.Translate(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.TranslateSubquery(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalSqlTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.SqlServer.Query.Internal.SqlServerSqlTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalSqlTranslatingExpressionVisitor.TranslateInternal(Expression expression, Boolean applyDefaultTypeMapping)
+   at Microsoft.EntityFrameworkCore.Query.RelationalSqlTranslatingExpressionVisitor.Translate(Expression expression, Boolean applyDefaultTypeMapping)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.TranslateExpression(Expression expression, Boolean applyDefaultTypeMapping)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.TranslateLambdaExpression(ShapedQueryExpression shapedQueryExpression, LambdaExpression lambdaExpression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.TranslateWhere(ShapedQueryExpression source, LambdaExpression predicate)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.Translate(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.Translate(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Storage.Database.CompileQuery[TResult](Expression query, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.CompileQueryCore[TResult](IDatabase database, Expression query, IModel model, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass12_0`1.<ExecuteAsync>b__0()
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.CountAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1.CreateAsync(IQueryable`1 query, Int32 pageIndex, Int32 pageSize)
+   at Antree_Ecommerce_BE.Application.UserCases.Queries.Products.GetProductsQueryHandler.Handle(GetProductsQuery request, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/UserCases/Queries/Products/GetProductsQueryHandler.cs:line 54
+   at Antree_Ecommerce_BE.Application.Behaviors.TracingPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TracingPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 25
+   at Antree_Ecommerce_BE.Application.Behaviors.CachingPipelineBehaviorCachingBehavior`2.<>c__DisplayClass2_0.<<Handle>g__GetResponseAndAddToCache|0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/CachingPipelineBehavior.cs:line 23
+--- End of stack trace from previous location ---
+   at Antree_Ecommerce_BE.Application.Behaviors.CachingPipelineBehaviorCachingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/CachingPipelineBehavior.cs:line 48
+   at Antree_Ecommerce_BE.Application.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/PerformancePipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.ValidationPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/ValidationPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Presentation.APIs.Products.ProductApi.GetProductsV1(ISender sender, String serchTerm, String categoryName, String vendorName, String sortColumn, String sortOrder, Boolean isSale, Int32 pageIndex, Int32 pageSize) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Presentation/APIs/Products/ProductApi.cs:line 57
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-30 15:49:14.102 +07:00 [ERR] Handling exception: InvalidOperationException, Status Code: 500, Message: The LINQ expression 'DbSet<ProductDiscount>()
+    .Where(p0 => EF.Property<Guid?>(StructuralTypeShaperExpression: 
+        Antree_Ecommerce_BE.Domain.Entities.Product
+        ValueBufferExpression: 
+            ProjectionBindingExpression: EmptyProjectionMember
+        IsNullable: False
+    , "Id") != null && object.Equals(
+        objA: (object)EF.Property<Guid?>(StructuralTypeShaperExpression: 
+            Antree_Ecommerce_BE.Domain.Entities.Product
+            ValueBufferExpression: 
+                ProjectionBindingExpression: EmptyProjectionMember
+            IsNullable: False
+        , "Id"), 
+        objB: (object)EF.Property<Guid?>(p0, "ProductId")))
+    .Any(p0 => !(p0.IsDeleted) && p0.CreatedOnUtc > TimeZoneInfo.ConvertTime(
+        dateTimeOffset: DateTimeOffset.UtcNow, 
+        destinationTimeZone: __vietnamTimeZone_0).AddDays(-7))' could not be translated. Additional information: Translation of method 'System.TimeZoneInfo.ConvertTime' failed. If this method can be mapped to your custom function, see https://go.microsoft.com/fwlink/?linkid=2132413 for more information. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+2024-09-30 15:49:14.245 +07:00 [ERR] The LINQ expression 'DbSet<ProductDiscount>()
+    .Where(p0 => EF.Property<Guid?>(StructuralTypeShaperExpression: 
+        Antree_Ecommerce_BE.Domain.Entities.Product
+        ValueBufferExpression: 
+            ProjectionBindingExpression: EmptyProjectionMember
+        IsNullable: False
+    , "Id") != null && object.Equals(
+        objA: (object)EF.Property<Guid?>(StructuralTypeShaperExpression: 
+            Antree_Ecommerce_BE.Domain.Entities.Product
+            ValueBufferExpression: 
+                ProjectionBindingExpression: EmptyProjectionMember
+            IsNullable: False
+        , "Id"), 
+        objB: (object)EF.Property<Guid?>(p0, "ProductId")))
+    .Any(p0 => !(p0.IsDeleted) && p0.CreatedOnUtc > TimeZoneInfo.ConvertTime(
+        dateTimeOffset: DateTimeOffset.UtcNow, 
+        destinationTimeZone: __vietnamTimeZone_0).AddDays(-7))' could not be translated. Additional information: Translation of method 'System.TimeZoneInfo.ConvertTime' failed. If this method can be mapped to your custom function, see https://go.microsoft.com/fwlink/?linkid=2132413 for more information. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+System.InvalidOperationException: The LINQ expression 'DbSet<ProductDiscount>()
+    .Where(p0 => EF.Property<Guid?>(StructuralTypeShaperExpression: 
+        Antree_Ecommerce_BE.Domain.Entities.Product
+        ValueBufferExpression: 
+            ProjectionBindingExpression: EmptyProjectionMember
+        IsNullable: False
+    , "Id") != null && object.Equals(
+        objA: (object)EF.Property<Guid?>(StructuralTypeShaperExpression: 
+            Antree_Ecommerce_BE.Domain.Entities.Product
+            ValueBufferExpression: 
+                ProjectionBindingExpression: EmptyProjectionMember
+            IsNullable: False
+        , "Id"), 
+        objB: (object)EF.Property<Guid?>(p0, "ProductId")))
+    .Any(p0 => !(p0.IsDeleted) && p0.CreatedOnUtc > TimeZoneInfo.ConvertTime(
+        dateTimeOffset: DateTimeOffset.UtcNow, 
+        destinationTimeZone: __vietnamTimeZone_0).AddDays(-7))' could not be translated. Additional information: Translation of method 'System.TimeZoneInfo.ConvertTime' failed. If this method can be mapped to your custom function, see https://go.microsoft.com/fwlink/?linkid=2132413 for more information. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.Translate(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.Translate(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.TranslateSubquery(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalSqlTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.SqlServer.Query.Internal.SqlServerSqlTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalSqlTranslatingExpressionVisitor.TranslateInternal(Expression expression, Boolean applyDefaultTypeMapping)
+   at Microsoft.EntityFrameworkCore.Query.RelationalSqlTranslatingExpressionVisitor.Translate(Expression expression, Boolean applyDefaultTypeMapping)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.TranslateExpression(Expression expression, Boolean applyDefaultTypeMapping)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.TranslateLambdaExpression(ShapedQueryExpression shapedQueryExpression, LambdaExpression lambdaExpression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.TranslateWhere(ShapedQueryExpression source, LambdaExpression predicate)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.Translate(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.Translate(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Storage.Database.CompileQuery[TResult](Expression query, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.CompileQueryCore[TResult](IDatabase database, Expression query, IModel model, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass12_0`1.<ExecuteAsync>b__0()
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.CountAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1.CreateAsync(IQueryable`1 query, Int32 pageIndex, Int32 pageSize)
+   at Antree_Ecommerce_BE.Application.UserCases.Queries.Products.GetProductsQueryHandler.Handle(GetProductsQuery request, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/UserCases/Queries/Products/GetProductsQueryHandler.cs:line 54
+   at Antree_Ecommerce_BE.Application.Behaviors.TracingPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TracingPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 25
+   at Antree_Ecommerce_BE.Application.Behaviors.CachingPipelineBehaviorCachingBehavior`2.<>c__DisplayClass2_0.<<Handle>g__GetResponseAndAddToCache|0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/CachingPipelineBehavior.cs:line 23
+--- End of stack trace from previous location ---
+   at Antree_Ecommerce_BE.Application.Behaviors.CachingPipelineBehaviorCachingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/CachingPipelineBehavior.cs:line 48
+   at Antree_Ecommerce_BE.Application.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/PerformancePipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.ValidationPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/ValidationPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Presentation.APIs.Products.ProductApi.GetProductsV1(ISender sender, String serchTerm, String categoryName, String vendorName, String sortColumn, String sortOrder, Boolean isSale, Int32 pageIndex, Int32 pageSize) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Presentation/APIs/Products/ProductApi.cs:line 57
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-30 15:49:14.248 +07:00 [ERR] Handling exception: InvalidOperationException, Status Code: 500, Message: The LINQ expression 'DbSet<ProductDiscount>()
+    .Where(p0 => EF.Property<Guid?>(StructuralTypeShaperExpression: 
+        Antree_Ecommerce_BE.Domain.Entities.Product
+        ValueBufferExpression: 
+            ProjectionBindingExpression: EmptyProjectionMember
+        IsNullable: False
+    , "Id") != null && object.Equals(
+        objA: (object)EF.Property<Guid?>(StructuralTypeShaperExpression: 
+            Antree_Ecommerce_BE.Domain.Entities.Product
+            ValueBufferExpression: 
+                ProjectionBindingExpression: EmptyProjectionMember
+            IsNullable: False
+        , "Id"), 
+        objB: (object)EF.Property<Guid?>(p0, "ProductId")))
+    .Any(p0 => !(p0.IsDeleted) && p0.CreatedOnUtc > TimeZoneInfo.ConvertTime(
+        dateTimeOffset: DateTimeOffset.UtcNow, 
+        destinationTimeZone: __vietnamTimeZone_0).AddDays(-7))' could not be translated. Additional information: Translation of method 'System.TimeZoneInfo.ConvertTime' failed. If this method can be mapped to your custom function, see https://go.microsoft.com/fwlink/?linkid=2132413 for more information. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+2024-09-30 15:49:21.931 +07:00 [ERR] The LINQ expression 'DbSet<ProductDiscount>()
+    .Where(p0 => EF.Property<Guid?>(StructuralTypeShaperExpression: 
+        Antree_Ecommerce_BE.Domain.Entities.Product
+        ValueBufferExpression: 
+            ProjectionBindingExpression: EmptyProjectionMember
+        IsNullable: False
+    , "Id") != null && object.Equals(
+        objA: (object)EF.Property<Guid?>(StructuralTypeShaperExpression: 
+            Antree_Ecommerce_BE.Domain.Entities.Product
+            ValueBufferExpression: 
+                ProjectionBindingExpression: EmptyProjectionMember
+            IsNullable: False
+        , "Id"), 
+        objB: (object)EF.Property<Guid?>(p0, "ProductId")))
+    .Any(p0 => !(p0.IsDeleted) && p0.CreatedOnUtc > TimeZoneInfo.ConvertTime(
+        dateTimeOffset: DateTimeOffset.UtcNow, 
+        destinationTimeZone: __vietnamTimeZone_0).AddDays(-7))' could not be translated. Additional information: Translation of method 'System.TimeZoneInfo.ConvertTime' failed. If this method can be mapped to your custom function, see https://go.microsoft.com/fwlink/?linkid=2132413 for more information. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+System.InvalidOperationException: The LINQ expression 'DbSet<ProductDiscount>()
+    .Where(p0 => EF.Property<Guid?>(StructuralTypeShaperExpression: 
+        Antree_Ecommerce_BE.Domain.Entities.Product
+        ValueBufferExpression: 
+            ProjectionBindingExpression: EmptyProjectionMember
+        IsNullable: False
+    , "Id") != null && object.Equals(
+        objA: (object)EF.Property<Guid?>(StructuralTypeShaperExpression: 
+            Antree_Ecommerce_BE.Domain.Entities.Product
+            ValueBufferExpression: 
+                ProjectionBindingExpression: EmptyProjectionMember
+            IsNullable: False
+        , "Id"), 
+        objB: (object)EF.Property<Guid?>(p0, "ProductId")))
+    .Any(p0 => !(p0.IsDeleted) && p0.CreatedOnUtc > TimeZoneInfo.ConvertTime(
+        dateTimeOffset: DateTimeOffset.UtcNow, 
+        destinationTimeZone: __vietnamTimeZone_0).AddDays(-7))' could not be translated. Additional information: Translation of method 'System.TimeZoneInfo.ConvertTime' failed. If this method can be mapped to your custom function, see https://go.microsoft.com/fwlink/?linkid=2132413 for more information. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.Translate(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.Translate(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.TranslateSubquery(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalSqlTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.SqlServer.Query.Internal.SqlServerSqlTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalSqlTranslatingExpressionVisitor.TranslateInternal(Expression expression, Boolean applyDefaultTypeMapping)
+   at Microsoft.EntityFrameworkCore.Query.RelationalSqlTranslatingExpressionVisitor.Translate(Expression expression, Boolean applyDefaultTypeMapping)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.TranslateExpression(Expression expression, Boolean applyDefaultTypeMapping)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.TranslateLambdaExpression(ShapedQueryExpression shapedQueryExpression, LambdaExpression lambdaExpression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.TranslateWhere(ShapedQueryExpression source, LambdaExpression predicate)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.Translate(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.Translate(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Storage.Database.CompileQuery[TResult](Expression query, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.CompileQueryCore[TResult](IDatabase database, Expression query, IModel model, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass12_0`1.<ExecuteAsync>b__0()
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.CountAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1.CreateAsync(IQueryable`1 query, Int32 pageIndex, Int32 pageSize)
+   at Antree_Ecommerce_BE.Application.UserCases.Queries.Products.GetProductsQueryHandler.Handle(GetProductsQuery request, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/UserCases/Queries/Products/GetProductsQueryHandler.cs:line 54
+   at Antree_Ecommerce_BE.Application.Behaviors.TracingPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TracingPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 25
+   at Antree_Ecommerce_BE.Application.Behaviors.CachingPipelineBehaviorCachingBehavior`2.<>c__DisplayClass2_0.<<Handle>g__GetResponseAndAddToCache|0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/CachingPipelineBehavior.cs:line 23
+--- End of stack trace from previous location ---
+   at Antree_Ecommerce_BE.Application.Behaviors.CachingPipelineBehaviorCachingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/CachingPipelineBehavior.cs:line 48
+   at Antree_Ecommerce_BE.Application.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/PerformancePipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.ValidationPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/ValidationPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Presentation.APIs.Products.ProductApi.GetProductsV1(ISender sender, String serchTerm, String categoryName, String vendorName, String sortColumn, String sortOrder, Boolean isSale, Int32 pageIndex, Int32 pageSize) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Presentation/APIs/Products/ProductApi.cs:line 57
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-30 15:49:21.934 +07:00 [ERR] Handling exception: InvalidOperationException, Status Code: 500, Message: The LINQ expression 'DbSet<ProductDiscount>()
+    .Where(p0 => EF.Property<Guid?>(StructuralTypeShaperExpression: 
+        Antree_Ecommerce_BE.Domain.Entities.Product
+        ValueBufferExpression: 
+            ProjectionBindingExpression: EmptyProjectionMember
+        IsNullable: False
+    , "Id") != null && object.Equals(
+        objA: (object)EF.Property<Guid?>(StructuralTypeShaperExpression: 
+            Antree_Ecommerce_BE.Domain.Entities.Product
+            ValueBufferExpression: 
+                ProjectionBindingExpression: EmptyProjectionMember
+            IsNullable: False
+        , "Id"), 
+        objB: (object)EF.Property<Guid?>(p0, "ProductId")))
+    .Any(p0 => !(p0.IsDeleted) && p0.CreatedOnUtc > TimeZoneInfo.ConvertTime(
+        dateTimeOffset: DateTimeOffset.UtcNow, 
+        destinationTimeZone: __vietnamTimeZone_0).AddDays(-7))' could not be translated. Additional information: Translation of method 'System.TimeZoneInfo.ConvertTime' failed. If this method can be mapped to your custom function, see https://go.microsoft.com/fwlink/?linkid=2132413 for more information. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+2024-09-30 15:50:17.668 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-30 15:50:17.781 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-30 15:50:17.782 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-30 15:50:17.782 +07:00 [WRN] No store type was specified for the decimal property 'ProductPrice' on entity type 'OrderDetail'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-30 15:50:17.782 +07:00 [WRN] No store type was specified for the decimal property 'ProductPriceDiscount' on entity type 'OrderDetail'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-30 15:50:17.782 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-30 15:50:17.782 +07:00 [WRN] No store type was specified for the decimal property 'DiscountSold' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-30 15:50:17.783 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-30 15:50:17.783 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-30 15:50:18.061 +07:00 [ERR] The LINQ expression 'DbSet<ProductDiscount>()
+    .Where(p0 => EF.Property<Guid?>(StructuralTypeShaperExpression: 
+        Antree_Ecommerce_BE.Domain.Entities.Product
+        ValueBufferExpression: 
+            ProjectionBindingExpression: EmptyProjectionMember
+        IsNullable: False
+    , "Id") != null && object.Equals(
+        objA: (object)EF.Property<Guid?>(StructuralTypeShaperExpression: 
+            Antree_Ecommerce_BE.Domain.Entities.Product
+            ValueBufferExpression: 
+                ProjectionBindingExpression: EmptyProjectionMember
+            IsNullable: False
+        , "Id"), 
+        objB: (object)EF.Property<Guid?>(p0, "ProductId")))
+    .Any(p0 => !(p0.IsDeleted) && p0.CreatedOnUtc > TimeZoneInfo.ConvertTime(
+        dateTimeOffset: DateTimeOffset.Now, 
+        destinationTimeZone: __vietnamTimeZone_0).AddDays(-7))' could not be translated. Additional information: Translation of method 'System.TimeZoneInfo.ConvertTime' failed. If this method can be mapped to your custom function, see https://go.microsoft.com/fwlink/?linkid=2132413 for more information. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+System.InvalidOperationException: The LINQ expression 'DbSet<ProductDiscount>()
+    .Where(p0 => EF.Property<Guid?>(StructuralTypeShaperExpression: 
+        Antree_Ecommerce_BE.Domain.Entities.Product
+        ValueBufferExpression: 
+            ProjectionBindingExpression: EmptyProjectionMember
+        IsNullable: False
+    , "Id") != null && object.Equals(
+        objA: (object)EF.Property<Guid?>(StructuralTypeShaperExpression: 
+            Antree_Ecommerce_BE.Domain.Entities.Product
+            ValueBufferExpression: 
+                ProjectionBindingExpression: EmptyProjectionMember
+            IsNullable: False
+        , "Id"), 
+        objB: (object)EF.Property<Guid?>(p0, "ProductId")))
+    .Any(p0 => !(p0.IsDeleted) && p0.CreatedOnUtc > TimeZoneInfo.ConvertTime(
+        dateTimeOffset: DateTimeOffset.Now, 
+        destinationTimeZone: __vietnamTimeZone_0).AddDays(-7))' could not be translated. Additional information: Translation of method 'System.TimeZoneInfo.ConvertTime' failed. If this method can be mapped to your custom function, see https://go.microsoft.com/fwlink/?linkid=2132413 for more information. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.Translate(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.Translate(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.TranslateSubquery(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalSqlTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.SqlServer.Query.Internal.SqlServerSqlTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalSqlTranslatingExpressionVisitor.TranslateInternal(Expression expression, Boolean applyDefaultTypeMapping)
+   at Microsoft.EntityFrameworkCore.Query.RelationalSqlTranslatingExpressionVisitor.Translate(Expression expression, Boolean applyDefaultTypeMapping)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.TranslateExpression(Expression expression, Boolean applyDefaultTypeMapping)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.TranslateLambdaExpression(ShapedQueryExpression shapedQueryExpression, LambdaExpression lambdaExpression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.TranslateWhere(ShapedQueryExpression source, LambdaExpression predicate)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.Translate(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.Translate(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Storage.Database.CompileQuery[TResult](Expression query, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.CompileQueryCore[TResult](IDatabase database, Expression query, IModel model, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass12_0`1.<ExecuteAsync>b__0()
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.CountAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1.CreateAsync(IQueryable`1 query, Int32 pageIndex, Int32 pageSize)
+   at Antree_Ecommerce_BE.Application.UserCases.Queries.Products.GetProductsQueryHandler.Handle(GetProductsQuery request, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/UserCases/Queries/Products/GetProductsQueryHandler.cs:line 54
+   at Antree_Ecommerce_BE.Application.Behaviors.TracingPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TracingPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 25
+   at Antree_Ecommerce_BE.Application.Behaviors.CachingPipelineBehaviorCachingBehavior`2.<>c__DisplayClass2_0.<<Handle>g__GetResponseAndAddToCache|0>d.MoveNext() in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/CachingPipelineBehavior.cs:line 23
+--- End of stack trace from previous location ---
+   at Antree_Ecommerce_BE.Application.Behaviors.CachingPipelineBehaviorCachingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/CachingPipelineBehavior.cs:line 48
+   at Antree_Ecommerce_BE.Application.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/PerformancePipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.ValidationPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/ValidationPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Presentation.APIs.Products.ProductApi.GetProductsV1(ISender sender, String serchTerm, String categoryName, String vendorName, String sortColumn, String sortOrder, Boolean isSale, Int32 pageIndex, Int32 pageSize) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Presentation/APIs/Products/ProductApi.cs:line 57
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-30 15:50:18.075 +07:00 [ERR] Handling exception: InvalidOperationException, Status Code: 500, Message: The LINQ expression 'DbSet<ProductDiscount>()
+    .Where(p0 => EF.Property<Guid?>(StructuralTypeShaperExpression: 
+        Antree_Ecommerce_BE.Domain.Entities.Product
+        ValueBufferExpression: 
+            ProjectionBindingExpression: EmptyProjectionMember
+        IsNullable: False
+    , "Id") != null && object.Equals(
+        objA: (object)EF.Property<Guid?>(StructuralTypeShaperExpression: 
+            Antree_Ecommerce_BE.Domain.Entities.Product
+            ValueBufferExpression: 
+                ProjectionBindingExpression: EmptyProjectionMember
+            IsNullable: False
+        , "Id"), 
+        objB: (object)EF.Property<Guid?>(p0, "ProductId")))
+    .Any(p0 => !(p0.IsDeleted) && p0.CreatedOnUtc > TimeZoneInfo.ConvertTime(
+        dateTimeOffset: DateTimeOffset.Now, 
+        destinationTimeZone: __vietnamTimeZone_0).AddDays(-7))' could not be translated. Additional information: Translation of method 'System.TimeZoneInfo.ConvertTime' failed. If this method can be mapped to your custom function, see https://go.microsoft.com/fwlink/?linkid=2132413 for more information. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+2024-09-30 15:51:44.972 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-30 15:51:45.087 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-30 15:51:45.088 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-30 15:51:45.088 +07:00 [WRN] No store type was specified for the decimal property 'ProductPrice' on entity type 'OrderDetail'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-30 15:51:45.088 +07:00 [WRN] No store type was specified for the decimal property 'ProductPriceDiscount' on entity type 'OrderDetail'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-30 15:51:45.088 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-30 15:51:45.088 +07:00 [WRN] No store type was specified for the decimal property 'DiscountSold' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-30 15:51:45.088 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-30 15:51:45.088 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-30 15:54:55.538 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-09-30 15:54:55.540 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-09-30 15:55:55.336 +07:00 [ERR] Missing type map configuration or unsupported mapping.
+
+Mapping types:
+PagedResult`1 -> PagedResult`1
+Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Domain.Entities.ProductDiscount, Antree_Ecommerce_BE.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Contract.Services.ProductDiscounts.Response+GetProductDiscountsResponse, Antree_Ecommerce_BE.Contract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+PagedResult`1 -> PagedResult`1
+Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Domain.Entities.ProductDiscount, Antree_Ecommerce_BE.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Contract.Services.ProductDiscounts.Response+GetProductDiscountsResponse, Antree_Ecommerce_BE.Contract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+   at lambda_method1129(Closure, Object, PagedResult`1, ResolutionContext)
+   at Antree_Ecommerce_BE.Application.UserCases.Queries.ProductDiscounts.GetProductDiscountsQueryHandler.Handle(GetProductDiscountsQuery request, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/UserCases/Queries/ProductDiscounts/GetProductDiscountsQueryHandler.cs:line 42
+   at Antree_Ecommerce_BE.Application.Behaviors.TracingPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TracingPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.TransactionPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/TransactionPipelineBehavior.cs:line 25
+   at Antree_Ecommerce_BE.Application.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/PerformancePipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Application.Behaviors.ValidationPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Application/Behaviors/ValidationPipelineBehavior.cs:line 23
+   at Antree_Ecommerce_BE.Presentation.APIs.ProductDiscounts.ProductDiscountApi.GetProductDiscountsV1(ISender sender, HttpContext context, IJwtTokenService jwtTokenService, Guid productId, Boolean isRelease, String sortColumn, String sortOrder, Int32 pageIndex, Int32 pageSize) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.Presentation/APIs/ProductDiscounts/ProductDiscountApi.cs:line 58
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Antree_Ecommerce_BE.API.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/tantran/Documents/WorkSpace/Antree_Ecommerce_BE/src/Antree_Ecommerce_BE.API/Middlewares/ExceptionHandlingMiddleware.cs:line 17
+2024-09-30 15:55:55.347 +07:00 [ERR] Handling exception: AutoMapperMappingException, Status Code: 500, Message: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+PagedResult`1 -> PagedResult`1
+Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Domain.Entities.ProductDiscount, Antree_Ecommerce_BE.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Antree_Ecommerce_BE.Contract.Abstractions.Shared.PagedResult`1[[Antree_Ecommerce_BE.Contract.Services.ProductDiscounts.Response+GetProductDiscountsResponse, Antree_Ecommerce_BE.Contract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+2024-09-30 15:57:56.532 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-09-30 15:57:56.638 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Discount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-30 15:57:56.639 +07:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-30 15:57:56.639 +07:00 [WRN] No store type was specified for the decimal property 'ProductPrice' on entity type 'OrderDetail'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-30 15:57:56.640 +07:00 [WRN] No store type was specified for the decimal property 'ProductPriceDiscount' on entity type 'OrderDetail'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-30 15:57:56.640 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-30 15:57:56.640 +07:00 [WRN] No store type was specified for the decimal property 'DiscountSold' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-30 15:57:56.640 +07:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-30 15:57:56.640 +07:00 [WRN] No store type was specified for the decimal property 'DiscountPercent' on entity type 'ProductDiscount'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
