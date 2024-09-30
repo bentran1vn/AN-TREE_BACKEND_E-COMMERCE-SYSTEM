@@ -26,7 +26,8 @@ public sealed class DeleteAuditableEntitiesInterceptor : SaveChangesInterceptor
             dbContext
                 .ChangeTracker
                 .Entries();
-
+        
+        TimeZoneInfo vietnamTimeZone = TimeZoneInfo.FindSystemTimeZoneById("SE Asia Standard Time");
         foreach (EntityEntry entityEntry in entries)
         {
             if (entityEntry.State == EntityState.Deleted)
@@ -38,7 +39,8 @@ public sealed class DeleteAuditableEntitiesInterceptor : SaveChangesInterceptor
                 {
                     entityEntry.State = EntityState.Modified;
                     isDeletedProperty.SetValue(entity, true);
-                    updateProperty.SetValue(entity, DateTimeOffset.UtcNow);
+                    updateProperty.SetValue(entity, 
+                        TimeZoneInfo.ConvertTime(DateTimeOffset.UtcNow, vietnamTimeZone));
                 }
             }
         }

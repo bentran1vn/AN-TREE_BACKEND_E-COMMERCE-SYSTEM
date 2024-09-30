@@ -11,9 +11,6 @@ public static class Command
     public record CreateVendorCommand : ICommand
     {
         [SwaggerSchema(ReadOnly = true)]
-        [DefaultValue("e824c924-e441-4367-a03b-8dd13423f76f")]
-        public Guid? Id { get; set; } 
-        [SwaggerSchema(ReadOnly = true)]
         [DefaultValue("e824c924-e441-4367-a03b-8dd13223f76f")]
         public Guid? UserId { get; set; } 
         public string VendorEmail { get; set; }

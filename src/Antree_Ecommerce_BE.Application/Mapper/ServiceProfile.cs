@@ -172,6 +172,7 @@ public class ServiceProfile : Profile
                      DiscountPercent = src.Discount.DiscountPercent
                  }, // Directly map Discount
                  src.OrderDetailList == null ? null : src.OrderDetailList.Select(od => new OrderServices.Response.OrderDetail(){
+                     Id = od.Id,
                      ProductQuantity = od.ProductQuantity,
                      ProductName = od.Product.Name,  // Assuming Name is a string
                      ProductPrice = od.ProductPrice,

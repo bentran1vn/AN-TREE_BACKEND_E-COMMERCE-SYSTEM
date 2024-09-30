@@ -64,7 +64,7 @@ public class CreateVendorCommandHandler : ICommandHandler<Command.CreateVendorCo
 
         if (user.VendorId == null)
         {
-            var vendor = new Vendor(request.Id ?? Guid.NewGuid(), request.VendorEmail, request.VendorName, request.Address,
+            var vendor = new Vendor(Guid.NewGuid(), request.VendorEmail, request.VendorName, request.Address,
                 request.City, request.Province, request.PhoneNumber, avatarUrl, coverUrl,
                 request.BankName, request.BankOwnerName, request.BankAccountNumber, request.UserId ?? Guid.NewGuid());
         

@@ -27,17 +27,19 @@ public sealed class UpdateAuditableEntitiesInterceptor
             dbContext
                 .ChangeTracker
                 .Entries<IAuditableEntity>();
-
+        TimeZoneInfo vietnamTimeZone = TimeZoneInfo.FindSystemTimeZoneById("SE Asia Standard Time");
         foreach (EntityEntry<IAuditableEntity> entityEntry in entries)
         {
             if (entityEntry.State == EntityState.Added)
             {
-                entityEntry.Property(a => a.CreatedOnUtc).CurrentValue = DateTime.UtcNow;
+                entityEntry.Property(a => a.CreatedOnUtc).CurrentValue
+                    = TimeZoneInfo.ConvertTime(DateTimeOffset.UtcNow, vietnamTimeZone);
             }
 
             if (entityEntry.State == EntityState.Modified)
             {
-                entityEntry.Property(a => a.ModifiedOnUtc).CurrentValue = DateTime.UtcNow;
+                entityEntry.Property(a => a.ModifiedOnUtc).CurrentValue
+                    = TimeZoneInfo.ConvertTime(DateTimeOffset.UtcNow, vietnamTimeZone);
             }
         }
 

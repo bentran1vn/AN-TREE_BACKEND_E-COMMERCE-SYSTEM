@@ -58,7 +58,6 @@ public class VendorApi : ApiEndpoint, ICarterModule
         var userId = claimPrincipal.Claims.FirstOrDefault(c => c.Type == "UserId")!.Value;
         
         var result = await sender.Send(new CommandV1.CreateVendorCommand(){
-            Id = Guid.NewGuid(),
             UserId = new Guid(userId),
             VendorEmail = command.VendorEmail,
             VendorName = command.VendorName,
