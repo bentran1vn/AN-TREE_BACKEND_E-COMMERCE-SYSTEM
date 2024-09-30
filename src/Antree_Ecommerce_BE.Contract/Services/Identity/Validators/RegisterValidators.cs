@@ -11,6 +11,6 @@ public class RegisterValidators : AbstractValidator<Command.RegisterCommand>
         RuleFor(x => x.Username).NotEmpty();
         RuleFor(x => x.LastName).NotEmpty();
         RuleFor(x => x.FirstName).NotEmpty();
-        RuleFor(x => x.Role).GreaterThanOrEqualTo(0).LessThanOrEqualTo(1).NotEmpty();
+        RuleFor(x => x.Role).GreaterThanOrEqualTo(0).LessThanOrEqualTo(1).NotNull();
     }
 }
