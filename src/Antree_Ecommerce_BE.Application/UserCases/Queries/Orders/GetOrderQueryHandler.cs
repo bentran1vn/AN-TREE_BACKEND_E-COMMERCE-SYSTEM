@@ -34,6 +34,8 @@ public class GetOrderQueryHandler : IQueryHandler<Query.GetOrderQuery, Response.
         
         var order = await orderQuery.SingleOrDefaultAsync(cancellationToken);
         
+        // if(order.OrderDetailList.Any(x => x.Product.VendorId.Equals(request.VendorId)))
+        
         var result = _mapper.Map<Response.OrderResponse>(order);
 
         return Result.Success(result);

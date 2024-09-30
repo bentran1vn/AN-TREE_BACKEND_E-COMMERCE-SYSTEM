@@ -119,36 +119,37 @@ public class ServiceProfile : Profile
          
          // ============= OrderServices =============
 
-         CreateMap<OrderDetailFeedback, OrderServices.Response.OrderDetailFeedback>()
-             .ForMember(dest => dest.Content,
-                 opt =>
-                     opt.MapFrom(src => src.Content))
-             .ForMember(dest => dest.Rating,
-                 opt =>
-                     opt.MapFrom(src => src.Rating))
-             .ForMember(dest => dest.CreatedOnUtc,
-                 opt =>
-                     opt.MapFrom(src => src.CreatedOnUtc))
-             .ForMember(dest => dest.OrderDetailFeedbackMedia,
-                 opt =>
-                     opt.MapFrom(src => 
-                         src.OrderDetailFeedbackMediaList.Select(x => x.ImageUrl).ToList()));
-
-         CreateMap<OrderDetail, OrderServices.Response.OrderDetail>()
-             .ForMember(dest => dest.ProductQuantity,
-                 opt =>
-                     opt.MapFrom(src => src.ProductQuantity))
-             .ForMember(dest => dest.ProductPrice,
-                 opt =>
-                     opt.MapFrom(src => src.ProductPrice))
-             .ForMember(dest => dest.ProductPriceDiscount,
-                 opt =>
-                     opt.MapFrom(src => src.ProductPriceDiscount))
-             .ForMember(dest => dest.ProductName,
-                 opt =>
-                     opt.MapFrom(src => src.Product.Name))
-             .ForMember(dest => dest.OrderDetailFeedback,
-                 opt => opt.MapFrom(src => src.OrderDetailFeedback));;
+         // CreateMap<OrderDetailFeedback, OrderServices.Response.OrderDetailFeedback>()
+         //     .ForMember(dest => dest.Content,
+         //         opt =>
+         //             opt.MapFrom(src => src.Content))
+         //     .ForMember(dest => dest.Rating,
+         //         opt =>
+         //             opt.MapFrom(src => src.Rating))
+         //     .ForMember(dest => dest.CreatedOnUtc,
+         //         opt =>
+         //             opt.MapFrom(src => src.CreatedOnUtc))
+         //     .ForMember(dest => dest.OrderDetailFeedbackMedia,
+         //         opt =>
+         //             opt.MapFrom(src => 
+         //                 src.OrderDetailFeedbackMediaList.Select(x => x.ImageUrl).ToList()));
+         //
+         // CreateMap<OrderDetail, OrderServices.Response.OrderDetail>()
+         //     .ForMember(dest => dest.ProductQuantity,
+         //         opt =>
+         //             opt.MapFrom(src => src.ProductQuantity))
+         //     .ForMember(dest => dest.ProductPrice,
+         //         opt =>
+         //             opt.MapFrom(src => src.ProductPrice))
+         //     .ForMember(dest => dest.ProductPriceDiscount,
+         //         opt =>
+         //             opt.MapFrom(src => src.ProductPriceDiscount))
+         //     .ForMember(dest => dest.ProductName,
+         //         opt =>
+         //             opt.MapFrom(src => src.Product.Name))
+         //     .ForMember(dest => dest.OrderDetailFeedback,
+         //         opt => opt.MapFrom(src => src.OrderDetailFeedback));;
+         //
          
          CreateMap<Order, OrderServices.Response.OrderResponse>()
              .ConstructUsing(src => new OrderServices.Response.OrderResponse(
