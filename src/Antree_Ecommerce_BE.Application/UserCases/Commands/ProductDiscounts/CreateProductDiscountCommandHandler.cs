@@ -31,6 +31,12 @@ public class CreateProductDiscountCommandHandler : ICommandHandler<Command.Creat
 
         var product = await _productRepository.FindByIdAsync(request.ProductId, cancellationToken);
 
+        if (product.VendorId != request.VendorId)
+        {
+            return Result.Failure(new Error("403", "Forbidden, Can not add Discount for" +
+                                                   " Another Product's Seller"));
+        }
+
         product.DiscountPercent = request.DiscountPercent;
         product.DiscountSold = product.Price * request.DiscountPercent / 100;
         

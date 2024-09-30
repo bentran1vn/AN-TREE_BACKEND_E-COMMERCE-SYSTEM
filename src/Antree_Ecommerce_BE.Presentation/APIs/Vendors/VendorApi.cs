@@ -122,6 +122,14 @@ public class VendorApi : ApiEndpoint, ICarterModule
         var (claimPrincipal, _)  = jwtTokenService.GetPrincipalFromExpiredToken(accessToken!);
         var vendorId = claimPrincipal.Claims.FirstOrDefault(c => c.Type == "VendorId")!.Value;
 
+        if (string.IsNullOrWhiteSpace(vendorId))
+        {
+            var result1 = Result.Failure(new Error("404", "Please Create Vendor !"));
+            
+            if (result1.IsFailure)
+                return HandlerFailure(result1);
+        }
+        
         Result result = await sender.Send(new QueryV1.GetVendorByIdQuery(new Guid(vendorId)));
         
         if (result.IsFailure)
