@@ -2,11 +2,22 @@ namespace Antree_Ecommerce_BE.Contract.Services.Products;
 
 public static class Response
 {
-    public record ProductsResponse(
-        Guid Id, string Name, decimal Price, int Sku, int Sold,
-        decimal DiscountSold, decimal DiscountPercent, string CoverImage,
-        decimal Rating
-    );
+    public record ProductsResponse
+    {
+        public Guid Id { get; set; }
+        public string Name { get; set; }
+        public decimal Price { get; set; }
+        public int Sku { get; set; }
+        public int Sold { get; set; }
+        public decimal DiscountSold { get; set; }
+        public decimal DiscountPercent { get; set; }
+        public string CoverImage { get; set; }
+        public decimal Rating { get; set; }
+        public string VendorName { get; set; }
+        public string VendorAvatarImage { get; set; }
+    }
+    
+    //, string VendorName, string VendorAvatarImage
     
     public record ProductResponse(
         Guid Id, Guid ProductCategoryId, string Name,

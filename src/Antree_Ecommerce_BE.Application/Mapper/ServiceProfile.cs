@@ -23,18 +23,22 @@ public class ServiceProfile : Profile
         
         //Get All
         CreateMap<Product, ProductSerivces.Response.ProductsResponse>()
-            .ConstructUsing(src => new ProductSerivces.Response.ProductsResponse(
-                src.Id, src.Name, src.Price, src.Sku, src.Sold,
-                src.DiscountSold, src.DiscountPercent, src.CoverImage,
-                src.ProductFeedbackList == null ? 0 :
-                    decimal.Parse(src.ProductFeedbackList.Select(x => x.Rate * x.Total)
-                        .Sum().ToString()) / 
-                    decimal.Parse(src.ProductFeedbackList.Select(x => x.Total)
-                        .Sum().ToString())
-            ));
-        
-        CreateMap<PagedResult<Product>, PagedResult<ProductSerivces.Response.ProductsResponse>>()
-            .ForMember(dest => dest.Items, opt => opt.MapFrom(src => src.Items));
+            .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
+            .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name))
+            .ForMember(dest => dest.Price, opt => opt.MapFrom(src => src.Price))
+            .ForMember(dest => dest.Sku, opt => opt.MapFrom(src => src.Sku))
+            .ForMember(dest => dest.Sold, opt => opt.MapFrom(src => src.Sold))
+            .ForMember(dest => dest.DiscountSold, opt => opt.MapFrom(src => src.DiscountSold))
+            .ForMember(dest => dest.DiscountPercent, opt => opt.MapFrom(src => src.DiscountPercent))
+            .ForMember(dest => dest.CoverImage, opt => opt.MapFrom(src => src.CoverImage))
+            .ForMember(dest => dest.Rating, opt => opt.MapFrom(src => 
+                src.ProductFeedbackList != null && src.ProductFeedbackList.Any() 
+                    ? (decimal)src.ProductFeedbackList.Average(f => f.Rate) 
+                    : 0))
+            .ForMember(dest => dest.VendorName, opt => opt.MapFrom(src => src.Vendor != null ? src.Vendor.Name : ""))
+            .ForMember(dest => dest.VendorAvatarImage, opt => opt.MapFrom(src => src.Vendor != null ? src.Vendor.AvatarImage : ""));
+
+        CreateMap<PagedResult<Product>, PagedResult<ProductSerivces.Response.ProductsResponse>>();
         
         // Get By Detail
          CreateMap<ProductCategory, ProductSerivces.Response.ProductCategory>()

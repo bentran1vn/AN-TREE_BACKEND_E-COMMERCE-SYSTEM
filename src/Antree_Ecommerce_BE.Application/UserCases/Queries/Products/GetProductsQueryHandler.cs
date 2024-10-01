@@ -25,10 +25,12 @@ public class GetProductsQueryHandler : IQueryHandler<Query.GetProductsQuery, Pag
     {
         var productsQuery = string.IsNullOrWhiteSpace(request.SearchTerm)
             ? _productRepository.FindAll(null,
+                x => x.Vendor,
                 x => x.ProductFeedbackList)
             : _productRepository.FindAll(
                 x => x.Name.ToLower().Contains(request.SearchTerm.ToLower())
                      || x.ProductCategory.Name.ToLower().Contains(request.SearchTerm.ToLower()),
+                x => x.Vendor,
                 x => x.ProductFeedbackList
             );
         
