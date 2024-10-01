@@ -23,12 +23,14 @@ public class ServiceProfile : Profile
         
         //Get All
         CreateMap<Product, ProductSerivces.Response.ProductsResponse>()
-            .ForMember(dest => dest.ProductFeedbackList,
-            opt =>
-                opt.MapFrom(src =>
-                    src.ProductFeedbackList.Any() 
-                        ? src.ProductFeedbackList.ToList()
-                        : new List<ProductFeedback>()
+            .ConstructUsing(src => new ProductSerivces.Response.ProductsResponse(
+                src.Id, src.Name, src.Price, src.Sku, src.Sold,
+                src.DiscountSold, src.DiscountPercent, src.CoverImage,
+                src.ProductFeedbackList == null ? 0 :
+                    decimal.Parse(src.ProductFeedbackList.Select(x => x.Rate * x.Total)
+                        .Sum().ToString()) / 
+                    decimal.Parse(src.ProductFeedbackList.Select(x => x.Total)
+                        .Sum().ToString())
             ));
         
         CreateMap<PagedResult<Product>, PagedResult<ProductSerivces.Response.ProductsResponse>>()

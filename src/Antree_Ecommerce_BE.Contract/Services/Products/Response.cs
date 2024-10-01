@@ -5,7 +5,7 @@ public static class Response
     public record ProductsResponse(
         Guid Id, string Name, decimal Price, int Sku, int Sold,
         decimal DiscountSold, decimal DiscountPercent, string CoverImage,
-        IReadOnlyCollection<ProductFeedback> ProductFeedbackList
+        decimal Rating
     );
     
     public record ProductResponse(
