@@ -76,19 +76,33 @@ public class ServiceProfile : Profile
              .ForMember(dest => dest.Items, opt => opt.MapFrom(src => src.Items));
          
          // ============= FeedbackServices =============
-         CreateMap<User, FeedbackServices.Response.User>().ReverseMap();
+         // CreateMap<User, FeedbackServices.Response.User>().ReverseMap();
+         //
+         // CreateMap<Order, FeedbackServices.Response.Order>().ReverseMap();
+         //
+         // CreateMap<OrderDetailFeedback, FeedbackServices.Response.OrderDetailFeedback>();
          
-         CreateMap<Order, FeedbackServices.Response.Order>().ReverseMap();
+         // CreateMap<OrderDetail, FeedbackServices.Response.FeedbackResonse>()
+         //     .ForMember(dest => dest.Order,
+         //         opt =>
+         //             opt.MapFrom(src => src.Order))
+         //     .ForMember(dest => dest.OrderDetailFeedback,
+         //         opt =>
+         //             opt.MapFrom(src => src.OrderDetailFeedback));
 
-         CreateMap<OrderDetailFeedback, FeedbackServices.Response.OrderDetailFeedback>();
-         
          CreateMap<OrderDetail, FeedbackServices.Response.FeedbackResonse>()
-             .ForMember(dest => dest.Order,
-                 opt =>
-                     opt.MapFrom(src => src.Order))
-             .ForMember(dest => dest.OrderDetailFeedback,
-                 opt =>
-                     opt.MapFrom(src => src.OrderDetailFeedback));
+             .ConstructUsing(src => new FeedbackServices.Response.FeedbackResonse
+             {
+                Id = src.OrderDetailFeedback!.Id,
+                Rating = src.OrderDetailFeedback.Rating,
+                Content = src.OrderDetailFeedback.Content,
+                Email = src.Order.User.Email,
+                Username = src.Order.User.Username,
+                FeedbackImage = src.OrderDetailFeedback.OrderDetailFeedbackMediaList == null ? 
+                    new List<string>() 
+                    : src.OrderDetailFeedback.OrderDetailFeedbackMediaList.Select(x => x.ImageUrl).ToList(),
+                CreatedOnUtc = src.OrderDetailFeedback.CreatedOnUtc
+             });
          
          CreateMap<PagedResult<OrderDetail>, PagedResult<FeedbackServices.Response.FeedbackResonse>>()
              .ForMember(dest => dest.Items, opt => opt.MapFrom(src => src.Items));

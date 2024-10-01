@@ -31,7 +31,8 @@ public class GetFeedbacksQueryHandler : IQueryHandler<Query.GetFeedbacksQuery, P
             .Include(x => x.Product)
             .Include(x => x.Order)
                 .ThenInclude(o => o.User)
-            .Include(x => x.OrderDetailFeedback);
+            .Include(x => x.OrderDetailFeedback)
+                .ThenInclude(odf => odf.OrderDetailFeedbackMediaList);
         
         feedbacksQuery = request.SortOrder == SortOrder.Descending
             ? feedbacksQuery.OrderByDescending(GetSortProperty(request))
@@ -49,7 +50,7 @@ public class GetFeedbacksQueryHandler : IQueryHandler<Query.GetFeedbacksQuery, P
     private static Expression<Func<OrderDetail, object>> GetSortProperty(Query.GetFeedbacksQuery request)
         => request.SortColumn?.ToLower() switch
         {
-            "name" => orderDetail => orderDetail.OrderDetailFeedback.Rating,
+            "rating" => orderDetail => orderDetail.OrderDetailFeedback.Rating,
             _ => orderDetail => orderDetail.Id
             //_ => product => product.CreatedDate // Default Sort Descending on CreatedDate column
         };
