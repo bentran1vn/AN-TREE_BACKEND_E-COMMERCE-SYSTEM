@@ -38,7 +38,9 @@ public static class ServiceCollectionExtensions
                                     maxRetryCount: options.CurrentValue.MaxRetryCount,
                                     maxRetryDelay: options.CurrentValue.MaxRetryDelay,
                                     errorNumbersToAdd: options.CurrentValue.ErrorNumbersToAdd))
-                            .MigrationsAssembly(typeof(ApplicationDbContext).Assembly.GetName().Name))
+                            .MigrationsAssembly(typeof(ApplicationDbContext).Assembly.GetName().Name)
+                            .EnableRetryOnFailure().UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery)
+                )
             .AddInterceptors(auditableInterceptor, deletableInterceptor);
 
             #endregion ============== SQL-SERVER-STRATEGY-1 ==============

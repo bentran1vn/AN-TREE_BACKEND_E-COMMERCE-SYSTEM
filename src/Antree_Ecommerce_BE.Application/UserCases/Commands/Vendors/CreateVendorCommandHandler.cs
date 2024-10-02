@@ -26,26 +26,41 @@ public class CreateVendorCommandHandler : ICommandHandler<Command.CreateVendorCo
 
     public async Task<Result> Handle(Command.CreateVendorCommand request, CancellationToken cancellationToken)
     {
-        var vendorTask = _vendorRepository.FindSingleAsync(
+        // var vendorTask = Task.Run(async () => 
+        //     await _vendorRepository.FindSingleAsync(
+        //         x => x.Name.Equals(request.VendorName), 
+        //         cancellationToken
+        //     )
+        // );
+        //
+        // var userTask = Task.Run(async () => 
+        //     await _userRepository.FindByIdAsync(
+        //         request.UserId ?? Guid.NewGuid(), 
+        //         cancellationToken, 
+        //         x => x.Vendor!
+        //     )
+        // );
+        //
+        // await Task.WhenAll(vendorTask, userTask);
+        //
+        // var existingVendor = await vendorTask;
+        // var user = await userTask;
+        
+        var existingVendor = await _vendorRepository.FindSingleAsync(
             x => x.Name.Equals(request.VendorName), 
             cancellationToken
         );
         
-        var userTask = _userRepository.FindByIdAsync(
-            request.UserId ?? Guid.NewGuid(), 
-            cancellationToken, 
-            x => x.Vendor!
-        );
-
-        await Task.WhenAll(vendorTask, userTask);
-        
-        var existingVendor = await vendorTask;
-        var user = await userTask;
-
         if (existingVendor is not null)
         {
             throw new Exception($"Exist Vendor has name: {request.VendorName}");
         }
+        
+        var user = await _userRepository.FindByIdAsync(
+            request.UserId ?? Guid.NewGuid(), 
+            cancellationToken, 
+            x => x.Vendor!
+        );
         
         if (user is null)
         {
