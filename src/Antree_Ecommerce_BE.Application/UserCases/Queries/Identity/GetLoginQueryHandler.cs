@@ -60,12 +60,15 @@ public class GetLoginQueryHandler : IQueryHandler<Query.Login, Response.Authenti
 
         var accessToken = _jwtTokenService.GenerateAccessToken(claims);
         var refreshToken = _jwtTokenService.GenerateRefreshToken();
-
+        
+        TimeZoneInfo vietnamTimeZone = TimeZoneInfo.FindSystemTimeZoneById("SE Asia Standard Time");
+        
+        
         var response = new Response.Authenticated()
         {
             AccessToken = accessToken,
             RefreshToken = refreshToken,
-            RefreshTokenExpiryTime = DateTime.Now.AddMinutes(15)
+            RefreshTokenExpiryTime = TimeZoneInfo.ConvertTime(DateTimeOffset.UtcNow.AddMinutes(15), vietnamTimeZone)
         };
         
         var slidingExpiration = request.SlidingExpirationInMinutes == 0 ? 10 : request.SlidingExpirationInMinutes;
