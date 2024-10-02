@@ -14,4 +14,13 @@ public static class Command
         [DefaultValue("e824c924-e441-4367-a03b-8dd13223f76f")]
         public Guid VendorId { get; set; }
     }
+    
+    public record UpdateProductDiscountCommand(
+        Guid ProductDiscountId, string Name, string Description, decimal DiscountPercent,
+        DateTimeOffset StartTime, DateTimeOffset EndTime, bool IsDeleted) : ICommand 
+    {
+        [SwaggerSchema(ReadOnly = true)]
+        [DefaultValue("e824c924-e441-4367-a03b-8dd13223f76f")]
+        public Guid VendorId { get; set; }
+    }
 }

@@ -14,4 +14,12 @@ public class Query
         SortOrder? SortOrder,
         int PageIndex,
         int PageSize) : IQuery<PagedResult<Response.GetProductDiscountsResponse>>;
+    
+    public record GetProductDiscountsesQuery(
+        Guid VendorId,
+        bool IsRelease,
+        string? SortColumn,
+        SortOrder? SortOrder,
+        int PageIndex,
+        int PageSize) : IQuery<PagedResult<Response.GetProductDiscountsResponse>>;
 }

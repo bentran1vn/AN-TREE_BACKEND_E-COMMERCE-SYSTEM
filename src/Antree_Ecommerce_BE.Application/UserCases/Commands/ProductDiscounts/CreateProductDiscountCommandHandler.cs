@@ -59,7 +59,7 @@ public class CreateProductDiscountCommandHandler : ICommandHandler<Command.Creat
             StartTime = request.StartTime,
             EndTime = request.EndTime,
             DiscountPercent = request.DiscountPercent,
-            CreatedBy =  Guid.NewGuid()
+            CreatedBy =  request.VendorId
         };
         
         _productDiscountRepository.Add(productDiscount);

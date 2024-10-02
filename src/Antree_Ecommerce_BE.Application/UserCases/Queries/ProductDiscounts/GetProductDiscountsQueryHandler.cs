@@ -24,7 +24,7 @@ public class GetProductDiscountsQueryHandler : IQueryHandler<Query.GetProductDis
     {
         var query = _productDiscountRepository.FindAll(
             x => x.ProductId.Equals(request.ProductId)
-                && x.Product.VendorId.Equals(request.VendorId)
+                && x.CreatedBy.Equals(request.VendorId)
         );
         
         query = request.IsRelease
