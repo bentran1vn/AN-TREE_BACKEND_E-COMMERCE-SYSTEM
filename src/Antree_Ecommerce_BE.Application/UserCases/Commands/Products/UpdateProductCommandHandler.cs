@@ -24,28 +24,30 @@ public sealed class UpdateProductCommandHandler : ICommandHandler<Command.Update
 
     public async Task<Result> Handle(Command.UpdateProductCommand request, CancellationToken cancellationToken)
     {
-        var product = await _productRepository.FindByIdAsync(request.Id) ?? throw new ProductException.ProductNotFoundException(request.Id);
+        var product = await _productRepository.FindByIdAsync(request.Id, cancellationToken) 
+                      ?? throw new ProductException.ProductNotFoundException(request.Id);
+        
         var productMedia = await _productMediaRepository.FindAll(x => x.ProductId.Equals(request.Id)).ToListAsync(cancellationToken);
        
-        if (request.ProductImageCover != null)
-        {
-            var coverImage = await _mediaService.UploadImageAsync(request.ProductImageCover);
-            product.CoverImage = coverImage;
-        }
-        
-        if (request.ProductImages != null)
-        {
-            var imageUrlListTask = request.ProductImages.Select(x => _mediaService.UploadImageAsync(x));
-            var imageUrlList = await Task.WhenAll(imageUrlListTask);
-            productMedia = productMedia.Select((x, index) => new ProductMedia()
-            {
-                Id = x.Id,
-                ProductId = request.Id,
-                ImageUrl = imageUrlList[index],
-                IsDeleted = x.IsDeleted
-            }).ToList();
-            _productMediaRepository.UpdateRange(productMedia);
-        }
+        // if (request.ProductImageCover != null)
+        // {
+        //     var coverImage = await _mediaService.UploadImageAsync(request.ProductImageCover);
+        //     product.CoverImage = coverImage;
+        // }
+        //
+        // if (request.ProductImages != null)
+        // {
+        //     var imageUrlListTask = request.ProductImages.Select(x => _mediaService.UploadImageAsync(x));
+        //     var imageUrlList = await Task.WhenAll(imageUrlListTask);
+        //     productMedia = productMedia.Select((x, index) => new ProductMedia()
+        //     {
+        //         Id = x.Id,
+        //         ProductId = request.Id,
+        //         ImageUrl = imageUrlList[index],
+        //         IsDeleted = x.IsDeleted
+        //     }).ToList();
+        //     _productMediaRepository.UpdateRange(productMedia);
+        // }
 
         if (request.ProductCategoryId != null)
             product.ProductCategoryId = (Guid)request.ProductCategoryId;
@@ -62,6 +64,6 @@ public sealed class UpdateProductCommandHandler : ICommandHandler<Command.Update
         if (request.Sku != null)
             product.Sku = (int)request.Sku;
         
-        return Result.Success();
+        return Result.Success("Update Product Successfully !");
     }
 }

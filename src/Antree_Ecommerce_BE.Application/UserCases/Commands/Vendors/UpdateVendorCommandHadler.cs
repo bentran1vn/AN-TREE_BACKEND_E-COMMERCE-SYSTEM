@@ -26,9 +26,9 @@ public class UpdateVendorCommandHadler : ICommandHandler<Command.UpdateVendorCom
 
     public async Task<Result> Handle(Command.UpdateVendorCommand request, CancellationToken cancellationToken)
     {
-        if (!(string.IsNullOrWhiteSpace(request.BankAccountNumber)
-             || string.IsNullOrWhiteSpace(request.BankName)
-             || string.IsNullOrWhiteSpace(request.BankOwnerName)))
+        if (!(!string.IsNullOrWhiteSpace(request.BankAccountNumber)
+             && !string.IsNullOrWhiteSpace(request.BankName)
+             && !string.IsNullOrWhiteSpace(request.BankOwnerName)))
         {
             throw new Exception("Missing Field of BankAccountNumber or BankName or BankOwnerName!");
         }

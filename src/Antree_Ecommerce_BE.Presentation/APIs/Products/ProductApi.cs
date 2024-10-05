@@ -33,13 +33,12 @@ public class ProductApi : ApiEndpoint, ICarterModule
             .Accepts<CommandV1.CreateProductCommand>("multipart/form-data")
             .DisableAntiforgery();
         
-        group1.MapDelete("{productId}", DeleteProductsV1)
-            .RequireAuthorization(RoleNames.Seller);
-        
-        group1.MapPut("{productId}", UpdateProductsV1)
-            .RequireAuthorization(RoleNames.Seller)
+        group1.MapPut(string.Empty, UpdateProductsV1)
             .Accepts<CommandV1.UpdateProductCommand>("multipart/form-data")
             .DisableAntiforgery();
+        
+        group1.MapDelete("{productId}", DeleteProductsV1)
+            .RequireAuthorization(RoleNames.Seller);
     }
 
     #region ====== version 1 ======
@@ -90,24 +89,43 @@ public class ProductApi : ApiEndpoint, ICarterModule
         return Results.Ok(result);
     }
     
-    public static async Task<IResult> UpdateProductsV1(ISender sender, Guid productId, [FromForm] CommandV1.UpdateProductCommand updateProduct)
+    public static async Task<IResult> UpdateProductsV1(ISender sender, HttpContext context, IJwtTokenService jwtTokenService,
+         [FromForm] CommandV1.UpdateProductCommand command)
     {
-        Result result;
+        var accessToken = await context.GetTokenAsync("access_token");
+        var (claimPrincipal, _)  = jwtTokenService.GetPrincipalFromExpiredToken(accessToken!);
+        var vendorId = claimPrincipal.Claims.FirstOrDefault(c => c.Type == "VendorId")!.Value;
         
-        if (!productId.Equals(updateProduct.Id))
+        // if (!productId.Equals(updateProduct.Id))
+        // {
+        //     result = Result.Failure(new Error("500", "Invalid Product Id"));
+        //     return HandlerFailure(result);
+        // }
+        
+        // var result = await sender.Send(new CommandV1.UpdateProductCommand()
+        // {
+        //     Id = command.Id,
+        //     VendorId = new Guid(vendorId),
+        //     Description = command.Description,
+        //     Name = command.Name,
+        //     Price = command.Price,
+        //     Sku = command.Sku,
+        //     ProductCategoryId = command.ProductCategoryId,
+        //     ProductImages = command.ProductImages,
+        //     ProductImageCover = command.ProductImageCover
+        // });
+
+        var result = await sender.Send(new CommandV1.UpdateProductCommand()
         {
-            result = Result.Failure(new Error("500", "Invalid Product Id"));
-            return HandlerFailure(result);
-        }
+            Id = command.Id,
+            VendorId = new Guid(vendorId),
+            Description = command.Description,
+            Name = command.Name,
+            Price = command.Price,
+            Sku = command.Sku,
+            ProductCategoryId = command.ProductCategoryId
+        });
         
-        var updateProductCommand = new CommandV1.UpdateProductCommand(
-            productId, updateProduct.ProductCategoryId,
-            updateProduct.Name, updateProduct.Price,
-            updateProduct.Description, updateProduct.Sku,
-            updateProduct.ProductImageCover,
-            updateProduct.ProductImages
-        );
-        result = await sender.Send(updateProductCommand);
         if (result.IsFailure)
             return HandlerFailure(result);
 
