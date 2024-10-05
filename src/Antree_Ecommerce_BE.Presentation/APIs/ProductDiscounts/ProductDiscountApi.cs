@@ -27,10 +27,14 @@ public class ProductDiscountApi : ApiEndpoint, ICarterModule
         
         group1.MapGet("{productId}", GetProductDiscountsV1)
             .RequireAuthorization(RoleNames.Seller);
+        
         group1.MapPost(string.Empty, CreateProductDiscountsV1)
             .RequireAuthorization(RoleNames.Seller);
+        
         group1.MapPut(string.Empty, UpdateProductDiscountsV1)
-            .RequireAuthorization(RoleNames.Seller);
+            .RequireAuthorization(RoleNames.Seller)
+            .Accepts<CommandV1.UpdateProductDiscountCommand>("application/json");
+        
         group1.MapDelete("{discountId}", () => { })
             .RequireAuthorization(RoleNames.Seller);
     }

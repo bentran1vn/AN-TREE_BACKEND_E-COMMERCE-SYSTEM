@@ -1,4 +1,5 @@
 using System.ComponentModel;
+using System.Text.Json.Serialization;
 using Antree_Ecommerce_BE.Contract.Abstractions.Messages;
 using Swashbuckle.AspNetCore.Annotations;
 
@@ -15,12 +16,32 @@ public static class Command
         public Guid VendorId { get; set; }
     }
     
-    public record UpdateProductDiscountCommand(
-        Guid ProductDiscountId, string Name, string Description, decimal DiscountPercent,
-        DateTimeOffset StartTime, DateTimeOffset EndTime, bool IsDeleted) : ICommand 
+    public record UpdateProductDiscountCommand : ICommand 
     {
+        [JsonPropertyName("productDiscountId")]
+        public Guid ProductDiscountId { get; init; }
+
+        [JsonPropertyName("name")]
+        public string Name { get; init; }
+
+        [JsonPropertyName("description")]
+        public string Description { get; init; }
+
+        [JsonPropertyName("discountPercent")]
+        public decimal DiscountPercent { get; init; }
+
+        [JsonPropertyName("startTime")]
+        public DateTimeOffset StartTime { get; init; }
+
+        [JsonPropertyName("endTime")]
+        public DateTimeOffset EndTime { get; init; }
+
+        [JsonPropertyName("isDeleted")]
+        public bool IsDeleted { get; init; }
+
         [SwaggerSchema(ReadOnly = true)]
         [DefaultValue("e824c924-e441-4367-a03b-8dd13223f76f")]
+        [JsonIgnore]
         public Guid VendorId { get; set; }
     }
 }
