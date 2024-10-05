@@ -49,6 +49,7 @@ Example: 'Bearer 12345abcdef'",
             
             c.EnableAnnotations();
             
+            c.UseOneOfForPolymorphism();
             
         });
         services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
@@ -85,16 +86,27 @@ Example: 'Bearer 12345abcdef'",
             {
                 foreach (var param in formParameters)
                 {
+                    var schema = context.SchemaGenerator.GenerateSchema(param.ParameterType, context.SchemaRepository);
+                    SetOptionalProperties(schema);
+                    
                     operation.RequestBody = new OpenApiRequestBody
                     {
                         Content = {
                             ["multipart/form-data"] = new OpenApiMediaType
                             {
-                                Schema = context.SchemaGenerator.GenerateSchema(param.ParameterType, context.SchemaRepository)
+                                Schema = schema
                             }
                         }
                     };
                 }
+            }
+        }
+        private void SetOptionalProperties(OpenApiSchema schema)
+        {
+            // Make all properties optional by removing them from the 'Required' list
+            if (schema?.Properties != null)
+            {
+                schema.Required.Clear();
             }
         }
     }

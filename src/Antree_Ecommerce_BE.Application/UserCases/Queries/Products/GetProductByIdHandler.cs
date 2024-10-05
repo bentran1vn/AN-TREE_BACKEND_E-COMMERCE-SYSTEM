@@ -24,7 +24,7 @@ public class GetProductByIdHandler : IQueryHandler<Query.GetProductByIdQuery, Re
             x => x.Id.Equals(request.Id),
             cancellationToken,
             x => x.ProductCategory,
-            x => x.ProductImageList,
+            x => x.ProductImageList.Where(x => !x.IsDeleted),
             x => x.ProductFeedbackList,
             x => x.Vendor
         );

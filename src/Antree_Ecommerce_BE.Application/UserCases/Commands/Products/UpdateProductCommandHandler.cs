@@ -5,6 +5,7 @@ using Antree_Ecommerce_BE.Contract.Services.Products;
 using Antree_Ecommerce_BE.Domain.Abstractions.Repositories;
 using Antree_Ecommerce_BE.Domain.Entities;
 using Antree_Ecommerce_BE.Domain.Exceptions;
+using Antree_Ecommerce_BE.Persistence;
 using Microsoft.EntityFrameworkCore;
 
 namespace Antree_Ecommerce_BE.Application.UserCases.Commands.Products;
@@ -14,43 +15,52 @@ public sealed class UpdateProductCommandHandler : ICommandHandler<Command.Update
     private readonly IRepositoryBase<Product, Guid> _productRepository;
     private readonly IRepositoryBase<ProductMedia, Guid> _productMediaRepository;
     private readonly IMediaService _mediaService;
+    private readonly ApplicationDbContext _dbContext;
+    private readonly ICacheService _cacheService;
 
-    public UpdateProductCommandHandler(IRepositoryBase<Product, Guid> productRepository, IRepositoryBase<ProductMedia, Guid> productMediaRepository, ICacheService cacheService, IMediaService mediaService)
+    public UpdateProductCommandHandler(IRepositoryBase<Product, Guid> productRepository, IRepositoryBase<ProductMedia, Guid> productMediaRepository, ICacheService cacheService, IMediaService mediaService, ApplicationDbContext dbContext)
     {
         _productRepository = productRepository;
         _productMediaRepository = productMediaRepository;
+        _cacheService = cacheService;
         _mediaService = mediaService;
+        _dbContext = dbContext;
     }
 
     public async Task<Result> Handle(Command.UpdateProductCommand request, CancellationToken cancellationToken)
     {
-        var product = await _productRepository.FindByIdAsync(request.Id, cancellationToken) 
-                      ?? throw new ProductException.ProductNotFoundException(request.Id);
-        
-        var productMedia = await _productMediaRepository.FindAll(x => x.ProductId.Equals(request.Id)).ToListAsync(cancellationToken);
-       
-        // if (request.ProductImageCover != null)
-        // {
-        //     var coverImage = await _mediaService.UploadImageAsync(request.ProductImageCover);
-        //     product.CoverImage = coverImage;
-        // }
-        //
-        // if (request.ProductImages != null)
-        // {
-        //     var imageUrlListTask = request.ProductImages.Select(x => _mediaService.UploadImageAsync(x));
-        //     var imageUrlList = await Task.WhenAll(imageUrlListTask);
-        //     productMedia = productMedia.Select((x, index) => new ProductMedia()
-        //     {
-        //         Id = x.Id,
-        //         ProductId = request.Id,
-        //         ImageUrl = imageUrlList[index],
-        //         IsDeleted = x.IsDeleted
-        //     }).ToList();
-        //     _productMediaRepository.UpdateRange(productMedia);
-        // }
+        var product = await _productRepository.FindByIdAsync(new Guid(request.Id!), cancellationToken) 
+                      ?? throw new ProductException.ProductNotFoundException(new Guid(request.Id!));
 
-        if (request.ProductCategoryId != null)
-            product.ProductCategoryId = (Guid)request.ProductCategoryId;
+        if (!product.VendorId.Equals(request.VendorId))
+        {
+            return Result.Failure(new Error("401", "Can not update product of another vendor !"));
+        }
+       
+        if (request.ProductImageCover != null)
+        {
+            var coverImage = await _mediaService.UploadImageAsync(request.ProductImageCover);
+            product.CoverImage = coverImage;
+        }
+        
+        if (request.ProductImages != null)
+        {
+            var imageMedias = await _productMediaRepository.FindAll(x => x.ProductId.Equals(new Guid(request.Id!)) && !x.IsDeleted).ToListAsync(cancellationToken);
+            var imageUrlListTask = request.ProductImages.Select(x => _mediaService.UploadImageAsync(x));
+            var imageUrlList = await Task.WhenAll(imageUrlListTask);
+            var mediaList = imageUrlList.Select((x, index) => new ProductMedia()
+            {
+                Id = Guid.NewGuid(),
+                ProductId = new Guid(request.Id!),
+                ImageUrl = imageUrlList[index]
+            }).ToList();
+            
+            _productMediaRepository.RemoveMultiple(imageMedias);
+            _productMediaRepository.AddRange(mediaList);
+        }
+
+        if (!string.IsNullOrWhiteSpace(request.ProductCategoryId))
+            product.ProductCategoryId = new Guid(request.ProductCategoryId);
         
         if (!string.IsNullOrWhiteSpace(request.Name))
             product.Name = request.Name;
@@ -58,11 +68,13 @@ public sealed class UpdateProductCommandHandler : ICommandHandler<Command.Update
         if (!string.IsNullOrWhiteSpace(request.Description))
             product.Description = request.Description;
         
-        if (request.Price != null)
-            product.Price = (decimal)request.Price;
+        if (!string.IsNullOrWhiteSpace(request.Price) && decimal.TryParse(request.Price, out var decimalPrice))
+            product.Price = decimalPrice;
         
-        if (request.Sku != null)
-            product.Sku = (int)request.Sku;
+        if (!string.IsNullOrWhiteSpace(request.Sku) && int.TryParse(request.Price, out var intSku))
+            product.Sku = intSku;
+        
+        await _cacheService.RemoveByPrefixAsync($"{nameof(Query.GetProductsQuery)}", cancellationToken);
         
         return Result.Success("Update Product Successfully !");
     }
