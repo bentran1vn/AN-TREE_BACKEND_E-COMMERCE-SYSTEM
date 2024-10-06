@@ -24,7 +24,7 @@ public class AuthApi : ApiEndpoint, ICarterModule
             .MapGroup(BaseUrl).HasApiVersion(1);
         
         // group1.MapGet(string.Empty, GetCategoriesV1);
-        // group1.MapGet("{categoryId}", () => { });
+        group1.MapGet("me", GetMeV1).RequireAuthorization();;
         group1.MapPost("login", LoginV1);
         group1.MapPost("refresh_token", RefreshTokenV1);
         group1.MapPost("register", RegisterV1);
@@ -33,7 +33,22 @@ public class AuthApi : ApiEndpoint, ICarterModule
         group1.MapPost("change_password", ChangePasswordV1).RequireAuthorization();
         group1.MapPost("logout", LogoutV1).RequireAuthorization();
     }
+    
+    public static async Task<IResult> GetMeV1(ISender sender, HttpContext context, IJwtTokenService jwtTokenService)
+    {
+        var accessToken = await context.GetTokenAsync("access_token");
+        var (claimPrincipal, _)  = jwtTokenService.GetPrincipalFromExpiredToken(accessToken!);
+        var userId = claimPrincipal.Claims.FirstOrDefault(c => c.Type == "UserId")!.Value;
+        Guid.TryParse(userId, out var guidUserId);
+        
+        var result = await sender.Send(new CommandV1.Query.GetMe(guidUserId));
+        
+        if (result.IsFailure)
+            return HandlerFailure(result);
 
+        return Results.Ok(result);
+    }
+    
     public static async Task<IResult> LoginV1(ISender sender, [FromBody] CommandV1.Query.Login login)
     {
         var result = await sender.Send(login);
@@ -43,6 +58,7 @@ public class AuthApi : ApiEndpoint, ICarterModule
 
         return Results.Ok(result);
     }
+    
     public static async Task<IResult> RefreshTokenV1(HttpContext context, ISender sender, [FromBody] CommandV1.Query.Token query)
     {
         //var accessToken = await context.GetTokenAsync("access_token");

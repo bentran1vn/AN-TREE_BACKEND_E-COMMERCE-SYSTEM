@@ -23,4 +23,6 @@ public static class Query
     }
 
     public record Token(string AccessToken, string RefreshToken) : IQuery<Response.Authenticated>;
+
+    public record GetMe(Guid UserId) : IQuery<Response.GetMe>;
 }

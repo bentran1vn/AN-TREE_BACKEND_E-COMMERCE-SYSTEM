@@ -1,4 +1,5 @@
 using Antree_Ecommerce_BE.Contract.Abstractions.Shared;
+using Antree_Ecommerce_BE.Contract.Services.Identity;
 using Antree_Ecommerce_BE.Domain.Entities;
 using AutoMapper;
 
@@ -16,6 +17,8 @@ public class ServiceProfile : Profile
 {
     public ServiceProfile()
     {
+        CreateMap<User, Response.GetMe>().ReverseMap();
+        
         // ============= ProductSerivces =============
         CreateMap<ProductFeedback, ProductSerivces.Response.ProductFeedback>()
             .ForMember(dest => dest.Total, opt => opt.MapFrom(src => src.Total))
