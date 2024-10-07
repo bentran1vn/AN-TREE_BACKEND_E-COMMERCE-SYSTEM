@@ -42,6 +42,9 @@ public class GetLoginQueryHandler : IQueryHandler<Query.Login, Response.Authenti
             throw new UnauthorizedAccessException("UnAuthorize !");
         }
         
+        TimeZoneInfo vietnamTimeZone = TimeZoneInfo.FindSystemTimeZoneById("SE Asia Standard Time");
+        
+        
         // Generate JWT Token
         var claims = new List<Claim>
         {
@@ -50,7 +53,7 @@ public class GetLoginQueryHandler : IQueryHandler<Query.Login, Response.Authenti
             new Claim("Role", user.Role.ToString()),
             new Claim("UserId", user.Id.ToString()),
             new Claim(ClaimTypes.Name, request.EmailOrUserName),
-            new Claim(ClaimTypes.Expired, DateTime.Now.AddMinutes(5).ToString(CultureInfo.CurrentCulture))
+            new Claim(ClaimTypes.Expired, TimeZoneInfo.ConvertTime(DateTimeOffset.UtcNow.AddMinutes(5), vietnamTimeZone).ToString())
         };
 
         if (user.Role.Equals(1))
@@ -60,8 +63,6 @@ public class GetLoginQueryHandler : IQueryHandler<Query.Login, Response.Authenti
 
         var accessToken = _jwtTokenService.GenerateAccessToken(claims);
         var refreshToken = _jwtTokenService.GenerateRefreshToken();
-        
-        TimeZoneInfo vietnamTimeZone = TimeZoneInfo.FindSystemTimeZoneById("SE Asia Standard Time");
         
         
         var response = new Response.Authenticated()
