@@ -40,7 +40,7 @@ public class VnPayService : IVnPayService
         pay.AddRequestData("vnp_Locale", _vnPayOptions.Locale);
         pay.AddRequestData("vnp_OrderInfo", $"{model.Id}-{model.Address}-{model.Total}"); 
         pay.AddRequestData("vnp_OrderType", "250000");
-        pay.AddRequestData("vnp_ExpireDate", timeNow.AddMinutes(2).ToString("yyyyMMddHHmmss"));
+        pay.AddRequestData("vnp_ExpireDate", timeNow.AddMinutes(8).ToString("yyyyMMddHHmmss"));
         // pay.AddRequestData("vnp_Inv_Phone", model.User.Phonenumber.Trim());
         // pay.AddRequestData("vnp_Inv_Email", model.User.Email.Trim());
         pay.AddRequestData("vnp_Inv_Address", model.Address.Trim());
