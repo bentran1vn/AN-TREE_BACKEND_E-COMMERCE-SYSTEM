@@ -255,5 +255,4 @@ public static class EmailExtensions
         Subject = "Antree Vendor Information Update Verification"
     };
 }
-
 }

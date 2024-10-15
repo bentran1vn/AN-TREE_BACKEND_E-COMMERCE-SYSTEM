@@ -25,8 +25,8 @@ public class VnPayService : IVnPayService
 
     public string CreatePaymentUrl(Order model)
     {
-        var timeZoneById = TimeZoneInfo.FindSystemTimeZoneById(TimeZoneInfo.Local.Id);
-        var timeNow = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, timeZoneById);
+        TimeZoneInfo vietnamTimeZone = TimeZoneInfo.FindSystemTimeZoneById("SE Asia Standard Time");
+        var timeNow = TimeZoneInfo.ConvertTime(DateTimeOffset.UtcNow, vietnamTimeZone);
         var pay = new VnPayLibrary();
 
         pay.AddRequestData("vnp_Version", _vnPayOptions.Version);
