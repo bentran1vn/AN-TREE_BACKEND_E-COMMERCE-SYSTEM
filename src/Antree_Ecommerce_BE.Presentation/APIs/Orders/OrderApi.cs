@@ -33,6 +33,8 @@ public class OrderApi : ApiEndpoint, ICarterModule
         
         group1.MapGet("vnpay-callback", VnPayCallBackV1);
         
+        group1.MapPost("sepay-payment", SePayCallBack);
+        
         group1.MapPost(string.Empty, CreateOrdersV1)
             .RequireAuthorization(RoleNames.Customer);
         
@@ -55,6 +57,14 @@ public class OrderApi : ApiEndpoint, ICarterModule
             return HandlerFailure(result);
 
         return Results.Ok(result);
+    }
+
+
+    public static async Task<IResult> SePayCallBack(ISender sender, [FromBody] CommandV1.CreateSePayOrderCommand command)
+    {
+        var result = await sender.Send(command);
+        var response = new { success = true };
+        return Results.Json(response);
     }
     
     public static async Task<IResult> GetOrdersV1(ISender sender, HttpContext context, IJwtTokenService jwtTokenService,
