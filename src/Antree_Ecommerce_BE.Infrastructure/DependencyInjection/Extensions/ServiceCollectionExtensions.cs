@@ -16,20 +16,21 @@ namespace Antree_Ecommerce_BE.Infrastructure.DependencyInjection.Extensions;
 public static class ServiceCollectionExtensions
 {
     public static void AddServicesInfrastructure(this IServiceCollection services)
-        => services.AddTransient<IJwtTokenService, JwtTokenService>()
-        .AddTransient<IPasswordHasherService, PasswordHasherService>()
-        .AddTransient<ICacheService, CacheService>()
-        .AddTransient<IMediaService, CloudinaryService>()
-        .AddSingleton<IVnPayService, VnPayService>()
-        .AddSingleton<IMailService, MailService>()
-        .AddSingleton<Cloudinary>((provider) =>
-        {
-            var options = provider.GetRequiredService<IOptionsMonitor<CloudinaryOptions>>();
-            return new Cloudinary(new Account(
-                options.CurrentValue.CloudName,
-                options.CurrentValue.ApiKey,
-                options.CurrentValue.ApiSecret));
-        });
+        => services
+            .AddTransient<IJwtTokenService, JwtTokenService>()
+            .AddTransient<IPasswordHasherService, PasswordHasherService>()
+            .AddTransient<ICacheService, CacheService>()
+            .AddTransient<IMediaService, CloudinaryService>()
+            .AddSingleton<IVnPayService, VnPayService>()
+            .AddSingleton<IMailService, MailService>()
+            .AddSingleton<Cloudinary>((provider) =>
+            {
+                var options = provider.GetRequiredService<IOptionsMonitor<CloudinaryOptions>>();
+                return new Cloudinary(new Account(
+                    options.CurrentValue.CloudName,
+                    options.CurrentValue.ApiKey,
+                    options.CurrentValue.ApiSecret));
+            });
     
     public static void AddRedisInfrastructure(this IServiceCollection services, IConfiguration configuration)
     {

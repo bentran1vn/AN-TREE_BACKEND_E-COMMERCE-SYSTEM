@@ -1,5 +1,6 @@
 using Antree_Ecommerce_BE.Application.Behaviors;
 using Antree_Ecommerce_BE.Application.Mapper;
+using Antree_Ecommerce_BE.Application.SignalR;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
@@ -22,4 +23,9 @@ public static class ServiceCollectionExtensions
 
     public static IServiceCollection AddAutoMapperApplication(this IServiceCollection services)
         => services.AddAutoMapper(typeof(ServiceProfile));
+    
+    public static void AddSignalRApplication(this IServiceCollection services)
+        => services
+            .AddTransient<PaymentService>()
+            .AddSignalR();
 }

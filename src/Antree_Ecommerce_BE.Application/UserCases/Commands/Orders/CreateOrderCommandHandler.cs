@@ -1,4 +1,5 @@
 using Antree_Ecommerce_BE.Application.Abstractions;
+using Antree_Ecommerce_BE.Application.SignalR;
 using Antree_Ecommerce_BE.Contract.Abstractions.Messages;
 using Antree_Ecommerce_BE.Contract.Abstractions.Shared;
 using Antree_Ecommerce_BE.Contract.Services.Orders;
@@ -16,14 +17,16 @@ public class CreateOrderCommandHandler : ICommandHandler<Command.CreateOrderComm
     private readonly IRepositoryBase<OrderDetail, Guid> _orderDetailRepository;
     private readonly IRepositoryBase<Product, Guid> _productRepository;
     private readonly ICacheService _cacheService;
+    private readonly PaymentService _paymentService;
 
-    public CreateOrderCommandHandler(IVnPayService vnPayService, IRepositoryBase<Order, Guid> orderRepository, IRepositoryBase<OrderDetail, Guid> orderDetailRepository, IRepositoryBase<Product, Guid> productRepository, ICacheService cacheService)
+    public CreateOrderCommandHandler(IVnPayService vnPayService, IRepositoryBase<Order, Guid> orderRepository, IRepositoryBase<OrderDetail, Guid> orderDetailRepository, IRepositoryBase<Product, Guid> productRepository, ICacheService cacheService, PaymentService paymentService)
     {
         _vnPayService = vnPayService;
         _orderRepository = orderRepository;
         _orderDetailRepository = orderDetailRepository;
         _productRepository = productRepository;
         _cacheService = cacheService;
+        _paymentService = paymentService;
     }
 
     public async Task<Result> Handle(Command.CreateOrderCommand request, CancellationToken cancellationToken)

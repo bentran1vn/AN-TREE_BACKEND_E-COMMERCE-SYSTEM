@@ -1,5 +1,6 @@
 using System.Text.RegularExpressions;
 using Antree_Ecommerce_BE.Application.Exceptions;
+using Antree_Ecommerce_BE.Application.SignalR;
 using Antree_Ecommerce_BE.Contract.Abstractions.Messages;
 using Antree_Ecommerce_BE.Contract.Abstractions.Shared;
 using Antree_Ecommerce_BE.Contract.Services.Orders;
@@ -11,10 +12,12 @@ namespace Antree_Ecommerce_BE.Application.UserCases.Commands.Orders;
 public class CreateSePayOrderCommandHandler : ICommandHandler<Command.CreateSePayOrderCommand>
 {
     private readonly IRepositoryBase<Order, Guid> _orderRepository;
+    private readonly PaymentService _paymentService;
 
-    public CreateSePayOrderCommandHandler(IRepositoryBase<Order, Guid> orderRepository)
+    public CreateSePayOrderCommandHandler(IRepositoryBase<Order, Guid> orderRepository, PaymentService paymentService)
     {
         _orderRepository = orderRepository;
+        _paymentService = paymentService;
     }
 
     public async Task<Result> Handle(Command.CreateSePayOrderCommand request, CancellationToken cancellationToken)
@@ -26,18 +29,12 @@ public class CreateSePayOrderCommandHandler : ICommandHandler<Command.CreateSePa
         {
             return Result.Failure(new Error("400", "Order is not exist !"));
         }
-
-        if (Math.Round(order.Total, 2).Equals(Math.Round(double.Parse(request.transferAmount!.ToString()), 2)))
-        {
-            order.Status = 1;
-            order.Note = orderId + "-" + request.transferAmount + "-" + request.transactionDate;
-        }
-        else
-        {
-            order.Status = 2;
-            order.Note = orderId + "-" + request.transferAmount + "-" + request.transactionDate;
-            return Result.Failure(new Error("500", "Your charge is wrong !"));
-        }
+        
+        var isPaymentSuccessful = Math.Round(order.Total, 2).Equals(Math.Round(Convert.ToDecimal(request.transferAmount), 2));
+        order.Status = isPaymentSuccessful ? 1 : 2;
+        order.Note = orderId + "-" + request.transferAmount + "-" + request.transactionDate;
+        await _paymentService.ProcessPayment(order.Id.ToString(), isPaymentSuccessful);
+        
         return Result.Success("Oker");
     }
 }

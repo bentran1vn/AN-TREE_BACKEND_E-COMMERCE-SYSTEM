@@ -1,6 +1,7 @@
 using Antree_Ecommerce_BE.API.DependencyInjection.Extensions;
 using Antree_Ecommerce_BE.API.Middlewares;
 using Antree_Ecommerce_BE.Application.DependencyInjection.Extensions;
+using Antree_Ecommerce_BE.Application.SignalR;
 using Antree_Ecommerce_BE.Infrastructure.DependencyInjection.Extensions;
 using Antree_Ecommerce_BE.Infrastructure.DependencyInjection.Options;
 using Antree_Ecommerce_BE.Persistence.DependencyInjection.Extensions;
@@ -43,6 +44,8 @@ builder.Services.ConfigureCors();
 
 builder.Services.AddMediatRApplication();
 builder.Services.AddAutoMapperApplication();
+builder.Services.AddSignalRApplication();
+
 
 builder.Services.Configure<FormOptions>(options =>
 {
@@ -73,6 +76,8 @@ var app = builder.Build();
 
 // Using middleware
 app.UseMiddleware<ExceptionHandlingMiddleware>();
+
+app.MapHub<PaymentHub>("/paymentHub");
 
 // Configure the HTTP request pipeline. 
 // if (builder.Environment.IsDevelopment() || builder.Environment.IsStaging())
