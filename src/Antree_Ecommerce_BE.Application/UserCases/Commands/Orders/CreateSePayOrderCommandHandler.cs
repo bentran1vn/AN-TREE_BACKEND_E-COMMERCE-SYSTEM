@@ -1,4 +1,5 @@
 using System.Text.RegularExpressions;
+using Antree_Ecommerce_BE.Application.Exceptions;
 using Antree_Ecommerce_BE.Contract.Abstractions.Messages;
 using Antree_Ecommerce_BE.Contract.Abstractions.Shared;
 using Antree_Ecommerce_BE.Contract.Services.Orders;
@@ -18,23 +19,25 @@ public class CreateSePayOrderCommandHandler : ICommandHandler<Command.CreateSePa
 
     public async Task<Result> Handle(Command.CreateSePayOrderCommand request, CancellationToken cancellationToken)
     {
-        var id = new Guid("9eddf230-6113-4803-93f4-cc1485d3ec1a");
+        var orderId = OrderExtensions.TakeOrderIdFromContent(request.content);
+        var order = await _orderRepository.FindByIdAsync(orderId, cancellationToken);
 
-        var order = await _orderRepository.FindByIdAsync(id, cancellationToken);
-
-        order.Status = 5;
-
-        var orderId = "";
-        string note = request.content;
-        Match match = Regex.Match(note, @"QR\s+([^\s]+)");  // Regular expression to match non-space characters after "QR"
-
-        if (match.Success)
+        if (order == null || order.IsDeleted)
         {
-            orderId = match.Groups[1].Value;
+            return Result.Failure(new Error("400", "Order is not exist !"));
         }
-        order.Note = orderId + "-" + request.gateway + "" + request.accountNumber + "-" + request.transferAmount;
-        // QR   orderId12345- Ma GD ACSP/ qG580192-
 
+        if (order.Total.Equals(double.Parse(request.transferAmount!.ToString())))
+        {
+            order.Status = 1;
+            order.Note = orderId + "-" + request.transferAmount + "-" + request.transactionDate;
+        }
+        else
+        {
+            order.Status = 2;
+            order.Note = orderId + "-" + request.transferAmount + "-" + request.transactionDate;
+            return Result.Failure(new Error("500", "Your charge is wrong !"));
+        }
         return Result.Success("Oker");
     }
 }
