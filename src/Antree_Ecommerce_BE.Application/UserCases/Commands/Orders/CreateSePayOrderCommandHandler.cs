@@ -27,7 +27,7 @@ public class CreateSePayOrderCommandHandler : ICommandHandler<Command.CreateSePa
             return Result.Failure(new Error("400", "Order is not exist !"));
         }
 
-        if (order.Total.Equals(double.Parse(request.transferAmount!.ToString())))
+        if (Math.Round(order.Total, 2).Equals(Math.Round(double.Parse(request.transferAmount!.ToString()), 2)))
         {
             order.Status = 1;
             order.Note = orderId + "-" + request.transferAmount + "-" + request.transactionDate;
