@@ -21,7 +21,8 @@ public class CreateSePayOrderCommandHandler : ICommandHandler<Command.CreateSePa
 
         var order = await _orderRepository.FindByIdAsync(id, cancellationToken);
 
-        order.Status = 2;
+        order.Status = 4;
+        order.Note = request.content + "-" + request.code;
 
         return Result.Success("Oker");
     }
