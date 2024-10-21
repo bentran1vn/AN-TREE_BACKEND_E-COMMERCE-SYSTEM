@@ -13,13 +13,13 @@ public class User : Entity<Guid>, IAuditableEntity, ICreatedByEntity<Guid>, IUpd
     public int Role { get; set; }
     public Guid? VendorId { get; set; }
     
-    // public Guid? SubscriptionId { get; set; }
+    public Guid? SubscriptionId { get; set; }
     public DateTimeOffset CreatedOnUtc { get; set; }
     public DateTimeOffset? ModifiedOnUtc { get; set; }
     public Guid CreatedBy { get; set; }
     public Guid? UpdatedBy { get; set; }
     public virtual Vendor? Vendor { get; set; } = default!;
-    // public virtual Subscription? Subscription { get; set; } = default!;
+    public virtual Subscription? Subscription { get; set; } = default!;
     
     public virtual IReadOnlyCollection<UserAddress> UserAddressList { get; set; } = default!;
     public virtual IReadOnlyCollection<UserPayment> UserPaymentList { get; set; } = default!;

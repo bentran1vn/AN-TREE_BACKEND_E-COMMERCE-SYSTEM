@@ -1,5 +1,6 @@
 using Antree_Ecommerce_BE.Presentation.Abstractions;
 using Carter;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Routing;
 
@@ -14,9 +15,9 @@ public class SubscriptionApi : ApiEndpoint, ICarterModule
         var group1 = app.NewVersionedApi("Subscriptions")
             .MapGroup(BaseUrl).HasApiVersion(1);
 
-        group1.MapGet(string.Empty, () =>
+        group1.MapGet(string.Empty, (ISender sender) =>
         {
-
+            
         });
         
         group1.MapGet("{subscriptionId}", () =>

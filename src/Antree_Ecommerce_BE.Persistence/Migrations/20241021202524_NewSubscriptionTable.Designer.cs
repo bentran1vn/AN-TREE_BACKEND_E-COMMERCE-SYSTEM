@@ -4,6 +4,7 @@ using Antree_Ecommerce_BE.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Antree_Ecommerce_BE.Persistence.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241021202524_NewSubscriptionTable")]
+    partial class NewSubscriptionTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -329,9 +332,9 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("d0f6cbb8-6421-44b5-8a46-bb9038555d73"),
+                            Id = new Guid("659c3b80-62c4-45ce-a441-bd08c5980b12"),
                             CoverImage = "",
-                            CreatedBy = new Guid("b0fcf67e-0d47-4bca-8b11-1e658f4817a3"),
+                            CreatedBy = new Guid("9e8dee4a-34ec-4c2e-ae84-769c55abea99"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description0",
                             DiscountPercent = 0m,
@@ -347,9 +350,9 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("05a7abb8-20dc-442e-b142-e2774a1b3849"),
+                            Id = new Guid("a910198b-ff75-41eb-8c6c-7bac8abe3d61"),
                             CoverImage = "",
-                            CreatedBy = new Guid("5bce0957-029c-4c28-9126-f9a529a371c0"),
+                            CreatedBy = new Guid("9daebede-29bf-447f-beba-82aef24096a1"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description1",
                             DiscountPercent = 0m,
@@ -365,9 +368,9 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("48dba51a-1c8c-49ac-9638-74d57c4aefb6"),
+                            Id = new Guid("66fd80e4-c1ca-4d76-b365-24cf1024f65c"),
                             CoverImage = "",
-                            CreatedBy = new Guid("15f79e6a-49ec-49f5-bf22-e76faf3b8ed0"),
+                            CreatedBy = new Guid("9665aaa6-5177-49c3-8810-60b44bf56225"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description2",
                             DiscountPercent = 0m,
@@ -383,9 +386,9 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("5a082098-80bb-4040-b4bf-d7af85c9a463"),
+                            Id = new Guid("4db6940b-d4e4-40e0-9b67-83b21876225a"),
                             CoverImage = "",
-                            CreatedBy = new Guid("37861b98-20c6-4bc0-9a2e-096843c5a9f8"),
+                            CreatedBy = new Guid("70f70617-81e0-435f-9af5-a2310d9072a5"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description3",
                             DiscountPercent = 0m,
@@ -401,9 +404,9 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("71920841-5c57-4ab9-9577-946e8076de6e"),
+                            Id = new Guid("8b6c38d0-1b0c-4543-bd5b-294652b5669f"),
                             CoverImage = "",
-                            CreatedBy = new Guid("69602954-7d32-40ce-8016-a354dec8f148"),
+                            CreatedBy = new Guid("257e7c7c-faeb-48f6-9cd4-58619e7a7df7"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description4",
                             DiscountPercent = 0m,
@@ -419,9 +422,9 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("af689836-13e0-4a2e-8a49-a14c324800ce"),
+                            Id = new Guid("ffbef7f7-6786-4a3c-9268-3151aad17ae8"),
                             CoverImage = "",
-                            CreatedBy = new Guid("13f9a379-fa2f-459c-917c-8e53c4190184"),
+                            CreatedBy = new Guid("b67f6429-9bb2-45db-adc5-e9ba912e3e52"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description5",
                             DiscountPercent = 0m,
@@ -437,9 +440,9 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("2b4c2e8a-6266-46ce-8d8a-28adbef856f1"),
+                            Id = new Guid("93eeb3a8-a724-451c-ae3d-b2dc10e69c35"),
                             CoverImage = "",
-                            CreatedBy = new Guid("96c188ae-1c16-4dbb-81ed-44309a8bd1ff"),
+                            CreatedBy = new Guid("27d16087-f8d6-4cf9-8ac7-88131e564e38"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description6",
                             DiscountPercent = 0m,
@@ -455,9 +458,9 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("9fa06791-7e61-4ee7-a55c-31650cca06da"),
+                            Id = new Guid("4259a7b0-15ef-49f1-b241-7e80eecad696"),
                             CoverImage = "",
-                            CreatedBy = new Guid("2cc8b19c-b4f4-4fcc-bbf3-4da48248b874"),
+                            CreatedBy = new Guid("617a7c8d-5a87-4cbb-820c-4755603afad1"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description7",
                             DiscountPercent = 0m,
@@ -473,9 +476,9 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("9ca88eb6-80db-428a-bd92-416d3bd2e3ea"),
+                            Id = new Guid("b9d369e4-69cf-4c81-a3a6-6d89b532be8d"),
                             CoverImage = "",
-                            CreatedBy = new Guid("0e0bc4a6-16dd-4b27-a8c8-e59824d0354e"),
+                            CreatedBy = new Guid("4c229b21-545d-4c1e-b354-dcd0b4712741"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description8",
                             DiscountPercent = 0m,
@@ -491,9 +494,9 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("f8944915-e1bc-4386-abf3-db60285b5578"),
+                            Id = new Guid("e896c95d-0dd2-4b43-8c48-4d4cf1e06426"),
                             CoverImage = "",
-                            CreatedBy = new Guid("153ffad0-3dbd-4010-9ed2-09da5230d5b8"),
+                            CreatedBy = new Guid("08955964-7a7a-423c-9792-a4623b2c4484"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description9",
                             DiscountPercent = 0m,
@@ -509,9 +512,9 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("0eb6901b-e426-4127-b404-ddc87457ee64"),
+                            Id = new Guid("97e5efc1-c5a9-46ee-9d73-dcdb9122dcd7"),
                             CoverImage = "",
-                            CreatedBy = new Guid("a8fdb26f-4ebc-41a4-a5ae-e3540b74ed5b"),
+                            CreatedBy = new Guid("10479857-abb9-4299-b5af-3107d6eb6579"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description10",
                             DiscountPercent = 0m,
@@ -527,9 +530,9 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("6660b4f2-2627-4c99-93b3-b886e49ffcd4"),
+                            Id = new Guid("02857203-5cee-489e-a509-c25e21ec89b5"),
                             CoverImage = "",
-                            CreatedBy = new Guid("75de2af9-9b4c-42f0-9f15-bd19304f4ecc"),
+                            CreatedBy = new Guid("a26f71ca-ff64-46e0-98ec-645c549c55a9"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description11",
                             DiscountPercent = 0m,
@@ -545,9 +548,9 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("7e15374e-46f7-4281-a592-4b9ca2b3bc93"),
+                            Id = new Guid("e5bd4485-4be7-4e3f-bc3a-a1b421fea0cd"),
                             CoverImage = "",
-                            CreatedBy = new Guid("08fd74b1-5cc0-4523-b9f6-c7088172edc1"),
+                            CreatedBy = new Guid("0c15632a-d90c-4418-9a41-6ece8b6cd664"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description12",
                             DiscountPercent = 0m,
@@ -563,9 +566,9 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("22a47049-d139-41bb-ba39-1719d5a82c88"),
+                            Id = new Guid("58414f6b-a90f-4eae-bd35-0bd1e9abcbee"),
                             CoverImage = "",
-                            CreatedBy = new Guid("744a23fb-39ff-4715-b519-c58870b1798f"),
+                            CreatedBy = new Guid("8f3b842b-a0cb-4e12-9285-63b1a87e6166"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description13",
                             DiscountPercent = 0m,
@@ -581,9 +584,9 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("6a2d1ab9-0fb1-4d25-8ea9-d64b2ddbcb02"),
+                            Id = new Guid("2e209149-4a19-4c3f-8532-50dbcb833972"),
                             CoverImage = "",
-                            CreatedBy = new Guid("db4620ed-4a5d-4e15-a352-2dae64a5759f"),
+                            CreatedBy = new Guid("146bac0c-39af-4c26-a509-796e910bf074"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description14",
                             DiscountPercent = 0m,
@@ -599,9 +602,9 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("7781d433-1954-42af-b15a-ed002df556d4"),
+                            Id = new Guid("af416424-87eb-4909-9512-e8c3c33804aa"),
                             CoverImage = "",
-                            CreatedBy = new Guid("018ed0a5-70f9-4012-879d-a09f63fd6fb7"),
+                            CreatedBy = new Guid("0672e255-78c5-4b01-bb83-3b79a2e2b36e"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description15",
                             DiscountPercent = 0m,
@@ -617,9 +620,9 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("9e917dd4-74c4-49b1-8043-a01e24c6ce49"),
+                            Id = new Guid("55fd3c19-4945-4f9a-a268-f23bd3ec98e3"),
                             CoverImage = "",
-                            CreatedBy = new Guid("aee78ef7-0def-46e0-872c-cea1680add43"),
+                            CreatedBy = new Guid("bfb38e48-ea04-4288-9ba0-0e19ae28ccc1"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description16",
                             DiscountPercent = 0m,
@@ -635,9 +638,9 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("452334b9-b1e3-49e0-b2a6-32006cdf1da8"),
+                            Id = new Guid("377a64c7-09e1-4fe4-bd8e-95e0c7968d9e"),
                             CoverImage = "",
-                            CreatedBy = new Guid("4683425d-a531-477d-af51-b51c71c9876d"),
+                            CreatedBy = new Guid("f2bc70ae-2051-46b3-903c-996ec24731e0"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description17",
                             DiscountPercent = 0m,
@@ -653,9 +656,9 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("059b7ef8-d70f-4102-a42b-2c51a89baa7d"),
+                            Id = new Guid("994d6fd3-23a1-41d6-be49-fc0329d983b3"),
                             CoverImage = "",
-                            CreatedBy = new Guid("267676c2-e3a3-4f24-94dd-d2d69d5535e1"),
+                            CreatedBy = new Guid("2333a3c4-7c18-43a8-979b-13a7348bae00"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description18",
                             DiscountPercent = 0m,
@@ -671,9 +674,9 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("daf14424-161b-4733-8f83-38b662653932"),
+                            Id = new Guid("ffe74f1d-6d3c-4499-9b51-94c3dffcf252"),
                             CoverImage = "",
-                            CreatedBy = new Guid("228bca8e-cd1b-4ff7-87df-eac56d775986"),
+                            CreatedBy = new Guid("dfbed439-2be9-466c-b59e-a70995ce0163"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description19",
                             DiscountPercent = 0m,
@@ -689,9 +692,9 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("a8cee3d1-fc85-4008-b902-b734ea85c2e9"),
+                            Id = new Guid("d7ac1145-f438-4402-ac7d-0ef2d9358155"),
                             CoverImage = "",
-                            CreatedBy = new Guid("5724965a-b888-4400-b5d6-ae15b6276f25"),
+                            CreatedBy = new Guid("5cc82f35-66d3-42f5-84aa-88ad29241e48"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description20",
                             DiscountPercent = 0m,
@@ -707,9 +710,9 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("8d2c07ab-f7e8-43ec-957f-9e080f386cb5"),
+                            Id = new Guid("24538206-c743-44eb-a2b4-12415a551f6f"),
                             CoverImage = "",
-                            CreatedBy = new Guid("66612cfd-9f3e-4b78-9aa4-f2f3fd94d140"),
+                            CreatedBy = new Guid("e14f0f27-6f7e-4425-a231-7370db1ff8e9"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description21",
                             DiscountPercent = 0m,
@@ -725,9 +728,9 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("15fb32b6-4ba7-4b25-b489-d94f778827cf"),
+                            Id = new Guid("15f4e766-6a02-4357-9f51-557447e7811f"),
                             CoverImage = "",
-                            CreatedBy = new Guid("966b5c5f-fdb4-46b9-af80-17108bc7a33e"),
+                            CreatedBy = new Guid("44557aa3-d4e8-4a42-8323-64b74751c3a0"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description22",
                             DiscountPercent = 0m,
@@ -743,9 +746,9 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("757c886a-b61a-4a9e-802a-8d855e41dbb7"),
+                            Id = new Guid("31297ea1-f351-4b84-8fbb-5cd1bb783fee"),
                             CoverImage = "",
-                            CreatedBy = new Guid("e5e97010-96a5-4272-a043-4169aee7175a"),
+                            CreatedBy = new Guid("2db59bec-472a-4f12-bdab-f86bafbe3d42"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description23",
                             DiscountPercent = 0m,
@@ -761,9 +764,9 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("8942b6a2-7aed-4d75-92ad-94cfa22657c3"),
+                            Id = new Guid("cc09f14f-660d-4f82-8162-369707494bca"),
                             CoverImage = "",
-                            CreatedBy = new Guid("3ac25786-8e9e-45f2-8c32-4bfeb442ccea"),
+                            CreatedBy = new Guid("c786df3b-4a12-4e33-8067-12cb54bd031c"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description24",
                             DiscountPercent = 0m,
@@ -779,9 +782,9 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("1073a688-c0d1-4ba7-9fe2-aa24b60d14fb"),
+                            Id = new Guid("aac5933c-0c62-467a-a983-5e7dcda595a4"),
                             CoverImage = "",
-                            CreatedBy = new Guid("bbf829de-dcfc-45e8-9f9b-e75772216a6d"),
+                            CreatedBy = new Guid("e4adb88c-0086-49fa-a402-22022b69000b"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description25",
                             DiscountPercent = 0m,
@@ -797,9 +800,9 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("620df071-72ff-43cc-a956-54552448d81a"),
+                            Id = new Guid("4e63f15a-f92a-4aeb-836d-c33d96fe8745"),
                             CoverImage = "",
-                            CreatedBy = new Guid("4afa8e33-40b8-4182-8fdb-a1118bd0689b"),
+                            CreatedBy = new Guid("e6a57b9f-01ab-4c0b-8534-207bbe15449e"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description26",
                             DiscountPercent = 0m,
@@ -815,9 +818,9 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("5cc1f3d2-826e-4bf2-b1c2-45cd6d994199"),
+                            Id = new Guid("39cdc74d-e193-4ec1-b9b4-46d477d09769"),
                             CoverImage = "",
-                            CreatedBy = new Guid("351cf476-5a86-4b43-9243-5a31c99f5a26"),
+                            CreatedBy = new Guid("35654ea8-68fb-49b2-a2c0-9ec01fecd44b"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description27",
                             DiscountPercent = 0m,
@@ -833,9 +836,9 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("9fef12e0-cdae-4a30-a057-595baf28b2a6"),
+                            Id = new Guid("fbd207bd-3106-4bd2-8dc1-ec3e7bb7ad10"),
                             CoverImage = "",
-                            CreatedBy = new Guid("f585f9c0-a53c-49a6-8b07-d3bfdf1b31a6"),
+                            CreatedBy = new Guid("4f9c7a9f-ab7c-47a9-b04f-cb903850d48d"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description28",
                             DiscountPercent = 0m,
@@ -851,9 +854,9 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("26d7ec30-7479-4677-b8d6-8a00b3d731dd"),
+                            Id = new Guid("11e113c4-1c13-43a5-9d04-8a8ac75afee6"),
                             CoverImage = "",
-                            CreatedBy = new Guid("12c840ad-c479-45cd-88ea-0df25065f2b6"),
+                            CreatedBy = new Guid("4e30bd84-54c9-475b-8c0d-cee069b0f33c"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description29",
                             DiscountPercent = 0m,
@@ -869,9 +872,9 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("1de91c95-6332-420e-961f-fa12c0f5e161"),
+                            Id = new Guid("d85b98d9-3165-4086-a00f-6f549048ef1d"),
                             CoverImage = "",
-                            CreatedBy = new Guid("3942dee4-df76-4b26-a040-e58158631869"),
+                            CreatedBy = new Guid("607c5927-1c2a-4472-899e-09095ddb49d1"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description30",
                             DiscountPercent = 0m,
@@ -887,9 +890,9 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("f8889260-07ce-43e7-ac3f-6146f2308d48"),
+                            Id = new Guid("965c4c51-3d4d-4d4e-889e-52d653cf9c7c"),
                             CoverImage = "",
-                            CreatedBy = new Guid("e0f869d4-42d2-430d-b2cf-c87289b68233"),
+                            CreatedBy = new Guid("03f6175b-3fdc-4de6-a137-6a7d8a1d7c43"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description31",
                             DiscountPercent = 0m,
@@ -905,9 +908,9 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("456851a1-1ac0-4021-ab6d-8f4f0f1cf121"),
+                            Id = new Guid("4e7df899-f545-4b41-99ab-38971514b955"),
                             CoverImage = "",
-                            CreatedBy = new Guid("5b1d2d8e-d31b-4e53-a374-1802a8c792e5"),
+                            CreatedBy = new Guid("04c53369-a4cb-48ea-8964-7e537d5f9d80"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description32",
                             DiscountPercent = 0m,
@@ -923,9 +926,9 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("8c761dd7-7cac-4fee-a88f-06b73f3615f4"),
+                            Id = new Guid("49c95ea3-3f57-4831-a7d2-f26429f607ba"),
                             CoverImage = "",
-                            CreatedBy = new Guid("5ef9a426-52a8-4c4e-a74d-68d6d1e9fee7"),
+                            CreatedBy = new Guid("d713f69f-82f7-4a21-9dc1-b428d37a7844"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description33",
                             DiscountPercent = 0m,
@@ -941,9 +944,9 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("b2a5a535-5f15-4b99-a697-5e4cd8234e48"),
+                            Id = new Guid("c819c811-5eae-4b74-9994-16791ac90144"),
                             CoverImage = "",
-                            CreatedBy = new Guid("1f55c6ba-f57b-4b08-9e08-c54f388a677b"),
+                            CreatedBy = new Guid("2e9c2a4f-7fcc-4858-8c49-03a0e3db9d39"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description34",
                             DiscountPercent = 0m,
@@ -959,9 +962,9 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("afdec7b0-1065-48d8-bc54-f1f44b75e3d9"),
+                            Id = new Guid("1f4f6216-b952-432a-aa8a-fdf4fefe55cc"),
                             CoverImage = "",
-                            CreatedBy = new Guid("ef6edf4e-8fb1-47de-aa69-be94912a5610"),
+                            CreatedBy = new Guid("9a1ece7c-c887-44ed-a6a7-44435fb695bf"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description35",
                             DiscountPercent = 0m,
@@ -977,9 +980,9 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("94270a02-4c08-4dae-9555-98737ed851f1"),
+                            Id = new Guid("71038ce1-b337-4db2-affa-6fa98b32f004"),
                             CoverImage = "",
-                            CreatedBy = new Guid("af22cb60-e38f-4b02-bad3-3cf73080d086"),
+                            CreatedBy = new Guid("96a7947f-de60-43d5-9c2b-f40e7fd36ca3"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description36",
                             DiscountPercent = 0m,
@@ -995,9 +998,9 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("3c1611e8-2782-4a28-80d9-52dc97d6214c"),
+                            Id = new Guid("a87a8944-5493-4d66-b147-5408be2a214f"),
                             CoverImage = "",
-                            CreatedBy = new Guid("5af65fcf-bc77-42a8-942b-b764b1f7a471"),
+                            CreatedBy = new Guid("127ce6f1-d4be-47a1-b365-1d6bb2ecd6f8"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description37",
                             DiscountPercent = 0m,
@@ -1013,9 +1016,9 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("0c2633ed-ad73-42b3-b955-78b5376bad01"),
+                            Id = new Guid("c59312e9-ae91-4972-ac62-00a7e2d5f4d3"),
                             CoverImage = "",
-                            CreatedBy = new Guid("6e2b94f5-7193-4bab-be3e-d1ae09dce55b"),
+                            CreatedBy = new Guid("1ea604fc-98eb-4700-bdd4-80597ef8071b"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description38",
                             DiscountPercent = 0m,
@@ -1031,9 +1034,9 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("47567503-e129-4e04-80b8-3383fd754fad"),
+                            Id = new Guid("87bc6764-c8a7-4abd-a746-2bfd094fd05a"),
                             CoverImage = "",
-                            CreatedBy = new Guid("3ac0e837-44b6-4d76-9b38-6861f191f0fc"),
+                            CreatedBy = new Guid("dc1978eb-35ce-4723-b2b1-65dde103d2a8"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description39",
                             DiscountPercent = 0m,
@@ -1049,9 +1052,9 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("6c2c7302-2ab5-454f-992e-1fb5644c3bbc"),
+                            Id = new Guid("379e86d4-715a-4df3-a027-fdc055c32a38"),
                             CoverImage = "",
-                            CreatedBy = new Guid("3fe616b6-919c-45cd-a916-d711e2838226"),
+                            CreatedBy = new Guid("3d31a860-59cf-46bb-875f-db43dddc2328"),
                             CreatedOnUtc = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Description40",
                             DiscountPercent = 0m,
@@ -1264,9 +1267,6 @@ namespace Antree_Ecommerce_BE.Persistence.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<decimal?>("Price")
-                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("Wait")
                         .HasColumnType("int");

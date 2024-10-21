@@ -19,24 +19,27 @@ public class GetVendorByIdQueryHandler : IQueryHandler<Query.GetVendorByIdQuery,
 
     public async Task<Result<Response.VendorResponse>> Handle(Query.GetVendorByIdQuery request, CancellationToken cancellationToken)
     {
-        var vendorUser = await _vendorRepository.FindSingleAsync(
-            x => x.CreatedBy.Equals(new Guid(request.UserId!)),
-            cancellationToken
-        );
-
-        if (request.VendorId is null && vendorUser is not null && vendorUser.Status == 1)
-        {
-            return Result.Failure<Response.VendorResponse>(new Error("500", "Please Wait for Response"));
-        }
-        
-        if (request.VendorId is null && vendorUser is null)
-        {
-            return Result.Failure<Response.VendorResponse>(new Error("400", "Vendor is not existed !"));
-        }
-
         if (request.VendorId is null && request.UserId is null)
         {
             return Result.Failure<Response.VendorResponse>(new Error("401", "Unauthorize !"));
+        }
+
+        if (request.UserId is not null)
+        {
+            var vendorUser = await _vendorRepository.FindSingleAsync(
+                x => x.CreatedBy.Equals(new Guid(request.UserId!)),
+                cancellationToken
+            );
+            
+            if (request.VendorId is null && vendorUser is not null && vendorUser.Status == 1)
+            {
+                return Result.Failure<Response.VendorResponse>(new Error("500", "Please Wait for Response"));
+            }
+        
+            if (request.VendorId is null && vendorUser is null)
+            {
+                return Result.Failure<Response.VendorResponse>(new Error("400", "Vendor is not existed !"));
+            }
         }
         
         var vendor = await _vendorRepository.FindSingleAsync(
