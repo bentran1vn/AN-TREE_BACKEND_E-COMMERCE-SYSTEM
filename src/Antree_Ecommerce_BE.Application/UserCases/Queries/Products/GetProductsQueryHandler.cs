@@ -68,7 +68,7 @@ public class GetProductsQueryHandler : IQueryHandler<Query.GetProductsQuery, Pag
             "name" => product => product.Name,
             "price" => product => product.Price,
             "sold" => product => product.Sold,
-            _ => product => product.Id
+            _ => product => product.CreatedOnUtc
             //_ => product => product.CreatedDate // Default Sort Descending on CreatedDate column
         };
 }
