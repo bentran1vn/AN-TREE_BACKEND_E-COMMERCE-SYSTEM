@@ -31,7 +31,7 @@ public class GetVendorByIdQueryHandler : IQueryHandler<Query.GetVendorByIdQuery,
             return Result.Success(result1);
         }
 
-        if (request.VendorId is null || vendor is null)
+        if (request.VendorId is null && vendor is null)
         {
             return Result.Failure<Response.VendorResponse>(new Error("400", "Vendor is not existed !"));
         }
