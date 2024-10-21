@@ -18,4 +18,5 @@ public class TableNames
     internal const string ProductMedia = nameof(ProductMedia);
     internal const string Vendor = nameof(Vendor);
     internal const string Subscription = nameof(Subscription);
+    internal const string Transaction = nameof(Transaction);
 }

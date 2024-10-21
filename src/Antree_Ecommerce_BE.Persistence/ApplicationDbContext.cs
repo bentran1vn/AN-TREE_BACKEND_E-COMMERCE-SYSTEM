@@ -29,4 +29,5 @@ public class ApplicationDbContext : DbContext
     public DbSet<OrderDetailFeedbackMedia> OrderDetailFeedbackMedias { get; set; }
     public DbSet<Vendor> Vendors { get; set; }
     public DbSet<Subscription> Subscriptions { get; set; }
+    public DbSet<Transaction> Transactions { get; set; }
 }
