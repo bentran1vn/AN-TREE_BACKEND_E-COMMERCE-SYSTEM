@@ -19,24 +19,44 @@ public class GetVendorByIdQueryHandler : IQueryHandler<Query.GetVendorByIdQuery,
 
     public async Task<Result<Response.VendorResponse>> Handle(Query.GetVendorByIdQuery request, CancellationToken cancellationToken)
     {
-        var vendor = await _vendorRepository.FindSingleAsync(
-            x => x.Id.Equals(request.VendorId),
+        var vendorUser = await _vendorRepository.FindSingleAsync(
+            x => x.CreatedBy.Equals(new Guid(request.UserId!)),
             cancellationToken
         );
 
-        if (request.VendorId is null && vendor is not null && vendor.Status == 1)
+        if (request.VendorId is null && vendorUser is not null && vendorUser.Status == 1)
+        {
+            return Result.Failure<Response.VendorResponse>(new Error("500", "Please Wait for Response"));
+        }
+        
+        if (request.VendorId is null && vendorUser is null)
+        {
+            return Result.Failure<Response.VendorResponse>(new Error("400", "Vendor is not existed !"));
+        }
+
+        if (request.VendorId is null && request.UserId is null)
+        {
+            return Result.Failure<Response.VendorResponse>(new Error("401", "Unauthorize !"));
+        }
+        
+        var vendor = await _vendorRepository.FindSingleAsync(
+            x => x.Id.Equals(new Guid(request.VendorId!)),
+            cancellationToken
+        );
+        
+        if (vendor is null)
+        {
+            return Result.Failure<Response.VendorResponse>(new Error("400", "Vendor is not existed !"));
+        }
+        
+        if (vendor.Status == 1)
         {
             var result1 = _mapper.Map<Response.VendorResponse>(vendor);
 
             return Result.Success(result1);
         }
 
-        if (request.VendorId is null && vendor is null)
-        {
-            return Result.Failure<Response.VendorResponse>(new Error("400", "Vendor is not existed !"));
-        }
-
-        if (request.VendorId is not null && vendor.IsDeleted)
+        if (vendor?.IsDeleted == true)
         {
             return Result.Failure<Response.VendorResponse>(new Error("400", "Vendor is not existed !"));
         }

@@ -148,16 +148,9 @@ public class VendorApi : ApiEndpoint, ICarterModule
         var accessToken = await context.GetTokenAsync("access_token");
         var (claimPrincipal, _)  = jwtTokenService.GetPrincipalFromExpiredToken(accessToken!);
         var vendorId = claimPrincipal.Claims.FirstOrDefault(c => c.Type == "VendorId")?.Value;
-
-        if (string.IsNullOrWhiteSpace(vendorId))
-        {
-            var result1 = Result.Failure(new Error("404", "Please Create Vendor !"));
-            
-            if (result1.IsFailure)
-                return HandlerFailure(result1);
-        }
+        var userId = claimPrincipal.Claims.FirstOrDefault(c => c.Type == "UserId")?.Value;
         
-        Result result = await sender.Send(new QueryV1.GetVendorByIdQuery(vendorId));
+        Result result = await sender.Send(new QueryV1.GetVendorByIdQuery(vendorId, userId));
         
         if (result.IsFailure)
             return HandlerFailure(result);
@@ -189,7 +182,7 @@ public class VendorApi : ApiEndpoint, ICarterModule
 
     public async Task<IResult> GetVendorByIdV1(ISender sender, string vendorId)
     {
-        Result result = await sender.Send(new QueryV1.GetVendorByIdQuery(vendorId));
+        Result result = await sender.Send(new QueryV1.GetVendorByIdQuery(vendorId, null));
         
         if (result.IsFailure)
             return HandlerFailure(result);

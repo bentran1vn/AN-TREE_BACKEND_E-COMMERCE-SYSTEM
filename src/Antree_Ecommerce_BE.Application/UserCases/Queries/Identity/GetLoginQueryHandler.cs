@@ -59,7 +59,7 @@ public class GetLoginQueryHandler : IQueryHandler<Query.Login, Response.Authenti
 
         if (user.Role.Equals(1) && user.Vendor?.Status == 0)
         {
-            claims.Add(new Claim("VendorId", user.VendorId.ToString() ?? string.Empty));
+            claims.Add(new Claim("VendorId", user.VendorId.ToString() ?? null));
         }
 
         var accessToken = _jwtTokenService.GenerateAccessToken(claims);
