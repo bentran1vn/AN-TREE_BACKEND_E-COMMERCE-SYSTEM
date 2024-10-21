@@ -1,5 +1,7 @@
 using Antree_Ecommerce_BE.Application.Abstractions;
 using Antree_Ecommerce_BE.Contract.Services.Subscriptions;
+using Antree_Ecommerce_BE.Domain.Abstractions.Repositories;
+using Antree_Ecommerce_BE.Domain.Entities;
 using Antree_Ecommerce_BE.Presentation.Abstractions;
 using Antree_Ecommerce_BE.Presentation.Constrants;
 using Carter;
@@ -9,6 +11,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
+using Microsoft.EntityFrameworkCore;
 
 namespace Antree_Ecommerce_BE.Presentation.APIs.Subscription;
 
@@ -25,10 +28,16 @@ public class SubscriptionApi : ApiEndpoint, ICarterModule
             .RequireAuthorization();
         
         group1.MapPost(string.Empty, BuySubscriptions)
-            .RequireAuthorization(RoleNames.Customer);;
+            .RequireAuthorization(RoleNames.Customer);
         
         group1.MapPost("sepay-payment", SePayCallBack);
         
+        group1.MapPost("transaction", async (IRepositoryBase<Transaction, Guid> repositoryBase) =>
+            {
+                var result = await repositoryBase.FindAll().ToListAsync();
+                return result;
+            })
+        .RequireAuthorization(RoleNames.Admin);
     }
     
     public static async Task<IResult> GetSubscriptions(ISender sender)
