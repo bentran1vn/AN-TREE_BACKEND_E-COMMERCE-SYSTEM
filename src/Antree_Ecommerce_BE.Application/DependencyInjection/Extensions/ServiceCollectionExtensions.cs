@@ -23,9 +23,8 @@ public static class ServiceCollectionExtensions
 
     public static IServiceCollection AddAutoMapperApplication(this IServiceCollection services)
         => services.AddAutoMapper(typeof(ServiceProfile));
-    
+
     public static void AddSignalRApplication(this IServiceCollection services)
         => services
-            .AddTransient<PaymentService>()
-            .AddSignalR();
+            .AddTransient<PaymentService>();
 }

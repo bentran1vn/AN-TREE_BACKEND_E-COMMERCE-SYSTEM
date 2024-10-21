@@ -1,4 +1,5 @@
 using Antree_Ecommerce_BE.Application.Abstractions;
+using Antree_Ecommerce_BE.Application.SignalR;
 using Antree_Ecommerce_BE.Contract.Abstractions.Shared;
 using Antree_Ecommerce_BE.Contract.Extensions;
 using Antree_Ecommerce_BE.Presentation.Abstractions;
@@ -10,6 +11,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
+using Microsoft.AspNetCore.SignalR;
 
 namespace Antree_Ecommerce_BE.Presentation.APIs.Orders;
 
@@ -37,6 +39,21 @@ public class OrderApi : ApiEndpoint, ICarterModule
         
         group1.MapPost(string.Empty, CreateOrdersV1)
             .RequireAuthorization(RoleNames.Customer);
+        
+        group1.MapGet("test", async (PaymentService paymentService) =>
+        {
+            try
+            {
+                await paymentService.ProcessPayment("123", true);
+                Console.WriteLine("Message sent successfully");
+                return Results.Ok(new { message = "Message sent successfully" });
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error sending message: {ex.Message}");
+                return Results.StatusCode(500);
+            }
+        });
         
         // group1.MapDelete("{orderId}", () => { });
         // group1.MapPut("{orderId}", () => { });

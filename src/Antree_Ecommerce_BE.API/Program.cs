@@ -25,7 +25,7 @@ builder.Host.UseSerilog();
 
 // Add Carter module
 builder.Services.AddCarter();
-
+builder.Services.AddSignalR();
 builder.Services
     .AddSwaggerGenNewtonsoftSupport()
     .AddFluentValidationRulesToSwagger()
@@ -66,7 +66,6 @@ builder.Services.AddRedisInfrastructure(builder.Configuration);
 builder.Services.ConfigureCloudinaryOptionsInfrastucture(builder.Configuration.GetSection(nameof(CloudinaryOptions)));
 builder.Services.ConfigureVnPayOptionsInfrastucture(builder.Configuration.GetSection(nameof(VnPayOption)));
 builder.Services.ConfigureMailOptionsInfrastucture(builder.Configuration.GetSection(nameof(MailOption)));
-
 builder.Services.AddHttpContextAccessor();
  
 // Add Middleware => Remember using middleware
@@ -77,7 +76,6 @@ var app = builder.Build();
 // Using middleware
 app.UseMiddleware<ExceptionHandlingMiddleware>();
 
-app.MapHub<PaymentHub>("/paymentHub");
 
 // Configure the HTTP request pipeline. 
 // if (builder.Environment.IsDevelopment() || builder.Environment.IsStaging())
@@ -86,11 +84,12 @@ app.MapHub<PaymentHub>("/paymentHub");
 app.UseCors("CorsPolicy");
 
 // app.UseHttpsRedirection();
-
+app.UseRouting();
 app.UseAuthentication(); // Need to be before app.UseAuthorization();
 // app.UseAntiforgery();
 app.UseAuthorization();
 
+app.MapHub<PaymentHub>("/paymentHub");
 
 // Add API Endpoint with carter module
 app.MapCarter();

@@ -6,7 +6,8 @@ public static class ServiceCollectionExtensions
         services.AddCors(options =>
         {
             options.AddPolicy("CorsPolicy", builder =>
-                builder.AllowAnyOrigin()
+                builder
+                    .AllowAnyOrigin()
                     .AllowAnyMethod()
                     .AllowAnyHeader());
         });
