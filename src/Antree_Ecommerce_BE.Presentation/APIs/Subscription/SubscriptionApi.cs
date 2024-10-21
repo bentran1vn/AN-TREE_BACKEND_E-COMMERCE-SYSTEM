@@ -34,7 +34,5 @@ public class SubscriptionApi : ApiEndpoint, ICarterModule
 
         });
         
-        
-        throw new NotImplementedException();
     }
 }
