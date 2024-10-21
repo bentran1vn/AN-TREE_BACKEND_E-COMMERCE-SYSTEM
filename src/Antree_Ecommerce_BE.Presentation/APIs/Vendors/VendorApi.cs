@@ -39,6 +39,9 @@ public class VendorApi : ApiEndpoint, ICarterModule
             .Accepts<CommandV1.CreateVendorCommand>("multipart/form-data")
             .DisableAntiforgery();
         
+        group1.MapPost("{vendorId}", VerifyVendorV1)
+            .RequireAuthorization(RoleNames.Admin);
+        
         group1.MapDelete(string.Empty, DeleteVendorV1)
             .RequireAuthorization(RoleNames.Seller);
         
@@ -77,6 +80,24 @@ public class VendorApi : ApiEndpoint, ICarterModule
 
         return Results.Ok(result);
     }
+    
+    public async Task<IResult> VerifyVendorV1(ISender sender, Guid vendorId, [FromBody] CommandV1.VerifyVendorCommand command)
+    {
+        if (!vendorId.Equals(command.VendorId))
+        {
+            var result1 = Result.Failure(new Error("500", "Invalid Vendor Id"));
+            return HandlerFailure(result1);
+        }
+        
+        var result = await sender.Send(command);
+
+        if (result.IsFailure)
+            return HandlerFailure(result);
+
+        return Results.Ok(result);
+    }
+    
+    
     public async Task<IResult> DeleteVendorV1(ISender sender, HttpContext context, IJwtTokenService jwtTokenService)
     {
         var accessToken = await context.GetTokenAsync("access_token");
@@ -126,7 +147,7 @@ public class VendorApi : ApiEndpoint, ICarterModule
     {
         var accessToken = await context.GetTokenAsync("access_token");
         var (claimPrincipal, _)  = jwtTokenService.GetPrincipalFromExpiredToken(accessToken!);
-        var vendorId = claimPrincipal.Claims.FirstOrDefault(c => c.Type == "VendorId")!.Value;
+        var vendorId = claimPrincipal.Claims.FirstOrDefault(c => c.Type == "VendorId")?.Value;
 
         if (string.IsNullOrWhiteSpace(vendorId))
         {
@@ -136,7 +157,7 @@ public class VendorApi : ApiEndpoint, ICarterModule
                 return HandlerFailure(result1);
         }
         
-        Result result = await sender.Send(new QueryV1.GetVendorByIdQuery(new Guid(vendorId)));
+        Result result = await sender.Send(new QueryV1.GetVendorByIdQuery(vendorId));
         
         if (result.IsFailure)
             return HandlerFailure(result);
@@ -147,12 +168,14 @@ public class VendorApi : ApiEndpoint, ICarterModule
         string? serchTerm = null,
         string? sortColumn = null,
         string? sortOrder = null,
+        bool isPending = false,
         int pageIndex = 1,
         int pageSize = 10)
     {
         var result =  await sender.Send(new QueryV1.GetVendorsQuery(
             serchTerm,
             sortColumn,
+            isPending,
             SortOrderExtension.ConvertStringToSortOrder(sortOrder),
             pageIndex,
             pageSize
@@ -164,7 +187,7 @@ public class VendorApi : ApiEndpoint, ICarterModule
         return Results.Ok(result);
     }
 
-    public async Task<IResult> GetVendorByIdV1(ISender sender, Guid vendorId)
+    public async Task<IResult> GetVendorByIdV1(ISender sender, string vendorId)
     {
         Result result = await sender.Send(new QueryV1.GetVendorByIdQuery(vendorId));
         

@@ -24,9 +24,21 @@ public class GetVendorByIdQueryHandler : IQueryHandler<Query.GetVendorByIdQuery,
             cancellationToken
         );
 
-        if (vendor.IsDeleted)
+        if (request.VendorId is null && vendor is not null && vendor.Status == 1)
         {
-            throw new Exception("Vendor is not existed !");
+            var result1 = _mapper.Map<Response.VendorResponse>(vendor);
+
+            return Result.Success(result1);
+        }
+
+        if (request.VendorId is null || vendor is null)
+        {
+            return Result.Failure<Response.VendorResponse>(new Error("400", "Vendor is not existed !"));
+        }
+
+        if (request.VendorId is not null && vendor.IsDeleted)
+        {
+            return Result.Failure<Response.VendorResponse>(new Error("400", "Vendor is not existed !"));
         }
         
         var result = _mapper.Map<Response.VendorResponse>(vendor);

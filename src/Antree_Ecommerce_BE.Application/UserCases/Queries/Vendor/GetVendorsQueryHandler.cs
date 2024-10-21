@@ -25,6 +25,10 @@ public class GetVendorsQueryHandler : IQueryHandler<Query.GetVendorsQuery, Paged
             ? _vendorRepository.FindAll(null)
             : _vendorRepository.FindAll(
                 x => x.Name.ToLower().Contains(request.SearchTerm.ToLower()));
+
+        vendorsQuery = !request.IsPending
+            ? vendorsQuery
+            : vendorsQuery.Where(x => x.Status == 1);
         
         vendorsQuery = request.SortOrder == SortOrder.Descending
             ? vendorsQuery.OrderByDescending(GetSortProperty(request))

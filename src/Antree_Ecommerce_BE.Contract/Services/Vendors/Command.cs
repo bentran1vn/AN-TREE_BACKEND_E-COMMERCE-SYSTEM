@@ -8,6 +8,8 @@ namespace Antree_Ecommerce_BE.Contract.Services.Vendors;
 
 public static class Command
 {
+    public record VerifyVendorCommand(Guid VendorId, bool IsAccepted) : ICommand;
+    
     public record CreateVendorCommand : ICommand
     {
         [SwaggerSchema(ReadOnly = true)]

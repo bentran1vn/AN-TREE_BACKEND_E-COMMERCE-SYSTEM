@@ -16,6 +16,8 @@ public class Vendor: Entity<Guid>, IAuditableEntity, ICreatedByEntity<Guid>, IUp
     public string AvatarImage { get; set; }
     public string CoverImage { get; set; }
     
+    public int Status { get; set; } // 0 Pending, 1 Working
+    
     public virtual IReadOnlyCollection<Product> ProductList { get; set; } = default!;
     public DateTimeOffset CreatedOnUtc { get; set; }
     public DateTimeOffset? ModifiedOnUtc { get; set; }
@@ -24,7 +26,7 @@ public class Vendor: Entity<Guid>, IAuditableEntity, ICreatedByEntity<Guid>, IUp
 
     public Vendor(Guid id, string email, string name, string address, string city, string province,
         string phonenumber, string avatarImage, string coverImage, string bankName,string bankOwnerName,
-        string bankAccountNumber, Guid createdBy)
+        string bankAccountNumber, Guid createdBy, int status)
     {
         Id = id;
         Email = email;
@@ -39,11 +41,12 @@ public class Vendor: Entity<Guid>, IAuditableEntity, ICreatedByEntity<Guid>, IUp
         BankOwnerName = bankOwnerName;
         BankAccountNumber = bankAccountNumber;
         CreatedBy = createdBy;
+        Status = status;
     }
 
     public void UpdateVendor(string email, string name, string address, string city, string province,
         string phonenumber, string avatarImage, string coverImage, string bankName,
-        string bankOwnerName, string bankAccountNumber, Guid updateBy, bool isDeleted)
+        string bankOwnerName, string bankAccountNumber, Guid updateBy, bool isDeleted, int status)
     {
         Email = email;
         Name = name;
@@ -58,6 +61,7 @@ public class Vendor: Entity<Guid>, IAuditableEntity, ICreatedByEntity<Guid>, IUp
         BankAccountNumber = bankAccountNumber;
         UpdatedBy = updateBy;
         IsDeleted = isDeleted;
+        Status = status;
     }
     
     public void UpdateVendor(string email, string name, string address, string city, string province,

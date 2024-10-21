@@ -30,7 +30,8 @@ public class GetLoginQueryHandler : IQueryHandler<Query.Login, Response.Authenti
         // Check User
         var user =
             await _userRepository.FindSingleAsync(x =>
-                x.Email.Equals(request.EmailOrUserName) || x.Username.Equals(request.EmailOrUserName), cancellationToken);
+                x.Email.Equals(request.EmailOrUserName) || x.Username.Equals(request.EmailOrUserName)
+                , cancellationToken, x => x.Vendor);
         
         if (user is null)
         {
@@ -56,7 +57,7 @@ public class GetLoginQueryHandler : IQueryHandler<Query.Login, Response.Authenti
             new Claim(ClaimTypes.Expired, TimeZoneInfo.ConvertTime(DateTimeOffset.UtcNow.AddMinutes(5), vietnamTimeZone).ToString())
         };
 
-        if (user.Role.Equals(1))
+        if (user.Role.Equals(1) && user.Vendor?.Status == 0)
         {
             claims.Add(new Claim("VendorId", user.VendorId.ToString() ?? string.Empty));
         }
