@@ -2,6 +2,17 @@ namespace Antree_Ecommerce_BE.Contract.Services.Orders;
 
 public class Response
 {
+    public record AdminOrdersResponse()
+    {
+        public Guid OrderId { get; set; }
+        
+        public Guid VendorId { get; set; }
+        public decimal Total { get; set; }
+        public int Status { get; set; }
+        public DateTimeOffset CreatedOnUtc { get; set; }
+        public string VendorName { get; set; }
+    };
+    
     public record VendorOrdersResponse(
         Guid Id, string Address, string Note, decimal Total, int Status,
         bool IsFeedback, DateTimeOffset CreatedOnUtc, Discount Discount, User User

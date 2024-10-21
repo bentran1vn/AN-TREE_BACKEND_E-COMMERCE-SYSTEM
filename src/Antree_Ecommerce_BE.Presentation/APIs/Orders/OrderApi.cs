@@ -26,7 +26,7 @@ public class OrderApi : ApiEndpoint, ICarterModule
             .MapGroup(BaseUrl).HasApiVersion(1);
         
         group1.MapGet(string.Empty, GetOrdersV1)
-            .RequireAuthorization(RoleNames.CustomerAndSeller);
+            .RequireAuthorization();
         
         group1.MapGet("{orderId}", GetOrderV1)
             .RequireAuthorization(RoleNames.CustomerAndSeller);
@@ -88,7 +88,7 @@ public class OrderApi : ApiEndpoint, ICarterModule
                 pageIndex, pageSize
             ));
         }
-        else
+        else if(role.Equals("1"))
         {
             var vendorId = claimPrincipal.Claims.FirstOrDefault(c => c.Type == "VendorId")!.Value;
             if (string.IsNullOrWhiteSpace(vendorId))
@@ -100,6 +100,14 @@ public class OrderApi : ApiEndpoint, ICarterModule
             }
             result = await sender.Send(new QueryV1.GetVendorOrdersQuery(
                 new Guid(vendorId), notFeedback, sortColumn,
+                SortOrderExtension.ConvertStringToSortOrder(sortOrder),
+                pageIndex, pageSize
+            ));
+        }
+        else
+        {
+            result = await sender.Send(new QueryV1.GetAdminOrdersQuery(
+                sortColumn,
                 SortOrderExtension.ConvertStringToSortOrder(sortOrder),
                 pageIndex, pageSize
             ));

@@ -478,3 +478,4 @@ Temporary Items
 # End of https://www.toptal.com/developers/gitignore/api/macos,rider,intellij,aspnetcore,dotnetcore
 
 docker-compose.yml
+src/Antree_Ecommerce_BE.API/logs
