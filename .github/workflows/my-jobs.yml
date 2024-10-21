@@ -38,4 +38,4 @@ jobs:
           fi
           # Run new container
           echo ":: Running new container - $CNAME"
-          docker run -d --network AntreeNetwork --name $CNAME $INAME
+          docker run -d --network nginx-proxy_AntreeNetwork --name $CNAME $INAME
