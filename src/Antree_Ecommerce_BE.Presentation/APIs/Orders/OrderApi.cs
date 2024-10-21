@@ -40,11 +40,11 @@ public class OrderApi : ApiEndpoint, ICarterModule
         group1.MapPost(string.Empty, CreateOrdersV1)
             .RequireAuthorization(RoleNames.Customer);
         
-        group1.MapGet("test", async (PaymentService paymentService) =>
+        group1.MapGet("test", async (PaymentService paymentService, string orderId) =>
         {
             try
             {
-                await paymentService.ProcessPayment("123", true);
+                await paymentService.ProcessPayment(orderId, true);
                 Console.WriteLine("Message sent successfully");
                 return Results.Ok(new { message = "Message sent successfully" });
             }
