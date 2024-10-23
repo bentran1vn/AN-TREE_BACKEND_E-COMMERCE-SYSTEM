@@ -55,6 +55,21 @@ public class OrderApi : ApiEndpoint, ICarterModule
             }
         });
         
+        group1.MapGet("test1", async (IHubContext<PaymentHub> hubContext) =>
+        {
+            try
+            {
+                await hubContext.Clients.All.SendAsync("ReceiveEvent", 10000);
+                Console.WriteLine("Message sent successfully");
+                return Results.Ok(new { message = "Message sent successfully" });
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error sending message: {ex.Message}");
+                return Results.StatusCode(500);
+            }
+        });
+        
         // group1.MapDelete("{orderId}", () => { });
         // group1.MapPut("{orderId}", () => { });
     }

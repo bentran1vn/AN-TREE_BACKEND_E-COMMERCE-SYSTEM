@@ -6,6 +6,7 @@ using Antree_Ecommerce_BE.Contract.Abstractions.Shared;
 using Antree_Ecommerce_BE.Contract.Services.Orders;
 using Antree_Ecommerce_BE.Domain.Abstractions.Repositories;
 using Antree_Ecommerce_BE.Domain.Entities;
+using Microsoft.AspNetCore.SignalR;
 
 namespace Antree_Ecommerce_BE.Application.UserCases.Commands.Orders;
 
@@ -13,11 +14,13 @@ public class CreateSePayOrderCommandHandler : ICommandHandler<Command.CreateSePa
 {
     private readonly IRepositoryBase<Order, Guid> _orderRepository;
     private readonly PaymentService _paymentService;
+    private readonly IHubContext<PaymentHub> _hubContext;
 
-    public CreateSePayOrderCommandHandler(IRepositoryBase<Order, Guid> orderRepository, PaymentService paymentService)
+    public CreateSePayOrderCommandHandler(IRepositoryBase<Order, Guid> orderRepository, PaymentService paymentService, IHubContext<PaymentHub> hubContext)
     {
         _orderRepository = orderRepository;
         _paymentService = paymentService;
+        _hubContext = hubContext;
     }
 
     public async Task<Result> Handle(Command.CreateSePayOrderCommand request, CancellationToken cancellationToken)
@@ -34,6 +37,7 @@ public class CreateSePayOrderCommandHandler : ICommandHandler<Command.CreateSePa
         order.Status = isPaymentSuccessful ? 1 : 2;
         order.Note = orderId + "-" + request.transferAmount + "-" + request.transactionDate;
         await _paymentService.ProcessPayment(order.Id.ToString(), isPaymentSuccessful);
+        await _hubContext.Clients.All.SendAsync("ReceiveEvent", request.transferAmount, cancellationToken);
         
         return Result.Success("Oker");
     }
