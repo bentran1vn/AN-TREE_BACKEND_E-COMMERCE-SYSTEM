@@ -3,6 +3,7 @@ using Antree_Ecommerce_BE.Contract.Abstractions.Shared;
 using Antree_Ecommerce_BE.Contract.Services.Subscriptions;
 using Antree_Ecommerce_BE.Domain.Abstractions.Repositories;
 using Antree_Ecommerce_BE.Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace Antree_Ecommerce_BE.Application.UserCases.Commands.Subscriptions;
 
@@ -28,21 +29,37 @@ public class BuySubscriptionsCommandHandler : ICommandHandler<Command.BuySubscri
         {
             return Result.Failure(new Error("400", "Invalid Subscription !"));
         }
+        
+        if (user is null)
+        {
+            return Result.Failure(new Error("400", "Invalid User !"));
+        }
 
         var tran = new Transaction()
         {
             Id = Guid.NewGuid(),
-            UserId = request.UserId,
+            UserId = user.Id,
+            SubscriptionId = sub.Id,
             Note = request.UserId + "_" + sub.Name,
             Total = sub.Price ?? 0,
             Status = 0,
         };
+
+        var transaction = await _transactionRepository.FindAll(
+            x => x.UserId.Equals(user.Id) && !x.IsDeleted).ToListAsync(cancellationToken);
+
+        var transactionEdit = transaction.Select(x =>
+        {
+            x.IsDeleted = true;
+            return x;
+        }).ToList();
         
+        _transactionRepository.UpdateRange(transactionEdit);
         
         _transactionRepository.Add(tran);
-        user.SubscriptionId = sub.Id;
         
         var urlSea = $"https://qr.sepay.vn/img?bank=MBBank&acc=0901928382&template=&amount={tran.Total}&des={tran.Id}";
+        
         var result = new
         {
             TranId = tran.Id,

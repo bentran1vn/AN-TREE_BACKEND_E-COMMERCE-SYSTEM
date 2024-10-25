@@ -9,4 +9,6 @@ public class Subscription : Entity<Guid>, IAuditableEntity
     public decimal? Price { get; set; }
     public DateTimeOffset CreatedOnUtc { get; set; }
     public DateTimeOffset? ModifiedOnUtc { get; set; }
+    
+    public virtual IReadOnlyCollection<Transaction> TransactionList { get; set; } = default!;
 }
