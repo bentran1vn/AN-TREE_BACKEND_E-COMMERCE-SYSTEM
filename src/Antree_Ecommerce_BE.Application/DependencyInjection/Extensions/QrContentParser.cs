@@ -20,18 +20,23 @@ public static class QrContentParser
 
     public static QrParseResult ParseQrContent(string content)
     {
-        // Regex pattern to match either AntreeOrder or AntreeSub followed by the ID
-        Match match = Regex.Match(content, @"QR\s+Antree(Order|Sub)([a-zA-Z0-9]+)");
+        // Convert content to lowercase first
+        string lowercaseContent = content.ToLower();
 
+        // Pattern now uses lowercase 'antree' since we've converted the content
+        const string pattern = @"antree(order|sub)([a-f0-9]{32})";
+
+        Match match = Regex.Match(lowercaseContent, pattern);
+        
         if (!match.Success)
         {
-            throw new FormatException("Invalid QR content format. Expected format: QR Antree[Order|Sub]<ID>");
+            throw new FormatException("Could not find valid Antree transaction in content");
         }
 
         return new QrParseResult
         {
-            TransactionType = match.Groups[1].Value,  // Will be either "Order" or "Sub"
-            TransactionId = match.Groups[2].Value     // Will be the ID portion
+            TransactionType = match.Groups[1].Value.ToUpper(),  // Convert type back to uppercase for consistency
+            TransactionId = match.Groups[2].Value              // Keep ID as found (lowercase)
         };
     }
 
