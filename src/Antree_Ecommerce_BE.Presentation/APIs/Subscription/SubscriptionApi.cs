@@ -29,13 +29,6 @@ public class SubscriptionApi : ApiEndpoint, ICarterModule
         
         group1.MapPost(string.Empty, BuySubscriptions)
             .RequireAuthorization(RoleNames.Customer);
-        
-        group1.MapGet("transaction", async (IRepositoryBase<Transaction, Guid> repositoryBase) =>
-            {
-                var result = await repositoryBase.FindAll().ToListAsync();
-                return result;
-            })
-        .RequireAuthorization(RoleNames.Admin);
     }
     
     public static async Task<IResult> GetSubscriptions(ISender sender)

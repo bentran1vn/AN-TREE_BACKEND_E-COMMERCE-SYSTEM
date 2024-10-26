@@ -11,6 +11,7 @@ using FeedbackServices = Contract.Services.Feedbacks;
 using VendorServices = Contract.Services.Vendors;
 using OrderServices = Contract.Services.Orders;
 using ProductDiscountsServices = Contract.Services.ProductDiscounts;
+using TransactionsServices = Contract.Services.Transactions;
 // using ProducMediaServices = Antree_Ecommerce_BE.Contract.Services.ProducMedia;
 
 public class ServiceProfile : Profile
@@ -218,6 +219,21 @@ public class ServiceProfile : Profile
          CreateMap<ProductDiscount, ProductDiscountsServices.Response.GetProductDiscountsResponse>().ReverseMap();
          
          CreateMap<PagedResult<ProductDiscount>, PagedResult<ProductDiscountsServices.Response.GetProductDiscountsResponse>>()
+             .ForMember(dest => dest.Items, opt => opt.MapFrom(src => src.Items));
+         
+         // ============= TransactionServices ================
+         CreateMap<Transaction, TransactionsServices.Response.GetAllTransaction>()
+             .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
+             .ConstructUsing((src, context) => new TransactionsServices.Response.GetAllTransaction()
+             {
+                 Email = src.User.Email,
+                 SubscriptionName = src.Subscription.Name,
+                 Total = src.Total,
+                 CreatedAt = src.CreatedOnUtc,
+                 Status = src.Status
+             });
+         
+         CreateMap<PagedResult<Transaction>, PagedResult<TransactionsServices.Response.GetAllTransaction>>()
              .ForMember(dest => dest.Items, opt => opt.MapFrom(src => src.Items));
     }
 }
