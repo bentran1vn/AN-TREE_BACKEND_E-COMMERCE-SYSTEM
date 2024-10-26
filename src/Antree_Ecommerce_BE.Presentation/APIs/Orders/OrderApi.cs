@@ -97,7 +97,7 @@ public class OrderApi : ApiEndpoint, ICarterModule
     public static async Task<IResult> SePayCallBack(ISender sender, [FromBody] SePayBody request)
     {
         var (type, id) = QrContentParser.TakeOrderIdFromContent(request.content);
-        if (type.Equals("order"))
+        if (type.Equals("ORDER"))
         {
             await sender.Send(new CommandV1.CreateSePayOrderCommand()
             {
@@ -106,7 +106,7 @@ public class OrderApi : ApiEndpoint, ICarterModule
                 transferAmount = request.transferAmount
             });
         }
-        if(type.Equals("sub"))
+        if(type.Equals("SUB"))
         {
             await sender.Send(new Command.CreateSePayTranCommand()
             {
