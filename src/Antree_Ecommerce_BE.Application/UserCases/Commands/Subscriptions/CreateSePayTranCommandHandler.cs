@@ -21,9 +21,8 @@ public class CreateSePayTranCommandHandler : ICommandHandler<Command.CreateSePay
 
     public async Task<Result> Handle(Command.CreateSePayTranCommand request, CancellationToken cancellationToken)
     {
-        var tranId = OrderExtensions.TakeOrderIdFromContent(request.content);
         
-        var tran = await _tranRepository.FindByIdAsync(tranId, cancellationToken);
+        var tran = await _tranRepository.FindByIdAsync(request.transactionId, cancellationToken);
 
         if (tran == null || tran.IsDeleted)
         {
@@ -32,7 +31,7 @@ public class CreateSePayTranCommandHandler : ICommandHandler<Command.CreateSePay
         
         var isPaymentSuccessful = Math.Round(tran.Total, 2).Equals(Math.Round(Convert.ToDecimal(request.transferAmount), 2));
         tran.Status = isPaymentSuccessful ? 1 : 2;
-        tran.Note = tranId + "-" + request.transferAmount + "-" + request.transactionDate;
+        tran.Note = request.transactionId + "-" + request.transferAmount + "-" + request.transactionDate;
         await _paymentService.ProcessPayment(tran.Id.ToString(), isPaymentSuccessful);
         
         return Result.Success("Oker");

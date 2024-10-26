@@ -80,7 +80,7 @@ public class CreateOrderCommandHandler : ICommandHandler<Command.CreateOrderComm
         _productRepository.UpdateRange(updatedProducts);
 
         
-        var urlSea = $"https://qr.sepay.vn/img?bank=MBBank&acc=0901928382&template=&amount={order.Total}&des={order.Id}";
+        var urlSea = $"https://qr.sepay.vn/img?bank=MBBank&acc=0901928382&template=&amount={order.Total}&des=AntreeOrder{order.Id}";
         var result = new
         {
             OrderId = order.Id,

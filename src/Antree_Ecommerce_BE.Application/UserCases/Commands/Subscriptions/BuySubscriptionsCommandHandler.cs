@@ -58,7 +58,7 @@ public class BuySubscriptionsCommandHandler : ICommandHandler<Command.BuySubscri
         
         _transactionRepository.Add(tran);
         
-        var urlSea = $"https://qr.sepay.vn/img?bank=MBBank&acc=0901928382&template=&amount={tran.Total}&des={tran.Id}";
+        var urlSea = $"https://qr.sepay.vn/img?bank=MBBank&acc=0901928382&template=&amount={tran.Total}&des=AntreeSub{tran.Id}";
         
         var result = new
         {

@@ -25,8 +25,7 @@ public class CreateSePayOrderCommandHandler : ICommandHandler<Command.CreateSePa
 
     public async Task<Result> Handle(Command.CreateSePayOrderCommand request, CancellationToken cancellationToken)
     {
-        var orderId = OrderExtensions.TakeOrderIdFromContent(request.content);
-        var order = await _orderRepository.FindByIdAsync(orderId, cancellationToken);
+        var order = await _orderRepository.FindByIdAsync(request.orderId, cancellationToken);
 
         if (order == null || order.IsDeleted)
         {
@@ -35,7 +34,7 @@ public class CreateSePayOrderCommandHandler : ICommandHandler<Command.CreateSePa
         
         var isPaymentSuccessful = Math.Round(order.Total, 2).Equals(Math.Round(Convert.ToDecimal(request.transferAmount), 2));
         order.Status = isPaymentSuccessful ? 1 : 2;
-        order.Note = orderId + "-" + request.transferAmount + "-" + request.transactionDate;
+        order.Note = request.orderId + "-" + request.transferAmount + "-" + request.transactionDate;
         await _paymentService.ProcessPayment(order.Id.ToString(), isPaymentSuccessful);
         await _hubContext.Clients.All.SendAsync("ReceiveEvent", request.transferAmount, cancellationToken);
         

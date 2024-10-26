@@ -1,7 +1,9 @@
 using Antree_Ecommerce_BE.Application.Abstractions;
+using Antree_Ecommerce_BE.Application.DependencyInjection.Extensions;
 using Antree_Ecommerce_BE.Application.SignalR;
 using Antree_Ecommerce_BE.Contract.Abstractions.Shared;
 using Antree_Ecommerce_BE.Contract.Extensions;
+using Antree_Ecommerce_BE.Contract.Services.Subscriptions;
 using Antree_Ecommerce_BE.Presentation.Abstractions;
 using Antree_Ecommerce_BE.Presentation.Constrants;
 using Carter;
@@ -92,9 +94,27 @@ public class OrderApi : ApiEndpoint, ICarterModule
     }
 
 
-    public static async Task<IResult> SePayCallBack(ISender sender, [FromBody] CommandV1.CreateSePayOrderCommand command)
+    public static async Task<IResult> SePayCallBack(ISender sender, [FromBody] SePayBody request)
     {
-        var result = await sender.Send(command);
+        var (type, id) = QrContentParser.TakeOrderIdFromContent(request.content);
+        if (type.Equals("Order"))
+        {
+            await sender.Send(new CommandV1.CreateSePayOrderCommand()
+            {
+                orderId = id,
+                transactionDate = request.transactionDate,
+                transferAmount = request.transferAmount
+            });
+        }
+        if(type.Equals("Sub"))
+        {
+            await sender.Send(new Command.CreateSePayTranCommand()
+            {
+                transactionId = id,
+                transactionDate = request.transactionDate,
+                transferAmount = request.transferAmount
+            });
+        }
         var response = new { success = true };
         return Results.Json(response);
     }

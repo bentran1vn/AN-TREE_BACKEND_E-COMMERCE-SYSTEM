@@ -30,9 +30,7 @@ public class SubscriptionApi : ApiEndpoint, ICarterModule
         group1.MapPost(string.Empty, BuySubscriptions)
             .RequireAuthorization(RoleNames.Customer);
         
-        group1.MapPost("sepay-payment", SePayCallBack);
-        
-        group1.MapPost("transaction", async (IRepositoryBase<Transaction, Guid> repositoryBase) =>
+        group1.MapGet("transaction", async (IRepositoryBase<Transaction, Guid> repositoryBase) =>
             {
                 var result = await repositoryBase.FindAll().ToListAsync();
                 return result;
@@ -63,12 +61,5 @@ public class SubscriptionApi : ApiEndpoint, ICarterModule
             return HandlerFailure(result);
 
         return Results.Ok(result);
-    }
-    
-    public static async Task<IResult> SePayCallBack(ISender sender, [FromBody] Command.CreateSePayTranCommand command)
-    {
-        var result = await sender.Send(command);
-        var response = new { success = true };
-        return Results.Json(response);
     }
 }
