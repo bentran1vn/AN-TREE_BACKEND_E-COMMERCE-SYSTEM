@@ -16,13 +16,15 @@ public class GetLoginQueryHandler : IQueryHandler<Query.Login, Response.Authenti
     private readonly ICacheService _cacheService;
     private readonly IRepositoryBase<User, Guid> _userRepository;
     private readonly IPasswordHasherService _passwordHasherService;
+    private readonly IRepositoryBase<Transaction, Guid> _transactionRepository;
 
-    public GetLoginQueryHandler(IJwtTokenService jwtTokenService, ICacheService cacheService, IRepositoryBase<User, Guid> userRepository, IPasswordHasherService passwordHasherService)
+    public GetLoginQueryHandler(IJwtTokenService jwtTokenService, ICacheService cacheService, IRepositoryBase<User, Guid> userRepository, IPasswordHasherService passwordHasherService, IRepositoryBase<Transaction, Guid> transactionRepository)
     {
         _jwtTokenService = jwtTokenService;
         _cacheService = cacheService;
         _userRepository = userRepository;
         _passwordHasherService = passwordHasherService;
+        _transactionRepository = transactionRepository;
     }
 
     public async Task<Result<Response.Authenticated>> Handle(Query.Login request, CancellationToken cancellationToken)
@@ -59,10 +61,13 @@ public class GetLoginQueryHandler : IQueryHandler<Query.Login, Response.Authenti
             new Claim(ClaimTypes.Expired, TimeZoneInfo.ConvertTime(DateTimeOffset.UtcNow.AddMinutes(5), vietnamTimeZone).ToString())
         };
         
-        // if (user.Role.Equals(0))
-        // {
-        //     claims.Add(new Claim("Wait", user.Subscription?.Wait.ToString() ?? "0"));
-        // }
+        if (user.Role.Equals(0))
+        {
+            var sub = await _transactionRepository.FindSingleAsync(x => x.UserId.Equals(user.Id) && !x.IsDeleted, cancellationToken,
+                x=> x.Subscription);
+            
+            claims.Add(new Claim("Wait", sub?.Subscription?.Wait.ToString() ?? "0"));
+        }
         
         if (user.Role.Equals(1) && user.Vendor?.Status == 0)
         {

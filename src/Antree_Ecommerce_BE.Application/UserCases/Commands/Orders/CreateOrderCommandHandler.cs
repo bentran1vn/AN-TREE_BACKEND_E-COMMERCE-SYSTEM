@@ -18,8 +18,11 @@ public class CreateOrderCommandHandler : ICommandHandler<Command.CreateOrderComm
     private readonly IRepositoryBase<Product, Guid> _productRepository;
     private readonly ICacheService _cacheService;
     private readonly PaymentService _paymentService;
+    private readonly IRepositoryBase<Domain.Entities.UserAddress, Guid> _userAddressRepository;
+    private readonly IRepositoryBase<Domain.Entities.User, Guid> _userRepository;
 
-    public CreateOrderCommandHandler(IVnPayService vnPayService, IRepositoryBase<Order, Guid> orderRepository, IRepositoryBase<OrderDetail, Guid> orderDetailRepository, IRepositoryBase<Product, Guid> productRepository, ICacheService cacheService, PaymentService paymentService)
+
+    public CreateOrderCommandHandler(IVnPayService vnPayService, IRepositoryBase<Order, Guid> orderRepository, IRepositoryBase<OrderDetail, Guid> orderDetailRepository, IRepositoryBase<Product, Guid> productRepository, ICacheService cacheService, PaymentService paymentService, IRepositoryBase<Domain.Entities.UserAddress, Guid> userAddressRepository, IRepositoryBase<User, Guid> userRepository)
     {
         _vnPayService = vnPayService;
         _orderRepository = orderRepository;
@@ -27,10 +30,28 @@ public class CreateOrderCommandHandler : ICommandHandler<Command.CreateOrderComm
         _productRepository = productRepository;
         _cacheService = cacheService;
         _paymentService = paymentService;
+        _userAddressRepository = userAddressRepository;
+        _userRepository = userRepository;
     }
 
     public async Task<Result> Handle(Command.CreateOrderCommand request, CancellationToken cancellationToken)
     {
+        var user = await _userRepository.FindByIdAsync(request.UserId, cancellationToken);
+
+        if (user is null)
+        {
+            return Result.Failure(new Error("404", "User not Existed !"));
+        }
+
+        var userAddress =
+            await _userAddressRepository.FindSingleAsync(x =>
+                x.UserId.Equals(request.UserId) && !x.IsDeleted && x.IsOrder, cancellationToken);
+        
+        if (userAddress is null)
+        {
+            return Result.Failure(new Error("404", "User's Address not Existed !"));
+        }
+        
         var productIds = request.OrderItems.Select(orderItem => orderItem.ProductId).ToHashSet();
         
         var products = await _productRepository.FindAll(x => productIds.Contains(x.Id) && !x.IsDeleted)
@@ -57,10 +78,10 @@ public class CreateOrderCommandHandler : ICommandHandler<Command.CreateOrderComm
         var order = new Order
         {
             Id = Guid.NewGuid(),
-            Address = string.Empty,
+            Address = userAddress.Address + "-" + userAddress.PhoneNumber,
             Note = string.Empty,
             Total = total,
-            UserId = request.UserId ?? new Guid(), // Consider setting this to the actual user ID
+            UserId = request.UserId, // Consider setting this to the actual user ID
             Status = 0,
         };
         
