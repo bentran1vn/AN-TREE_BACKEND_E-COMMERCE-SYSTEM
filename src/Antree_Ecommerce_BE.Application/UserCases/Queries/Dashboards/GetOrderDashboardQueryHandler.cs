@@ -31,7 +31,7 @@ public class GetOrderDashboardQueryHandler : IQueryHandler<Query.GetOrderDashboa
             return Result.Failure<List<Response.GetOrderDashboard>>(new Error("500", "Can not appear Week and Month in same time !"));
         }
         
-        if (request.Month is not null)
+        if (request.Month != "")
         {
             DateTimeOffset monthDate = DateTimeOffset.ParseExact(request.Month, "MM-yyyy", null);
 
@@ -90,7 +90,7 @@ public class GetOrderDashboardQueryHandler : IQueryHandler<Query.GetOrderDashboa
             return Result.Success(orders);
         }
         
-        if (request.Year is not null)
+        if (request.Year != "")
         {
             DateTimeOffset yearDate = DateTimeOffset.ParseExact(request.Year, "yyyy", null);
             
