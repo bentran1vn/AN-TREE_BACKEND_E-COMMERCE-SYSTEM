@@ -19,17 +19,17 @@ public class GetSubDashboardQueryHandler : IQueryHandler<Query.GetSubDashboardQu
 
     public async Task<Result<List<Response.GetSubDashboard>>> Handle(Query.GetSubDashboardQuery request, CancellationToken cancellationToken)
     {
-        if (request is { Month: "", Year: "" })
+        if (String.IsNullOrEmpty(request.Month) && String.IsNullOrEmpty(request.Year))
         {
             return Result.Failure<List<Response.GetSubDashboard>>(new Error("500", "Can not empty Week and Month in same time !"));
         }
         
-        if (request.Month != "" && request.Year != "")
+        if (!String.IsNullOrEmpty(request.Month) && !String.IsNullOrEmpty(request.Year))
         {
             return Result.Failure<List<Response.GetSubDashboard>>(new Error("500", "Can not appear Week and Month in same time !"));
         }
 
-        if (request.Month != "")
+        if (!String.IsNullOrEmpty(request.Month))
         {
             DateTimeOffset monthDate = DateTimeOffset.ParseExact(request.Month, "MM-yyyy", null);
             
@@ -94,7 +94,7 @@ public class GetSubDashboardQueryHandler : IQueryHandler<Query.GetSubDashboardQu
             return Result.Success(dashboard.OrderBy(x => x.No).ThenBy(x => x.SubscriptionName).ToList());
         }
 
-        if (request.Year != "")
+        if (!String.IsNullOrEmpty(request.Year))
         {
             DateTimeOffset yearDate = DateTimeOffset.ParseExact(request.Year, "yyyy", null);
             TimeZoneInfo vietnamTimeZone = TimeZoneInfo.FindSystemTimeZoneById("SE Asia Standard Time");

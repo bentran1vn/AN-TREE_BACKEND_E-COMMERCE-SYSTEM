@@ -21,17 +21,17 @@ public class GetOrderDashboardQueryHandler : IQueryHandler<Query.GetOrderDashboa
 
     public async Task<Result<List<Response.GetOrderDashboard>>> Handle(Query.GetOrderDashboardQuery request, CancellationToken cancellationToken)
     {
-        if (request is { Month: "", Year: "" })
+        if (String.IsNullOrEmpty(request.Month) && String.IsNullOrEmpty(request.Year))
         {
             return Result.Failure<List<Response.GetOrderDashboard>>(new Error("500", "Can not empty Week and Month in same time !"));
         }
         
-        if (request.Month != "" && request.Year != "")
+        if (!String.IsNullOrEmpty(request.Month) && !String.IsNullOrEmpty(request.Year))
         {
             return Result.Failure<List<Response.GetOrderDashboard>>(new Error("500", "Can not appear Week and Month in same time !"));
         }
         
-        if (request.Month != "")
+        if (!String.IsNullOrEmpty(request.Month))
         {
             DateTimeOffset monthDate = DateTimeOffset.ParseExact(request.Month, "MM-yyyy", null);
 
@@ -90,7 +90,7 @@ public class GetOrderDashboardQueryHandler : IQueryHandler<Query.GetOrderDashboa
             return Result.Success(orders);
         }
         
-        if (request.Year != "")
+        if (!String.IsNullOrEmpty(request.Year))
         {
             DateTimeOffset yearDate = DateTimeOffset.ParseExact(request.Year, "yyyy", null);
             
