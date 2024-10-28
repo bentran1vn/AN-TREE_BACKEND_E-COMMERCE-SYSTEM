@@ -1,9 +1,11 @@
+using Antree_Ecommerce_BE.Application.Abstractions;
 using Antree_Ecommerce_BE.Contract.Abstractions.Shared;
 using Antree_Ecommerce_BE.Contract.Services.Dashboards;
 using Antree_Ecommerce_BE.Presentation.Abstractions;
 using Antree_Ecommerce_BE.Presentation.Constrants;
 using Carter;
 using MediatR;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
@@ -23,18 +25,26 @@ public class DashboardApi : ApiEndpoint, ICarterModule
         group1.MapGet(string.Empty, GetDashboardV1)
             .WithSummary("Get All The Order And Subscription Revenue in Month And Week !")
             .WithDescription("Month must be in pattern MM-YYYY")
-            .RequireAuthorization(RoleNames.Admin);
+            .RequireAuthorization(RoleNames.AdminAndSeller);
     }
     
     public static async Task<IResult> GetDashboardV1(ISender sender,
+        HttpContext context,
+        IJwtTokenService jwtTokenService,
         string? month = null,
         string? year = null,
         bool isOrder = true)
     {
+        var accessToken = await context.GetTokenAsync("access_token");
+        var (claimPrincipal, _)  = jwtTokenService.GetPrincipalFromExpiredToken(accessToken!);
+        var userId = claimPrincipal.Claims.FirstOrDefault(c => c.Type == "UserId")!.Value;
+        var vendorId = claimPrincipal.Claims.FirstOrDefault(c => c.Type == "VendorId")!.Value;
+        var role = claimPrincipal.Claims.FirstOrDefault(c => c.Type == "Role")!.Value;
+        
         Result result;
-        if (isOrder)
+        if (role.Equals("1") || isOrder)
         {
-            result = await sender.Send(new Query.GetOrderDashboardQuery(month, year));
+            result = await sender.Send(new Query.GetOrderDashboardQuery(vendorId, month, year));
         }
         else
         {

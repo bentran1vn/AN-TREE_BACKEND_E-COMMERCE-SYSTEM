@@ -11,10 +11,12 @@ namespace Antree_Ecommerce_BE.Application.UserCases.Queries.Dashboards;
 public class GetOrderDashboardQueryHandler : IQueryHandler<Query.GetOrderDashboardQuery, List<Response.GetOrderDashboard>>
 {
     private readonly IRepositoryBase<Order, Guid> _orderRepository;
+    private readonly IRepositoryBase<OrderDetail, Guid> _orderDetailRepository;
 
-    public GetOrderDashboardQueryHandler(IRepositoryBase<Order, Guid> orderRepository)
+    public GetOrderDashboardQueryHandler(IRepositoryBase<Order, Guid> orderRepository, IRepositoryBase<OrderDetail, Guid> orderDetailRepository)
     {
         _orderRepository = orderRepository;
+        _orderDetailRepository = orderDetailRepository;
     }
 
     public async Task<Result<List<Response.GetOrderDashboard>>> Handle(Query.GetOrderDashboardQuery request, CancellationToken cancellationToken)
@@ -32,13 +34,34 @@ public class GetOrderDashboardQueryHandler : IQueryHandler<Query.GetOrderDashboa
         if (request.Month is not null)
         {
             DateTimeOffset monthDate = DateTimeOffset.ParseExact(request.Month, "MM-yyyy", null);
-            
-            var result = await _orderRepository
-                .FindAll(x =>
-                    x.Status == 1 && !x.IsDeleted 
-                                  && x.CreatedOnUtc.Month.Equals(monthDate.Month)
+
+            List<Order> result;
+
+            if (request.VendorId == null)
+            {
+                result = await _orderRepository
+                    .FindAll(x =>
+                        x.Status == 1 && !x.IsDeleted 
+                                      && x.CreatedOnUtc.Month.Equals(monthDate.Month)
+                                      && x.CreatedOnUtc.Year.Equals(monthDate.Year)
+                    ).ToListAsync(cancellationToken);
+            }
+            else {
+                var vendorIdGuid = new Guid(request.VendorId);
+                
+                var ordersList = _orderDetailRepository.FindAll(
+                        x => x.Product.VendorId.Equals(vendorIdGuid),
+                        x=> x.Product)
+                    .Select(x => x.OrderId).Distinct();
+                
+                result = await _orderRepository
+                    .FindAll(x => ordersList.Contains(x.Id) 
+                                  && x.Status == 1 
+                                  && !x.IsDeleted 
+                                  && x.CreatedOnUtc.Month.Equals(monthDate.Month) 
                                   && x.CreatedOnUtc.Year.Equals(monthDate.Year)
-                ).ToListAsync(cancellationToken);
+                    ).ToListAsync(cancellationToken);
+            }
 
             // Get the total number of weeks in the month
             int totalWeeks = DashboardExtensions.GetTotalWeeksInMonth(monthDate.DateTime);
