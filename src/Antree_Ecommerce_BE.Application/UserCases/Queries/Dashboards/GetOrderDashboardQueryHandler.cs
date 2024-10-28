@@ -21,12 +21,12 @@ public class GetOrderDashboardQueryHandler : IQueryHandler<Query.GetOrderDashboa
 
     public async Task<Result<List<Response.GetOrderDashboard>>> Handle(Query.GetOrderDashboardQuery request, CancellationToken cancellationToken)
     {
-        if (request.Month is null && request.Year is null)
+        if (request is { Month: "", Year: "" })
         {
             return Result.Failure<List<Response.GetOrderDashboard>>(new Error("500", "Can not empty Week and Month in same time !"));
         }
         
-        if (request.Month is not null && request.Year is not null)
+        if (request.Month != "" && request.Year != "")
         {
             return Result.Failure<List<Response.GetOrderDashboard>>(new Error("500", "Can not appear Week and Month in same time !"));
         }
