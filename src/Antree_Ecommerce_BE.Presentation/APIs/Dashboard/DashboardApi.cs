@@ -40,12 +40,12 @@ public class DashboardApi : ApiEndpoint, ICarterModule
     {
         var accessToken = await context.GetTokenAsync("access_token");
         var (claimPrincipal, _)  = jwtTokenService.GetPrincipalFromExpiredToken(accessToken!);
-        var userId = claimPrincipal.Claims.FirstOrDefault(c => c.Type == "UserId")!.Value;
-        var vendorId = claimPrincipal.Claims.FirstOrDefault(c => c.Type == "VendorId")!.Value;
-        var role = claimPrincipal.Claims.FirstOrDefault(c => c.Type == "Role")!.Value;
+        var userId = claimPrincipal.Claims.FirstOrDefault(c => c.Type == "UserId")?.Value;
+        var vendorId = claimPrincipal.Claims.FirstOrDefault(c => c.Type == "VendorId")?.Value;
+        var role = claimPrincipal.Claims.FirstOrDefault(c => c.Type == "Role")?.Value;
         
         Result result;
-        if (role.Equals("1") || isOrder)
+        if (role!.Equals("1") || isOrder)
         {
             result = await sender.Send(new Query.GetOrderDashboardQuery(vendorId, month, year));
         }
