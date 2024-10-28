@@ -10,7 +10,6 @@ public class Response
         public int OrderNumber { get; set; }
         public decimal TotalAmount { get; set; }
     }
-    
     public record GetSubDashboard()
     {
         public int No { get; set; }
@@ -20,4 +19,7 @@ public class Response
         public string SubscriptionNumber { get; set; }
         public string SubscriptionTotal { get; set; }
     }
+    public record GetAdminAmountDashboard(
+        int TotalOrder, int TotalTransaction,
+        int TotalVendor, int TotalCustomer);
 }

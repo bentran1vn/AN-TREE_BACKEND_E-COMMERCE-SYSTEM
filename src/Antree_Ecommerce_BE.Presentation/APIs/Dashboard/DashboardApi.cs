@@ -22,10 +22,13 @@ public class DashboardApi : ApiEndpoint, ICarterModule
         var group1 = app.NewVersionedApi("Dashboards")
             .MapGroup(BaseUrl).HasApiVersion(1);
 
-        group1.MapGet(string.Empty, GetDashboardV1)
+        group1.MapGet("Revenue", GetDashboardV1)
             .WithSummary("Get All The Order And Subscription Revenue in Month And Week !")
             .WithDescription("Month must be in pattern MM-YYYY")
             .RequireAuthorization(RoleNames.AdminAndSeller);
+        
+        group1.MapGet("Amount", GetAmountV1)
+            .RequireAuthorization(RoleNames.Admin);
     }
     
     public static async Task<IResult> GetDashboardV1(ISender sender,
@@ -50,6 +53,16 @@ public class DashboardApi : ApiEndpoint, ICarterModule
         {
             result = await sender.Send(new Query.GetSubDashboardQuery(month, year));
         }
+        
+        if (result.IsFailure)
+            return HandlerFailure(result);
+
+        return Results.Ok(result);
+    }
+    
+    public static async Task<IResult> GetAmountV1(ISender sender)
+    {
+        Result result = await sender.Send(new Query.GetAdminAmountDashboardQuery());
         
         if (result.IsFailure)
             return HandlerFailure(result);
