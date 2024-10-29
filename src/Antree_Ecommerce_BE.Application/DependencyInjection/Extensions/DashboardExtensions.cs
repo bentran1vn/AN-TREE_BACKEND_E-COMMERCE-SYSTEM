@@ -6,28 +6,15 @@ public static class DashboardExtensions
     
     public static int GetWeekInMonth(DateTime date)
     {
-        // Convert to Vietnam timezone
-        var vietnamDate = TimeZoneInfo.ConvertTimeFromUtc(
-            date.ToUniversalTime(), 
-            VietnamTimeZone
-        );
-        
-        var firstDayOfMonth = new DateTime(vietnamDate.Year, vietnamDate.Month, 1);
-        int offset = (vietnamDate.Day + (int)firstDayOfMonth.DayOfWeek - 1) / 7;
-        return offset + 1;
+        var firstDayOfMonth = new DateTime(date.Year, date.Month, 1);
+        return (date.Day - 1) / 7 + 1;
     }
 
     public static int GetTotalWeeksInMonth(DateTime date)
     {
-        // Convert to Vietnam timezone
-        var vietnamDate = TimeZoneInfo.ConvertTimeFromUtc(
-            date.ToUniversalTime(), 
-            VietnamTimeZone
-        );
-        
-        var lastDayOfMonth = new DateTime(vietnamDate.Year, vietnamDate.Month, 
-            DateTime.DaysInMonth(vietnamDate.Year, vietnamDate.Month));
-        return (int)Math.Ceiling(lastDayOfMonth.Day / 7.0);
+        var lastDayOfMonth = new DateTime(date.Year, date.Month, 
+            DateTime.DaysInMonth(date.Year, date.Month));
+        return (lastDayOfMonth.Day - 1) / 7 + 1;
     }
     
     public static DateOnly GetWeekStartDate(DateTime monthDate, int weekNumber)
