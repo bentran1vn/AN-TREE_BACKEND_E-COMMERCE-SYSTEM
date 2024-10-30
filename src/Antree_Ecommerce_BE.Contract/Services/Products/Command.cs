@@ -10,16 +10,16 @@ public static class Command
 {
     public record CreateProductCommand : ICommand
     {
-        public Guid ProductCategoryId { get; set; }
-        public Guid VendorId { get; set; }
+        [SwaggerSchema(ReadOnly = true)]
+        [DefaultValue("e824c924-e441-4367-a03b-8dd13423f76f")]
+        public Guid? VendorId { get; set; }
+        public string ProductCategoryId { get; set; }
         public string Name { get; set; }
         public decimal Price { get; set; }
         public string Description { get; set; }
         public int Sku { get; set; }
         public int Sold { get; set; }
-        
         public IFormFile ProductImageCover { get; set; }
-        
         public IFormFileCollection ProductImages { get; set; }
     };
 

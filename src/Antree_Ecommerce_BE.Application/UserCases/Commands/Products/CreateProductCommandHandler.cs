@@ -40,7 +40,7 @@ public sealed class CreateProductCommandHandler : ICommandHandler<Command.Create
         
         var product = Product.CreateProduct(
             Guid.NewGuid(), 
-            request.ProductCategoryId, request.VendorId, request.Name,
+            new Guid(request.ProductCategoryId), request.VendorId ?? new Guid(), request.Name,
             request.Price, request.Description, request.Sku, request.Sold,
             coverImage, Guid.NewGuid(), Guid.Empty
         );

@@ -82,8 +82,13 @@ public class ProductApi : ApiEndpoint, ICarterModule
     }
     
     public static async Task<IResult> CreateProductsV1(ISender sender,
+        HttpContext context, IJwtTokenService jwtTokenService,
         [FromForm] CommandV1.CreateProductCommand createProduct)
     {
+        var accessToken = await context.GetTokenAsync("access_token");
+        var (claimPrincipal, _)  = jwtTokenService.GetPrincipalFromExpiredToken(accessToken!);
+        var vendorId = claimPrincipal.Claims.FirstOrDefault(c => c.Type == "VendorId")!.Value;
+        createProduct.VendorId = new Guid(vendorId);
         var result = await sender.Send(createProduct);
 
         if (result.IsFailure)
