@@ -17,7 +17,7 @@ public class GetAllUserAddressQueryHandler : IQueryHandler<Query.GetAllUserAddre
 
     public async Task<Result<List<Response.GetAllUserAddress>>> Handle(Query.GetAllUserAddressQuery request, CancellationToken cancellationToken)
     {
-        var result = await _userAddressRepository.FindAll(x => !x.IsDeleted).ToListAsync(cancellationToken);
+        var result = await _userAddressRepository.FindAll(x => !x.IsDeleted && x.UserId.Equals(request.UserId)).ToListAsync(cancellationToken);
 
         return result.Select(x => new Response.GetAllUserAddress()
         {
