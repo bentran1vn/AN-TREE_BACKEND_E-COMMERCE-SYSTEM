@@ -17,5 +17,12 @@ public static class Response
         public string Lastname { get; set; }
         public string Phonenumber { get; set; }
         public DateTimeOffset CreatedOnUtc { get; set; }
+        public Subscription Subcription { get; set; }
+    }
+
+    public class Subscription
+    {
+        public string SubscriptionName { get; set; }
+        public DateTimeOffset SubscriptionEndDate { get; set; }
     }
 }
