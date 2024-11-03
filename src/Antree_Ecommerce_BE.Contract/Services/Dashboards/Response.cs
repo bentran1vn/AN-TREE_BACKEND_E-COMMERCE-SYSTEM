@@ -21,5 +21,6 @@ public class Response
     }
     public record GetAdminAmountDashboard(
         int TotalOrder, int TotalTransaction,
-        int TotalVendor, int TotalCustomer);
+        int TotalVendor, int TotalCustomer,
+        int TotalFreeSubscription, int TotalBuySubscription);
 }

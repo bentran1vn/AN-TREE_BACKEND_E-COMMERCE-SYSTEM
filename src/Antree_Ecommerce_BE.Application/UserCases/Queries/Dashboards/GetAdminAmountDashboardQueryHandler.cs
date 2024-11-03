@@ -28,10 +28,21 @@ public class GetAdminAmountDashboardQueryHandler : IQueryHandler<Query.GetAdminA
         var userCount = await _userRepository.FindAll(x => x.Role.Equals(0) && !x.IsDeleted).CountAsync(cancellationToken);
         var tranCount = await _transactionRepository.FindAll(x => x.Status.Equals(1) && !x.IsDeleted).CountAsync(cancellationToken);
         var orderCount = await _orderRepository.FindAll(x => x.Status.Equals(1) && !x.IsDeleted).CountAsync(cancellationToken);
+        var freeSub = await _userRepository.FindAll(
+                x => x.Role.Equals(0)
+                     && !x.IsDeleted
+                     && (!x.TransactionList.Any(transaction => transaction.Status.Equals(1) && !transaction.IsDeleted) || x.TransactionList == null))
+            .CountAsync(cancellationToken);
+        var existSub = await _userRepository.FindAll(
+                x => x.Role.Equals(0)
+                     && !x.IsDeleted
+                     && x.TransactionList.Any(transaction => transaction.Status.Equals(1) && !transaction.IsDeleted))
+            .CountAsync(cancellationToken);
 
         // var result = await Task.WhenAll(vendorCount, userCount, tranCount, orderCount);
 
-        return Result.Success(new Response.GetAdminAmountDashboard(orderCount,
-            tranCount, vendorCount, userCount));
+        return Result.Success(
+            new Response.GetAdminAmountDashboard(orderCount, tranCount, vendorCount,
+                userCount, freeSub, existSub));
     }
 }
