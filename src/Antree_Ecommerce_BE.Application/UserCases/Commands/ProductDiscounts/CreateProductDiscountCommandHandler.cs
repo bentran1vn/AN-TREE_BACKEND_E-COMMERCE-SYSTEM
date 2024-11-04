@@ -38,7 +38,7 @@ public class CreateProductDiscountCommandHandler : ICommandHandler<Command.Creat
         }
 
         product.DiscountPercent = request.DiscountPercent;
-        product.DiscountSold = product.Price * request.DiscountPercent / 100;
+        product.DiscountSold = product.Price - (product.Price * request.DiscountPercent / 100);
         
         if (productDiscounts.Count > 0)
         {
