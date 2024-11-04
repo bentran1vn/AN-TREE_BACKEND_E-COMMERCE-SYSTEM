@@ -37,7 +37,7 @@ public class UpdateProductDiscountCommandHandler : ICommandHandler<Command.Updat
         else
         {
             var productDiscountActive = await _productDiscountRepository
-                .FindSingleAsync(x => x.IsDeleted == false && x.CreatedBy.Equals(request.VendorId), cancellationToken);
+                .FindSingleAsync(x => x.IsDeleted == false && x.CreatedBy.Equals(request.VendorId) && x.ProductId.Equals(productDiscounts.ProductId), cancellationToken);
             
             if (!request.IsDeleted)
             {

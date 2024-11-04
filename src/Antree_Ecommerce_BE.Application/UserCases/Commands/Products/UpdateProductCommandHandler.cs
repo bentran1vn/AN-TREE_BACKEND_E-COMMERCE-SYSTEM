@@ -14,17 +14,17 @@ public sealed class UpdateProductCommandHandler : ICommandHandler<Command.Update
 {
     private readonly IRepositoryBase<Product, Guid> _productRepository;
     private readonly IRepositoryBase<ProductMedia, Guid> _productMediaRepository;
+    private readonly IRepositoryBase<ProductDiscount, Guid> _productDiscountRepository;
     private readonly IMediaService _mediaService;
-    private readonly ApplicationDbContext _dbContext;
     private readonly ICacheService _cacheService;
 
-    public UpdateProductCommandHandler(IRepositoryBase<Product, Guid> productRepository, IRepositoryBase<ProductMedia, Guid> productMediaRepository, ICacheService cacheService, IMediaService mediaService, ApplicationDbContext dbContext)
+    public UpdateProductCommandHandler(IRepositoryBase<Product, Guid> productRepository, IRepositoryBase<ProductMedia, Guid> productMediaRepository, ICacheService cacheService, IMediaService mediaService, IRepositoryBase<ProductDiscount, Guid> productDiscountRepository)
     {
         _productRepository = productRepository;
         _productMediaRepository = productMediaRepository;
         _cacheService = cacheService;
         _mediaService = mediaService;
-        _dbContext = dbContext;
+        _productDiscountRepository = productDiscountRepository;
     }
 
     public async Task<Result> Handle(Command.UpdateProductCommand request, CancellationToken cancellationToken)
@@ -70,6 +70,10 @@ public sealed class UpdateProductCommandHandler : ICommandHandler<Command.Update
         
         if (!string.IsNullOrWhiteSpace(request.Price) && decimal.TryParse(request.Price, out var decimalPrice))
             product.Price = decimalPrice;
+        
+        var productDiscountActive = await _productDiscountRepository
+            .FindSingleAsync(x => x.IsDeleted == false && x.CreatedBy.Equals(request.VendorId) && x.ProductId.Equals(request.Id), cancellationToken);
+        product.DiscountSold = product.Price - (product.Price * productDiscountActive.DiscountPercent / 100);
         
         if (!string.IsNullOrWhiteSpace(request.Sku) && int.TryParse(request.Sku, out var intSku))
             product.Sku = intSku;

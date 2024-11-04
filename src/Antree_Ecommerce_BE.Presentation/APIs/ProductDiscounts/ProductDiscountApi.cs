@@ -34,9 +34,6 @@ public class ProductDiscountApi : ApiEndpoint, ICarterModule
         group1.MapPut(string.Empty, UpdateProductDiscountsV1)
             .RequireAuthorization(RoleNames.Seller)
             .Accepts<CommandV1.UpdateProductDiscountCommand>("application/json");
-        
-        group1.MapDelete("{discountId}", () => { })
-            .RequireAuthorization(RoleNames.Seller);
     }
 
     public static async Task<IResult> GetProductDiscountsV1(ISender sender,
