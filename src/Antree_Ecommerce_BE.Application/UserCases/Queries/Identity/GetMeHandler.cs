@@ -45,7 +45,7 @@ public class GetMeHandler : IQueryHandler<Query.GetMe, Response.GetMe>
             Subcription = new Response.Subscription()
             {
                 SubscriptionName = user.TransactionList.FirstOrDefault(x => x.Status.Equals(1) && !x.IsDeleted)?.Subscription.Name ?? "Mặc định",
-                SubscriptionEndDate = user.TransactionList.FirstOrDefault(x => x.Status.Equals(1) && !x.IsDeleted)?.Subscription.CreatedOnUtc.AddDays(30) ?? DateTimeOffset.Now
+                SubscriptionEndDate = user.TransactionList.FirstOrDefault(x => x.Status.Equals(1) && !x.IsDeleted)?.CreatedOnUtc.AddDays(30) ?? DateTimeOffset.Now
             },
             CreatedOnUtc = user.CreatedOnUtc
         };
