@@ -71,7 +71,7 @@ public sealed class UpdateProductCommandHandler : ICommandHandler<Command.Update
         if (!string.IsNullOrWhiteSpace(request.Price) && decimal.TryParse(request.Price, out var decimalPrice))
             product.Price = decimalPrice;
         
-        if (!string.IsNullOrWhiteSpace(request.Sku) && int.TryParse(request.Price, out var intSku))
+        if (!string.IsNullOrWhiteSpace(request.Sku) && int.TryParse(request.Sku, out var intSku))
             product.Sku = intSku;
         
         await _cacheService.RemoveByPrefixAsync($"{nameof(Query.GetProductsQuery)}", cancellationToken);

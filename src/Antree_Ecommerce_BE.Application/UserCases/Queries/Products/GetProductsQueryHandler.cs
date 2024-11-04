@@ -24,12 +24,12 @@ public class GetProductsQueryHandler : IQueryHandler<Query.GetProductsQuery, Pag
     public async Task<Result<PagedResult<Response.ProductsResponse>>> Handle(Query.GetProductsQuery request, CancellationToken cancellationToken)
     {
         var productsQuery = string.IsNullOrWhiteSpace(request.SearchTerm)
-            ? _productRepository.FindAll(null,
+            ? _productRepository.FindAll(x => !x.IsDeleted,
                 x => x.Vendor,
                 x => x.ProductFeedbackList)
             : _productRepository.FindAll(
-                x => x.Name.ToLower().Contains(request.SearchTerm.ToLower())
-                     || x.ProductCategory.Name.ToLower().Contains(request.SearchTerm.ToLower()),
+                x => (x.Name.ToLower().Contains(request.SearchTerm.ToLower())
+                      || x.ProductCategory.Name.ToLower().Contains(request.SearchTerm.ToLower())) && !x.IsDeleted,
                 x => x.Vendor,
                 x => x.ProductFeedbackList
             );
