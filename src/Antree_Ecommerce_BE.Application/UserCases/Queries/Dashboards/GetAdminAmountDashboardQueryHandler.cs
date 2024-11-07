@@ -26,8 +26,9 @@ public class GetAdminAmountDashboardQueryHandler : IQueryHandler<Query.GetAdminA
     {
         var vendorCount = await _vendorRepository.FindAll(x => x.Status.Equals(0) && !x.IsDeleted).CountAsync(cancellationToken);
         var userCount = await _userRepository.FindAll(x => x.Role.Equals(0) && !x.IsDeleted).CountAsync(cancellationToken);
-        var tranCount = await _transactionRepository.FindAll(x => x.Status.Equals(1) && !x.IsDeleted).CountAsync(cancellationToken);
-        var orderCount = await _orderRepository.FindAll(x => x.Status.Equals(1) && !x.IsDeleted).CountAsync(cancellationToken);
+        var tranQuery =  _transactionRepository.FindAll(x => x.Status.Equals(1) && !x.IsDeleted);
+        var tranCount = await tranQuery.CountAsync(cancellationToken);
+        var orderCount = await _orderRepository.FindAll(x => x.Status.Equals(1) && !x.IsDeleted).SumAsync(x => x.Total, cancellationToken: cancellationToken);
         var freeSub = await _userRepository.FindAll(
                 x => x.Role.Equals(0)
                      && !x.IsDeleted
@@ -40,6 +41,7 @@ public class GetAdminAmountDashboardQueryHandler : IQueryHandler<Query.GetAdminA
             .CountAsync(cancellationToken);
 
         // var result = await Task.WhenAll(vendorCount, userCount, tranCount, orderCount);
+        orderCount += await tranQuery.SumAsync(x => x.Total, cancellationToken);
 
         return Result.Success(
             new Response.GetAdminAmountDashboard(orderCount, tranCount, vendorCount,

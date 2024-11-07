@@ -20,7 +20,7 @@ public class Response
         public string SubscriptionTotal { get; set; }
     }
     public record GetAdminAmountDashboard(
-        int TotalOrder, int TotalTransaction,
+        decimal TotalRevenue, int TotalTransaction,
         int TotalVendor, int TotalCustomer,
         int TotalFreeSubscription, int TotalBuySubscription);
 }
