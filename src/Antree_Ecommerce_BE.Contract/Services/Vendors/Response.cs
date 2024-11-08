@@ -6,6 +6,6 @@ public class Response
         Guid Id, string Name, string Email, string Address, string City,
         string Province, string Phonenumber, string BankName, string BankOwnerName,
         string BankAccountNumber, string AvatarImage, string CoverImage,
-        DateTimeOffset CreatedOnUtc, DateTimeOffset ModifiedOnUtc
+        DateTimeOffset CreatedOnUtc, DateTimeOffset ModifiedOnUtc, int Status , int IsDeleted
     );
 }
