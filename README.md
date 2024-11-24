@@ -34,5 +34,4 @@ Descriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondes
 ![WebAdminDash2](./items/ProjectInfor/Image/WebAdminDash2.png)
 
 ## Demo Video
-<iframe width="560" height="315" src="https://www.youtube.com/embed/xojdwtRskxo"
-frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xojdwtRskxo?si=25vvvMB2WnIM4pFJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
